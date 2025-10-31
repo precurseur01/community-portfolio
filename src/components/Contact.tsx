@@ -139,6 +139,7 @@ export default function Contact() {
                                     <input
                                         type="text"
                                         id="name"
+                                        name="name"
                                         required
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -154,6 +155,7 @@ export default function Contact() {
                                     <input
                                         type="email"
                                         id="email"
+                                        name="email"
                                         required
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -168,6 +170,7 @@ export default function Contact() {
                                     </label>
                                     <textarea
                                         id="message"
+                                        name="message"
                                         required
                                         rows={6}
                                         value={formData.message}
