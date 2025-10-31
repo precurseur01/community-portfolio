@@ -1,5 +1,5 @@
-import { Mail, Linkedin, Instagram, Twitter, Send } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, Linkedin, Instagram, Twitter, Send, Phone } from 'lucide-react';
+import { useState, useRef } from 'react';
 import type { FormEvent } from "react";
 
 
@@ -11,13 +11,23 @@ export default function Contact() {
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-        setIsSubmitted(true);
+
+    const formRef = useRef<HTMLFormElement>(null);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        // Optionnel : si tu veux éviter le rechargement complet
+        // e.preventDefault();
+        setIsSubmitted(true)
         setTimeout(() => {
-            setFormData({ name: '', email: '', message: '' });
-            setIsSubmitted(false);
-        }, 3000);
+            if (formRef.current) {
+                formRef.current.reset();
+            }
+            setFormData({
+                name: '',
+                email: '',
+                message: '',
+            });
+        }, 3000); // 3s après l'envoi
     };
 
     const socialLinks = [
@@ -54,7 +64,18 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <div className="text-sm text-gray-400">Email</div>
-                                        <div className="text-white font-medium">contact@yndrisdouanla.com</div>
+                                        <div className="text-white font-medium">yndriswilf@gmail.com</div>
+                                    </div>
+
+
+                                </div>
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-400 rounded-xl flex items-center justify-center">
+                                        <Phone size={24} className="text-white" />
+                                    </div>
+                                    <div>
+                                        <div className="text-sm text-gray-400">Tel</div>
+                                        <div className="text-white font-medium">+237 650871031</div>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +124,12 @@ export default function Contact() {
                     </div>
 
                     <div>
-                        <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
+                        <form
+                            onSubmit={handleSubmit}
+                            action="https://formspree.io/f/xldnpebz"
+                            method="POST"
+                            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8"
+                        >
                             <div className="space-y-6">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
