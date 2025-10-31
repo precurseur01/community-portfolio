@@ -125,6 +125,7 @@ export default function Contact() {
 
                     <div>
                         <form
+                            ref={formRef}
                             onSubmit={handleSubmit}
                             action="https://formspree.io/f/xldnpebz"
                             method="POST"
