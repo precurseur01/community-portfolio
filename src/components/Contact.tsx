@@ -131,7 +131,6 @@ export default function Contact() {
                             method="POST"
                             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8"
                         >
-                            <input type="hidden" name="site" value="Portfolio Community" />
                             <div className="space-y-6">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
