@@ -190,6 +190,10 @@ export default function Contact() {
                                             <Send size={20} />
                                         </>
                                     )} */}
+                                    <>
+                                        Discutons de votre projet
+                                        <Send size={20} />
+                                    </>
                                 </button>
                             </div>
                         </form>
