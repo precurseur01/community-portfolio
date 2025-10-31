@@ -1,6 +1,6 @@
 import { Mail, Linkedin, Instagram, Twitter, Send, Phone } from 'lucide-react';
 import { useState, useRef } from 'react';
-import type { FormEvent } from "react";
+// import type { FormEvent } from "react";
 
 
 export default function Contact() {
