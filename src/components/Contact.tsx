@@ -9,7 +9,7 @@ export default function Contact() {
         email: '',
         message: ''
     });
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    // const [isSubmitted, setIsSubmitted] = useState(false);
 
 
     const formRef = useRef<HTMLFormElement>(null);
@@ -17,7 +17,7 @@ export default function Contact() {
     const handleSubmit = (e: React.FormEvent) => {
         // Optionnel : si tu veux éviter le rechargement complet
         // e.preventDefault();
-        setIsSubmitted(true)
+        // setIsSubmitted(true)
         setTimeout(() => {
             if (formRef.current) {
                 formRef.current.reset();
@@ -178,17 +178,17 @@ export default function Contact() {
 
                                 <button
                                     type="submit"
-                                    disabled={isSubmitted}
+                                    // disabled={isSubmitted}
                                     className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-xl font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    {isSubmitted ? (
+                                    {/* {isSubmitted ? (
                                         <>Message envoyé avec succès !</>
                                     ) : (
                                         <>
                                             Discutons de votre projet
                                             <Send size={20} />
                                         </>
-                                    )}
+                                    )} */}
                                 </button>
                             </div>
                         </form>
