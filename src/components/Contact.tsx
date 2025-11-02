@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Instagram, Twitter, Send, Phone } from 'lucide-react';
+import { Mail, Linkedin, Send, Phone, Github, Facebook } from 'lucide-react';
 import { useState, useRef } from 'react';
 // import type { FormEvent } from "react";
 
@@ -31,10 +31,12 @@ export default function Contact() {
     };
 
     const socialLinks = [
-        { icon: Linkedin, url: '#', label: 'LinkedIn', color: 'hover:text-blue-400' },
-        { icon: Instagram, url: '#', label: 'Instagram', color: 'hover:text-pink-400' },
-        { icon: Twitter, url: '#', label: 'Twitter / X', color: 'hover:text-blue-300' },
-        { icon: Mail, url: 'mailto:contact@yndrisdouanla.com', label: 'Email', color: 'hover:text-emerald-400' },
+        { icon: Linkedin, url: "https://linkedin.com/in/yndris-douanla-060968273", label: 'LinkedIn', color: 'hover:text-blue-400' },
+        // { icon: Instagram, url: '#', label: 'Instagram', color: 'hover:text-pink-400' },
+        // { icon: Twitter, url: '#', label: 'Twitter / X', color: 'hover:text-blue-300' },
+         { icon: Facebook, url: 'https://www.facebook.com/share/1BC6jjWT3G/?mibextid=wwXIfr', label: 'Facebook', color: 'hover:text-blue-300' },
+        { icon: Github, url: 'https://github.com/precurseur01', label: 'Github', color: 'hover:text-blue-300' },
+        { icon: Mail, url: 'mailto:yndriswilf@gmail.com', label: 'Email', color: 'hover:text-emerald-400' },
     ];
 
     return (
