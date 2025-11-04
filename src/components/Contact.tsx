@@ -1,7 +1,7 @@
 import { Mail, Linkedin, Send, Facebook, Github } from 'lucide-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { FormEvent } from "react";
+// import type { FormEvent } from "react";
 
 export default function Contact() {
     const { t } = useTranslation();
@@ -10,15 +10,25 @@ export default function Contact() {
         email: '',
         message: ''
     });
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    // const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-        setIsSubmitted(true);
+
+    const formRef = useRef<HTMLFormElement>(null);
+
+    const handleSubmit = () => {
+        // Optionnel : si tu veux éviter le rechargement complet
+        // e.preventDefault();
+        // setIsSubmitted(true)
         setTimeout(() => {
-            setFormData({ name: '', email: '', message: '' });
-            setIsSubmitted(false);
-        }, 3000);
+            if (formRef.current) {
+                formRef.current.reset();
+            }
+            setFormData({
+                name: '',
+                email: '',
+                message: '',
+            });
+        }, 3000); // 3s après l'envoi
     };
 
     const socialLinks = [
@@ -100,7 +110,12 @@ export default function Contact() {
                     </div>
 
                     <div>
-                        <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 space-y-6">
+                        <form
+                            ref={formRef}
+                            onSubmit={handleSubmit}
+                            action="https://formspree.io/f/xldnpebz"
+                            method="POST"
+                            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                                     {t('contact.form.nameLabel')}
@@ -148,15 +163,19 @@ export default function Contact() {
 
                             <button
                                 type="submit"
-                                disabled={isSubmitted}
+                                // disabled={isSubmitted}
                                 className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-xl font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                {isSubmitted
+                                {/* {isSubmitted
                                     ? t('contact.form.submitButton.submitted')
                                     : <>
                                         {t('contact.form.submitButton.default')}
                                         <Send size={20} />
-                                    </>}
+                                    </>} */}
+                                <>
+                                    {t('contact.form.submitButton.default')}
+                                    <Send size={20} />
+                                </>
                             </button>
                         </form>
                     </div>
