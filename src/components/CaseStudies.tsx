@@ -1,44 +1,47 @@
 import { TrendingUp, Users, BarChart3, Quote } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function CaseStudies() {
+  const { t } = useTranslation();
+
   const cases = [
     {
-      title: 'Lancement de marque tech sur Instagram',
-      category: 'Tech Startup',
-      challenge: 'Construire une présence digitale de zéro',
-      strategy: 'Stratégie de contenu éducatif + collaborations ciblées + storytelling authentique',
+      title: t('cases.case1.title'),
+      category: t('cases.case1.category'),
+      challenge: t('cases.case1.challenge'),
+      strategy: t('cases.case1.strategy'),
       results: [
-        { label: 'Abonnés', value: '+5000', period: 'en 3 mois', icon: Users },
-        { label: 'Taux d\'engagement', value: '8.2%', period: 'moyenne', icon: TrendingUp },
-        { label: 'Reach mensuel', value: '150K', period: 'impressions', icon: BarChart3 },
+        { label: t('cases.case1.results.followers.label'), value: '+5000', period: t('cases.case1.results.followers.period'), icon: Users },
+        { label: t('cases.case1.results.engagement.label'), value: '8.2%', period: t('cases.case1.results.engagement.period'), icon: TrendingUp },
+        { label: t('cases.case1.results.reach.label'), value: '150K', period: t('cases.case1.results.reach.period'), icon: BarChart3 },
       ],
-      quote: 'Yndris a transformé notre vision en une communauté engagée. Son approche stratégique a dépassé toutes nos attentes.',
+      quote: t('cases.case1.quote'),
       color: 'from-blue-600 to-blue-400'
     },
     {
-      title: 'Campagne d\'engagement LinkedIn B2B',
-      category: 'Agence Marketing',
-      challenge: 'Améliorer la visibilité et générer des leads qualifiés',
-      strategy: 'Thought leadership + contenu premium + engagement actif avec décideurs',
+      title: t('cases.case2.title'),
+      category: t('cases.case2.category'),
+      challenge: t('cases.case2.challenge'),
+      strategy: t('cases.case2.strategy'),
       results: [
-        { label: 'Interactions', value: '+320%', period: 'vs période précédente', icon: TrendingUp },
-        { label: 'Leads qualifiés', value: '47', period: 'par mois', icon: Users },
-        { label: 'Taux de conversion', value: '12%', period: 'leads to clients', icon: BarChart3 },
+        { label: t('cases.case2.results.interactions.label'), value: '+320%', period: t('cases.case2.results.interactions.period'), icon: TrendingUp },
+        { label: t('cases.case2.results.leads.label'), value: '47', period: t('cases.case2.results.leads.period'), icon: Users },
+        { label: t('cases.case2.results.conversion.label'), value: '12%', period: t('cases.case2.results.conversion.period'), icon: BarChart3 },
       ],
-      quote: 'Une expertise rare en B2B. Les résultats parlent d\'eux-mêmes.',
+      quote: t('cases.case2.quote'),
       color: 'from-emerald-600 to-emerald-400'
     },
     {
-      title: 'Refonte stratégique de communication',
-      category: 'E-commerce Mode',
-      challenge: 'Revitaliser une marque dormante sur les réseaux sociaux',
-      strategy: 'Repositionnement complet + UGC strategy + campagnes créatives multi-plateformes',
+      title: t('cases.case3.title'),
+      category: t('cases.case3.category'),
+      challenge: t('cases.case3.challenge'),
+      strategy: t('cases.case3.strategy'),
       results: [
-        { label: 'Trafic social', value: '+70%', period: 'vers le site', icon: TrendingUp },
-        { label: 'Communauté', value: '+12K', period: 'nouveaux followers', icon: Users },
-        { label: 'Ventes', value: '+45%', period: 'via social', icon: BarChart3 },
+        { label: t('cases.case3.results.traffic.label'), value: '+70%', period: t('cases.case3.results.traffic.period'), icon: TrendingUp },
+        { label: t('cases.case3.results.community.label'), value: '+12K', period: t('cases.case3.results.community.period'), icon: Users },
+        { label: t('cases.case3.results.sales.label'), value: '+45%', period: t('cases.case3.results.sales.period'), icon: BarChart3 },
       ],
-      quote: 'Yndris a redonné vie à notre marque. L\'impact sur nos ventes a été immédiat.',
+      quote: t('cases.case3.quote'),
       color: 'from-blue-500 to-emerald-500'
     },
   ];
@@ -50,10 +53,10 @@ export default function CaseStudies() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Résultats <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Concrets</span>
+            {t('cases.titlePrefix')} <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">{t('cases.titleGradient')}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Des marques transformées, des communautés construites, des résultats mesurables
+            {t('cases.description')}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-emerald-400 mx-auto rounded-full mt-6"></div>
         </div>
@@ -74,12 +77,12 @@ export default function CaseStudies() {
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold text-blue-400 mb-2 uppercase tracking-wide">Challenge</h4>
+                    <h4 className="text-sm font-semibold text-blue-400 mb-2 uppercase tracking-wide">{t('cases.challenge')}</h4>
                     <p className="text-gray-300">{caseStudy.challenge}</p>
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold text-emerald-400 mb-2 uppercase tracking-wide">Stratégie</h4>
+                    <h4 className="text-sm font-semibold text-emerald-400 mb-2 uppercase tracking-wide">{t('cases.strategy')}</h4>
                     <p className="text-gray-300">{caseStudy.strategy}</p>
                   </div>
 
@@ -90,7 +93,7 @@ export default function CaseStudies() {
                 </div>
 
                 <div className="space-y-4">
-                  <h4 className="text-sm font-semibold text-white mb-6 uppercase tracking-wide">Résultats</h4>
+                  <h4 className="text-sm font-semibold text-white mb-6 uppercase tracking-wide">{t('cases.results')}</h4>
                   {caseStudy.results.map((result, idx) => {
                     const Icon = result.icon;
                     return (

@@ -1,0 +1,217 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "services": "Services",
+        "projects": "Projets",
+        "contact": "Contact",
+        "brand": "Yndris Douanla",
+        "cta": "Discutons de votre projet",
+        "tagline": "Créons ensemble quelque chose d'exceptionnel"
+    },
+    "hero": {
+        "role": "Community Manager & Stratège Digital",
+        "headingPrefix": "Je crée des marques qui",
+        "headingGradient": "inspirent, engagent et grandissent",
+        "descriptionPrefix": "Je suis",
+        "descriptionName": "Yndris Douanla",
+        "descriptionMiddle": "J'aide les marques à construire une présence",
+        "descriptionStrong": "puissante",
+        "descriptionHuman": "humaine",
+        "descriptionHigh": "performante",
+        "descriptionSuffix": "sur les réseaux sociaux.",
+        "cta": {
+            "services": "Découvrir mes services",
+            "contact": "Travaillons ensemble"
+        },
+        "stats": {
+            "brands": "Marques accompagnées",
+            "followers": "Abonnés gérés",
+            "engagement": "Taux d'engagement moyen"
+        }
+    },
+    "about": {
+        "heading": {
+            "before": "De la",
+            "highlight1": "technologie",
+            "middle": "à la",
+            "highlight2": "communication"
+        },
+        "paragraph1": "Développeur à l'origine, j'ai appris à comprendre les algorithmes. Aujourd'hui, je les transforme en leviers d'émotion et de croissance.",
+        "paragraph2": "Mon approche du community management est analytique, humaine et orientée impact. Je ne gère pas simplement des comptes, je construis des communautés qui transforment les marques en mouvements.",
+        "quote": "Ici, la créativité rencontre la stratégie. Chaque publication est pensée, chaque communauté est cultivée, chaque marque devient un mouvement.",
+        "timeline": {
+            "heading": "Mon parcours",
+            "2019": "Développeur Tech",
+            "2021": "Découverte du Marketing Digital",
+            "2023": "Community Manager Expert",
+            "2025": "Stratège Digital & Growth"
+        }
+    },
+    "services": {
+        "titlePrefix": "Services &",
+        "titleGradient": "Offres Premium",
+        "description": "Des solutions complètes pour transformer votre présence digitale en machine de croissance",
+        "service1": {
+            "title": "Stratégie Digitale",
+            "subtitle": "Audit & Positionnement de marque",
+            "description": "Analyse complète des réseaux, des concurrents et du ton de marque pour construire une stratégie gagnante.",
+            "features": {
+                "feature1": "Audit complet",
+                "feature2": "Positionnement unique",
+                "feature3": "Roadmap stratégique"
+            }
+        },
+        "service2": {
+            "title": "Création de Contenu",
+            "subtitle": "Gestion & Storytelling visuel",
+            "description": "Création de visuels, vidéos et textes captivants qui construisent une identité forte et mémorable.",
+            "features": {
+                "feature1": "Design créatif",
+                "feature2": "Vidéos engageantes",
+                "feature3": "Copywriting percutant"
+            }
+        },
+        "service3": {
+            "title": "Croissance & Engagement",
+            "subtitle": "Campagnes d'influence",
+            "description": "Développement d'une audience fidèle, active et qualifiée qui transforme votre marque en communauté.",
+            "features": {
+                "feature1": "Growth hacking",
+                "feature2": "Community building",
+                "feature3": "Engagement authentique"
+            }
+        },
+        "service4": {
+            "title": "Publicité Sociale",
+            "subtitle": "Meta Ads, TikTok, LinkedIn",
+            "description": "Optimisation des campagnes publicitaires pour maximiser la portée et les conversions avec un ROI optimal.",
+            "features": {
+                "feature1": "Ciblage précis",
+                "feature2": "Optimisation ROI",
+                "feature3": "A/B testing avancé"
+            }
+        },
+        "service5": {
+            "title": "Automatisation & Performance",
+            "subtitle": "Veille concurrentielle",
+            "description": "Mise en place d'outils de reporting, d'alertes et de publication automatique pour gagner en efficacité.",
+            "features": {
+                "feature1": "Reporting automatisé",
+                "feature2": "Veille en temps réel",
+                "feature3": "Optimisation continue"
+            }
+        },
+        "learnMore": "En savoir plus",
+        "cta": "Réserver une session stratégie gratuite"
+    },
+    "cases": {
+        "titlePrefix": "Résultats",
+        "titleGradient": "Concrets",
+        "description": "Des marques transformées, des communautés construites, des résultats mesurables",
+        "challenge": "Challenge",
+        "strategy": "Stratégie",
+        "results": "Résultats",
+        "case1": {
+            "title": "Lancement de marque tech sur Instagram",
+            "category": "Tech Startup",
+            "challenge": "Construire une présence digitale de zéro",
+            "strategy": "Stratégie de contenu éducatif + collaborations ciblées + storytelling authentique",
+            "quote": "Yndris a transformé notre vision en une communauté engagée. Son approche stratégique a dépassé toutes nos attentes.",
+            "results": {
+                "followers": {
+                    "label": "Abonnés",
+                    "period": "en 3 mois"
+                },
+                "engagement": {
+                    "label": "Taux d'engagement",
+                    "period": "moyenne"
+                },
+                "reach": {
+                    "label": "Reach mensuel",
+                    "period": "impressions"
+                }
+            }
+        },
+        "case2": {
+            "title": "Campagne d'engagement LinkedIn B2B",
+            "category": "Agence Marketing",
+            "challenge": "Améliorer la visibilité et générer des leads qualifiés",
+            "strategy": "Thought leadership + contenu premium + engagement actif avec décideurs",
+            "quote": "Une expertise rare en B2B. Les résultats parlent d'eux-mêmes.",
+            "results": {
+                "interactions": {
+                    "label": "Interactions",
+                    "period": "vs période précédente"
+                },
+                "leads": {
+                    "label": "Leads qualifiés",
+                    "period": "par mois"
+                },
+                "conversion": {
+                    "label": "Taux de conversion",
+                    "period": "leads to clients"
+                }
+            }
+        },
+        "case3": {
+            "title": "Refonte stratégique de communication",
+            "category": "E-commerce Mode",
+            "challenge": "Revitaliser une marque dormante sur les réseaux sociaux",
+            "strategy": "Repositionnement complet + UGC strategy + campagnes créatives multi-plateformes",
+            "quote": "Yndris a redonné vie à notre marque. L'impact sur nos ventes a été immédiat.",
+            "results": {
+                "traffic": {
+                    "label": "Trafic social",
+                    "period": "vers le site"
+                },
+                "community": {
+                    "label": "Communauté",
+                    "period": "nouveaux followers"
+                },
+                "sales": {
+                    "label": "Ventes",
+                    "period": "via social"
+                }
+            }
+        }
+    },
+    "contact": {
+        "titlePrefix": "Prêt à donner vie à votre",
+        "titleGradient": "communauté",
+        "description": "Construisons ensemble une stratégie qui fait battre le cœur de votre audience",
+        "connect": {
+            "title": "Connectons-nous",
+            "emailLabel": "Email",
+            "emailValue": "contact@yndrisdouanla.com",
+            "followTitle": "Suivez-moi",
+            "socialLinks": {
+                "linkedin": "LinkedIn",
+                "instagram": "Instagram",
+                "twitter": "Twitter / X",
+                "email": "Email"
+            }
+        },
+        "whyWorkWithMe": {
+            "title": "Pourquoi travailler avec moi ?",
+            "features": {
+                "feature1": "Approche data-driven et créative",
+                "feature2": "Résultats mesurables et transparents",
+                "feature3": "Expertise multi-plateformes",
+                "feature4": "Accompagnement personnalisé"
+            }
+        },
+        "form": {
+            "nameLabel": "Nom complet",
+            "namePlaceholder": "Votre nom",
+            "emailLabel": "Email",
+            "emailPlaceholder": "votre@email.com",
+            "messageLabel": "Message",
+            "messagePlaceholder": "Parlez-moi de votre projet...",
+            "submitButton": {
+                "default": "Discutons de votre projet",
+                "submitted": "Message envoyé avec succès !"
+            }
+        }
+    }
+}

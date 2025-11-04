@@ -1,0 +1,217 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "brand": "Yndris Douanla",
+    "cta": "Let's discuss your project",
+    "tagline": "Let's create something exceptional together"
+  },
+  "hero": {
+    "role": "Community Manager & Digital Strategist",
+    "headingPrefix": "I create brands that",
+    "headingGradient": "inspire, engage, and grow",
+    "descriptionPrefix": "I am",
+    "descriptionName": "Yndris Douanla",
+    "descriptionMiddle": "I help brands build a",
+    "descriptionStrong": "strong",
+    "descriptionHuman": "human",
+    "descriptionHigh": "high-performing",
+    "descriptionSuffix": "presence on social media.",
+    "cta": {
+      "services": "Discover my services",
+      "contact": "Let's work together"
+    },
+    "stats": {
+      "brands": "Brands supported",
+      "followers": "Managed followers",
+      "engagement": "Average engagement rate"
+    }
+  },
+  "about": {
+    "heading": {
+      "before": "From",
+      "highlight1": "Technology",
+      "middle": "to",
+      "highlight2": "Communication"
+    },
+    "paragraph1": "Originally a developer, I learned to understand algorithms. Today, I turn them into emotional and growth levers.",
+    "paragraph2": "My approach to community management is analytical, human, and impact-driven. I don't just manage accounts, I build communities that turn brands into movements.",
+    "quote": "Here, creativity meets strategy. Every post is thought out, every community is cultivated, every brand becomes a movement.",
+    "timeline": {
+      "heading": "My Journey",
+      "2019": "Tech Developer",
+      "2021": "Discovery of Digital Marketing",
+      "2023": "Expert Community Manager",
+      "2025": "Digital & Growth Strategist"
+    }
+  },
+  "services": {
+    "titlePrefix": "Services &",
+    "titleGradient": "Premium Offers",
+    "description": "Complete solutions to turn your digital presence into a growth machine",
+    "service1": {
+      "title": "Digital Strategy",
+      "subtitle": "Brand Audit & Positioning",
+      "description": "Comprehensive analysis of networks, competitors, and brand tone to build a winning strategy.",
+      "features": {
+        "feature1": "Full Audit",
+        "feature2": "Unique Positioning",
+        "feature3": "Strategic Roadmap"
+      }
+    },
+    "service2": {
+      "title": "Content Creation",
+      "subtitle": "Management & Visual Storytelling",
+      "description": "Creation of visuals, videos, and texts that build a strong and memorable identity.",
+      "features": {
+        "feature1": "Creative Design",
+        "feature2": "Engaging Videos",
+        "feature3": "Impactful Copywriting"
+      }
+    },
+    "service3": {
+      "title": "Growth & Engagement",
+      "subtitle": "Influence Campaigns",
+      "description": "Develop a loyal, active, and qualified audience that transforms your brand into a community.",
+      "features": {
+        "feature1": "Growth Hacking",
+        "feature2": "Community Building",
+        "feature3": "Authentic Engagement"
+      }
+    },
+    "service4": {
+      "title": "Social Advertising",
+      "subtitle": "Meta Ads, TikTok, LinkedIn",
+      "description": "Optimize advertising campaigns to maximize reach and conversions with optimal ROI.",
+      "features": {
+        "feature1": "Precise Targeting",
+        "feature2": "ROI Optimization",
+        "feature3": "Advanced A/B Testing"
+      }
+    },
+    "service5": {
+      "title": "Automation & Performance",
+      "subtitle": "Competitive Monitoring",
+      "description": "Set up reporting tools, alerts, and automatic publishing to gain efficiency.",
+      "features": {
+        "feature1": "Automated Reporting",
+        "feature2": "Real-Time Monitoring",
+        "feature3": "Continuous Optimization"
+      }
+    },
+    "learnMore": "Learn more",
+    "cta": "Book a free strategy session"
+  },
+  "cases": {
+    "titlePrefix": "Results",
+    "titleGradient": "That Matter",
+    "description": "Brands transformed, communities built, measurable results",
+    "challenge": "Challenge",
+    "strategy": "Strategy",
+    "results": "Results",
+    "case1": {
+      "title": "Tech Brand Launch on Instagram",
+      "category": "Tech Startup",
+      "challenge": "Build a digital presence from scratch",
+      "strategy": "Educational content strategy + targeted collaborations + authentic storytelling",
+      "quote": "Yndris transformed our vision into an engaged community. His strategic approach exceeded all expectations.",
+      "results": {
+        "followers": {
+          "label": "Followers",
+          "period": "in 3 months"
+        },
+        "engagement": {
+          "label": "Engagement Rate",
+          "period": "average"
+        },
+        "reach": {
+          "label": "Monthly Reach",
+          "period": "impressions"
+        }
+      }
+    },
+    "case2": {
+      "title": "LinkedIn B2B Engagement Campaign",
+      "category": "Marketing Agency",
+      "challenge": "Improve visibility and generate qualified leads",
+      "strategy": "Thought leadership + premium content + active engagement with decision makers",
+      "quote": "Rare B2B expertise. The results speak for themselves.",
+      "results": {
+        "interactions": {
+          "label": "Interactions",
+          "period": "vs previous period"
+        },
+        "leads": {
+          "label": "Qualified Leads",
+          "period": "per month"
+        },
+        "conversion": {
+          "label": "Conversion Rate",
+          "period": "leads to clients"
+        }
+      }
+    },
+    "case3": {
+      "title": "Strategic Communication Redesign",
+      "category": "Fashion E-commerce",
+      "challenge": "Revitalize a dormant brand on social media",
+      "strategy": "Complete repositioning + UGC strategy + multi-platform creative campaigns",
+      "quote": "Yndris brought our brand back to life. The impact on sales was immediate.",
+      "results": {
+        "traffic": {
+          "label": "Social Traffic",
+          "period": "to site"
+        },
+        "community": {
+          "label": "Community",
+          "period": "new followers"
+        },
+        "sales": {
+          "label": "Sales",
+          "period": "via social"
+        }
+      }
+    }
+  },
+  "contact": {
+    "titlePrefix": "Ready to bring your",
+    "titleGradient": "community",
+    "description": "Let's build a strategy together that makes your audience's heart beat",
+    "connect": {
+      "title": "Let's connect",
+      "emailLabel": "Email",
+      "emailValue": "contact@yndrisdouanla.com",
+      "followTitle": "Follow me",
+      "socialLinks": {
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "twitter": "Twitter / X",
+        "email": "Email"
+      }
+    },
+    "whyWorkWithMe": {
+      "title": "Why work with me?",
+      "features": {
+        "feature1": "Data-driven and creative approach",
+        "feature2": "Measurable and transparent results",
+        "feature3": "Multi-platform expertise",
+        "feature4": "Personalized support"
+      }
+    },
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "submitButton": {
+        "default": "Let's discuss your project",
+        "submitted": "Message sent successfully!"
+      }
+    }
+  }
+}

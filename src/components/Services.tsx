@@ -1,46 +1,49 @@
 import { Target, Palette, TrendingUp, Megaphone, Zap, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Services() {
+  const { t } = useTranslation();
+
   const services = [
     {
       icon: Target,
-      title: 'Stratégie Digitale',
-      subtitle: 'Audit & Positionnement de marque',
-      description: 'Analyse complète des réseaux, des concurrents et du ton de marque pour construire une stratégie gagnante.',
+      titleKey: 'services.service1.title',
+      subtitleKey: 'services.service1.subtitle',
+      descriptionKey: 'services.service1.description',
       color: 'from-blue-600 to-blue-400',
-      features: ['Audit complet', 'Positionnement unique', 'Roadmap stratégique']
+      featuresKeys: ['services.service1.features.feature1', 'services.service1.features.feature2', 'services.service1.features.feature3']
     },
     {
       icon: Palette,
-      title: 'Création de Contenu',
-      subtitle: 'Gestion & Storytelling visuel',
-      description: 'Création de visuels, vidéos et textes captivants qui construisent une identité forte et mémorable.',
+      titleKey: 'services.service2.title',
+      subtitleKey: 'services.service2.subtitle',
+      descriptionKey: 'services.service2.description',
       color: 'from-emerald-600 to-emerald-400',
-      features: ['Design créatif', 'Vidéos engageantes', 'Copywriting percutant']
+      featuresKeys: ['services.service2.features.feature1', 'services.service2.features.feature2', 'services.service2.features.feature3']
     },
     {
       icon: TrendingUp,
-      title: 'Croissance & Engagement',
-      subtitle: "Campagnes d'influence",
-      description: "Développement d'une audience fidèle, active et qualifiée qui transforme votre marque en communauté.",
+      titleKey: 'services.service3.title',
+      subtitleKey: 'services.service3.subtitle',
+      descriptionKey: 'services.service3.description',
       color: 'from-blue-500 to-emerald-500',
-      features: ['Growth hacking', 'Community building', 'Engagement authentique']
+      featuresKeys: ['services.service3.features.feature1', 'services.service3.features.feature2', 'services.service3.features.feature3']
     },
     {
       icon: Megaphone,
-      title: 'Publicité Sociale',
-      subtitle: 'Meta Ads, TikTok, LinkedIn',
-      description: 'Optimisation des campagnes publicitaires pour maximiser la portée et les conversions avec un ROI optimal.',
+      titleKey: 'services.service4.title',
+      subtitleKey: 'services.service4.subtitle',
+      descriptionKey: 'services.service4.description',
       color: 'from-emerald-500 to-blue-500',
-      features: ['Ciblage précis', 'Optimisation ROI', 'A/B testing avancé']
+      featuresKeys: ['services.service4.features.feature1', 'services.service4.features.feature2', 'services.service4.features.feature3']
     },
     {
       icon: Zap,
-      title: 'Automatisation & Performance',
-      subtitle: 'Veille concurrentielle',
-      description: "Mise en place d'outils de reporting, d'alertes et de publication automatique pour gagner en efficacité.",
+      titleKey: 'services.service5.title',
+      subtitleKey: 'services.service5.subtitle',
+      descriptionKey: 'services.service5.description',
       color: 'from-blue-400 to-emerald-600',
-      features: ['Reporting automatisé', 'Veille en temps réel', 'Optimisation continue']
+      featuresKeys: ['services.service5.features.feature1', 'services.service5.features.feature2', 'services.service5.features.feature3']
     },
   ];
 
@@ -49,16 +52,19 @@ export default function Services() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-950/20 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Services & <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Offres Premium</span>
+            {t('services.titlePrefix')}{' '}
+            <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+              {t('services.titleGradient')}
+            </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Des solutions complètes pour transformer votre présence digitale en machine de croissance
-          </p>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">{t('services.description')}</p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-emerald-400 mx-auto rounded-full mt-6"></div>
         </div>
 
+        {/* Services grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -67,26 +73,31 @@ export default function Services() {
                 key={index}
                 className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20"
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div
+                  className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                >
                   <Icon size={32} className="text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold mb-2 text-white">{service.title}</h3>
-                <p className="text-sm text-emerald-400 mb-4 font-medium">{service.subtitle}</p>
-                <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+                <h3 className="text-2xl font-bold mb-2 text-white">{t(service.titleKey)}</h3>
+                <p className="text-sm text-emerald-400 mb-4 font-medium">{t(service.subtitleKey)}</p>
+                <p className="text-gray-300 mb-6 leading-relaxed">{t(service.descriptionKey)}</p>
 
                 <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
+                  {service.featuresKeys.map((featureKey, idx) => (
                     <li key={idx} className="flex items-center text-sm text-gray-400">
                       <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-2"></div>
-                      {feature}
+                      {t(featureKey)}
                     </li>
                   ))}
                 </ul>
 
                 <div className="pt-4 border-t border-white/10">
-                  <a href="#contact" className="text-blue-400 hover:text-blue-300 flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all">
-                    En savoir plus
+                  <a
+                    href="#contact"
+                    className="text-blue-400 hover:text-blue-300 flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all"
+                  >
+                    {t('services.learnMore')}
                     <ArrowRight size={16} />
                   </a>
                 </div>
@@ -95,12 +106,13 @@ export default function Services() {
           })}
         </div>
 
+        {/* CTA */}
         <div className="text-center">
           <a
             href="#contact"
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 text-lg"
           >
-            Réserver une session stratégie gratuite
+            {t('services.cta')}
             <ArrowRight size={20} />
           </a>
         </div>
