@@ -102,6 +102,16 @@
                 "feature3": "Optimisation continue"
             }
         },
+        "service6": {
+            "title": "Développement Web & Applications",
+            "subtitle": "Sites modernes, rapides et optimisés",
+            "description": "Je propose la création de sites web professionnels et d'applications légères pour accompagner votre présence digitale.",
+            "features": {
+                "feature1": "Site vitrine complet – à partir de 70 000 FCFA",
+                "feature2": "Optimisation SEO & performance",
+                "feature3": "Maintenance et mise à jour"
+            }
+        },
         "learnMore": "En savoir plus",
         "cta": "Réserver une session stratégie gratuite"
     },

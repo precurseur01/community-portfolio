@@ -1,4 +1,4 @@
-import { Target, Palette, TrendingUp, Megaphone, Zap, ArrowRight } from 'lucide-react';
+import { Target, Palette, TrendingUp, Megaphone, Zap, ArrowRight, Code } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function Services() {
@@ -11,7 +11,13 @@ export default function Services() {
       subtitleKey: 'services.service1.subtitle',
       descriptionKey: 'services.service1.description',
       color: 'from-blue-600 to-blue-400',
-      featuresKeys: ['services.service1.features.feature1', 'services.service1.features.feature2', 'services.service1.features.feature3']
+      featuresKeys: [
+        'services.service1.features.feature1',
+        'services.service1.features.feature2',
+        'services.service1.features.feature3'
+      ],
+      priceKey: 'services.service1.price',
+      priceRangeKey: 'services.service1.priceRange'
     },
     {
       icon: Palette,
@@ -19,7 +25,13 @@ export default function Services() {
       subtitleKey: 'services.service2.subtitle',
       descriptionKey: 'services.service2.description',
       color: 'from-emerald-600 to-emerald-400',
-      featuresKeys: ['services.service2.features.feature1', 'services.service2.features.feature2', 'services.service2.features.feature3']
+      featuresKeys: [
+        'services.service2.features.feature1',
+        'services.service2.features.feature2',
+        'services.service2.features.feature3'
+      ],
+      priceKey: 'services.service2.price',
+      priceRangeKey: 'services.service2.priceRange'
     },
     {
       icon: TrendingUp,
@@ -27,7 +39,13 @@ export default function Services() {
       subtitleKey: 'services.service3.subtitle',
       descriptionKey: 'services.service3.description',
       color: 'from-blue-500 to-emerald-500',
-      featuresKeys: ['services.service3.features.feature1', 'services.service3.features.feature2', 'services.service3.features.feature3']
+      featuresKeys: [
+        'services.service3.features.feature1',
+        'services.service3.features.feature2',
+        'services.service3.features.feature3'
+      ],
+      priceKey: 'services.service3.price',
+      priceRangeKey: 'services.service3.priceRange'
     },
     {
       icon: Megaphone,
@@ -35,7 +53,13 @@ export default function Services() {
       subtitleKey: 'services.service4.subtitle',
       descriptionKey: 'services.service4.description',
       color: 'from-emerald-500 to-blue-500',
-      featuresKeys: ['services.service4.features.feature1', 'services.service4.features.feature2', 'services.service4.features.feature3']
+      featuresKeys: [
+        'services.service4.features.feature1',
+        'services.service4.features.feature2',
+        'services.service4.features.feature3'
+      ],
+      priceKey: 'services.service4.price',
+      priceRangeKey: 'services.service4.priceRange'
     },
     {
       icon: Zap,
@@ -43,9 +67,30 @@ export default function Services() {
       subtitleKey: 'services.service5.subtitle',
       descriptionKey: 'services.service5.description',
       color: 'from-blue-400 to-emerald-600',
-      featuresKeys: ['services.service5.features.feature1', 'services.service5.features.feature2', 'services.service5.features.feature3']
+      featuresKeys: [
+        'services.service5.features.feature1',
+        'services.service5.features.feature2',
+        'services.service5.features.feature3'
+      ],
+      priceKey: 'services.service5.price',
+      priceRangeKey: 'services.service5.priceRange'
     },
+    {
+      icon: Code,
+      titleKey: 'services.service6.title',
+      subtitleKey: 'services.service6.subtitle',
+      descriptionKey: 'services.service6.description',
+      color: 'from-violet-600 to-blue-500',
+      featuresKeys: [
+        'services.service6.features.feature1',
+        'services.service6.features.feature2',
+        'services.service6.features.feature3'
+      ],
+      priceKey: 'services.service6.price',
+      priceRangeKey: 'services.service6.priceRange'
+    }
   ];
+
 
   return (
     <section id="services" className="py-24 relative overflow-hidden">
@@ -71,7 +116,12 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20"
+                className={
+                  "group backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl " +
+                  (index === 5
+                    ? "bg-gradient-to-br from-violet-700/30 to-blue-700/20 hover:bg-gradient-to-br hover:from-violet-600/40 hover:to-blue-600/30"
+                    : "bg-white/5 hover:bg-white/10")
+                }
               >
                 <div
                   className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
@@ -94,7 +144,7 @@ export default function Services() {
 
                 <div className="pt-4 border-t border-white/10">
                   <a
-                    href="#contact"
+                    href="https://www.freedry.dev/"
                     className="text-blue-400 hover:text-blue-300 flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all"
                   >
                     {t('services.learnMore')}

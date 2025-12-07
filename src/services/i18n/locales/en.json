@@ -102,6 +102,16 @@
         "feature3": "Continuous Optimization"
       }
     },
+    "service6": {
+      "title": "Web & App Development",
+      "subtitle": "Modern, fast and optimized websites",
+      "description": "I create professional websites and lightweight applications to strengthen your digital presence.",
+      "features": {
+        "feature1": "Full business website – from 70,000 FCFA",
+        "feature2": "SEO & performance optimization",
+        "feature3": "Maintenance and updates"
+      }
+    },
     "learnMore": "Learn more",
     "cta": "Book a free strategy session"
   },
