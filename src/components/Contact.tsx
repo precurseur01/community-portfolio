@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Send, Facebook, Github } from 'lucide-react';
+import { Mail, Linkedin, Send, Facebook, Github, Phone } from 'lucide-react';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 // import type { FormEvent } from "react";
@@ -72,6 +72,17 @@ export default function Contact() {
                                     <div>
                                         <div className="text-sm text-gray-400">{t('contact.connect.emailLabel')}</div>
                                         <div className="text-white font-medium">{t('contact.connect.emailValue')}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="space-y-6 mb-8">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-400 rounded-xl flex items-center justify-center">
+                                        <Phone size={24} className="text-white" />
+                                    </div>
+                                    <div>
+                                        <div className="text-sm text-gray-400">{t('contact.connect.phone')}</div>
+                                        <div className="text-white font-medium">{"+237 650871031"}</div>
                                     </div>
                                 </div>
                             </div>
