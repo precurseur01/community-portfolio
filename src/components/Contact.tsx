@@ -75,17 +75,17 @@ export default function Contact() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="space-y-6 mb-8">
+                            <a href='tel:+237670616710' className="space-y-6 mb-8">
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-400 rounded-xl flex items-center justify-center">
                                         <Phone size={24} className="text-white" />
                                     </div>
                                     <div>
                                         <div className="text-sm text-gray-400">{t('contact.connect.phone')}</div>
-                                        <div className="text-white font-medium">{"+237 650871031"}</div>
+                                        <div className="text-white font-medium">{"+237 670616710"}</div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
 
                             <div className="pt-6 border-t border-white/10">
                                 <h4 className="text-lg font-semibold mb-4">{t('contact.connect.followTitle')}</h4>
