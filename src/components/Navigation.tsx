@@ -17,7 +17,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
   }, [isOpen]);
 
   const navLinks = [
-    { name: t('nav.home'), href: '#hero', delay: 'delay-75' },
+    { name: t('nav.home'), href: '/', delay: 'delay-75' },
     { name: t('nav.about'), href: '#about', delay: 'delay-100' },
     { name: t('nav.services'), href: '#services', delay: 'delay-150' },
     { name: t('nav.projects'), href: '#cases', delay: 'delay-200' },
@@ -28,7 +28,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-lg border-b border-white/10' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <a href="#hero" className="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent relative z-50">
+          <a href="/" className="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent relative z-50">
             {t('nav.brand')}
           </a>
 

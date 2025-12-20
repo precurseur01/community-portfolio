@@ -1,8 +1,43 @@
 import { Target, Palette, TrendingUp, Megaphone, Zap, ArrowRight, Code, GraduationCap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+
+
+// Définition du type pour un service
+interface Service {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  titleKey: string;
+  subtitleKey?: string;
+  descriptionKey: string;
+  color: string;
+  featuresKeys?: string[];
+  priceKey?: string;
+  priceRangeKey?: string;
+}
+
 
 export default function Services() {
   const { t } = useTranslation();
+
+  const navigate = useNavigate();
+
+  const handleLearnMore = (service: Service, index: number) => {
+    // Service Formation (service7) → route interne
+    if (service.titleKey === 'services.service7.title') {
+      navigate('/formation');
+      return;
+    }
+
+    // Dernier service (index 5) → lien externe
+    if (index === 5) {
+      window.open('https://www.freedry.dev/', '_blank');
+      return;
+    }
+
+    // Cas général → scroll vers contact
+    const contactSection = document.querySelector('#contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  }
 
   const services = [
     {
@@ -157,13 +192,17 @@ export default function Services() {
                 </ul>
 
                 <div className="pt-4 border-t border-white/10">
-                  <a
-                    href={index == 5 ? "https://www.freedry.dev/" : "#contact"}
+                  <button
+
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLearnMore(service, index);
+                    }}
                     className="text-blue-400 hover:text-blue-300 flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all"
                   >
                     {t('services.learnMore')}
                     <ArrowRight size={16} />
-                  </a>
+                  </button>
                 </div>
               </div>
             );
