@@ -112,6 +112,18 @@
                 "feature3": "Maintenance et mise à jour"
             }
         },
+        "service7": {
+            "title": "Formation & Certifications Digitales",
+            "subtitle": "Maîtrisez le Community Management et explorez d’autres compétences digitales clés",
+            "description": "Bénéficiez d’une formation pratique et d’un accompagnement stratégique pour développer votre expertise en Community Management et vous préparer à des certifications digitales reconnues, tout en renforçant votre crédibilité et vos opportunités professionnelles.",
+            "features": {
+                "feature1": "Formation centrée sur le Community Management",
+                "feature2": "Préparation à des certifications digitales reconnues",
+                "feature3": "Accompagnement personnalisé pour booster votre carrière"
+            },
+            "price": "Sur candidature",
+            "priceRange": "Programmes premium de préparation certifiante"
+        },
         "learnMore": "En savoir plus",
         "cta": "Réserver une session stratégie gratuite"
     },

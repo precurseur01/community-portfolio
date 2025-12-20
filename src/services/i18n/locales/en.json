@@ -112,6 +112,18 @@
         "feature3": "Maintenance and updates"
       }
     },
+    "service7": {
+      "title": "Digital Training & Certifications",
+      "subtitle": "Master Community Management and explore other key digital skills",
+      "description": "Benefit from hands-on training and strategic guidance to develop your expertise in Community Management and prepare for recognized digital certifications, while strengthening your credibility and professional opportunities.",
+      "features": {
+        "feature1": "Training focused on Community Management",
+        "feature2": "Preparation for recognized digital certifications",
+        "feature3": "Personalized support to boost your career"
+      },
+      "price": "By application",
+      "priceRange": "Premium certification preparation programs"
+    },
     "learnMore": "Learn more",
     "cta": "Book a free strategy session"
   },

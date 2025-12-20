@@ -1,4 +1,4 @@
-import { Target, Palette, TrendingUp, Megaphone, Zap, ArrowRight, Code } from 'lucide-react';
+import { Target, Palette, TrendingUp, Megaphone, Zap, ArrowRight, Code, GraduationCap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function Services() {
@@ -88,6 +88,20 @@ export default function Services() {
       ],
       priceKey: 'services.service6.price',
       priceRangeKey: 'services.service6.priceRange'
+    },
+    {
+      icon: GraduationCap,
+      titleKey: 'services.service7.title',
+      subtitleKey: 'services.service7.subtitle',
+      descriptionKey: 'services.service7.description',
+      color: 'from-blue-600 to-emerald-500',
+      featuresKeys: [
+        'services.service7.features.feature1',
+        'services.service7.features.feature2',
+        'services.service7.features.feature3'
+      ],
+      priceKey: 'services.service7.price',
+      priceRangeKey: 'services.service7.priceRange'
     }
   ];
 
@@ -144,7 +158,7 @@ export default function Services() {
 
                 <div className="pt-4 border-t border-white/10">
                   <a
-                    href="https://www.freedry.dev/"
+                    href={index == 5 ? "https://www.freedry.dev/" : "#contact"}
                     className="text-blue-400 hover:text-blue-300 flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all"
                   >
                     {t('services.learnMore')}
