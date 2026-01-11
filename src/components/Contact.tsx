@@ -35,7 +35,7 @@ export default function Contact() {
         { icon: Linkedin, url: "https://linkedin.com/in/yndris-douanla-060968273", label: 'LinkedIn', key: 'LinkedIn', color: 'hover:text-blue-400' },
         // { icon: Instagram, url: '#', label: 'Instagram', color: 'hover:text-pink-400' },
         // { icon: Twitter, url: '#', label: 'Twitter / X', color: 'hover:text-blue-300' },
-        { icon: Facebook, url: 'https://www.facebook.com/share/1BC6jjWT3G/?mibextid=wwXIfr', label: 'Facebook', key: 'Facebook', color: 'hover:text-blue-300' },
+        { icon: Facebook, url: 'https://www.facebook.com/share/1C6Lz8aFes/?mibextid=wwXIfr', label: 'Facebook', key: 'Facebook', color: 'hover:text-blue-300' },
         { icon: Github, url: 'https://github.com/precurseur01', label: 'Github', key: 'Github', color: 'hover:text-blue-300' },
         { icon: Mail, url: 'mailto:yndriswilf@gmail.com', label: 'Email', key: 'Email', color: 'hover:text-emerald-400' },
     ];
