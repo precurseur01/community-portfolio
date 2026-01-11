@@ -38,8 +38,8 @@ export default function Hero() {
 
           {/* Description avec couleurs */}
           <p className="text-xl sm:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            {t('hero.descriptionPrefix')}{' '}
-            <span className="text-white font-semibold">{t('hero.descriptionName')}</span>.{' '}
+            {/* {t('hero.descriptionPrefix')}{' '} */}
+            {/* <span className="text-white font-semibold">{t('hero.descriptionName')}</span>.{' '} */}
             {t('hero.descriptionMiddle')}{' '}
             <span className="text-emerald-400">{t('hero.descriptionStrong')}</span>,{' '}
             <span className="text-blue-400">{t('hero.descriptionHuman')}</span> et{' '}
