@@ -7,6 +7,7 @@ import CaseStudies from './components/CaseStudies';
 import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import TrainingPage from './components/Pages/TrainingPage';
+import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,6 +36,7 @@ function App() {
                 <Services />
                 <CaseStudies />
                 <Contact />
+                <FloatingWhatsAppButton />
               </>
             }
           />
