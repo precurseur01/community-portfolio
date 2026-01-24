@@ -37,7 +37,7 @@ export default function Contact() {
         // { icon: Twitter, url: '#', label: 'Twitter / X', color: 'hover:text-blue-300' },
         { icon: Facebook, url: 'https://www.facebook.com/share/1C6Lz8aFes/?mibextid=wwXIfr', label: 'Facebook', key: 'Facebook', color: 'hover:text-blue-300' },
         { icon: Github, url: 'https://github.com/precurseur01', label: 'Github', key: 'Github', color: 'hover:text-blue-300' },
-        { icon: Mail, url: 'mailto:yndriswilf@gmail.com', label: 'Email', key: 'Email', color: 'hover:text-emerald-400' },
+        { icon: Mail, url: 'mailto:contact@freedry.dev', label: 'Email', key: 'Email', color: 'hover:text-emerald-400' },
     ];
 
     return (
