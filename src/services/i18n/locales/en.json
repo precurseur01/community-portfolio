@@ -301,5 +301,10 @@
       "non": "No"
     },
     "submitButton": "Submit my application"
+  },
+  "trainingAnnouncement": {
+    "title": "Community Managers Training – Session on {{date}}! Become a professional CM in 3 months",
+    "subtitle": "Personalized guidance, practical exercises, and a certificate of completion",
+    "button": "I want my spot"
   }
 }

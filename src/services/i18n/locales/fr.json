@@ -301,5 +301,10 @@
             "non": "Non"
         },
         "submitButton": "Envoyer ma candidature"
+    },
+    "trainingAnnouncement": {
+        "title": "Formation Community Managers – Session du {{date}} ! Devenez un CM professionnel en 3 mois",
+        "subtitle": "Suivi personnalisé, exercices pratiques et attestation de fin de formation",
+        "button": "Je veux ma place"
     }
 }
