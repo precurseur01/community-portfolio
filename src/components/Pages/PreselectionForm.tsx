@@ -1,12 +1,11 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Send } from "lucide-react";
 import { useTranslation, Trans } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 export default function PreselectionForm() {
     const { t } = useTranslation();
     const formRef = useRef<HTMLFormElement>(null);
-    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         name: "",
         whatsapp: "",
@@ -26,11 +25,6 @@ export default function PreselectionForm() {
     });
 
     const equipmentOptions = ["Smartphone", "Ordinateur portable", "Tablette"];
-
-    useEffect(() => {
-        navigate('/preselection');
-    }, []);
-
     const toggleEquipment = (option: string) => {
         setFormData((prev) => ({
             ...prev,

@@ -5,54 +5,56 @@ import About from './components/About';
 import Services from './components/Services';
 import CaseStudies from './components/CaseStudies';
 import Contact from './components/Contact';
-import Navigation from './components/Navigation';
-import TrainingPage from './components/Pages/TrainingPage';
 import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
+import TrainingPage from './components/Pages/TrainingPage';
 import PreselectionForm from './components/Pages/PreselectionForm';
+import MainLayout from './Layout/MainLayout';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
-        <Navigation scrolled={scrolled} />
+      <Routes>
+        {/* Page d'accueil avec sections */}
+        <Route
+          path="/"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <Hero />
+              <About />
+              <Services />
+              <CaseStudies />
+              <Contact />
+              <FloatingWhatsAppButton />
+            </MainLayout>
+          }
+        />
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <About />
-                <Services />
-                <CaseStudies />
-                <Contact />
-                <FloatingWhatsAppButton />
-              </>
-            }
-          />
-          <Route path="/formation" element={<TrainingPage />} />
-          <Route path="/preselection" element={<PreselectionForm />} />
-        </Routes>
-
-        <footer className="bg-black/30 backdrop-blur-sm border-t border-white/10 py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-gray-400 text-sm">
-              © 2025 – Yndris Douanla | Powered by Passion & Precision
-            </p>
-          </div>
-        </footer>
-      </div>
+        {/* Pages standalone */}
+        <Route
+          path="/formation"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <TrainingPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/preselection"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <PreselectionForm />
+            </MainLayout>
+          }
+        />
+      </Routes>
     </Router>
   );
 }
