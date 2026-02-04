@@ -32,7 +32,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
             {t('nav.brand')}
           </a>
 
-          {/* Desktop menu */}
+          {/* Desktop menus */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <a key={link.name} href={link.href} className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium">
@@ -42,7 +42,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
             <LanguageSwitcher />
           </div>
 
-          {/* Mobile toggle */}
+          {/* Mobile toggle  */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-white relative z-50 w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
@@ -60,7 +60,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menus */}
       <div className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-2xl transition-all duration-500 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`} style={{ top: '4rem' }}>
         <div className="h-full overflow-y-auto">
           <div className="min-h-full flex flex-col justify-between p-8">
