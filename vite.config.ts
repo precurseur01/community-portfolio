@@ -8,4 +8,14 @@ export default defineConfig({
     host: true,  // Permet d'accéder au projet depuis d'autres appareils du réseau
     port: 5173,  // Tu peux changer le port si nécessaire
   },
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]',
+      },
+    },
+    emptyOutDir: true,
+  },
 })
