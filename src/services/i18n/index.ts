@@ -21,7 +21,7 @@ i18n
       order: ['path', 'navigator'],
       lookupFromPathIndex: 0, // 0 = premier segment de l'URL (/fr/...)
     },
-    fallbackLng: 'en',
+    fallbackLng: 'fr',
     debug: false,
     interpolation: {
       escapeValue: false
