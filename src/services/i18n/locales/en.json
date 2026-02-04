@@ -236,5 +236,70 @@
         "submitted": "Message sent successfully!"
       }
     }
+  },
+  "preselectionForm": {
+    "title": "📝 Preselection Form – Community Managers Training",
+    "sessionInfo": "Session on <1>March 28, 2026</1> – 3 months to become a professional CM!",
+    "personalInfo": "🧑‍💼 Personal Information",
+    "placeholders": {
+      "name": "Full Name",
+      "whatsapp": "WhatsApp Number",
+      "email": "Email Address",
+      "city": "City / Country",
+      "age": "Age"
+    },
+    "profileObjective": "🎯 Profile & Objective",
+    "objectiveOptions": {
+      "placeholder": "What is your main objective?",
+      "emploi": "Find a job",
+      "freelance": "Work as a freelancer",
+      "business": "Develop my business",
+      "competences": "Improve my current skills",
+      "incertain": "Not sure yet"
+    },
+    "experienceOptions": {
+      "placeholder": "Experience in CM / digital marketing",
+      "aucune": "None",
+      "debutant": "Beginner",
+      "intermediaire": "Intermediate",
+      "avance": "Advanced"
+    },
+    "availabilityTitle": "⏱️ Availability & Commitment",
+    "availabilityOptions": {
+      "placeholder": "Attend full training?",
+      "oui": "Yes",
+      "non": "No"
+    },
+    "exercisesOptions": {
+      "placeholder": "Ready for weekly exercises?",
+      "oui": "Yes",
+      "non": "No"
+    },
+    "formatOptions": {
+      "placeholder": "Preferred format",
+      "presentiel": "In-person (weekend)",
+      "enligne": "Online (evening)"
+    },
+    "equipmentTitle": "💻 Equipment & Access",
+    "motivationTitle": "🧠 Motivation",
+    "motivationPlaceholder": "Why do you want to take this training?",
+    "practicalTestTitle": "🧪 Practical Task",
+    "practicalTestDesc1": "You are part of a group where people share personal stories every Friday.",
+    "practicalTestDesc2": "The founder wants a safe online space for those who are afraid to speak publicly.",
+    "practicalTestQuestion": "Which tool would you recommend to create this safe online space?",
+    "practicalTestOptions": [
+      "Page",
+      "Public Instagram Account",
+      "Public Group",
+      "Private Group"
+    ],
+    "creativityTitle": "✍️ Creativity & Expression",
+    "creativityPlaceholder": "Write a short message inviting people to subscribe.",
+    "payFeesOptions": {
+      "placeholder": "Ready to pay registration fees?",
+      "oui": "Yes",
+      "non": "No"
+    },
+    "submitButton": "Submit my application"
   }
 }

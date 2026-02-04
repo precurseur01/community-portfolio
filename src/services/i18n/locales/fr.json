@@ -236,5 +236,70 @@
                 "submitted": "Message envoyé avec succès !"
             }
         }
+    },
+    "preselectionForm": {
+        "title": "📝 Formulaire de présélection – Formation Community Managers",
+        "sessionInfo": "Session du <1>28 mars 2026</1> – 3 mois pour devenir un CM professionnel !",
+        "personalInfo": "🧑‍💼 Informations personnelles",
+        "placeholders": {
+            "name": "Nom et prénom",
+            "whatsapp": "Numéro WhatsApp",
+            "email": "Adresse e-mail",
+            "city": "Ville / Pays",
+            "age": "Âge"
+        },
+        "profileObjective": "🎯 Profil et objectif",
+        "objectiveOptions": {
+            "placeholder": "Quel est votre objectif principal ?",
+            "emploi": "Trouver un emploi",
+            "freelance": "Travailler en freelance",
+            "business": "Développer mon business",
+            "competences": "Améliorer mes compétences actuelles",
+            "incertain": "Je ne sais pas encore"
+        },
+        "experienceOptions": {
+            "placeholder": "Expérience en CM / marketing digital",
+            "aucune": "Aucune",
+            "debutant": "Débutant(e)",
+            "intermediaire": "Intermédiaire",
+            "avance": "Avancé(e)"
+        },
+        "availabilityTitle": "⏱️ Disponibilité et engagement",
+        "availabilityOptions": {
+            "placeholder": "Suivre la formation complète ?",
+            "oui": "Oui",
+            "non": "Non"
+        },
+        "exercisesOptions": {
+            "placeholder": "Prêt(e) à réaliser des exercices hebdomadaires ?",
+            "oui": "Oui",
+            "non": "Non"
+        },
+        "formatOptions": {
+            "placeholder": "Format souhaité",
+            "presentiel": "Présentiel (week-end)",
+            "enligne": "En ligne (soirée)"
+        },
+        "equipmentTitle": "💻 Équipement et accès",
+        "motivationTitle": "🧠 Motivation",
+        "motivationPlaceholder": "Pourquoi souhaitez-vous suivre cette formation ?",
+        "practicalTestTitle": "🧪 Mise en situation",
+        "practicalTestDesc1": "Vous faites partie d’un groupe où les gens racontent des histoires personnelles tous les vendredis.",
+        "practicalTestDesc2": "La fondatrice veut un endroit sûr en ligne pour que ceux qui ont peur de parler en public puissent partager.",
+        "practicalTestQuestion": "Selon vous, quel est le meilleur outil pour créer cet espace sûr en ligne ?",
+        "practicalTestOptions": [
+            "Page",
+            "Compte public sur Instagram",
+            "Groupe public",
+            "Groupe privé"
+        ],
+        "creativityTitle": "✍️ Créativité & expression",
+        "creativityPlaceholder": "Rédigez un court message pour inviter les internautes à s’abonner.",
+        "payFeesOptions": {
+            "placeholder": "Prêt(e) à payer les frais d'inscription ?",
+            "oui": "Oui",
+            "non": "Non"
+        },
+        "submitButton": "Envoyer ma candidature"
     }
 }

@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import TrainingPage from './components/Pages/TrainingPage';
 import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
+import PreselectionForm from './components/Pages/PreselectionForm';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,6 +42,7 @@ function App() {
             }
           />
           <Route path="/formation" element={<TrainingPage />} />
+          <Route path="/preselection" element={<PreselectionForm />} />
         </Routes>
 
         <footer className="bg-black/30 backdrop-blur-sm border-t border-white/10 py-8">
