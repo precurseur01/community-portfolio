@@ -18,7 +18,9 @@ export default function TrainingAnnouncement() {
             </div>
             <NavLink
                 to="/preselection"
-                className="px-6 py-3 bg-white text-blue-600 font-bold rounded-full hover:shadow-xl transition-all duration-300"
+                className="px-6 py-3 bg-white text-blue-600 font-bold rounded-full shadow-lg
+                   transition-all duration-300 transform hover:scale-110 hover:shadow-xl
+                   animate-bounce"
             >
                 {t("trainingAnnouncement.button")}
             </NavLink>
