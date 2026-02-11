@@ -16,7 +16,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children, scrolled }) => {
       <footer className="bg-black/30 backdrop-blur-sm border-t border-white/10 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 – Yndris Douanla | Powered by Passion & Precision
+            © 2025 – Free Digital Solutions | Powered by Passion & Precision
           </p>
         </div>
       </footer>
