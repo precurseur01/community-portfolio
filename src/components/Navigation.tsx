@@ -18,7 +18,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
 
   const navLinks = [
     { name: t('nav.home'), href: '/', delay: 'delay-75' },
-    { name: t('nav.about'), href: '#about', delay: 'delay-100' },
+    { name: t('nav.about'), href: '/about', delay: 'delay-100' },
     { name: t('nav.services'), href: '#services', delay: 'delay-150' },
     { name: t('nav.projects'), href: '#cases', delay: 'delay-200' },
     { name: t('nav.contact'), href: '#contact', delay: 'delay-300' },

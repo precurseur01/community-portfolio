@@ -28,7 +28,6 @@ function App() {
           element={
             <MainLayout scrolled={scrolled}>
               <Hero />
-              <About />
               <Services />
               <CaseStudies />
               <Contact />
@@ -51,6 +50,14 @@ function App() {
           element={
             <MainLayout scrolled={scrolled}>
               <PreselectionForm />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <About />
             </MainLayout>
           }
         />
