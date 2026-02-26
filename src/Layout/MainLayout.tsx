@@ -1,25 +1,25 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 interface MainLayoutProps {
   children: React.ReactNode;
   scrolled: boolean;
+  bgClassName?: string; // nouvelle prop optionnelle
 }
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children, scrolled }) => {
+const MainLayout: React.FC<MainLayoutProps> = ({
+  children,
+  scrolled,
+  bgClassName = 'bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900'
+}) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
+    <div className={`min-h-screen ${bgClassName} text-white`}>
       <Navigation scrolled={scrolled} />
 
       {children}
 
-      <footer className="bg-black/30 backdrop-blur-sm border-t border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-400 text-sm">
-            © 2025 – Free Digital Solutions | Powered by Passion & Precision
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

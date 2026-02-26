@@ -2,6 +2,7 @@ import { Menu, X, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
+import Img from '../constants/img';
 
 interface NavigationProps {
   scrolled: boolean;
@@ -19,9 +20,9 @@ export default function Navigation({ scrolled }: NavigationProps) {
   const navLinks = [
     { name: t('nav.home'), href: '/', delay: 'delay-75' },
     { name: t('nav.about'), href: '/about', delay: 'delay-100' },
-    { name: t('nav.services'), href: '#services', delay: 'delay-150' },
-    { name: t('nav.projects'), href: '#cases', delay: 'delay-200' },
-    { name: t('nav.contact'), href: '#contact', delay: 'delay-300' },
+    { name: t('nav.services'), href: '/services', delay: 'delay-150' },
+    { name: t('nav.projects'), href: '/projects', delay: 'delay-200' },
+    { name: t('nav.contact'), href: '/contact', delay: 'delay-300' },
   ];
 
   return (
@@ -29,7 +30,11 @@ export default function Navigation({ scrolled }: NavigationProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <a href="/" className="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent relative z-50">
-            {t('nav.brand')}
+            <img
+              src={Img.whitelogo}
+              alt="Free Technology Logo"
+              className="max-h-[60px] w-auto"
+            />
           </a>
 
           {/* Desktop menus */}

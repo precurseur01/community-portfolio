@@ -53,7 +53,7 @@ export default function Hero() {
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <a
-              href="#services"
+              href="/services"
               className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center gap-2"
             >
               {t('hero.cta.services')}
@@ -65,22 +65,6 @@ export default function Hero() {
             >
               {t('hero.cta.contact')}
             </a>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">+30</div>
-              <div className="text-sm text-gray-400">{t('hero.stats.brands')}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-emerald-400 mb-2">+200K</div>
-              <div className="text-sm text-gray-400">{t('hero.stats.followers')}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-white mb-2">+320%</div>
-              <div className="text-sm text-gray-400">{t('hero.stats.engagement')}</div>
-            </div>
           </div>
 
         </div>

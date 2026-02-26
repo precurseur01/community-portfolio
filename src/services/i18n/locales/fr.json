@@ -63,7 +63,7 @@
             }
         },
         "service2": {
-            "title": "Création de Contenu",
+            "title": "Création de Contenu (Contenu Captivant)",
             "subtitle": "Gestion & Storytelling visuel",
             "description": "Création de visuels, vidéos et textes captivants qui construisent une identité forte et mémorable.",
             "features": {
@@ -306,5 +306,82 @@
         "title": "Formation Community Managers – Session du {{date}} ! Devenez un CM professionnel en 3 mois",
         "subtitle": "Suivi personnalisé, exercices pratiques et attestation de fin de formation",
         "button": "Je veux ma place"
-    }
+    },
+    "footer": {
+        "about": "Agence spécialisée en stratégie digitale, création de contenu et performance marketing. Nous transformons les marques en véritables moteurs de croissance.",
+        "services": "Services",
+        "contact": "Contact",
+        "why": "Pourquoi nous choisir ?",
+        "why1": "+30 marques accompagnées",
+        "why2": "ROI mesurable",
+        "why3": "Stratégies personnalisées",
+        "why4": "Support rapide & réactif",
+        "processTitle": "Notre Méthode de Croissance",
+        "processSubtitle": "Nous ne faisons pas juste du marketing. Nous construisons des systèmes de croissance qui transforment votre vision en résultats mesurables.",
+        "step1": "Positionnement Stratégique",
+        "step1Desc": "Nous clarifions votre vision, définissons votre avantage concurrentiel et construisons une base solide pour votre croissance.",
+        "step2": "Stratégie de Contenu",
+        "step2Desc": "Nous créons un storytelling puissant qui attire, engage et crée une connexion émotionnelle avec votre audience.",
+        "step3": "Stratégie de Campagne",
+        "step3Desc": "Nous lançons des campagnes ciblées et optimisées pour générer visibilité, trafic et autorité.",
+        "step4": "Stratégie de Conversion & Techniques de Vente",
+        "step4Desc": "Nous transformons l’attention en clients grâce à une stratégie de conversion et des techniques de vente éprouvées.",
+        "legal": "Mentions légales",
+        "privacy": "Confidentialité",
+        "cgv": "CGV"
+    },
+    "legal": {
+        "title": "Mentions Légales",
+        "intro": "Bienvenue sur le site de Free Digital Solutions. Ce site est exploité par notre startup en développement. Nous vous fournissons ci-dessous les informations essentielles pour votre transparence.",
+        "companyTitle": "Informations sur l'entreprise",
+        "companyInfo": "Free Digital Solutions\nStartup en développement, Yaoundé, Cameroun",
+        "directorTitle": "Directeur de Publication",
+        "directorInfo": "Yndris Douanla, Fondateur de Free Digital Solutions",
+        "hostTitle": "Hébergement du site",
+        "hostInfo": "Hébergeur : Vercel – Site déployé sur la plateforme Vercel, cloud global pour les applications modernes.",
+        "copyrightTitle": "Propriété intellectuelle",
+        "copyrightInfo": "Le contenu du site (textes, images, vidéos, logos et marques) est la propriété de Free Digital Solutions ou de ses partenaires. Toute reproduction est interdite sans autorisation.",
+        "dataTitle": "Données personnelles",
+        "dataInfo": "Les informations collectées via ce site sont utilisées uniquement dans le cadre de nos services et conformément au RGPD. Vous pouvez demander l’accès, la correction ou la suppression de vos données à tout moment.",
+        "contactTitle": "Contact",
+        "contactInfo": "Pour toute question concernant le site ou vos données, contactez-nous : contact@freedry.dev"
+    },
+    "privacy": {
+        "title": "Politique de Confidentialité",
+        "intro": "Bienvenue sur le site de Free Digital Solutions. Votre confidentialité est importante pour nous. Cette page explique comment nous collectons, utilisons et protégeons vos données personnelles.",
+        "collectTitle": "Collecte des données personnelles",
+        "collectInfo": "Nous recueillons uniquement les informations nécessaires via les formulaires de contact, newsletter ou services proposés sur notre site. Cela inclut votre nom, email et toute information que vous choisissez de fournir.",
+        "useTitle": "Utilisation des données",
+        "useInfo": "Les données collectées sont utilisées uniquement pour vous fournir nos services, répondre à vos demandes et vous envoyer des informations utiles. Nous ne vendons ni ne partageons vos données à des tiers à des fins commerciales.",
+        "cookiesTitle": "Cookies et technologies similaires",
+        "cookiesInfo": "Notre site peut utiliser des cookies pour améliorer l’expérience utilisateur, analyser le trafic et personnaliser le contenu. Vous pouvez gérer vos préférences de cookies directement dans votre navigateur.",
+        "shareTitle": "Partage et sécurité",
+        "shareInfo": "Nous mettons en place des mesures techniques et organisationnelles pour protéger vos données. Vos informations ne sont partagées qu’avec des partenaires de confiance pour assurer le bon fonctionnement de nos services.",
+        "rightsTitle": "Vos droits",
+        "rightsInfo": "Conformément au RGPD, vous disposez d’un droit d’accès, de rectification, de suppression et d’opposition concernant vos données personnelles. Vous pouvez exercer ces droits en nous contactant directement.",
+        "contactTitle": "Contact",
+        "contactInfo": "Pour toute question concernant cette politique ou vos données, contactez-nous : contact@freedry.dev"
+    },
+    "sections": [
+        {
+            "title": "Notre approche stratégique intégrée",
+            "description": "Chaque étape de notre approche est pensée pour créer un écosystème de croissance autour de votre marque. Du positionnement stratégique à la création de contenu captivant, nous connectons toutes les actions pour maximiser votre impact.",
+            "description2": "Nous assurons un suivi complet : campagnes performantes, analyse continue, conversion optimisée et construction d'une audience fidèle qui vous suit et vous aime. Chaque étape agit en synergie pour renforcer votre présence et développer une communauté engagée."
+        },
+        {
+            "title": "Libérez-vous du stress des réseaux sociaux",
+            "description": "Vos réseaux sociaux demandent du temps et une attention constante ? Laissez notre équipe d’experts s’en occuper pour vous. Nous publions, analysons et ajustons vos contenus pour créer un impact maximal à chaque publication.",
+            "description2": "Avec nous, votre audience grandit naturellement et vos abonnés deviennent de véritables fans. Chaque interaction renforce leur attachement à votre marque et stimule votre notoriété."
+        },
+        {
+            "title": "Faites passer votre marque au niveau supérieur",
+            "description": "Nous décryptons vos données pour découvrir ce qui fonctionne vraiment et ce qui peut être amélioré. Chaque action est pensée pour booster votre visibilité et votre engagement.",
+            "description2": "Grâce à notre optimisation continue, votre marque évolue rapidement, reste en avance sur vos concurrents et attire une audience fidèle et active."
+        },
+        {
+            "title": "Transformez vos abonnés en véritables ambassadeurs",
+            "description": "Nous créons des campagnes interactives et engageantes qui captent l’attention de votre audience et les incitent à participer.",
+            "description2": "Chaque interaction renforce la loyauté de vos abonnés et augmente naturellement votre notoriété. Résultat : une communauté solide et active qui parle de vous."
+        }
+    ]
 }

@@ -212,7 +212,7 @@ export default function Services() {
         {/* CTA */}
         <div className="text-center">
           <a
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 text-lg"
           >
             {t('services.cta')}

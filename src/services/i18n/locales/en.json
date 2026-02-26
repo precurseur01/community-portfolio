@@ -63,7 +63,7 @@
       }
     },
     "service2": {
-      "title": "Content Creation",
+      "title": "Content Creation (Engaging Content)",
       "subtitle": "Management & Visual Storytelling",
       "description": "Creation of visuals, videos, and texts that build a strong and memorable identity.",
       "features": {
@@ -306,5 +306,82 @@
     "title": "Community Managers Training – Session on {{date}}! Become a professional CM in 3 months",
     "subtitle": "Personalized guidance, practical exercises, and a certificate of completion",
     "button": "I want my spot"
-  }
+  },
+  "footer": {
+    "about": "Digital agency specialized in strategy, content creation and performance marketing. We transform brands into powerful growth engines.",
+    "services": "Services",
+    "contact": "Contact",
+    "why": "Why Choose Us?",
+    "why1": "30+ brands supported",
+    "why2": "Measurable ROI",
+    "why3": "Tailored strategies",
+    "why4": "Fast & responsive support",
+    "processTitle": "Our Growth Framework",
+    "processSubtitle": "We don’t just do marketing. We build scalable growth systems that turn your vision into measurable results.",
+    "step1": "Business Plan & Positioning",
+    "step1Desc": "We clarify your vision, define your competitive edge and build a strong foundation for growth.",
+    "step2": "Content Strategy",
+    "step2Desc": "We craft powerful storytelling that attracts, engages and creates emotional connection.",
+    "step3": "Campaign Strategy",
+    "step3Desc": "We launch optimized campaigns designed to generate visibility, traffic and authority.",
+    "step4": "Conversion Strategy & Sales Techniques",
+    "step4Desc": "We turn attention into customers through strategic conversion engineering and proven sales techniques.",
+    "legal": "Legal Notice",
+    "privacy": "Privacy Policy",
+    "cgv": "Terms & Conditions"
+  },
+  "legal": {
+    "title": "Legal Notice",
+    "intro": "Welcome to Free Digital Solutions' website. This site is operated by our startup in development. We provide below essential information for your transparency.",
+    "companyTitle": "Company Information",
+    "companyInfo": "Free Digital Solutions\nStartup in development, Yaoundé, Cameroon",
+    "directorTitle": "Publishing Director",
+    "directorInfo": "Yndris Douanla, Founder of Free Digital Solutions",
+    "hostTitle": "Website Hosting",
+    "hostInfo": "Host: Vercel – Site deployed on the Vercel platform, global cloud for modern applications.",
+    "copyrightTitle": "Intellectual Property",
+    "copyrightInfo": "All content on this site (texts, images, videos, logos and trademarks) is the property of Free Digital Solutions or its partners. Reproduction is prohibited without permission.",
+    "dataTitle": "Personal Data",
+    "dataInfo": "Information collected via this site is used solely within the scope of our services and in compliance with GDPR. You can request access, correction or deletion of your data at any time.",
+    "contactTitle": "Contact",
+    "contactInfo": "For any questions regarding this site or your data, please contact us at: contact@freedry.dev"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": "Welcome to Free Digital Solutions' website. Your privacy is important to us. This page explains how we collect, use and protect your personal information.",
+    "collectTitle": "Personal Data Collection",
+    "collectInfo": "We only collect necessary information through contact forms, newsletter subscriptions, or services on our site. This includes your name, email, and any information you choose to provide.",
+    "useTitle": "Use of Data",
+    "useInfo": "Collected data is used solely to provide our services, respond to your inquiries, and send relevant information. We do not sell or share your data with third parties for commercial purposes.",
+    "cookiesTitle": "Cookies and Similar Technologies",
+    "cookiesInfo": "Our site may use cookies to enhance user experience, analyze traffic, and personalize content. You can manage your cookie preferences directly in your browser.",
+    "shareTitle": "Sharing and Security",
+    "shareInfo": "We implement technical and organizational measures to protect your data. Your information is only shared with trusted partners to ensure the proper functioning of our services.",
+    "rightsTitle": "Your Rights",
+    "rightsInfo": "Under GDPR, you have the right to access, rectify, delete, and object to the processing of your personal data. You can exercise these rights by contacting us directly.",
+    "contactTitle": "Contact",
+    "contactInfo": "For any questions regarding this policy or your data, please contact us at: contact@freedry.dev"
+  },
+  "sections": [
+    {
+      "title": "Our Integrated Strategic Approach",
+      "description": "Every step of our approach is designed to create a growth ecosystem around your brand. From strategic positioning to creating captivating content, we connect all actions to maximize your impact.",
+      "description2": "We provide full support: high-performing campaigns, continuous analysis, optimized conversion, and building a loyal audience that follows and loves you. Every step works in synergy to strengthen your presence and develop an engaged community."
+    },
+    {
+      "title": "Free Yourself from Social Media Stress",
+      "description": "Do your social media channels require constant time and attention? Let our team of experts handle it for you. We publish, analyze, and adjust your content to create maximum impact with every post.",
+      "description2": "With us, your audience grows naturally, and your followers become true fans. Every interaction strengthens their attachment to your brand and boosts your visibility."
+    },
+    {
+      "title": "Take Your Brand to the Next Level",
+      "description": "We analyze your data to discover what really works and what can be improved. Every action is designed to boost your visibility and engagement.",
+      "description2": "Thanks to our continuous optimization, your brand evolves quickly, stays ahead of competitors, and attracts a loyal, active audience."
+    },
+    {
+      "title": "Turn Your Followers into True Ambassadors",
+      "description": "We create interactive and engaging campaigns that capture your audience's attention and encourage participation.",
+      "description2": "Every interaction strengthens follower loyalty and naturally increases your visibility. Result: a strong, active community that talks about you."
+    }
+  ]
 }

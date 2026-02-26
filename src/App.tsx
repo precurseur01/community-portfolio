@@ -9,6 +9,9 @@ import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
 import TrainingPage from './components/Pages/TrainingPage';
 import PreselectionForm from './components/Pages/PreselectionForm';
 import MainLayout from './Layout/MainLayout';
+import LegalNotice from './components/Pages/LegalNotice';
+import PrivacyPolicy from './components/Pages/PrivacyPolicy';
+import HomeServicesSections from './components/Home';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,8 +31,8 @@ function App() {
           element={
             <MainLayout scrolled={scrolled}>
               <Hero />
+              <HomeServicesSections />
               <Services />
-              <CaseStudies />
               <Contact />
               <FloatingWhatsAppButton />
             </MainLayout>
@@ -58,6 +61,54 @@ function App() {
           element={
             <MainLayout scrolled={scrolled}>
               <About />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/services"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <Services />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <About />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <Contact />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <CaseStudies />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/legal-notice"
+          element={
+            <MainLayout scrolled={scrolled} >
+              <LegalNotice />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/privacy-policy"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <PrivacyPolicy />
             </MainLayout>
           }
         />

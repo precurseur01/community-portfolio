@@ -78,6 +78,21 @@ export default function About() {
           </div>
         </div>
       </div>
+      {/* Stats */}
+      <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+        <div className="text-center">
+          <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">+30</div>
+          <div className="text-sm text-gray-400">{t('hero.stats.brands')}</div>
+        </div>
+        <div className="text-center">
+          <div className="text-3xl sm:text-4xl font-bold text-emerald-400 mb-2">+200K</div>
+          <div className="text-sm text-gray-400">{t('hero.stats.followers')}</div>
+        </div>
+        <div className="text-center">
+          <div className="text-3xl sm:text-4xl font-bold text-white mb-2">+320%</div>
+          <div className="text-sm text-gray-400">{t('hero.stats.engagement')}</div>
+        </div>
+      </div>
     </section>
   );
 }
