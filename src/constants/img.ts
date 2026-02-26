@@ -2,10 +2,10 @@
 // Autres images existantes
 import logo from "../assets/img/logo.png";
 import whitelogo from "../assets/img/whitelogo.png";
-import img1 from "../assets/img/img1.png";
-import img2 from "../assets/img/img2.png";
-import img3 from "../assets/img/img3.png";
-import imgStrategie from "../assets/img/imgStrategie.png";
+import img1 from "../assets/img/img1.webp";
+import img2 from "../assets/img/img2.webp";
+import img3 from "../assets/img/img3.webp";
+import imgStrategie from "../assets/img/imgStrategie.webp";
 
 // Objet d’export regroupé
 const Img = {
