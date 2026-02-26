@@ -61,11 +61,13 @@ export default function HomeServicesSections() {
                             >
                                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-emerald-500/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
 
-                                <img
-                                    src={section.image}
-                                    alt={section.title}
-                                    className="relative rounded-3xl shadow-2xl border border-white/10 object-cover w-full h-[500px]"
-                                />
+                                <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                                    <img
+                                        src={section.image}
+                                        alt={section.title}
+                                        className="w-full h-auto max-h-[600px] object-cover"
+                                    />
+                                </div>
                             </motion.div>
 
                             {/* TEXT */}
