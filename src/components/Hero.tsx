@@ -1,7 +1,8 @@
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight} from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import TrainingAnnouncement from './Pages/TrainingAnnouncement';
+import AnimatedBadge from './animation/AnimatedBadge';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -29,10 +30,7 @@ export default function Hero() {
         <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 
           {/* Badge rôle */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 border border-white/20">
-            <Sparkles size={16} className="text-emerald-400" />
-            <span className="text-md text-gray-300">{t('hero.role')}</span>
-          </div>
+          <AnimatedBadge t={t} />
 
           {/* Heading avec gradient */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
