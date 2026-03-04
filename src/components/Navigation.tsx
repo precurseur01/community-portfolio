@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 import Img from '../constants/img';
+import { NavLink } from 'react-router-dom';
 
 interface NavigationProps {
   scrolled: boolean;
@@ -40,9 +41,18 @@ export default function Navigation({ scrolled }: NavigationProps) {
           {/* Desktop menus */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium">
+              <NavLink
+                key={link.name}
+                to={link.href}
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors duration-200 ${isActive
+                    ? 'text-emerald-400 border-b-2 border-emerald-400 pb-1'
+                    : 'text-gray-300 hover:text-white'
+                  }`
+                }
+              >
                 {link.name}
-              </a>
+              </NavLink>
             ))}
             <LanguageSwitcher />
           </div>
@@ -71,18 +81,25 @@ export default function Navigation({ scrolled }: NavigationProps) {
           <div className="min-h-full flex flex-col justify-between p-8">
             <div className="space-y-2">
               {navLinks.map((link, index) => (
-                <a
+                <NavLink
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`group flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-white/5 to-white/0 hover:from-blue-600/20 hover:to-emerald-600/20 border border-white/10 hover:border-white/20 transition-all duration-300 transform ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'} ${link.delay}`}
+                  className={({ isActive }) => `group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'} ${link.delay} ${isActive
+                    ? 'bg-gradient-to-r from-blue-600/30 to-emerald-600/30 border-emerald-400'
+                    : 'bg-gradient-to-r from-white/5 to-white/0 border-white/10 hover:border-white/20'
+                    }`
+                  }
                   style={{ transitionDelay: isOpen ? `${index * 50}ms` : '0ms' }}
                 >
                   <span className="text-xl font-semibold text-white group-hover:text-emerald-400 transition-colors duration-300">
                     {link.name}
                   </span>
-                  <ChevronRight size={24} className="text-gray-500 group-hover:text-blue-400 group-hover:translate-x-2 transition-all duration-300" />
-                </a>
+                  <ChevronRight
+                    size={24}
+                    className="text-gray-500 group-hover:text-blue-400 group-hover:translate-x-2 transition-all duration-300"
+                  />
+                </NavLink>
               ))}
               <LanguageSwitcher />
             </div>
