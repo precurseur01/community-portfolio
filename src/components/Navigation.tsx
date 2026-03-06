@@ -45,7 +45,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
                 key={link.name}
                 to={link.href}
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors duration-200 ${isActive
+                  `text-sm uppercase font-medium transition-colors duration-200 ${isActive
                     ? 'text-emerald-400 border-b-2 border-emerald-400 pb-1'
                     : 'text-gray-300 hover:text-white'
                   }`
@@ -92,7 +92,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
                   }
                   style={{ transitionDelay: isOpen ? `${index * 50}ms` : '0ms' }}
                 >
-                  <span className="text-xl font-semibold text-white group-hover:text-emerald-400 transition-colors duration-300">
+                  <span className="text-xl uppercase font-semibold text-white group-hover:text-emerald-400 transition-colors duration-300">
                     {link.name}
                   </span>
                   <ChevronRight
