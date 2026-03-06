@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { Send } from "lucide-react";
 import { useTranslation, Trans } from "react-i18next";
+import FakeProgressBar from "../FakeProgressBar";
 
 export default function PreselectionForm() {
     const { t } = useTranslation();
@@ -66,6 +67,8 @@ export default function PreselectionForm() {
                         Session du <span className="text-orange-400 font-bold">28 mars 2026</span> – 3 mois pour devenir un CM professionnel !
                     </Trans>
                 </p>
+                {/* Barre de progression fictive */}
+                <FakeProgressBar />
 
                 <form
                     ref={formRef}
