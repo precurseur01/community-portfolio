@@ -12,6 +12,8 @@ import MainLayout from './Layout/MainLayout';
 import LegalNotice from './components/Pages/LegalNotice';
 import PrivacyPolicy from './components/Pages/PrivacyPolicy';
 import HomeServicesSections from './components/Home';
+import Testimonials from './components/Testimonial';
+import NotFound from './components/Pages/NotFound';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,6 +35,7 @@ function App() {
               <Hero />
               <HomeServicesSections />
               <Services />
+              <Testimonials />
               <Contact />
               <FloatingWhatsAppButton />
             </MainLayout>
@@ -110,6 +113,12 @@ function App() {
             <MainLayout scrolled={scrolled}>
               <PrivacyPolicy />
             </MainLayout>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <NotFound />
           }
         />
       </Routes>

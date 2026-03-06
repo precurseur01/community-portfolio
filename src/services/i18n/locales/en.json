@@ -383,5 +383,76 @@
       "description": "We create interactive and engaging campaigns that capture your audience's attention and encourage participation.",
       "description2": "Every interaction strengthens follower loyalty and naturally increases your visibility. Result: a strong, active community that talks about you."
     }
-  ]
+  ],
+  "testimonials": {
+    "sectionTitle1": "Our clients",
+    "sectionTitle2": "speak",
+    "sectionDescription": "Concrete results, campaigns that convert, satisfied entrepreneurs.",
+    "stats": {
+      "prospects": "Converted leads",
+      "campaigns": "Successful campaigns",
+      "satisfiedClients": "Satisfied clients",
+      "appointments": "Appointments/month"
+    },
+    "carousel": {
+      "starsLabel": "5 stars",
+      "previous": "Previous testimonial",
+      "next": "Next testimonial",
+      "dotLabel": "Testimonial {{index}}"
+    },
+    "cta": {
+      "button": "Contact us",
+      "description": "Join our satisfied clients"
+    },
+    "quotes": [
+      {
+        "name": "Bema",
+        "quote": "At first I just wanted to try, but I was surprised to have 15 sales and 30 confirmed appointments in the same month.",
+        "highlights": [
+          {
+            "label": "Sales"
+          },
+          {
+            "label": "Confirmed appointments"
+          }
+        ]
+      },
+      {
+        "name": "CDE Global",
+        "quote": "I was in the shadows and Free Digital showed me the power of advertising campaigns. Today, every month I have sales, even with dropshipping.",
+        "highlights": []
+      },
+      {
+        "name": "Yndris",
+        "quote": "I already believed in it, but with precise targeting and optimal ROI I was able to reach my goals even with the smallest possible budget.",
+        "highlights": []
+      },
+      {
+        "name": "Cuisine Facile",
+        "quote": "I couldn't imagine having 300 leads in one month with my small budget.",
+        "highlights": [
+          {
+            "label": "Leads"
+          }
+        ]
+      },
+      {
+        "name": "Patrice",
+        "quote": "I trust in the power of Free, I was able to get my first clients in Cambodia and Germany.",
+        "highlights": []
+      },
+      {
+        "name": "Restau Lan 300",
+        "quote": "I launched a training and didn't know how to get participants. In less than two weeks, with a targeted and optimized campaign, I was able to get 10 candidates in Yaoundé and 15 in Douala. Thanks Free!",
+        "highlights": [
+          {
+            "label": "Yaoundé candidates"
+          },
+          {
+            "label": "Douala candidates"
+          }
+        ]
+      }
+    ]
+  }
 }

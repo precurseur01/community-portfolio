@@ -383,5 +383,76 @@
             "description": "Nous créons des campagnes interactives et engageantes qui captent l’attention de votre audience et les incitent à participer.",
             "description2": "Chaque interaction renforce la loyauté de vos abonnés et augmente naturellement votre notoriété. Résultat : une communauté solide et active qui parle de vous."
         }
-    ]
+    ],
+    "testimonials": {
+        "sectionTitle1": "Nos clients",
+        "sectionTitle2": "témoignent",
+        "sectionDescription": "Des résultats concrets, des campagnes qui convertissent, des entrepreneurs satisfaits.",
+        "stats": {
+            "prospects": "Prospects convertis",
+            "campaigns": "Campagnes réussies",
+            "satisfiedClients": "Clients satisfaits",
+            "appointments": "Rendez-vous/mois"
+        },
+        "carousel": {
+            "starsLabel": "5 étoiles",
+            "previous": "Témoignage précédent",
+            "next": "Témoignage suivant",
+            "dotLabel": "Témoignage {{index}}"
+        },
+        "cta": {
+            "button": "Contactez-nous",
+            "description": "Rejoignez nos clients satisfaits"
+        },
+        "quotes": [
+            {
+                "name": "Bema",
+                "quote": "Au début je voulais juste essayer mais j'ai été surpris d'avoir 15 ventes et 30 rendez-vous confirmés le même mois.",
+                "highlights": [
+                    {
+                        "label": "Ventes"
+                    },
+                    {
+                        "label": "RDV confirmés"
+                    }
+                ]
+            },
+            {
+                "name": "CDE Global",
+                "quote": "J'étais dans l'ombre et Free Digital m'a montré la force des campagnes publicitaires. Aujourd'hui chaque mois j'ai des ventes, même avec le dropshipping.",
+                "highlights": []
+            },
+            {
+                "name": "Yndris",
+                "quote": "J'y croyais déjà mais avec un ciblage précis et un ROI optimal j'ai pu atteindre mes objectifs même avec le plus faible budget possible.",
+                "highlights": []
+            },
+            {
+                "name": "Cuisine Facile",
+                "quote": "Je ne me voyais pas avoir 300 prospects en un mois avec mon faible budget.",
+                "highlights": [
+                    {
+                        "label": "Prospects"
+                    }
+                ]
+            },
+            {
+                "name": "Patrice",
+                "quote": "J'ai confiance en la force de Free, j'ai pu avoir mes premiers clients au Cambodge et en Allemagne.",
+                "highlights": []
+            },
+            {
+                "name": "Restau Lan 300",
+                "quote": "J'ai lancé une formation et je ne savais pas comment avoir les effectifs. En moins de deux semaines et avec une campagne ciblée et optimisée j'ai pu avoir 10 candidats à Yaoundé et 15 à Douala. Merci Free !",
+                "highlights": [
+                    {
+                        "label": "Candidats Yaoundé"
+                    },
+                    {
+                        "label": "Candidats Douala"
+                    }
+                ]
+            }
+        ]
+    }
 }
