@@ -17,6 +17,7 @@ type ReceiptData = {
     montantLettre: string
 }
 
+
 const ReceiptGenerator: React.FC = () => {
     const receiptRef = useRef<HTMLDivElement>(null)
 
@@ -282,10 +283,10 @@ const ReceiptGenerator: React.FC = () => {
                     <div className="mt-12">
 
                         <button
-                            onClick={() => setReceipts(true)}
-                            className="bg-blue-600 text-white px-6 py-2 rounded"
+                            onClick={() => setReceipts(!receipts)}
+                            className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full font-semibold hover:bg-white/20 transition-all duration-300"
                         >
-                            Créer un reçu
+                            reçu standard
                         </button>
 
                         {/* FORMULAIRE */}
@@ -346,7 +347,7 @@ const ReceiptGenerator: React.FC = () => {
 
                 </div>
                 :
-                <ProfessionalReceipt />}
+                <ProfessionalReceipt setReceipts={setReceipts} />}
         </>)
 }
 

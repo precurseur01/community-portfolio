@@ -4,6 +4,11 @@ import type { ChangeEvent } from 'react';
 import type { CSSProperties } from 'react';
 import Img from "../../constants/img";
 import html2pdf from "html2pdf.js";
+import type { Dispatch, SetStateAction } from "react";
+
+type ProfessionalReceiptProps = {
+    setReceipts: Dispatch<SetStateAction<boolean>>;
+};
 
 // ─── TYPES ───────────────────────────────────────────────────────────────────
 
@@ -497,7 +502,7 @@ const SectionHeader: React.FC<{ label: string }> = ({ label }) => (
 
 // ─── MAIN COMPONENT ──────────────────────────────────────────────────────────
 
-const ReceiptGenerator: React.FC = () => {
+const ReceiptGenerator = ({ setReceipts }: ProfessionalReceiptProps) => {
     const receiptRef = useRef<HTMLDivElement>(null)
 
     const [data, setData] = useState<ReceiptData>({
@@ -608,10 +613,12 @@ const ReceiptGenerator: React.FC = () => {
                 fontFamily: "'Sora', 'Segoe UI', sans-serif",
             }}
         >
+
             <link
                 href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap"
                 rel="stylesheet"
             />
+
 
             {/* ── FORM CARD ── */}
             <div
@@ -625,9 +632,15 @@ const ReceiptGenerator: React.FC = () => {
                     marginTop: "50px",
                 }}
             >
+                <button
+                    onClick={() => setReceipts(false)}
+                    className=" text-black px-8 py-4 backdrop-blur-sm border border-dark/20 rounded-full font-semibold hover:bg-white/20 transition-all duration-300"
+                >
+                    reçu cm
+                </button>
                 <div style={{ marginBottom: "20px" }}>
                     <div style={{ fontSize: "20px", fontWeight: 800, color: "#0f3460" }}>
-                        Freedry<span style={{ color: "#e94560" }}>.</span> — Générateur de Facture
+                        Free Digital Solutions<span style={{ color: "#e94560" }}>.</span> — Générateur de Facture
                     </div>
                     <div style={{ fontSize: "12px", color: "#888", marginTop: "2px" }}>
                         Remplissez les champs ci-dessous pour générer votre reçu.
