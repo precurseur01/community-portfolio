@@ -14,6 +14,7 @@ import PrivacyPolicy from './components/Pages/PrivacyPolicy';
 import HomeServicesSections from './components/Home';
 import Testimonials from './components/Testimonial';
 import NotFound from './components/Pages/NotFound';
+import ReceiptGenerator from './components/Pages/ReceiptGenerator';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -112,6 +113,14 @@ function App() {
           element={
             <MainLayout scrolled={scrolled}>
               <PrivacyPolicy />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/receipt-generator"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <ReceiptGenerator />
             </MainLayout>
           }
         />

@@ -12,6 +12,7 @@ import bg2 from "../assets/img/bg2.jfif"
 import bg3 from "../assets/img/bg3.jfif"
 import bg4 from "../assets/img/bg4.jfif"
 import bg5 from "../assets/img/bg5.jfif"
+import ifpit from "../assets/img/ifpit.png"
 
 // Objet d’export regroupé
 const Img = {
@@ -26,7 +27,8 @@ const Img = {
     bg2,
     bg3,
     bg4,
-    bg5
+    bg5,
+    ifpit
 
 };
 
