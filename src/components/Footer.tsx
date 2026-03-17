@@ -61,7 +61,36 @@ export default function Footer() {
 
   return (
     <footer className="bg-black/50 backdrop-blur-xl border-t border-white/10 text-gray-300">
-
+      <div className="relative py-20 overflow-hidden border-y border-white/10 bg-gradient-to-br from-blue-600/10 via-black to-emerald-600/10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white">{t("footer.processTitle")}</h3>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base">{t("footer.processSubtitle")}</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-blue-500/40 transition duration-300 hover:-translate-y-2">
+              <div className="text-blue-400 text-3xl font-bold mb-4">01</div>
+              <h4 className="text-white font-semibold mb-3">{t("footer.step1")}</h4>
+              <p className="text-gray-400 text-sm leading-relaxed">{t("footer.step1Desc")}</p>
+            </div>
+            <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-emerald-500/40 transition duration-300 hover:-translate-y-2">
+              <div className="text-emerald-400 text-3xl font-bold mb-4">02</div>
+              <h4 className="text-white font-semibold mb-3">{t("footer.step2")}</h4>
+              <p className="text-gray-400 text-sm leading-relaxed">{t("footer.step2Desc")}</p>
+            </div>
+            <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-blue-500/40 transition duration-300 hover:-translate-y-2">
+              <div className="text-blue-400 text-3xl font-bold mb-4">03</div>
+              <h4 className="text-white font-semibold mb-3">{t("footer.step3")}</h4>
+              <p className="text-gray-400 text-sm leading-relaxed">{t("footer.step3Desc")}</p>
+            </div>
+            <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-emerald-500/40 transition duration-300 hover:-translate-y-2">
+              <div className="text-emerald-400 text-3xl font-bold mb-4">04</div>
+              <h4 className="text-white font-semibold mb-3">{t("footer.step4")}</h4>
+              <p className="text-gray-400 text-sm leading-relaxed">{t("footer.step4Desc")}</p>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* ── SECTION PRINCIPALE ── */}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -123,36 +152,7 @@ export default function Footer() {
       </div>
 
       {/* ── SECTION MÉTHODE PREMIUM ── */}
-      <div className="relative py-20 overflow-hidden border-y border-white/10 bg-gradient-to-br from-blue-600/10 via-black to-emerald-600/10">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white">{t("footer.processTitle")}</h3>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base">{t("footer.processSubtitle")}</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-blue-500/40 transition duration-300 hover:-translate-y-2">
-              <div className="text-blue-400 text-3xl font-bold mb-4">01</div>
-              <h4 className="text-white font-semibold mb-3">{t("footer.step1")}</h4>
-              <p className="text-gray-400 text-sm leading-relaxed">{t("footer.step1Desc")}</p>
-            </div>
-            <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-emerald-500/40 transition duration-300 hover:-translate-y-2">
-              <div className="text-emerald-400 text-3xl font-bold mb-4">02</div>
-              <h4 className="text-white font-semibold mb-3">{t("footer.step2")}</h4>
-              <p className="text-gray-400 text-sm leading-relaxed">{t("footer.step2Desc")}</p>
-            </div>
-            <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-blue-500/40 transition duration-300 hover:-translate-y-2">
-              <div className="text-blue-400 text-3xl font-bold mb-4">03</div>
-              <h4 className="text-white font-semibold mb-3">{t("footer.step3")}</h4>
-              <p className="text-gray-400 text-sm leading-relaxed">{t("footer.step3Desc")}</p>
-            </div>
-            <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-emerald-500/40 transition duration-300 hover:-translate-y-2">
-              <div className="text-emerald-400 text-3xl font-bold mb-4">04</div>
-              <h4 className="text-white font-semibold mb-3">{t("footer.step4")}</h4>
-              <p className="text-gray-400 text-sm leading-relaxed">{t("footer.step4Desc")}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* ── NEWSLETTER ── */}
       <div className="relative overflow-hidden border-b border-white/10">
