@@ -15,6 +15,9 @@ import HomeServicesSections from './components/Home';
 import Testimonials from './components/Testimonial';
 import NotFound from './components/Pages/NotFound';
 import ReceiptGenerator from './components/Pages/ReceiptGenerator';
+import ConversionTechniques from './components/Pages/ConversionTechniques';
+import GrowthPlaybook from './components/Pages/GrowthPlaybook';
+import PsychologyLearning from './components/Pages/psychologyTriggers';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,10 +48,18 @@ function App() {
 
         {/* Pages standalone */}
         <Route
-          path="/formation"
+          path="/growth/formation"
           element={
             <MainLayout scrolled={scrolled}>
               <TrainingPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/growth"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <GrowthPlaybook />
             </MainLayout>
           }
         />
@@ -121,6 +132,22 @@ function App() {
           element={
             <MainLayout scrolled={scrolled}>
               <ReceiptGenerator />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/growth/Conversion"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <ConversionTechniques />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/growth/Psychology"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <PsychologyLearning />
             </MainLayout>
           }
         />
