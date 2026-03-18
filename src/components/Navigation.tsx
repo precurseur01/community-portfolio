@@ -1,4 +1,4 @@
-import { Menu, X, ChevronRight, ChevronDown, BookOpen, Zap, Star, Users } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronDown, BookOpen, Zap, Star, Users, Brain } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -26,14 +26,14 @@ const playbookItems = [
     color: 'text-emerald-400',
     bg: 'bg-emerald-500/10',
   },
-  // {
-  //   icon: Brain,
-  //   label: 'Psychologie Client',
-  //   desc: 'SONCAS & motivations',
-  //   href: '/growth/psychology',
-  //   color: 'text-blue-400',
-  //   bg: 'bg-blue-500/10',
-  // },
+  {
+    icon: Brain,
+    label: 'Psychologie Client',
+    desc: 'SONCAS & motivations',
+    href: '/growth/psychology',
+    color: 'text-blue-400',
+    bg: 'bg-blue-500/10',
+  },
   // {
   //   icon: MessageSquare,
   //   label: 'Scripts WhatsApp',
@@ -89,7 +89,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
 
           {/* Logo */}
           <a href="/" className="relative z-50">
-            <img src={Img.whitelogo} alt="Free Technology Logo" className="max-h-[60px] w-auto" />
+            <img src={Img.logo} alt="Free Technology Logo" className="max-h-[60px] w-auto" />
           </a>
 
           {/* Desktop nav */}

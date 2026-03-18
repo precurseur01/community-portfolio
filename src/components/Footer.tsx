@@ -97,7 +97,7 @@ export default function Footer() {
 
           {/* Bloc 1 — Logo + Social */}
           <div className="space-y-5">
-            <img src={Img.whitelogo} alt="Free Technology Logo" className="max-h-[60px] w-auto" />
+            <img src={Img.logo} alt="Free Technology Logo" className="max-h-[60px] w-auto" />
             <p className="text-gray-400 text-sm leading-relaxed">{t("footer.about")}</p>
             <div className="flex gap-4 pt-2">
               {socialLinks.map((social, index) => {
