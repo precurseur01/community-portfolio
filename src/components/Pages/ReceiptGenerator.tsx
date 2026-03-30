@@ -91,7 +91,7 @@ const ReceiptGenerator: React.FC = () => {
 
                 </div>
 
-                <img src={Img.logo} className="h-[22mm] object-contain" />
+                <img src={Img.logo} className="h-[12mm] object-contain" />
 
             </div>
 
@@ -153,6 +153,10 @@ const ReceiptGenerator: React.FC = () => {
 
                     <label className="flex gap-1">
                         <input type="checkbox" /> 2ème tranche
+                    </label>
+
+                    <label className="flex gap-1">
+                        <input type="checkbox" /> Avance
                     </label>
 
                     <label className="flex gap-1">
