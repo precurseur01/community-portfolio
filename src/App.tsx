@@ -18,6 +18,8 @@ import ReceiptGenerator from './components/Pages/ReceiptGenerator';
 import ConversionTechniques from './components/Pages/ConversionTechniques';
 import GrowthPlaybook from './components/Pages/GrowthPlaybook';
 import PsychologyLearning from './components/Pages/psychologyTriggers';
+import TrainingPage2 from './components/Pages/TrainingPage2';
+import SuggestionBox from './components/Pages/SuggestionBox';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -52,6 +54,14 @@ function App() {
           element={
             <MainLayout scrolled={scrolled}>
               <TrainingPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/growth/formation2"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <TrainingPage2 />
             </MainLayout>
           }
         />
@@ -148,6 +158,14 @@ function App() {
           element={
             <MainLayout scrolled={scrolled}>
               <PsychologyLearning />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/suggestion"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <SuggestionBox />
             </MainLayout>
           }
         />
