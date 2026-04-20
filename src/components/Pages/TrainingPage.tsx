@@ -149,14 +149,14 @@ const TrainingPage: React.FC = () => {
     },
     {
       id: 12,
-      question: "Une marque souhaite élargir sa communauté en ligne en s'adressant à des personnes appartenant à la même audience cible, mais situées dans différentes régions du pays.\n\nQuelle est la stratégie qu'un gestionnaire de communauté doit adopter en premier lieu ?",
+      question: "Une marque souhaite élargir sa communauté en ligne en s'adressant à des personnes appartenant à la même audience cible, mais situées dans différentes régions du pays.\n\nQuelle est la stratégie qu'un gestionnaire de communauté doit recommander en premier pour développer cette communauté ?",
       options: [
-        "Déployer des campagnes publicitaires nationales uniquement",
-        "Recruter des modérateurs locaux pour chaque région et adapter le contenu",
-        "Lancer une seule communication uniforme sans localisation",
-        "Utiliser des partenariats avec des influenceurs régionaux pour augmenter la portée"
+        "Demander aux membres d'inviter des personnes qui pourraient connaître des résidents de ces régions",
+        "Créer un contenu éditorial avec des messages personnalisés pour les habitants de différentes régions du pays",
+        "Analyser des statistiques pour connaître la position géographique de l'audience et évaluer les opportunités actuelles",
+        "Inviter des dirigeants de la marque à diffuser une vidéo en direct au sein de la communauté pour y exposer les perspectives d'expansion"
       ],
-      correctAnswers: [1],
+      correctAnswers: [2],
       multiSelect: false
     },
     {
@@ -488,10 +488,10 @@ const TrainingPage: React.FC = () => {
                             <div
                               key={oIndex}
                               className={`p-3 rounded-lg text-sm ${isCorrectAnswer
-                                  ? 'bg-green-100 border-2 border-green-500'
-                                  : isUserAnswer
-                                    ? 'bg-red-100 border-2 border-red-500'
-                                    : 'bg-white border border-gray-200'
+                                ? 'bg-green-100 border-2 border-green-500'
+                                : isUserAnswer
+                                  ? 'bg-red-100 border-2 border-red-500'
+                                  : 'bg-white border border-gray-200'
                                 }`}
                             >
                               {option}
@@ -575,8 +575,8 @@ const TrainingPage: React.FC = () => {
                   key={index}
                   onClick={() => handleAnswerSelect(index)}
                   className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ${isSelected
-                      ? 'border-indigo-600 bg-indigo-50 shadow-md'
-                      : 'border-gray-200 bg-white hover:border-indigo-300 hover:bg-indigo-50'
+                    ? 'border-indigo-600 bg-indigo-50 shadow-md'
+                    : 'border-gray-200 bg-white hover:border-indigo-300 hover:bg-indigo-50'
                     }`}
                 >
                   <div className="flex items-center gap-3">
@@ -603,8 +603,8 @@ const TrainingPage: React.FC = () => {
               onClick={goToPrevious}
               disabled={currentQuestion === 0}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors ${currentQuestion === 0
-                  ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                 }`}
             >
               <ChevronLeft size={20} />
@@ -621,10 +621,10 @@ const TrainingPage: React.FC = () => {
               onClick={goToNext}
               disabled={userAnswers.length === 0}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors ${userAnswers.length === 0
-                  ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                  : currentQuestion === questions.length - 1
-                    ? 'bg-green-600 text-white hover:bg-green-700'
-                    : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                : currentQuestion === questions.length - 1
+                  ? 'bg-green-600 text-white hover:bg-green-700'
+                  : 'bg-indigo-600 text-white hover:bg-indigo-700'
                 }`}
             >
               {currentQuestion === questions.length - 1 ? 'Terminer' : 'Suivant'}
