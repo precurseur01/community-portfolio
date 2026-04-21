@@ -124,6 +124,18 @@
       "price": "By application",
       "priceRange": "Premium certification preparation programs"
     },
+    "service8": {
+  "title": "Event & Audiovisual Production",
+  "subtitle": "Capture and elevate your events",
+  "description": "We create professional visual content to capture your events and enhance your brand image. From shooting to post-production, we deliver impactful content you can reuse for your communication.",
+  "features": {
+    "feature1": "Professional photography & premium retouching",
+    "feature2": "Video shooting & cinematic editing",
+    "feature3": "Content optimized for social media"
+  },
+  "price": "On request",
+  "priceRange": "Starting from 50,000 FCFA"
+},
     "learnMore": "Learn more",
     "cta": "Book a free strategy session"
   },

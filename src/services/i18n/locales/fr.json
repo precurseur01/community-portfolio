@@ -124,6 +124,18 @@
             "price": "Sur candidature",
             "priceRange": "Programmes premium de préparation certifiante"
         },
+        "service8": {
+  "title": "Événementiel & Production Audiovisuelle",
+  "subtitle": "Capturez et sublimez vos événements",
+  "description": "Nous réalisons des contenus visuels professionnels pour immortaliser vos événements et renforcer votre image de marque. De la captation à la post-production, nous créons des visuels impactants et réutilisables pour votre communication.",
+  "features": {
+    "feature1": "Photographie professionnelle & retouches premium",
+    "feature2": "Captation vidéo & montage cinématique",
+    "feature3": "Contenu optimisé pour réseaux sociaux"
+  },
+  "price": "Sur devis",
+  "priceRange": "À partir de 50 000 FCFA"
+},
         "learnMore": "En savoir plus",
         "cta": "Réserver une session stratégie gratuite"
     },

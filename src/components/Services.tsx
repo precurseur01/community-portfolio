@@ -1,4 +1,4 @@
-import { Target, Palette, TrendingUp, Megaphone, Zap, ArrowRight, Code, GraduationCap } from 'lucide-react';
+import { Target, Palette, TrendingUp, Megaphone, Zap, ArrowRight, Code, GraduationCap,Video } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -137,7 +137,21 @@ export default function Services() {
       ],
       priceKey: 'services.service7.price',
       priceRangeKey: 'services.service7.priceRange'
-    }
+    },
+    {
+  icon: Video,
+  titleKey: 'services.service8.title',
+  subtitleKey: 'services.service8.subtitle',
+  descriptionKey: 'services.service8.description',
+  color: 'from-purple-600 to-pink-500',
+  featuresKeys: [
+    'services.service8.features.feature1',
+    'services.service8.features.feature2',
+    'services.service8.features.feature3'
+  ],
+  priceKey: 'services.service8.price',
+  priceRangeKey: 'services.service8.priceRange'
+}
   ];
 
 
