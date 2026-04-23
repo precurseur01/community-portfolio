@@ -161,12 +161,12 @@ const TrainingPage: React.FC = () => {
     },
     {
       id: 13,
-      question: "Un membre d'une communauté en ligne publie une question. Le gestionnaire de communauté sait que beaucoup de membres ont de l'expérience dans ce domaine.\n\nQue doit faire le gestionnaire de communauté pour aider ce membre à obtenir une réponse appropriée ?",
+      question: "Un membre d'une communauté en ligne publie une question. Le gestionnaire de communauté sait que beaucoup de membres ont de l'expérience dans ce domaine.\n\nQue doit faire le gestionnaire de communauté pour aider ce membre à obtenir une réponse appropriée à sa question ?",
       options: [
-        "Identifier les membres qui ont de l'expérience dans ce domaine et les inviter à répondre",
-        "Répondre rapidement à la question et aider le membre à trouver une réponse",
-        "Laisser la question publiée durant toute la semaine",
-        "Laisser la question dans la communauté et attendre que les membres y répondent"
+        "Identifier les membres qui ont de l'expérience dans ce domaine pour qu'ils puissent répondre à la question",
+        "Répondre lui-même à la question parce que c'est plus rapide et plus simple",
+        "Intégrer la question à une annonce épinglée pendant toute la semaine",
+        "Laisser la question publiée dans la communauté, et attendre de voir quel membre y répond"
       ],
       correctAnswers: [0],
       multiSelect: false
