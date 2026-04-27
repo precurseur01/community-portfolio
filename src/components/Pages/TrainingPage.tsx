@@ -173,14 +173,14 @@ const TrainingPage: React.FC = () => {
     },
     {
       id: 14,
-      question: "Dans un groupe Facebook pour créateurs émergents, un community manager observe des difficultés à établir des liens entre les membres.\n\nQuelles mesures le community manager doit-il prendre pour encourager les interactions ?",
+      question: "Dans le groupe Facebook pour créateurs émergeants, un community manager a repéré des publications dans lesquelles les membres ont fait part de leurs difficultés à établir des liens et à faire connaissance avec les autres membres.\n\nQuelles mesures le community manager doit-il prendre pour encourager les interactions entre les membres ?",
       options: [
-        "Encourager les publications incitant les membres à interagir entre eux et à partager des contenus",
-        "Mettre à jour le calendrier éditorial pour inclure plus d'activités de réseau",
-        "Organiser des événements virtuels et des sessions AMA (Ask Me Anything)",
-        "Demander aux créateurs actifs de publier des présentations régulières dans le groupe"
+        "Effectuer des publications incitant les membres à interagir entre eux et partager leurs centres d’intérêt communs",
+        "Mettre à jour le calendrier de contenu pour inclure plus de publications à contenu pédagogique",
+        "Identifier les créateurs dans la publication et le guide de présentation",
+        "Demander aux créateurs actifs de publier une présentation chaque fois qu’un membre rejoint le groupe"
       ],
-      correctAnswers: [2],
+      correctAnswers: [0],
       multiSelect: false
     },
     {
