@@ -1,4 +1,4 @@
-import { Target, Palette, TrendingUp, Megaphone, Zap, ArrowRight, Code, GraduationCap,Video } from 'lucide-react';
+import { Target, Palette, TrendingUp, Megaphone, Zap, ArrowRight, Code, GraduationCap, Video, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -40,6 +40,20 @@ export default function Services() {
   }
 
   const services = [
+    {
+      icon: Users, // N'oubliez pas d'importer l'icône correspondante (ex: de lucide-react)
+      titleKey: 'services.service9.title',
+      subtitleKey: 'services.service9.subtitle',
+      descriptionKey: 'services.service9.description',
+      color: 'from-emerald-600 to-emerald-400', // Couleurs suggérées pour les réseaux sociaux
+      featuresKeys: [
+        'services.service9.features.feature1',
+        'services.service9.features.feature2',
+        'services.service9.features.feature3'
+      ],
+      priceKey: 'services.service9.price',
+      priceRangeKey: 'services.service9.priceRange'
+    },
     {
       icon: Target,
       titleKey: 'services.service1.title',
@@ -139,19 +153,19 @@ export default function Services() {
       priceRangeKey: 'services.service7.priceRange'
     },
     {
-  icon: Video,
-  titleKey: 'services.service8.title',
-  subtitleKey: 'services.service8.subtitle',
-  descriptionKey: 'services.service8.description',
-  color: 'from-purple-600 to-pink-500',
-  featuresKeys: [
-    'services.service8.features.feature1',
-    'services.service8.features.feature2',
-    'services.service8.features.feature3'
-  ],
-  priceKey: 'services.service8.price',
-  priceRangeKey: 'services.service8.priceRange'
-}
+      icon: Video,
+      titleKey: 'services.service8.title',
+      subtitleKey: 'services.service8.subtitle',
+      descriptionKey: 'services.service8.description',
+      color: 'from-purple-600 to-pink-500',
+      featuresKeys: [
+        'services.service8.features.feature1',
+        'services.service8.features.feature2',
+        'services.service8.features.feature3'
+      ],
+      priceKey: 'services.service8.price',
+      priceRangeKey: 'services.service8.priceRange'
+    }
   ];
 
 

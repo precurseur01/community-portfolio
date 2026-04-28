@@ -125,17 +125,29 @@
       "priceRange": "Premium certification preparation programs"
     },
     "service8": {
-  "title": "Event & Audiovisual Production",
-  "subtitle": "Capture and elevate your events",
-  "description": "We create professional visual content to capture your events and enhance your brand image. From shooting to post-production, we deliver impactful content you can reuse for your communication.",
-  "features": {
-    "feature1": "Professional photography & premium retouching",
-    "feature2": "Video shooting & cinematic editing",
-    "feature3": "Content optimized for social media"
-  },
-  "price": "On request",
-  "priceRange": "Starting from 50,000 FCFA"
-},
+      "title": "Event & Audiovisual Production",
+      "subtitle": "Capture and elevate your events",
+      "description": "We create professional visual content to capture your events and enhance your brand image. From shooting to post-production, we deliver impactful content you can reuse for your communication.",
+      "features": {
+        "feature1": "Professional photography & premium retouching",
+        "feature2": "Video shooting & cinematic editing",
+        "feature3": "Content optimized for social media"
+      },
+      "price": "On request",
+      "priceRange": "Starting from 50,000 FCFA"
+    },
+    "service9": {
+      "title": "Community Management",
+      "subtitle": "Grow and engage your community",
+      "description": "We manage your social networks to build an active audience, increase your visibility, and build customer loyalty on a daily basis.",
+      "features": {
+        "feature1": "Custom content creation and scheduling",
+        "feature2": "Daily moderation and audience interaction",
+        "feature3": "Performance analysis and monthly reporting"
+      },
+      "price": "Custom quote",
+      "priceRange": "Monthly package"
+    },
     "learnMore": "Learn more",
     "cta": "Book a free strategy session"
   },
