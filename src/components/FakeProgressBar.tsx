@@ -1,6 +1,6 @@
 function FakeProgressBar() {
     const totalSlots = 15;
-    const filledSlots = 8; // tu peux changer ce nombre pour simuler
+    const filledSlots = 5; // tu peux changer ce nombre pour simuler
     const percentage = (filledSlots / totalSlots) * 100;
 
     return (

@@ -91,7 +91,7 @@ export default function PreselectionForm() {
                 </h2>
                 <p className="text-center text-gray-300 mb-12">
                     <Trans i18nKey="preselectionForm.sessionInfo">
-                        Session du <span className="text-orange-400 font-bold">28 mars 2026</span> – 3 mois pour devenir un CM professionnel !
+                        Session du <span className="text-orange-400 font-bold">04 juillet 2026</span> – 3 mois pour devenir un CM professionnel !
                     </Trans>
                 </p>
 

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 export default function TrainingAnnouncement() {
     const { t } = useTranslation();
 
-    const sessionDate = "28 mars 2026";
+    const sessionDate = "04 Juillet 2026";
 
     return (
         <div className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 text-white px-6 py-4 rounded-b-lg shadow-lg mb-8 flex flex-col sm:flex-row items-center justify-between gap-4 animate-slideDown">
