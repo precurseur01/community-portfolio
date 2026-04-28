@@ -263,7 +263,7 @@
     },
     "preselectionForm": {
         "title": "📝 Formulaire de présélection – Formation Community Managers",
-        "sessionInfo": "Session du <1>28 mars 2026</1> – 3 mois pour devenir un CM professionnel !",
+        "sessionInfo": "Session du <1>04 juillet 2026</1> – 3 mois pour devenir un CM professionnel !",
         "personalInfo": "🧑‍💼 Informations personnelles",
         "placeholders": {
             "name": "Nom et prénom",
@@ -301,8 +301,8 @@
         },
         "formatOptions": {
             "placeholder": "Format souhaité",
-            "presentiel": "Présentiel (week-end)",
-            "enligne": "En ligne (soirée)"
+            "presentiel": "Présentiel",
+            "enligne": "En ligne"
         },
         "equipmentTitle": "💻 Équipement et accès",
         "motivationTitle": "🧠 Motivation",

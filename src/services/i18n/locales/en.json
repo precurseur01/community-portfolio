@@ -301,8 +301,8 @@
     },
     "formatOptions": {
       "placeholder": "Preferred format",
-      "presentiel": "In-person (weekend)",
-      "enligne": "Online (evening)"
+      "presentiel": "In-person",
+      "enligne": "Online"
     },
     "equipmentTitle": "💻 Equipment & Access",
     "motivationTitle": "🧠 Motivation",
