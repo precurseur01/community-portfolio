@@ -49,6 +49,15 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         success: "hsl(var(--success))",
+        // CM Academy brand colors
+        cm: {
+          blue: "#09A9E3",
+          green: "#50BC74",
+          orange: "#FF8C42",
+          deep: "#0B3C5D",
+          "light-green": "#A8E6CF",
+          gray: "#2B2B2B",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

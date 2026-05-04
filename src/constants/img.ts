@@ -1,6 +1,7 @@
 
 // Autres images existantes
 import logo from "../assets/img/logo.png";
+import logo1 from "../assets/img/logo1.png";
 // import whitelogo from "../assets/img/whitelogo.png";
 import img1 from "../assets/img/img1.webp";
 import img2 from "../assets/img/img2.webp";
@@ -14,9 +15,21 @@ import bg4 from "../assets/img/bg4.jfif"
 import bg5 from "../assets/img/bg5.jfif"
 import ifpit from "../assets/img/ifpit.png"
 
+
+//avatar
+import avatar1 from "../assets/avatar/av1.jfif";
+import avatar2 from "../assets/avatar/av2.jfif";
+import avatar3 from "../assets/avatar/av3.jfif";
+import avatar4 from "../assets/avatar/av4.jfif";
+import avatar5 from "../assets/avatar/av5.jfif";
+import avatar6 from "../assets/avatar/av6.jfif";
+import avatar7 from "../assets/avatar/av7.jfif";
+
+
 // Objet d’export regroupé
 const Img = {
     logo,
+    logo1,
     // whitelogo,
     img1,
     img2,
@@ -28,7 +41,15 @@ const Img = {
     bg3,
     bg4,
     bg5,
-    ifpit
+    ifpit,
+
+    avatar1,
+    avatar2,
+    avatar3,
+    avatar4,
+    avatar5,
+    avatar6,
+    avatar7,
 
 };
 

@@ -20,6 +20,10 @@ import GrowthPlaybook from './components/Pages/GrowthPlaybook';
 import PsychologyLearning from './components/Pages/psychologyTriggers';
 import TrainingPage2 from './components/Pages/TrainingPage2';
 import SuggestionBox from './components/Pages/SuggestionBox';
+import CMTrainingHero from './components/CMTrainingHero';
+import CMCurriculumPage from './components/Pages/CMCurriculumPage';
+import CMProgramsPage from './components/Pages/CMProgramsPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,12 +36,14 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         {/* Page d'accueil avec sections */}
         <Route
           path="/"
           element={
             <MainLayout scrolled={scrolled}>
+              <CMTrainingHero />
               <Hero />
               <HomeServicesSections />
               <Services />
@@ -62,6 +68,22 @@ function App() {
           element={
             <MainLayout scrolled={scrolled}>
               <TrainingPage2 />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/growth/cm-curriculum"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <CMCurriculumPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/growth/cm-programs"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <CMProgramsPage />
             </MainLayout>
           }
         />

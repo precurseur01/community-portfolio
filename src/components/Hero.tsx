@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import TrainingAnnouncement from './Pages/TrainingAnnouncement';
+// import TrainingAnnouncement from './Pages/TrainingAnnouncement';
 import AnimatedBadge from './animation/AnimatedBadge';
 import Img from '../constants/img';
 
@@ -34,7 +34,7 @@ export default function Hero() {
       {/* Contenu */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col items-center">
 
-        <TrainingAnnouncement />
+        {/* <TrainingAnnouncement /> */}
 
         <div
           className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -59,13 +59,13 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <a
-              href="/services"
-              className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center gap-2"
+            <button
+              onClick={() => window.location.href = '#services'}
+              className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center gap-2 text-white"
             >
-              {t('hero.cta.services')}
+             {t('hero.cta.services')}
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+            </button>
 
             <a
               href="#contact"

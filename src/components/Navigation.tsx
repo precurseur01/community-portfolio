@@ -1,12 +1,16 @@
-import { Menu, X, ChevronRight, ChevronDown, BookOpen, Zap, Star, Users, Brain } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronDown, BookOpen, Zap, Star, Users, Brain, LogIn, UserPlus } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 import Img from '../constants/img';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import UserMenu from './auth/UserMenu';
 
 interface NavigationProps {
   scrolled: boolean;
+  onOpenLogin: () => void;
+  onOpenSignup: () => void;
 }
 
 const playbookItems = [
@@ -52,7 +56,8 @@ const playbookItems = [
   // },
 ];
 
-export default function Navigation({ scrolled }: NavigationProps) {
+export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: NavigationProps) {
+  const { user, loading } = useAuth();
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [playbook, setPlaybook] = useState(false);
@@ -83,25 +88,26 @@ export default function Navigation({ scrolled }: NavigationProps) {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-lg border-b border-white/10' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-lg border-b border-white/10' : 'bg-[#020617]/80 backdrop-blur-md border-b border-white/5'}`}>
+      <div className="max-w-[1600px] mx-auto px-4 xl:px-8">
+        <div className="flex items-center h-[76px] gap-4">
 
-          {/* Logo */}
-          <a href="/" className="relative z-50">
-            <img src={Img.logo} alt="Free Technology Logo" className="max-h-[60px] w-auto" />
+          {/* ── Logo ── */}
+          <a href="/" className="relative z-50 flex-shrink-0">
+            <img src={Img.logo1} alt="Free Digital Logo" className="max-h-[54px] w-auto" />
           </a>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* ── Centre : liens de navigation ── */}
+          <div className="hidden xl:flex flex-1 items-center justify-center gap-6">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.href}
                 className={({ isActive }) =>
-                  `text-sm uppercase font-medium transition-colors duration-200 ${isActive
-                    ? 'text-emerald-400 border-b-2 border-emerald-400 pb-1'
-                    : 'text-gray-300 hover:text-white'
+                  `px-3 py-2 text-[13px] uppercase font-medium rounded-lg transition-all duration-200 ${
+                    isActive
+                      ? 'text-emerald-400 bg-emerald-400/10'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`
                 }
               >
@@ -114,17 +120,17 @@ export default function Navigation({ scrolled }: NavigationProps) {
               <button
                 onClick={() => setPlaybook(!playbook)}
                 onMouseEnter={() => setPlaybook(true)}
-                className={`flex items-center gap-1.5 text-sm uppercase font-medium transition-colors duration-200 ${playbook ? 'text-emerald-400' : 'text-gray-300 hover:text-white'
-                  }`}
+                className={`flex items-center gap-1.5 px-3 py-2 text-[13px] uppercase font-medium rounded-lg transition-all duration-200 ${
+                  playbook
+                    ? 'text-emerald-400 bg-emerald-400/10'
+                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                }`}
               >
-                <BookOpen
-                  size={14}
-                  className={`transition-colors duration-200 ${playbook ? 'text-emerald-400' : ''}`}
-                />
+                <BookOpen size={13} className="transition-colors duration-200" />
                 Growth Playbook
                 <ChevronDown
-                  size={14}
-                  className={`transition-transform duration-300 ${playbook ? 'rotate-180 text-emerald-400' : ''}`}
+                  size={13}
+                  className={`transition-transform duration-300 ${playbook ? 'rotate-180' : ''}`}
                 />
               </button>
 
@@ -193,14 +199,44 @@ export default function Navigation({ scrolled }: NavigationProps) {
                 </div>
               </div>
             </div>
-
-            <LanguageSwitcher />
           </div>
 
-          {/* Mobile toggle */}
+          {/* ── Droite : langue + séparateur + auth (ancré à droite) ── */}
+          <div className="hidden xl:flex flex-shrink-0 items-center gap-3">
+            <LanguageSwitcher />
+
+            {/* Séparateur vertical */}
+            <div className="w-px h-5 bg-white/15 rounded-full" />
+
+            {/* Auth buttons / UserMenu */}
+            {!loading && (
+              user ? (
+                <UserMenu />
+              ) : (
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={onOpenLogin}
+                    className="flex items-center gap-1.5 text-[13px] font-medium text-gray-300 hover:text-white border border-white/15 hover:border-white/30 px-3.5 py-2 rounded-xl transition-all duration-200 hover:bg-white/5"
+                  >
+                    <LogIn size={14} />
+                    Connexion
+                  </button>
+                  <button
+                    onClick={onOpenSignup}
+                    className="flex items-center gap-1.5 text-[13px] font-semibold text-white bg-gradient-to-r from-blue-600 to-emerald-600 px-3.5 py-2 rounded-xl shadow-md shadow-blue-500/20 hover:shadow-blue-500/30 hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
+                  >
+                    <UserPlus size={14} />
+                    S'inscrire
+                  </button>
+                </div>
+              )
+            )}
+          </div>
+
+          {/* ── Mobile toggle (visible sous xl) ── */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white relative z-50 w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
+            className="xl:hidden ml-auto text-white relative z-[70] w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
             aria-label={t('nav.toggleMenu')}
           >
             <div className="relative w-6 h-6">
@@ -215,10 +251,10 @@ export default function Navigation({ scrolled }: NavigationProps) {
         </div>
       </div>
 
-      {/* ── Mobile menu ── */}
+      {/* ── Menu mobile ── */}
       <div
-        className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-2xl transition-all duration-500 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
-        style={{ top: '4rem' }}
+        className={`xl:hidden fixed inset-0 z-[60] bg-black/95 backdrop-blur-2xl transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
+        style={{ top: '76px' }}
       >
         <div className="h-full overflow-y-auto">
           <div className="min-h-full flex flex-col justify-between p-8">
@@ -315,8 +351,41 @@ export default function Navigation({ scrolled }: NavigationProps) {
               <LanguageSwitcher />
             </div>
 
-            <div className={`mt-8 space-y-6 transform transition-all duration-500 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} delay-500`}>
+            <div className={`mt-8 space-y-4 transform transition-all duration-500 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} delay-500`}>
               <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+              {/* ── Auth mobile ── */}
+              {!loading && (
+                user ? (
+                  <div className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold flex-shrink-0">
+                      {user.email?.charAt(0).toUpperCase()}
+                    </div>
+                    <div className="overflow-hidden">
+                      <p className="text-sm font-semibold text-white">Connecté</p>
+                      <p className="text-xs text-slate-400 truncate">{user.email}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      onClick={() => { setIsOpen(false); onOpenLogin(); }}
+                      className="flex items-center justify-center gap-2 py-3.5 rounded-2xl border border-white/15 text-white font-semibold hover:bg-white/5 transition-all"
+                    >
+                      <LogIn size={16} />
+                      Connexion
+                    </button>
+                    <button
+                      onClick={() => { setIsOpen(false); onOpenSignup(); }}
+                      className="flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-emerald-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all"
+                    >
+                      <UserPlus size={16} />
+                      S'inscrire
+                    </button>
+                  </div>
+                )
+              )}
+
               <a
                 href="#contact"
                 onClick={() => setIsOpen(false)}
