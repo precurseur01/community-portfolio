@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#9b4500",
+                    "on-tertiary-fixed": "#331200",
+                    "tertiary-fixed": "#ffdbc9",
+                    "surface-container-low": "#eff4f9",
+                    "surface-container-highest": "#dee3e8",
+                    "on-primary-fixed-variant": "#004c69",
+                    "surface-bright": "#f5faff",
+                    "on-surface-variant": "#3e484f",
+                    "surface": "#f5faff",
+                    "on-secondary-container": "#345d80",
+                    "on-primary-fixed": "#001e2c",
+                    "surface-tint": "#00668a",
+                    "secondary-container": "#aed6fe",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#7cd0ff",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#cee5ff",
+                    "secondary": "#396285",
+                    "on-secondary-fixed": "#001d32",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-background": "#171c20",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#dee3e8",
+                    "on-secondary-fixed-variant": "#1f4a6c",
+                    "primary-fixed": "#c4e7ff",
+                    "inverse-on-surface": "#edf1f6",
+                    "outline": "#6e7880",
+                    "secondary-fixed-dim": "#a3cbf2",
+                    "on-tertiary-fixed-variant": "#763300",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e4e9ee",
+                    "outline-variant": "#bdc8d1",
+                    "tertiary-container": "#ef8037",
+                    "tertiary-fixed-dim": "#ffb68d",
+                    "inverse-surface": "#2c3135",
+                    "primary-fixed-dim": "#7cd0ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#5a2600",
+                    "on-primary-container": "#003950",
+                    "primary": "#00668a",
+                    "on-surface": "#171c20",
+                    "surface-dim": "#d6dadf",
+                    "background": "#f5faff",
+                    "primary-container": "#09a9e3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "unit": "8px",
+                    "section-padding": "80px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "h3": ["Manrope"],
+                    "h2": ["Manrope"],
+                    "button": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h1": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-sm": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "700"}],
+                    "h2": ["36px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow {
+            box-shadow: 0px 4px 20px rgba(11, 60, 93, 0.05);
+        }
+        .airy-grid {
+            display: grid;
+            gap: 32px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Hero Section -->
+<header class="relative min-h-[614px] flex items-center justify-center overflow-hidden bg-on-primary-fixed pt-20">
+<div class="absolute inset-0 z-0 opacity-20">
+<img class="w-full h-full object-cover" data-alt="A professional, high-end workspace with blurred tech enthusiasts collaborating in a sleek glass-walled office. The lighting is cool and sophisticated with deep blues and crisp whites. This cinematic shot captures the essence of high-performance community management training within a minimalist, corporate environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASD184gVvXcvEo-DkdcH2z2jWJrTUvwPALKBjSUyy_xJawHORYCUbpHEWpCYNV7VDRGprH1PhACy-rigu2qpB3HLIVeYUoKQtYQJNdhW4l52h2vnSqbPLhH0HIeh3biQmgPkLoNn7oKVsHSTk5uWzg20ll7LpYV2jG3ROuljZsPdchxRiBkdeAoKbiQDv8vdU2sKl6idTLgtzB0KlG-KLYvWnysw9Qt0NMjBLSjrYneS0V2-FRsiwuPZotCEDEf27mXzaJTY6nwA"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<span class="inline-block py-2 px-4 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-full mb-6">CURRICULUM 2024</span>
+<h1 class="font-h1 text-h1 text-white mb-6">Programme Complet : Votre chemin vers l'expertise CM</h1>
+<p class="font-body-lg text-body-lg text-slate-300 max-w-2xl mx-auto mb-10">
+                Une formation intensive structurée en 7 modules stratégiques pour maîtriser l'art du Community Management moderne et les outils de pointe.
+            </p>
+<div class="flex flex-wrap justify-center gap-4">
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-primary-container">verified</span>
+<span class="font-label-sm text-label-sm">Certification Professionnelle</span>
+</div>
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-primary-container">groups</span>
+<span class="font-label-sm text-label-sm">Accès Communauté Privée</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Curriculum Modules Section -->
+<main class="py-section-padding max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Module Navigation (Visual Guidance) -->
+<div class="hidden lg:block lg:col-span-3 sticky top-10">
+<div class="space-y-4">
+<h4 class="font-h3 text-label-sm text-primary uppercase tracking-widest mb-6">Aperçu du parcours</h4>
+<div class="flex flex-col gap-2">
+<a class="p-3 rounded-lg bg-surface-container-high text-primary font-label-sm flex items-center gap-3" href="#module-1">
+<span class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">01</span>
+                            Fondamentaux
+                        </a>
+<a class="p-3 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-sm flex items-center gap-3 transition-colors" href="#module-2">
+<span class="w-6 h-6 rounded-full bg-outline-variant text-white flex items-center justify-center text-[10px]">02</span>
+                            IA &amp; Workflow
+                        </a>
+<a class="p-3 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-sm flex items-center gap-3 transition-colors" href="#module-3">
+<span class="w-6 h-6 rounded-full bg-outline-variant text-white flex items-center justify-center text-[10px]">03</span>
+                            Contenu &amp; Canva
+                        </a>
+<a class="p-3 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-sm flex items-center gap-3 transition-colors" href="#module-4">
+<span class="w-6 h-6 rounded-full bg-outline-variant text-white flex items-center justify-center text-[10px]">04</span>
+                            Ads &amp; Andromeda
+                        </a>
+<a class="p-3 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-sm flex items-center gap-3 transition-colors" href="#module-5">
+<span class="w-6 h-6 rounded-full bg-outline-variant text-white flex items-center justify-center text-[10px]">05</span>
+                            Analytics
+                        </a>
+<a class="p-3 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-sm flex items-center gap-3 transition-colors" href="#module-6">
+<span class="w-6 h-6 rounded-full bg-outline-variant text-white flex items-center justify-center text-[10px]">06</span>
+                            Web &amp; Pratique
+                        </a>
+<a class="p-3 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-sm flex items-center gap-3 transition-colors" href="#module-7">
+<span class="w-6 h-6 rounded-full bg-tertiary-container text-white flex items-center justify-center text-[10px]">07</span>
+                            Conversion (Bonus)
+                        </a>
+</div>
+</div>
+</div>
+<!-- Right Column: Module Detailed Cards -->
+<div class="lg:col-span-9 space-y-16">
+<!-- Module 1 -->
+<section class="bg-white rounded-xl p-8 card-shadow border border-slate-100 flex flex-col md:flex-row gap-8" id="module-1">
+<div class="md:w-1/3">
+<div class="aspect-square rounded-lg bg-surface-container-low flex items-center justify-center overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist workspace featuring a high-resolution tablet displaying abstract colorful data charts and social media platform icons. The setting is a bright, modern studio with natural sunlight and soft shadows, reflecting a professional and strategic marketing atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbffnKf5X991lS2fdfzRuljto_yGHIAZN1W8mlUArzjE6oNsLWAs4sLIbMd0Vp8l7H_p3gbVbkIefvkPX5O7KkydvR2wFHI9CnruvCEPCkXHH9DdA1YpX17cIZRLwB87SGJPWt67ikSLy2ftdodzkd1s75QbRAUzwraplrroSZv_osKkg0zfnJ09ZLfpzWHeqYLyqt-NKb4PBq33d6uhDBh9KqXllgSmnnQ7pswTZJu6vOTGxa3Dr_PYM7H9Lgc1F7k1aN8SzuXg"/>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase">Module 01</span>
+</div>
+</div>
+<div class="md:w-2/3">
+<h3 class="font-h3 text-h3 text-on-background mb-4">Fondamentaux du Community Management</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Comprenez les rouages profonds des réseaux sociaux pour bâtir une stratégie solide et pérenne.</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Élaboration de stratégie social media de A à Z.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Déchiffrage des algorithmes (Instagram, LinkedIn, TikTok).</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Positionnement de marque et étude d'audience.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Module 2 -->
+<section class="bg-white rounded-xl p-8 card-shadow border border-slate-100 flex flex-col md:flex-row gap-8" id="module-2">
+<div class="md:w-1/3">
+<div class="aspect-square rounded-lg bg-surface-container-low flex items-center justify-center overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="Close up of a sleek laptop screen displaying complex artificial intelligence neural network patterns in glowing cyan and white. The background is a dim, high-tech workspace, emphasizing innovation and automation. The lighting is focused and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFw9330QttsXJTyKFbHtEAXHrVk1iTqfyYt30J0FJGVT7U1OuPnjpzfP94ZXBFARiQz6lWHlArvp3muGWEeOrHWPWKTmfUD9leedqQu77RggWOkvXjNgkYQ71tL53TfXk4WpSTj_KcaCtoS-rhzGICH0-r4oQQUTpR8Thl6x8RPb6yEUgbuMI2fUdnzsZ9xen3bDsNqrfhau9R9K9oq4TUonQRoD7HjfpHy1IlRSsGYKJUvOpMuzAxksZd6jJspr9lXnIPIdhSNA"/>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase">Module 02</span>
+</div>
+</div>
+<div class="md:w-2/3">
+<h3 class="font-h3 text-h3 text-on-background mb-4">IA appliquée au Community Management</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Décuplez votre productivité grâce aux dernières avancées de l'intelligence artificielle.</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Prompt Engineering avancé pour ChatGPT et Claude.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Automatisation des workflows répétitifs.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Génération d'idées et de calendriers éditoriaux assistée par IA.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Module 3 -->
+<section class="bg-white rounded-xl p-8 card-shadow border border-slate-100 flex flex-col md:flex-row gap-8" id="module-3">
+<div class="md:w-1/3">
+<div class="aspect-square rounded-lg bg-surface-container-low flex items-center justify-center overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="A stylish graphic designer's desk with two large monitors showing vibrant visual assets and UI layouts. The atmosphere is creative and professional with a soft blue and orange color grade. Pencils and high-quality photography equipment are visible in the shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQU9y67oEPaZv3v3W1L-WnzpZiKz4SI2ooipHkvNQezkPbeXhEijx3MZoNyiCGCPBLhuGVGmTlvrM6-OFUOcG9PUn4_BzoTQ3uymeUFvqMOkd6boqOQQIMRSOhvb6ANcBYDnHau-mfKk12BiCN-c1V53299zHADZ4JAP6iDAnH3d3Hsx3fYQZMseA6VnndCS5Gb1tuE3MLpgvGo7bGZysJZxHTEXkKRxIzkIB1TWhtt0NtsBgupSgvdlkhZs5JL0cFqkEmJsJ0NA"/>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase">Module 03</span>
+</div>
+</div>
+<div class="md:w-2/3">
+<h3 class="font-h3 text-h3 text-on-background mb-4">Création de contenu (Canva &amp; IA)</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Maîtrisez les outils visuels pour créer des contenus qui arrêtent le scroll.</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Design graphique professionnel avec Canva.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Génération d'images et de visuels par IA (Midjourney).</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Montage vidéo court (Reels, TikTok) à fort impact.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Module 4 -->
+<section class="bg-white rounded-xl p-8 card-shadow border border-slate-100 flex flex-col md:flex-row gap-8" id="module-4">
+<div class="md:w-1/3">
+<div class="aspect-square rounded-lg bg-surface-container-low flex items-center justify-center overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="A futuristic advertising control room with multiple holographic screens showing real-time campaign metrics and global reach maps. The color scheme is a deep tech blue and vibrant orange. The mood is powerful and results-oriented, representing high-performance digital advertising." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDz1-VjZrCOLcxUqEfJ57xFwaZStBvDnw5UzdF0UEEfOp-c-XO3wZWl1ce_QULtLHHeqagdmtFFcXW6hl0HetbV52YW1XcayzJWRyCx4HXCoYMztiBYdEJbPGn_YekqZ4nS758CFvD97aaqeicdTjvSyE70qmjiJhzrQN6RGl5ItNHfUbvHdKlFVK2668VjTPMg6TDB42q8nTg0VTwMgJVboH-gDL1WuODM7Z1ZSBhf4iLSq0aulEEOoSFF-FbZxjUCWfit7VRNA"/>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase">Module 04</span>
+</div>
+</div>
+<div class="md:w-2/3">
+<h3 class="font-h3 text-h3 text-on-background mb-4">Publicité et campagnes + Andromeda</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Passez à la vitesse supérieure avec l'acquisition payante et les outils propriétaires.</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Gestion du Ads Manager (Facebook, Instagram, TikTok).</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Exploitation de la puissance d'Andromeda pour vos campagnes.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Optimisation du budget et A/B testing rigoureux.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Module 5 -->
+<section class="bg-white rounded-xl p-8 card-shadow border border-slate-100 flex flex-col md:flex-row gap-8" id="module-5">
+<div class="md:w-1/3">
+<div class="aspect-square rounded-lg bg-surface-container-low flex items-center justify-center overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="A clean data visualization dashboard on a premium desktop screen. Graphs and charts are rendered in shades of blue and success green, showcasing growth and performance. The surrounding environment is a minimalist, airy executive office with soft morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlsd7L13hUdIInbsD_C0vHqYVJqHoZtnt5Khuyoio0tRUwCT_mVf4DwIibPPaFoMC-oC81Gya3WzYYiG6l92eIf_DHaZ7-DkwZbjow4HPd_V-FdkArv05OrR8bnqrYJPraxa-QK3n0H_EAX5LvRYItIMGkWZhPg1AKOra7gT4klktCNidwcQCwb_LdJuReGisXbGRNiTp5z4CuYwm2uzawAyZUqXaJOM8d87dnHff7Vhog-iBcDgYkb4zaWA7X_5cREpQzmVy94g"/>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase">Module 05</span>
+</div>
+</div>
+<div class="md:w-2/3">
+<h3 class="font-h3 text-h3 text-on-background mb-4">Analytics et reporting</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Apprenez à faire parler les chiffres et prouvez la valeur de vos actions.</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Définition et suivi des KPIs stratégiques.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Création de rapports professionnels pour vos clients.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Analyse du ROI et ajustements stratégiques basés sur la data.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Module 6 -->
+<section class="bg-white rounded-xl p-8 card-shadow border border-slate-100 flex flex-col md:flex-row gap-8" id="module-6">
+<div class="md:w-1/3">
+<div class="aspect-square rounded-lg bg-surface-container-low flex items-center justify-center overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="A laptop showing a modern, high-converting landing page under construction. The UI is clean, using whitespace effectively. A smartphone sits next to it, showing the responsive mobile view. The setting is a bright creative studio, highlighting the transition from social media to web presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5RdRvNMaVV8VOOcDyEr2nbxgg12XiLajbT6p6oSF3cSz8AgsWyekrY8H2pUt5dVGwy2b8prUk_m09zSI4HIZ2LSqpS1r6oHt1gc5jN6L93erYuPzaJU27vG9j1uXG2k0hVerDViUdzk9xLZkoSxiqboadYQEXzgK-ArQozM91cJ9roBf28BTQI3STS2aIlsOwhXxdtWXCJWws7NVht_avSKANEzU7oUb92u05cx2uoXT2W7VBkHQqWNkxgoFHHigMp8Guy9bUaQ"/>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase">Module 06</span>
+</div>
+</div>
+<div class="md:w-2/3">
+<h3 class="font-h3 text-h3 text-on-background mb-4">Site web et mise en pratique</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Transformez votre présence sociale en un véritable écosystème web performant.</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Création de Landing Pages optimisées pour la conversion.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Intégration d'outils de tracking et pixels publicitaires.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface">Projets réels pour valider vos acquis techniques.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Module 7 -->
+<section class="bg-tertiary-fixed text-on-tertiary-fixed rounded-xl p-8 card-shadow border-2 border-tertiary-container flex flex-col md:flex-row gap-8 relative overflow-hidden" id="module-7">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-tertiary-container text-white px-3 py-1 rounded-full text-label-sm font-label-sm shadow-sm">BONUS EXCLUSIF</span>
+</div>
+<div class="md:w-1/3">
+<div class="aspect-square rounded-lg bg-tertiary-fixed-dim flex items-center justify-center overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="A charismatic professional delivering a passionate presentation in a high-end corporate meeting room. Warm accent lighting creates a prestigious and energetic mood. The focus is on leadership, personal branding, and elite client acquisition strategies within a modern minimalist setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhPRjBzSEqOpKmcD9hT3FKPOqfpZPySN0oq7g2vWlGr0YzVCWLzeO25SqgxNmxu7D8NqrTRM7Ffjgc1Hlt_FVD9yG_pdBP6LQX2ZPMLW6XS-IR0lkab5ODoK4xJEGYjkrPdjx6mYDK-IfJieBiOngLkYVBZnS3ELfpAvT_roQycEeN7hyaT1E5c69GIPtAlRCDwvihXA3dAJfUGX582FI9bh60ziY1ner61FFoqmTjpMSildRJvfOyZxkJooDLk8k7_nvpMVXrCQ"/>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm text-tertiary uppercase">Module 07</span>
+</div>
+</div>
+<div class="md:w-2/3">
+<h3 class="font-h3 text-h3 mb-4">Techniques de conversion (Vente &amp; Branding)</h3>
+<p class="font-body-md mb-6 opacity-90">Apprenez à vous vendre et à transformer vos abonnés en clients fidèles et engagés.</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container shrink-0">check_circle</span>
+<span class="font-body-md">Développement de votre Personal Branding d'expert.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container shrink-0">check_circle</span>
+<span class="font-body-md">Psychologie de vente et copywriting persuasif.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container shrink-0">check_circle</span>
+<span class="font-body-md">Méthodes d'acquisition de clients premium.</span>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Final CTA Section -->
+<section class="bg-white py-section-padding border-t border-slate-100">
+<div class="max-w-4xl mx-auto px-margin-mobile text-center">
+<h2 class="font-h2 text-h2 text-on-background mb-6">Prêt à commencer ? Rejoignez la prochaine session</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                Ne laissez pas votre carrière au hasard. Maîtrisez les compétences les plus demandées du marché actuel et rejoignez une élite de Community Managers.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="bg-tertiary-container hover:bg-tertiary text-white font-button text-button px-10 py-5 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    Enroll Now
+                </button>
+<button class="border-2 border-primary text-primary hover:bg-primary-container/10 font-button text-button px-10 py-5 rounded-lg transition-all">
+                    Télécharger la brochure
+                </button>
+</div>
+<p class="mt-8 font-label-sm text-label-sm text-outline">Prochaine cohorte : Septembre 2024 • Places limitées à 20 participants.</p>
+</div>
+</section>
+<!-- Floating Badge (Trust Indicator) -->
+<div class="fixed bottom-8 right-8 z-40 hidden md:block">
+<div class="bg-white/80 backdrop-blur-md p-4 rounded-xl card-shadow border border-slate-200 flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">stars</span>
+</div>
+<div>
+<p class="font-label-sm text-[12px] text-on-surface-variant leading-none mb-1">ÉVALUATION MOYENNE</p>
+<div class="flex items-center gap-1">
+<span class="font-h3 text-h3 text-primary leading-none">4.9/5</span>
+<span class="text-tertiary-container material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

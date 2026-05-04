@@ -1,0 +1,482 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "brand": "Free Digital Solutions",
+    "cta": "Let's discuss your project",
+    "tagline": "Let's create something exceptional together"
+  },
+  "hero": {
+    "role": "Community Management & Digital Strategy",
+    "headingPrefix": "We create brands that",
+    "headingGradient": "inspire, engage, and grow",
+    "descriptionPrefix": "I am",
+    "descriptionName": "Yndris Douanla",
+    "descriptionMiddle": "We help brands build a",
+    "descriptionStrong": "strong",
+    "descriptionHuman": "human",
+    "descriptionHigh": "high-performing",
+    "descriptionSuffix": "presence on social media.",
+    "cta": {
+      "services": "Discover my services",
+      "contact": "Let's work together"
+    },
+    "stats": {
+      "brands": "Brands supported",
+      "followers": "Managed followers",
+      "engagement": "Average engagement rate"
+    }
+  },
+  "about": {
+    "heading": {
+      "before": "From",
+      "highlight1": "Technology",
+      "middle": "to",
+      "highlight2": "Communication"
+    },
+    "paragraph1": "Originally a developer, I learned to understand algorithms. Today, I turn them into emotional and growth levers.",
+    "paragraph2": "My approach to community management is analytical, human, and impact-driven. I don't just manage accounts, I build communities that turn brands into movements.",
+    "quote": "Here, creativity meets strategy. Every post is thought out, every community is cultivated, every brand becomes a movement.",
+    "timeline": {
+      "heading": "My Journey",
+      "2019": "Tech Developer",
+      "2021": "Discovery of Digital Marketing",
+      "2023": "Expert Community Manager",
+      "2025": "Digital & Growth Strategist"
+    }
+  },
+  "services": {
+    "titlePrefix": "Services &",
+    "titleGradient": "Premium Offers",
+    "description": "Complete solutions to turn your digital presence into a growth machine",
+    "service1": {
+      "title": "Digital Strategy",
+      "subtitle": "Brand Audit & Positioning",
+      "description": "Comprehensive analysis of networks, competitors, and brand tone to build a winning strategy.",
+      "features": {
+        "feature1": "Full Audit",
+        "feature2": "Unique Positioning",
+        "feature3": "Strategic Roadmap"
+      }
+    },
+    "service2": {
+      "title": "Content Creation (Engaging Content)",
+      "subtitle": "Management & Visual Storytelling",
+      "description": "Creation of visuals, videos, and texts that build a strong and memorable identity.",
+      "features": {
+        "feature1": "Creative Design",
+        "feature2": "Engaging Videos",
+        "feature3": "Impactful Copywriting"
+      }
+    },
+    "service3": {
+      "title": "Growth & Engagement",
+      "subtitle": "Influence Campaigns",
+      "description": "Develop a loyal, active, and qualified audience that transforms your brand into a community.",
+      "features": {
+        "feature1": "Growth Hacking",
+        "feature2": "Community Building",
+        "feature3": "Authentic Engagement"
+      }
+    },
+    "service4": {
+      "title": "Social Advertising",
+      "subtitle": "Meta Ads, TikTok, LinkedIn",
+      "description": "Optimize advertising campaigns to maximize reach and conversions with optimal ROI.",
+      "features": {
+        "feature1": "Precise Targeting",
+        "feature2": "ROI Optimization",
+        "feature3": "Advanced A/B Testing"
+      }
+    },
+    "service5": {
+      "title": "Automation & Performance",
+      "subtitle": "Competitive Monitoring",
+      "description": "Set up reporting tools, alerts, and automatic publishing to gain efficiency.",
+      "features": {
+        "feature1": "Automated Reporting",
+        "feature2": "Real-Time Monitoring",
+        "feature3": "Continuous Optimization"
+      }
+    },
+    "service6": {
+      "title": "Web & App Development",
+      "subtitle": "Modern, fast and optimized websites",
+      "description": "I create professional websites and lightweight applications to strengthen your digital presence.",
+      "features": {
+        "feature1": "Full business website – from 70,000 FCFA",
+        "feature2": "SEO & performance optimization",
+        "feature3": "Maintenance and updates"
+      }
+    },
+    "service7": {
+      "title": "Digital Training & Certifications",
+      "subtitle": "Master Community Management and explore other key digital skills",
+      "description": "Benefit from hands-on training and strategic guidance to develop your expertise in Community Management and prepare for recognized digital certifications, while strengthening your credibility and professional opportunities.",
+      "features": {
+        "feature1": "Training focused on Community Management",
+        "feature2": "Preparation for recognized digital certifications",
+        "feature3": "Personalized support to boost your career"
+      },
+      "price": "By application",
+      "priceRange": "Premium certification preparation programs"
+    },
+    "service8": {
+      "title": "Event & Audiovisual Production",
+      "subtitle": "Capture and elevate your events",
+      "description": "We create professional visual content to capture your events and enhance your brand image. From shooting to post-production, we deliver impactful content you can reuse for your communication.",
+      "features": {
+        "feature1": "Professional photography & premium retouching",
+        "feature2": "Video shooting & cinematic editing",
+        "feature3": "Content optimized for social media"
+      },
+      "price": "On request",
+      "priceRange": "Starting from 50,000 FCFA"
+    },
+    "service9": {
+      "title": "Community Management",
+      "subtitle": "Grow and engage your community",
+      "description": "We manage your social networks to build an active audience, increase your visibility, and build customer loyalty on a daily basis.",
+      "features": {
+        "feature1": "Custom content creation and scheduling",
+        "feature2": "Daily moderation and audience interaction",
+        "feature3": "Performance analysis and monthly reporting"
+      },
+      "price": "Custom quote",
+      "priceRange": "Monthly package"
+    },
+    "learnMore": "Learn more",
+    "cta": "Book a free strategy session"
+  },
+  "cases": {
+    "titlePrefix": "Results",
+    "titleGradient": "That Matter",
+    "description": "Brands transformed, communities built, measurable results",
+    "challenge": "Challenge",
+    "strategy": "Strategy",
+    "results": "Results",
+    "case1": {
+      "title": "Tech Brand Launch on Instagram",
+      "category": "Tech Startup",
+      "challenge": "Build a digital presence from scratch",
+      "strategy": "Educational content strategy + targeted collaborations + authentic storytelling",
+      "quote": "Free Digital transformed our vision into an engaged community. His strategic approach exceeded all expectations.",
+      "results": {
+        "followers": {
+          "label": "Followers",
+          "period": "in 3 months"
+        },
+        "engagement": {
+          "label": "Engagement Rate",
+          "period": "average"
+        },
+        "reach": {
+          "label": "Monthly Reach",
+          "period": "impressions"
+        }
+      }
+    },
+    "case2": {
+      "title": "LinkedIn B2B Engagement Campaign",
+      "category": "Marketing Agency",
+      "challenge": "Improve visibility and generate qualified leads",
+      "strategy": "Thought leadership + premium content + active engagement with decision makers",
+      "quote": "Rare B2B expertise. The results speak for themselves.",
+      "results": {
+        "interactions": {
+          "label": "Interactions",
+          "period": "vs previous period"
+        },
+        "leads": {
+          "label": "Qualified Leads",
+          "period": "per month"
+        },
+        "conversion": {
+          "label": "Conversion Rate",
+          "period": "leads to clients"
+        }
+      }
+    },
+    "case3": {
+      "title": "Strategic Communication Redesign",
+      "category": "Fashion E-commerce",
+      "challenge": "Revitalize a dormant brand on social media",
+      "strategy": "Complete repositioning + UGC strategy + multi-platform creative campaigns",
+      "quote": "Free Digital brought our brand back to life. The impact on sales was immediate.",
+      "results": {
+        "traffic": {
+          "label": "Social Traffic",
+          "period": "to site"
+        },
+        "community": {
+          "label": "Community",
+          "period": "new followers"
+        },
+        "sales": {
+          "label": "Sales",
+          "period": "via social"
+        }
+      }
+    }
+  },
+  "contact": {
+    "titlePrefix": "Ready to bring your",
+    "titleGradient": "community",
+    "description": "Let's build a strategy together that makes your audience's heart beat",
+    "connect": {
+      "title": "Let's connect",
+      "emailLabel": "Email",
+      "emailValue": "contact@freedry.dev",
+      "followTitle": "Follow me",
+      "phone": "Phone",
+      "socialLinks": {
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "twitter": "Twitter / X",
+        "email": "Email"
+      }
+    },
+    "whyWorkWithMe": {
+      "title": "Why work with me?",
+      "features": {
+        "feature1": "Data-driven and creative approach",
+        "feature2": "Measurable and transparent results",
+        "feature3": "Multi-platform expertise",
+        "feature4": "Personalized support"
+      }
+    },
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "submitButton": {
+        "default": "Let's discuss your project",
+        "submitted": "Message sent successfully!"
+      }
+    }
+  },
+  "preselectionForm": {
+    "title": "📝 Preselection Form – Community Managers Training",
+    "sessionInfo": "Session on <1>March 28, 2026</1> – 3 months to become a professional CM!",
+    "personalInfo": "🧑‍💼 Personal Information",
+    "placeholders": {
+      "name": "Full Name",
+      "whatsapp": "WhatsApp Number",
+      "email": "Email Address",
+      "city": "City / Country",
+      "age": "Age"
+    },
+    "profileObjective": "🎯 Profile & Objective",
+    "objectiveOptions": {
+      "placeholder": "What is your main objective?",
+      "emploi": "Find a job",
+      "freelance": "Work as a freelancer",
+      "business": "Develop my business",
+      "competences": "Improve my current skills",
+      "incertain": "Not sure yet"
+    },
+    "experienceOptions": {
+      "placeholder": "Experience in CM / digital marketing",
+      "aucune": "None",
+      "debutant": "Beginner",
+      "intermediaire": "Intermediate",
+      "avance": "Advanced"
+    },
+    "availabilityTitle": "⏱️ Availability & Commitment",
+    "availabilityOptions": {
+      "placeholder": "Attend full training?",
+      "oui": "Yes",
+      "non": "No"
+    },
+    "exercisesOptions": {
+      "placeholder": "Ready for weekly exercises?",
+      "oui": "Yes",
+      "non": "No"
+    },
+    "formatOptions": {
+      "placeholder": "Preferred format",
+      "presentiel": "In-person",
+      "enligne": "Online"
+    },
+    "equipmentTitle": "💻 Equipment & Access",
+    "motivationTitle": "🧠 Motivation",
+    "motivationPlaceholder": "Why do you want to take this training?",
+    "practicalTestTitle": "🧪 Practical Task",
+    "practicalTestDesc1": "You are part of a group where people share personal stories every Friday.",
+    "practicalTestDesc2": "The founder wants a safe online space for those who are afraid to speak publicly.",
+    "practicalTestQuestion": "Which tool would you recommend to create this safe online space?",
+    "practicalTestOptions": [
+      "Page",
+      "Public Instagram Account",
+      "Public Group",
+      "Private Group"
+    ],
+    "creativityTitle": "✍️ Creativity & Expression",
+    "creativityPlaceholder": "Write a short message inviting people to subscribe.",
+    "payFeesOptions": {
+      "placeholder": "Ready to pay registration fees?",
+      "oui": "Yes",
+      "non": "No"
+    },
+    "submitButton": "Submit my application"
+  },
+  "trainingAnnouncement": {
+    "title": "Community Managers Training – Session on {{date}}! Become a professional CM in 3 months",
+    "subtitle": "Personalized guidance, practical exercises, and a certificate of completion",
+    "button": "I want my spot"
+  },
+  "footer": {
+    "about": "Digital agency specialized in strategy, content creation and performance marketing. We transform brands into powerful growth engines.",
+    "services": "Services",
+    "contact": "Contact",
+    "why": "Why Choose Us?",
+    "why1": "30+ brands supported",
+    "why2": "Measurable ROI",
+    "why3": "Tailored strategies",
+    "why4": "Fast & responsive support",
+    "processTitle": "Our Growth Framework",
+    "processSubtitle": "We don’t just do marketing. We build scalable growth systems that turn your vision into measurable results.",
+    "step1": "Business Plan & Positioning",
+    "step1Desc": "We clarify your vision, define your competitive edge and build a strong foundation for growth.",
+    "step2": "Content Strategy",
+    "step2Desc": "We craft powerful storytelling that attracts, engages and creates emotional connection.",
+    "step3": "Campaign Strategy",
+    "step3Desc": "We launch optimized campaigns designed to generate visibility, traffic and authority.",
+    "step4": "Conversion Strategy & Sales Techniques",
+    "step4Desc": "We turn attention into customers through strategic conversion engineering and proven sales techniques.",
+    "legal": "Legal Notice",
+    "privacy": "Privacy Policy",
+    "cgv": "Terms & Conditions"
+  },
+  "legal": {
+    "title": "Legal Notice",
+    "intro": "Welcome to Free Digital Solutions' website. This site is operated by our startup in development. We provide below essential information for your transparency.",
+    "companyTitle": "Company Information",
+    "companyInfo": "Free Digital Solutions\nStartup in development, Yaoundé, Cameroon",
+    "directorTitle": "Publishing Director",
+    "directorInfo": "Yndris Douanla, Founder of Free Digital Solutions",
+    "hostTitle": "Website Hosting",
+    "hostInfo": "Host: Vercel – Site deployed on the Vercel platform, global cloud for modern applications.",
+    "copyrightTitle": "Intellectual Property",
+    "copyrightInfo": "All content on this site (texts, images, videos, logos and trademarks) is the property of Free Digital Solutions or its partners. Reproduction is prohibited without permission.",
+    "dataTitle": "Personal Data",
+    "dataInfo": "Information collected via this site is used solely within the scope of our services and in compliance with GDPR. You can request access, correction or deletion of your data at any time.",
+    "contactTitle": "Contact",
+    "contactInfo": "For any questions regarding this site or your data, please contact us at: contact@freedry.dev"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": "Welcome to Free Digital Solutions' website. Your privacy is important to us. This page explains how we collect, use and protect your personal information.",
+    "collectTitle": "Personal Data Collection",
+    "collectInfo": "We only collect necessary information through contact forms, newsletter subscriptions, or services on our site. This includes your name, email, and any information you choose to provide.",
+    "useTitle": "Use of Data",
+    "useInfo": "Collected data is used solely to provide our services, respond to your inquiries, and send relevant information. We do not sell or share your data with third parties for commercial purposes.",
+    "cookiesTitle": "Cookies and Similar Technologies",
+    "cookiesInfo": "Our site may use cookies to enhance user experience, analyze traffic, and personalize content. You can manage your cookie preferences directly in your browser.",
+    "shareTitle": "Sharing and Security",
+    "shareInfo": "We implement technical and organizational measures to protect your data. Your information is only shared with trusted partners to ensure the proper functioning of our services.",
+    "rightsTitle": "Your Rights",
+    "rightsInfo": "Under GDPR, you have the right to access, rectify, delete, and object to the processing of your personal data. You can exercise these rights by contacting us directly.",
+    "contactTitle": "Contact",
+    "contactInfo": "For any questions regarding this policy or your data, please contact us at: contact@freedry.dev"
+  },
+  "sections": [
+    {
+      "title": "Our Integrated Strategic Approach",
+      "description": "Every step of our approach is designed to create a growth ecosystem around your brand. From strategic positioning to creating captivating content, we connect all actions to maximize your impact.",
+      "description2": "We provide full support: high-performing campaigns, continuous analysis, optimized conversion, and building a loyal audience that follows and loves you. Every step works in synergy to strengthen your presence and develop an engaged community."
+    },
+    {
+      "title": "Free Yourself from Social Media Stress",
+      "description": "Do your social media channels require constant time and attention? Let our team of experts handle it for you. We publish, analyze, and adjust your content to create maximum impact with every post.",
+      "description2": "With us, your audience grows naturally, and your followers become true fans. Every interaction strengthens their attachment to your brand and boosts your visibility."
+    },
+    {
+      "title": "Take Your Brand to the Next Level",
+      "description": "We analyze your data to discover what really works and what can be improved. Every action is designed to boost your visibility and engagement.",
+      "description2": "Thanks to our continuous optimization, your brand evolves quickly, stays ahead of competitors, and attracts a loyal, active audience."
+    },
+    {
+      "title": "Turn Your Followers into True Ambassadors",
+      "description": "We create interactive and engaging campaigns that capture your audience's attention and encourage participation.",
+      "description2": "Every interaction strengthens follower loyalty and naturally increases your visibility. Result: a strong, active community that talks about you."
+    }
+  ],
+  "testimonials": {
+    "sectionTitle1": "Our clients",
+    "sectionTitle2": "speak",
+    "sectionDescription": "Concrete results, campaigns that convert, satisfied entrepreneurs.",
+    "stats": {
+      "prospects": "Converted leads",
+      "campaigns": "Successful campaigns",
+      "satisfiedClients": "Satisfied clients",
+      "appointments": "Appointments/month"
+    },
+    "carousel": {
+      "starsLabel": "5 stars",
+      "previous": "Previous testimonial",
+      "next": "Next testimonial",
+      "dotLabel": "Testimonial {{index}}"
+    },
+    "cta": {
+      "button": "Contact us",
+      "description": "Join our satisfied clients"
+    },
+    "quotes": [
+      {
+        "name": "Bema",
+        "quote": "At first I just wanted to try, but I was surprised to have 15 sales and 30 confirmed appointments in the same month.",
+        "highlights": [
+          {
+            "label": "Sales"
+          },
+          {
+            "label": "Confirmed appointments"
+          }
+        ]
+      },
+      {
+        "name": "CDE Global",
+        "quote": "I was in the shadows and Free Digital showed me the power of advertising campaigns. Today, every month I have sales, even with dropshipping.",
+        "highlights": []
+      },
+      {
+        "name": "Yndris",
+        "quote": "I already believed in it, but with precise targeting and optimal ROI I was able to reach my goals even with the smallest possible budget.",
+        "highlights": []
+      },
+      {
+        "name": "Cuisine Facile",
+        "quote": "I couldn't imagine having 300 leads in one month with my small budget.",
+        "highlights": [
+          {
+            "label": "Leads"
+          }
+        ]
+      },
+      {
+        "name": "Patrice",
+        "quote": "I trust in the power of Free, I was able to get my first clients in Cambodia and Germany.",
+        "highlights": []
+      },
+      {
+        "name": "Restau Lan 300",
+        "quote": "I launched a training and didn't know how to get participants. In less than two weeks, with a targeted and optimized campaign, I was able to get 10 candidates in Yaoundé and 15 in Douala. Thanks Free!",
+        "highlights": [
+          {
+            "label": "Yaoundé candidates"
+          },
+          {
+            "label": "Douala candidates"
+          }
+        ]
+      }
+    ]
+  }
+}
