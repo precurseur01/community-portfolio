@@ -198,7 +198,7 @@ export default function CMTrainingHero() {
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button
-                  onClick={() => navigate('/growth/cm-programs')}
+                  onClick={() => navigate('/preselection')}
                   className="animate-shimmer group flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 active:scale-95"
                   style={{ background: 'linear-gradient(135deg, #09A9E3, #50BC74, #FF8C42)' }}
                 >
