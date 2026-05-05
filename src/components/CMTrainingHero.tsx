@@ -206,7 +206,7 @@ export default function CMTrainingHero() {
                   Je réserve ma place
                 </button>
               </div>
-              
+
               <div className="flex items-center gap-2 text-sm text-gray-500">
                 <CheckCircle size={15} style={{ color: '#50BC74' }} />
                 <span>Inscription rapide</span>
@@ -282,7 +282,7 @@ export default function CMTrainingHero() {
             <div className="absolute top-4 left-4 bg-[#FF8C42] text-white rounded-full px-5 py-2.5 flex items-center gap-3 shadow-xl flex animate-bounce" style={{ animationDuration: '4s' }}>
               <div className="w-2.5 h-2.5 rounded-full bg-white animate-pulse shadow-sm flex-shrink-0" />
               <div className="flex flex-col -space-y-0.5">
-                <span className="text-[9px] uppercase font-bold opacity-80 tracking-wider">Prochaine session</span>
+                <span className="text-[11px] font-bold text-[#0B3C5D]">Prochaine session</span>
                 <span className="text-sm font-black tracking-tight">04 JUILLET 2026</span>
               </div>
             </div>
@@ -290,7 +290,7 @@ export default function CMTrainingHero() {
             {/* Decorative float element */}
             <div className="absolute -bottom-6 -right-6 bg-[#FF8C42] text-white p-6 rounded-2xl shadow-xl hidden lg:block animate-bounce" style={{ animationDuration: '3s' }}>
               <div className="text-3xl font-bold mb-1">98%</div>
-              <div className="text-xs uppercase tracking-wider opacity-80">Satisfaction</div>
+              <div className="text-xs uppercase tracking-wider opacity-80 font-bold">Satisfaction</div>
             </div>
           </div>
 
