@@ -14,6 +14,9 @@ import bg3 from "../assets/img/bg3.jfif"
 import bg4 from "../assets/img/bg4.jfif"
 import bg5 from "../assets/img/bg5.jfif"
 import ifpit from "../assets/img/ifpit.png"
+import hero_cm_1 from "../assets/img/hero_cm_1.png"
+import hero_cm_2 from "../assets/img/hero_cm_2.png"
+import hero_cm_3 from "../assets/img/hero_cm_3.png"
 
 
 //avatar
@@ -50,7 +53,9 @@ const Img = {
     avatar5,
     avatar6,
     avatar7,
-
+    hero_cm_1,
+    hero_cm_2,
+    hero_cm_3,
 };
 
 export default Img;

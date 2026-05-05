@@ -245,7 +245,7 @@ export default function CMProgramsPage() {
             Des programmes adaptés à tous les niveaux, du débutant à l'expert, pour transformer votre carrière dans le digital.
           </p>
           <button
-            onClick={() => navigate('/preselection')}
+            onClick={() => window.scrollTo({ top: 500, behavior: 'smooth' })}
             className="inline-flex items-center gap-2 px-10 py-5 rounded-full font-bold text-white text-lg shadow-xl transition-all hover:shadow-2xl hover:-translate-y-0.5 active:scale-95"
             style={{ background: 'linear-gradient(135deg, #FF8C42, #e67000)' }}
           >
