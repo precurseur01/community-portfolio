@@ -17,18 +17,18 @@ interface Program {
 const presentialPrograms: Program[] = [
   {
     badge: 'Starter', badgeEmoji: '🥉',
-    name: 'Free Start',
-    desc: 'Apprenez les bases fondamentales du métier de CM et la gestion de communauté.',
-    scheduleLines: ['Lun 9h-12h | 13h-16h', 'Mar 9h-12h | 13h-16h'],
-    highlight: '15h / semaine',
+    name: 'Free Start Digital',
+    desc: 'Formation complète pour apprendre en profondeur, étape par étape. (Durée: 3 mois)',
+    scheduleLines: ['Mer & Sam: 09h-12h | 13h-16h', 'Rythme: 12h / semaine'],
+    highlight: '110 000 FCFA',
     tier: 'starter',
   },
   {
     badge: 'Growth', badgeEmoji: '🥈',
-    name: 'Free Boost',
-    desc: 'Optimisation de stratégie, content marketing et mise à jour des compétences.',
-    scheduleLines: ['Lun 14h-17h | 18h-21h', 'Mer 14h-17h | 18h-21h'],
-    highlight: '20h / semaine',
+    name: 'Free Boost Digital (Soir)',
+    desc: 'Idéal pour obtenir des résultats rapidement avec un rythme intensif. (Durée: 2 mois)',
+    scheduleLines: ['Mer & Sam: 17h00 - 20h00', 'Rythme: 6h / semaine'],
+    highlight: '150 000 FCFA',
     tier: 'growth',
   },
   {
@@ -68,10 +68,10 @@ const onlinePrograms: Program[] = [
   },
   {
     badge: 'Growth', badgeEmoji: '🥈',
-    name: 'Free Boost Online',
-    desc: 'Stratégie et content marketing en ligne.',
-    scheduleLines: ['Mar 18h-20h (Live)', 'Jeu 18h-20h (Workshop)'],
-    highlight: 'Accès 1 an',
+    name: 'Free Boost Digital (En ligne)',
+    desc: 'Même programme accéléré, accessible partout. (Durée: 2 mois)',
+    scheduleLines: ['Lun, Mar, Jeu: 19h00 - 21h00', 'Rythme: 6h / semaine'],
+    highlight: '150 000 FCFA',
     tier: 'growth',
   },
   {
@@ -198,7 +198,7 @@ function ProgramCard({ program, compact = false, icon }: { program: Program; com
         <button
           onClick={() => navigate('/preselection')}
           className="w-full py-2.5 rounded-xl font-bold text-sm transition-all active:scale-95 hover:opacity-90 flex items-center justify-center gap-1.5"
-          style={{ background: 'linear-gradient(135deg, #FF8C42, #e67000)', color: '#ffffff' }}
+          style={{ background: 'linear-gradient(135deg, #09A9E3, #50BC74, #FF8C42)', color: '#ffffff' }}
         >
           S'inscrire
           <ArrowRight size={14} />
@@ -247,7 +247,7 @@ export default function CMProgramsPage() {
           <button
             onClick={() => window.scrollTo({ top: 500, behavior: 'smooth' })}
             className="inline-flex items-center gap-2 px-10 py-5 rounded-full font-bold text-white text-lg shadow-xl transition-all hover:shadow-2xl hover:-translate-y-0.5 active:scale-95"
-            style={{ background: 'linear-gradient(135deg, #FF8C42, #e67000)' }}
+            style={{ background: 'linear-gradient(135deg, #09A9E3, #50BC74, #FF8C42)' }}
           >
             🚀 Je choisis mon programme
           </button>
@@ -334,7 +334,7 @@ export default function CMProgramsPage() {
               <button
                 onClick={() => navigate('/preselection')}
                 className="px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-all active:scale-95 hover:shadow-xl"
-                style={{ background: '#FF8C42', color: '#ffffff' }}
+                style={{ background: 'linear-gradient(135deg, #09A9E3, #50BC74, #FF8C42)', color: '#ffffff' }}
               >
                 Parler à un expert
               </button>

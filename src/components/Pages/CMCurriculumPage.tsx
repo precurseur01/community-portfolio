@@ -287,7 +287,7 @@ export default function CMCurriculumPage() {
             <button
               onClick={() => navigate('/preselection')}
               className="px-10 py-4 rounded-xl font-bold text-white text-lg shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5 active:scale-95 flex items-center gap-2"
-              style={{ background: 'linear-gradient(135deg, #FF8C42, #e67000)' }}
+              style={{ background: 'linear-gradient(135deg, #09A9E3, #50BC74, #FF8C42)' }}
             >
               Je m'inscris maintenant
               <ArrowRight size={18} />
