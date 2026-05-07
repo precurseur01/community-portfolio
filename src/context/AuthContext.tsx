@@ -6,7 +6,7 @@ import { authApi } from '../services/api';
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 interface AuthResult {
-  error: AuthError | null;
+  error: AuthError | Error | null;
 }
 
 interface AuthContextValue {
@@ -59,11 +59,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const response = await authApi.login({ email, password });
       if (response.success && response.data.session) {
         const { error } = await supabase.auth.setSession(response.data.session);
-        return { error: error as any };
+        return { error };
       }
-      return { error: { message: "Erreur lors de la connexion" } as any };
-    } catch (error: any) {
-      return { error: { message: error.message } as any };
+      return { error: new Error("Erreur lors de la connexion") };
+    } catch (error: unknown) {
+      return { error: error instanceof Error ? error : new Error(String(error)) };
     }
   }, []);
 
@@ -73,9 +73,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (response.success) {
         return { error: null };
       }
-      return { error: { message: "Erreur lors de l'inscription" } as any };
-    } catch (error: any) {
-      return { error: { message: error.message } as any };
+      return { error: new Error("Erreur lors de l'inscription") };
+    } catch (error: unknown) {
+      return { error: error instanceof Error ? error : new Error(String(error)) };
     }
   }, []);
 

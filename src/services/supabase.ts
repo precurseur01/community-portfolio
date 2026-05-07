@@ -1,14 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined;
-const supabaseAnonKey = (import.meta.env.VITE_SUPABASE_ANON_KEY || import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY) as string | undefined;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string | undefined;
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.warn(
     '[Supabase] Variables d\'environnement manquantes.\n' +
     'Crée un fichier .env à la racine du projet avec :\n' +
     '  VITE_SUPABASE_URL=https://xxxx.supabase.co\n' +
-    '  VITE_SUPABASE_ANON_KEY=eyJhbGci...\n' +
+    '  VITE_SUPABASE_PUBLISHABLE_KEY=sb_publishable_xxxx...\n' +
     'L\'authentification est désactivée en mode développement sans ces variables.'
   );
 }
