@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { ArrowRight, Calendar, Cloud, Award, Globe } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
 interface Program {
-  badge: string;
+  badgeKey: string;
   badgeEmoji: string;
   name: string;
   desc: string;
@@ -13,92 +14,6 @@ interface Program {
   highlight: string;
   tier: 'starter' | 'growth' | 'pro' | 'elite' | 'empire';
 }
-
-const presentialPrograms: Program[] = [
-  {
-    badge: 'Starter', badgeEmoji: '🥉',
-    name: 'Free Start Digital',
-    desc: 'Formation complète pour apprendre en profondeur, étape par étape. (Durée: 3 mois)',
-    scheduleLines: ['Mer & Sam: 09h-12h | 13h-16h', 'Rythme: 12h / semaine'],
-    highlight: '110 000 FCFA',
-    tier: 'starter',
-  },
-  {
-    badge: 'Growth', badgeEmoji: '🥈',
-    name: 'Free Boost Digital (Soir)',
-    desc: 'Idéal pour obtenir des résultats rapidement avec un rythme intensif. (Durée: 2 mois)',
-    scheduleLines: ['Mer & Sam: 17h00 - 20h00', 'Rythme: 6h / semaine'],
-    highlight: '150 000 FCFA',
-    tier: 'growth',
-  },
-  {
-    badge: 'Professional', badgeEmoji: '🥇',
-    name: 'Free Pro',
-    desc: 'Maîtrise complète du métier, du planning éditorial aux outils d\'automatisation.',
-    scheduleLines: ['Lun-Mer 9h-12h | 14h-18h', 'Jeu-Ven 9h-12h | 14h-18h'],
-    highlight: '35h / semaine',
-    tier: 'pro',
-  },
-  {
-    badge: 'Elite', badgeEmoji: '💎',
-    name: 'Free Elite',
-    desc: 'Performance avancée, publicité payante et monétisation de communauté.',
-    scheduleLines: ['Lun-Ven 9h-13h | 14h-18h', 'Sam 10h-13h | Coaching 1:1'],
-    highlight: '40h / semaine',
-    tier: 'elite',
-  },
-  {
-    badge: 'Empire', badgeEmoji: '👑',
-    name: 'Free Empire',
-    desc: 'Expertise ultime, gestion d\'agence et passage à l\'échelle business.',
-    scheduleLines: ['Accès VIP 24h/24 | 7j/7', 'Session Stratégie Mensuelle'],
-    highlight: 'Accès VIP 24/7',
-    tier: 'empire',
-  },
-];
-
-const onlinePrograms: Program[] = [
-  {
-    badge: 'Starter', badgeEmoji: '🥉',
-    name: 'Free Start Online',
-    desc: 'Bases en ligne à votre rythme.',
-    scheduleLines: ['Lun 9h-12h | 13h-16h', 'Mar 9h-12h | 13h-16h'],
-    highlight: 'Libre accès',
-    tier: 'starter',
-  },
-  {
-    badge: 'Growth', badgeEmoji: '🥈',
-    name: 'Free Boost Digital (En ligne)',
-    desc: 'Même programme accéléré, accessible partout. (Durée: 2 mois)',
-    scheduleLines: ['Lun, Mar, Jeu: 19h00 - 21h00', 'Rythme: 6h / semaine'],
-    highlight: '150 000 FCFA',
-    tier: 'growth',
-  },
-  {
-    badge: 'Pro', badgeEmoji: '🥇',
-    name: 'Free Pro Online',
-    desc: 'Maîtrise complète en ligne avec mentor.',
-    scheduleLines: ['Lun 17h (Coaching)', 'Ven 16h (Review)'],
-    highlight: 'Mentor dédié',
-    tier: 'pro',
-  },
-  {
-    badge: 'Elite', badgeEmoji: '💎',
-    name: 'Free Elite Online',
-    desc: 'Performance avancée avec mastermind privé.',
-    scheduleLines: ['Mer 19h (Masterclass)', 'Sam 11h (Q&A Session)'],
-    highlight: 'Mastermind Privé',
-    tier: 'elite',
-  },
-  {
-    badge: 'Empire', badgeEmoji: '👑',
-    name: 'Free Empire Online',
-    desc: 'Expertise ultime avec consulting mensuel.',
-    scheduleLines: ['Accès VIP 24h/24 | 7j/7', 'Consulting 1:1 Planifié'],
-    highlight: 'Consulting Mensuel',
-    tier: 'empire',
-  },
-];
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
@@ -136,6 +51,7 @@ const tierStyles: Record<string, { badge: React.CSSProperties; card: React.CSSPr
 };
 
 function ProgramCard({ program, compact = false, icon }: { program: Program; compact?: boolean; icon?: React.ReactNode }) {
+  const { t } = useTranslation();
   const s = tierStyles[program.tier];
   const isPremium = program.tier === 'elite' || program.tier === 'empire';
   const textColor = isPremium ? '#ffffff' : '#0B3C5D';
@@ -153,17 +69,17 @@ function ProgramCard({ program, compact = false, icon }: { program: Program; com
       {/* Premium crown label */}
       {program.tier === 'elite' && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-white"
-          style={{ background: '#09A9E3' }}>Premium</div>
+          style={{ background: '#09A9E3' }}>{t('programs.premiumLabel')}</div>
       )}
       {program.tier === 'empire' && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-white"
-          style={{ background: '#FF8C42' }}>Mastery</div>
+          style={{ background: '#FF8C42' }}>{t('programs.masteryLabel')}</div>
       )}
 
       {/* Header row */}
       <div className="flex items-center justify-between mb-3">
         <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold" style={s.badge}>
-          {program.badgeEmoji} {program.badge.toUpperCase()}
+          {program.badgeEmoji} {t(`programs.tiers.${program.badgeKey}`).toUpperCase()}
         </span>
         {icon && <span className="opacity-60">{icon}</span>}
       </div>
@@ -200,7 +116,7 @@ function ProgramCard({ program, compact = false, icon }: { program: Program; com
           className="w-full py-2.5 rounded-xl font-bold text-sm transition-all active:scale-95 hover:opacity-90 flex items-center justify-center gap-1.5"
           style={{ background: 'linear-gradient(135deg, #09A9E3, #50BC74, #FF8C42)', color: '#ffffff' }}
         >
-          S'inscrire
+          {t('programs.register')}
           <ArrowRight size={14} />
         </button>
       </div>
@@ -211,11 +127,98 @@ function ProgramCard({ program, compact = false, icon }: { program: Program; com
 // ─── Main Page ───────────────────────────────────────────────────────────────
 
 export default function CMProgramsPage() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const presentialPrograms: Program[] = [
+    {
+      badgeKey: 'starter', badgeEmoji: '🥉',
+      name: t('programs.list.presential.start.name'),
+      desc: t('programs.list.presential.start.desc'),
+      scheduleLines: t('programs.list.presential.start.scheduleLines', { returnObjects: true }) as string[],
+      highlight: t('programs.list.presential.start.highlight'),
+      tier: 'starter',
+    },
+    {
+      badgeKey: 'growth', badgeEmoji: '🥈',
+      name: t('programs.list.presential.boost.name'),
+      desc: t('programs.list.presential.boost.desc'),
+      scheduleLines: t('programs.list.presential.boost.scheduleLines', { returnObjects: true }) as string[],
+      highlight: t('programs.list.presential.boost.highlight'),
+      tier: 'growth',
+    },
+    {
+      badgeKey: 'pro', badgeEmoji: '🥇',
+      name: t('programs.list.presential.pro.name'),
+      desc: t('programs.list.presential.pro.desc'),
+      scheduleLines: t('programs.list.presential.pro.scheduleLines', { returnObjects: true }) as string[],
+      highlight: t('programs.list.presential.pro.highlight'),
+      tier: 'pro',
+    },
+    {
+      badgeKey: 'elite', badgeEmoji: '💎',
+      name: t('programs.list.presential.elite.name'),
+      desc: t('programs.list.presential.elite.desc'),
+      scheduleLines: t('programs.list.presential.elite.scheduleLines', { returnObjects: true }) as string[],
+      highlight: t('programs.list.presential.elite.highlight'),
+      tier: 'elite',
+    },
+    {
+      badgeKey: 'empire', badgeEmoji: '👑',
+      name: t('programs.list.presential.empire.name'),
+      desc: t('programs.list.presential.empire.desc'),
+      scheduleLines: t('programs.list.presential.empire.scheduleLines', { returnObjects: true }) as string[],
+      highlight: t('programs.list.presential.empire.highlight'),
+      tier: 'empire',
+    },
+  ];
+
+  const onlinePrograms: Program[] = [
+    {
+      badgeKey: 'starter', badgeEmoji: '🥉',
+      name: t('programs.list.online.start.name'),
+      desc: t('programs.list.online.start.desc'),
+      scheduleLines: t('programs.list.online.start.scheduleLines', { returnObjects: true }) as string[],
+      highlight: t('programs.list.online.start.highlight'),
+      tier: 'starter',
+    },
+    {
+      badgeKey: 'growth', badgeEmoji: '🥈',
+      name: t('programs.list.online.boost.name'),
+      desc: t('programs.list.online.boost.desc'),
+      scheduleLines: t('programs.list.online.boost.scheduleLines', { returnObjects: true }) as string[],
+      highlight: t('programs.list.online.boost.highlight'),
+      tier: 'growth',
+    },
+    {
+      badgeKey: 'pro', badgeEmoji: '🥇',
+      name: t('programs.list.online.pro.name'),
+      desc: t('programs.list.online.pro.desc'),
+      scheduleLines: t('programs.list.online.pro.scheduleLines', { returnObjects: true }) as string[],
+      highlight: t('programs.list.online.pro.highlight'),
+      tier: 'pro',
+    },
+    {
+      badgeKey: 'elite', badgeEmoji: '💎',
+      name: t('programs.list.online.elite.name'),
+      desc: t('programs.list.online.elite.desc'),
+      scheduleLines: t('programs.list.online.elite.scheduleLines', { returnObjects: true }) as string[],
+      highlight: t('programs.list.online.elite.highlight'),
+      tier: 'elite',
+    },
+    {
+      badgeKey: 'empire', badgeEmoji: '👑',
+      name: t('programs.list.online.empire.name'),
+      desc: t('programs.list.online.empire.desc'),
+      scheduleLines: t('programs.list.online.empire.scheduleLines', { returnObjects: true }) as string[],
+      highlight: t('programs.list.online.empire.highlight'),
+      tier: 'empire',
+    },
+  ];
 
   return (
     <div className="min-h-screen" style={{ background: '#f8faff', fontFamily: "'Inter', sans-serif" }}>
@@ -234,22 +237,21 @@ export default function CMProgramsPage() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <span className="inline-block mb-5 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest"
             style={{ background: '#e6f7fd', color: '#09A9E3', border: '1px solid #b3e6f7' }}>
-            Éducation de Performance
+            {t('programs.educationPerformance')}
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-5 leading-tight"
             style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
-            Choisis ton niveau et deviens{' '}
-            <span style={{ color: '#09A9E3' }}>Community Manager professionnel</span>
+            {t('programs.heroTitle')}
           </h1>
           <p className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Des programmes adaptés à tous les niveaux, du débutant à l'expert, pour transformer votre carrière dans le digital.
+            {t('programs.heroSubtitle')}
           </p>
           <button
             onClick={() => window.scrollTo({ top: 500, behavior: 'smooth' })}
             className="inline-flex items-center gap-2 px-10 py-5 rounded-full font-bold text-white text-lg shadow-xl transition-all hover:shadow-2xl hover:-translate-y-0.5 active:scale-95"
             style={{ background: 'linear-gradient(135deg, #09A9E3, #50BC74, #FF8C42)' }}
           >
-            🚀 Je choisis mon programme
+            🚀 {t('programs.chooseProgram')}
           </button>
         </div>
       </section>
@@ -261,11 +263,11 @@ export default function CMProgramsPage() {
             <Award size={28} style={{ color: '#FF8C42' }} />
             <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-wide"
               style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
-              Programmes Présentiels
+              {t('programs.presentialTitle')}
             </h2>
           </div>
           <p className="text-gray-500 max-w-xl">
-            L'immersion totale avec nos coachs experts pour une montée en compétences accélérée.
+            {t('programs.presentialSubtitle')}
           </p>
         </div>
 
@@ -285,21 +287,21 @@ export default function CMProgramsPage() {
                 <Globe size={28} style={{ color: '#09A9E3' }} />
                 <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-wide"
                   style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
-                  Programmes Online
+                  {t('programs.onlineTitle')}
                 </h2>
               </div>
               <p className="text-gray-500 max-w-xl">
-                La flexibilité totale pour apprendre à votre rythme, où que vous soyez.
+                {t('programs.onlineSubtitle')}
               </p>
             </div>
             <div className="flex gap-3 flex-wrap">
               <span className="flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg"
                 style={{ background: '#e6f7fd', color: '#09A9E3' }}>
-                <Cloud size={14} /> 100% en ligne
+                <Cloud size={14} /> {t('programs.online100')}
               </span>
               <span className="flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg"
                 style={{ background: '#e8f5f1', color: '#50BC74' }}>
-                ⏰ Accès flexible
+                ⏰ {t('programs.flexibleAccess')}
               </span>
             </div>
           </div>
@@ -325,10 +327,10 @@ export default function CMProgramsPage() {
           <div className="relative z-10">
             <h2 className="text-3xl sm:text-4xl font-extrabold mb-4"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              Prêt à transformer votre avenir digital ?
+              {t('programs.ctaTitle')}
             </h2>
             <p className="text-lg mb-10 opacity-80 max-w-xl mx-auto">
-              Nos conseillers vous accompagnent pour choisir la formation qui correspond le mieux à vos objectifs.
+              {t('programs.ctaSubtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
@@ -336,12 +338,12 @@ export default function CMProgramsPage() {
                 className="px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-all active:scale-95 hover:shadow-xl"
                 style={{ background: 'linear-gradient(135deg, #09A9E3, #50BC74, #FF8C42)', color: '#ffffff' }}
               >
-                Parler à un expert
+                {t('programs.talkToExpert')}
               </button>
               <button
                 className="px-8 py-4 rounded-full font-bold text-lg border-2 border-white/30 transition-all hover:bg-white/10"
               >
-                Télécharger la brochure
+                {t('programs.downloadBrochure')}
               </button>
             </div>
           </div>

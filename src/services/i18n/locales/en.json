@@ -549,5 +549,217 @@
         "desc": "Manage advertising budgets and measure your ROI precisely."
       }
     }
+  },
+  "curriculum": {
+    "label": "Curriculum 2025",
+    "heroTitle": "Full Program: Your Path to CM Expertise",
+    "heroSubtitle": "An intensive training structured into 7 strategic modules to master modern Community Management and cutting-edge tools.",
+    "certification": "Professional Certification",
+    "privateCommunity": "Private Community Access",
+    "pathOverview": "Course Overview",
+    "bonusExcl": "Exclusive Bonus",
+    "moduleLabel": "Module {{num}}",
+    "bonusLabel": "Bonus",
+    "ctaTitle": "Ready to Start? Join the Next Session",
+    "ctaSubtitle": "Don't leave your career to chance. Master the most in-demand skills in today's market.",
+    "signupNow": "Register Now",
+    "downloadBrochure": "Download Brochure",
+    "nextCohort": "Next cohort: {{date}} • Spots limited to 15 participants.",
+    "avgRating": "Average Rating",
+    "modules": {
+      "m1": {
+        "label": "Fundamentals",
+        "title": "Community Management Fundamentals",
+        "desc": "Understand the deep inner workings of social media to build a solid and sustainable strategy.",
+        "skills": [
+          "End-to-end social media strategy development.",
+          "Decoding algorithms (Instagram, LinkedIn, TikTok).",
+          "Brand positioning and audience research."
+        ]
+      },
+      "m2": {
+        "label": "AI & Workflow",
+        "title": "AI applied to Community Management",
+        "desc": "Boost your productivity with the latest advances in artificial intelligence.",
+        "skills": [
+          "Advanced Prompt Engineering for ChatGPT and Claude.",
+          "Automation of repetitive workflows.",
+          "AI-assisted idea generation and editorial calendars."
+        ]
+      },
+      "m3": {
+        "label": "Content & Canva",
+        "title": "Content Creation (Canva & AI)",
+        "desc": "Master visual tools to create content that stops the scroll.",
+        "skills": [
+          "Professional graphic design with Canva.",
+          "AI image and visual generation (Midjourney).",
+          "High-impact short-form video editing (Reels, TikTok)."
+        ]
+      },
+      "m4": {
+        "label": "Ads & Campaigns",
+        "title": "Advertising and Campaigns + Andromeda",
+        "desc": "Step up your game with paid acquisition and proprietary tools.",
+        "skills": [
+          "Ads Manager handling (Facebook, Instagram, TikTok).",
+          "Leveraging Andromeda's power for your campaigns.",
+          "Budget optimization and rigorous A/B testing."
+        ]
+      },
+      "m5": {
+        "label": "Analytics",
+        "title": "Analytics and Reporting",
+        "desc": "Learn to make numbers speak and prove the value of your actions.",
+        "skills": [
+          "Strategic KPIs definition and tracking.",
+          "Professional report creation for your clients.",
+          "ROI analysis and data-driven strategic adjustments."
+        ]
+      },
+      "m6": {
+        "label": "Web & Practice",
+        "title": "Website and Implementation",
+        "desc": "Transform your social presence into a high-performing web ecosystem.",
+        "skills": [
+          "Conversion-optimized Landing Page creation.",
+          "Tracking tools and tracking pixel integration.",
+          "Real-world projects to validate your technical skills."
+        ]
+      },
+      "m7": {
+        "label": "Conversion (Bonus)",
+        "title": "Conversion Techniques (Sales & Branding)",
+        "desc": "Learn how to sell yourself and turn your followers into loyal and engaged customers.",
+        "skills": [
+          "Expert Personal Branding development.",
+          "Sales psychology and persuasive copywriting.",
+          "Premium client acquisition methods."
+        ]
+      }
+    }
+  },
+  "programs": {
+    "educationPerformance": "Performance Education",
+    "heroTitle": "Choose Your Level and Become a Professional Community Manager",
+    "heroSubtitle": "Programs tailored for all levels, from beginner to expert, to transform your digital career.",
+    "chooseProgram": "I Choose My Program",
+    "presentialTitle": "In-Person Programs",
+    "presentialSubtitle": "Total immersion with our expert coaches for accelerated skill development.",
+    "onlineTitle": "Online Programs",
+    "onlineSubtitle": "Total flexibility to learn at your own pace, wherever you are.",
+    "online100": "100% Online",
+    "flexibleAccess": "Flexible Access",
+    "ctaTitle": "Ready to Transform Your Digital Future?",
+    "ctaSubtitle": "Our advisors accompany you to choose the training that best fits your goals.",
+    "talkToExpert": "Talk to an Expert",
+    "downloadBrochure": "Download Brochure",
+    "register": "Register",
+    "premiumLabel": "Premium",
+    "masteryLabel": "Mastery",
+    "tiers": {
+      "starter": "Starter",
+      "growth": "Growth",
+      "professional": "Professional",
+      "pro": "Pro",
+      "elite": "Elite",
+      "empire": "Empire"
+    },
+    "list": {
+      "presential": {
+        "start": {
+          "name": "Free Start Digital",
+          "desc": "Comprehensive training to learn in depth, step-by-step. (Duration: 3 months)",
+          "scheduleLines": [
+            "Wed & Sat: 09:00-12:00 | 13:00-16:00",
+            "Pace: 12h / week"
+          ],
+          "highlight": "110,000 FCFA"
+        },
+        "boost": {
+          "name": "Free Boost Digital (Evening)",
+          "desc": "Ideal for getting results quickly with an intensive pace. (Duration: 2 months)",
+          "scheduleLines": [
+            "Wed & Sat: 17:00 - 20:00",
+            "Pace: 6h / week"
+          ],
+          "highlight": "150,000 FCFA"
+        },
+        "pro": {
+          "name": "Free Pro",
+          "desc": "Complete mastery of the profession, from editorial planning to automation tools.",
+          "scheduleLines": [
+            "Mon-Wed 09:00-12:00 | 14:00-18:00",
+            "Thu-Fri 09:00-12:00 | 14:00-18:00"
+          ],
+          "highlight": "35h / week"
+        },
+        "elite": {
+          "name": "Free Elite",
+          "desc": "Advanced performance, paid advertising, and community monetization.",
+          "scheduleLines": [
+            "Mon-Fri 09:00-13:00 | 14:00-18:00",
+            "Sat 10:00-13:00 | 1:1 Coaching"
+          ],
+          "highlight": "40h / week"
+        },
+        "empire": {
+          "name": "Free Empire",
+          "desc": "Ultimate expertise, agency management, and business scaling.",
+          "scheduleLines": [
+            "24/7 VIP Access",
+            "Monthly Strategy Session"
+          ],
+          "highlight": "24/7 VIP Access"
+        }
+      },
+      "online": {
+        "start": {
+          "name": "Free Start Online",
+          "desc": "Online basics at your own pace.",
+          "scheduleLines": [
+            "Mon 09:00-12:00 | 13:00-16:00",
+            "Tue 09:00-12:00 | 13:00-16:00"
+          ],
+          "highlight": "Free Access"
+        },
+        "boost": {
+          "name": "Free Boost Digital (Online)",
+          "desc": "Same accelerated program, accessible everywhere. (Duration: 2 months)",
+          "scheduleLines": [
+            "Mon, Tue, Thu: 19:00 - 21:00",
+            "Pace: 6h / week"
+          ],
+          "highlight": "150,000 FCFA"
+        },
+        "pro": {
+          "name": "Free Pro Online",
+          "desc": "Complete online mastery with a mentor.",
+          "scheduleLines": [
+            "Mon 17:00 (Coaching)",
+            "Fri 16:00 (Review)"
+          ],
+          "highlight": "Dedicated Mentor"
+        },
+        "elite": {
+          "name": "Free Elite Online",
+          "desc": "Advanced performance with a private mastermind.",
+          "scheduleLines": [
+            "Wed 19:00 (Masterclass)",
+            "Sat 11:00 (Q&A Session)"
+          ],
+          "highlight": "Private Mastermind"
+        },
+        "empire": {
+          "name": "Free Empire Online",
+          "desc": "Ultimate expertise with monthly consulting.",
+          "scheduleLines": [
+            "24/7 VIP Access",
+            "Scheduled 1:1 Consulting"
+          ],
+          "highlight": "Monthly Consulting"
+        }
+      }
+    }
   }
 }

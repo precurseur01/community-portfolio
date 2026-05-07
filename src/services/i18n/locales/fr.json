@@ -549,5 +549,187 @@
                 "desc": "Gérez des budgets publicitaires et mesurez votre ROI précisément."
             }
         }
+    },
+    "curriculum": {
+        "label": "Curriculum 2025",
+        "heroTitle": "Programme Complet : Votre chemin vers l'expertise CM",
+        "heroSubtitle": "Une formation intensive structurée en 7 modules stratégiques pour maîtriser l'art du Community Management moderne et les outils de pointe.",
+        "certification": "Certification Professionnelle",
+        "privateCommunity": "Accès Communauté Privée",
+        "pathOverview": "Aperçu du parcours",
+        "bonusExcl": "Bonus Exclusif",
+        "moduleLabel": "Module {{num}}",
+        "bonusLabel": "Bonus",
+        "ctaTitle": "Prêt à commencer ? Rejoignez la prochaine session",
+        "ctaSubtitle": "Ne laissez pas votre carrière au hasard. Maîtrisez les compétences les plus demandées du marché actuel.",
+        "signupNow": "Je m'inscris maintenant",
+        "downloadBrochure": "Télécharger la brochure",
+        "nextCohort": "Prochaine cohorte : {{date}} • Places limitées à 15 participants.",
+        "avgRating": "Évaluation moyenne",
+        "modules": {
+            "m1": {
+                "label": "Fondamentaux",
+                "title": "Fondamentaux du Community Management",
+                "desc": "Comprenez les rouages profonds des réseaux sociaux pour bâtir une stratégie solide et pérenne.",
+                "skills": [
+                    "Élaboration de stratégie social media de A à Z.",
+                    "Déchiffrage des algorithmes (Instagram, LinkedIn, TikTok).",
+                    "Positionnement de marque et étude d'audience."
+                ]
+            },
+            "m2": {
+                "label": "IA & Workflow",
+                "title": "IA appliquée au Community Management",
+                "desc": "Décuplez votre productivité grâce aux dernières avancées de l'intelligence artificielle.",
+                "skills": [
+                    "Prompt Engineering avancé pour ChatGPT et Claude.",
+                    "Automatisation des workflows répétitifs.",
+                    "Génération d'idées et calendriers éditoriaux assistée par IA."
+                ]
+            },
+            "m3": {
+                "label": "Contenu & Canva",
+                "title": "Création de contenu (Canva & IA)",
+                "desc": "Maîtrisez les outils visuels pour créer des contenus qui arrêtent le scroll.",
+                "skills": [
+                    "Design graphique professionnel avec Canva.",
+                    "Génération d'images et de visuels par IA (Midjourney).",
+                    "Montage vidéo court (Reels, TikTok) à fort impact."
+                ]
+            },
+            "m4": {
+                "label": "Ads & Campagnes",
+                "title": "Publicité et campagnes + Andromeda",
+                "desc": "Passez à la vitesse supérieure avec l'acquisition payante et les outils propriétaires.",
+                "skills": [
+                    "Gestion du Ads Manager (Facebook, Instagram, TikTok).",
+                    "Exploitation de la puissance d'Andromeda pour vos campagnes.",
+                    "Optimisation du budget et A/B testing rigoureux."
+                ]
+            },
+            "m5": {
+                "label": "Analytics",
+                "title": "Analytics et reporting",
+                "desc": "Apprenez à faire parler les chiffres et prouvez la valeur de vos actions.",
+                "skills": [
+                    "Définition et suivi des KPIs stratégiques.",
+                    "Création de rapports professionnels pour vos clients.",
+                    "Analyse du ROI et ajustements stratégiques basés sur la data."
+                ]
+            },
+            "m6": {
+                "label": "Web & Pratique",
+                "title": "Site web et mise en pratique",
+                "desc": "Transformez votre présence sociale en un véritable écosystème web performant.",
+                "skills": [
+                    "Création de Landing Pages optimisées pour la conversion.",
+                    "Intégration d'outils de tracking et pixels publicitaires.",
+                    "Projets réels pour valider vos acquis techniques."
+                ]
+            },
+            "m7": {
+                "label": "Conversion (Bonus)",
+                "title": "Techniques de conversion (Vente & Branding)",
+                "desc": "Apprenez à vous vendre et à transformer vos abonnés en clients fidèles et engagés.",
+                "skills": [
+                    "Développement de votre Personal Branding d'expert.",
+                    "Psychologie de vente et copywriting persuasif.",
+                    "Méthodes d'acquisition de clients premium."
+                ]
+            }
+        }
+    },
+    "programs": {
+        "educationPerformance": "Éducation de Performance",
+        "heroTitle": "Choisis ton niveau et deviens Community Manager professionnel",
+        "heroSubtitle": "Des programmes adaptés à tous les niveaux, du débutant à l'expert, pour transformer votre carrière dans le digital.",
+        "chooseProgram": "Je choisis mon programme",
+        "presentialTitle": "Programmes Présentiels",
+        "presentialSubtitle": "L'immersion totale avec nos coachs experts pour une montée en compétences accélérée.",
+        "onlineTitle": "Programmes Online",
+        "onlineSubtitle": "La flexibilité totale pour apprendre à votre rythme, où que vous soyez.",
+        "online100": "100% en ligne",
+        "flexibleAccess": "Accès flexible",
+        "ctaTitle": "Prêt à transformer votre avenir digital ?",
+        "ctaSubtitle": "Nos conseillers vous accompagnent pour choisir la formation qui correspond le mieux à vos objectifs.",
+        "talkToExpert": "Parler à un expert",
+        "downloadBrochure": "Télécharger la brochure",
+        "register": "S'inscrire",
+        "premiumLabel": "Premium",
+        "masteryLabel": "Mastery",
+        "tiers": {
+            "starter": "Starter",
+            "growth": "Growth",
+            "professional": "Professional",
+            "pro": "Pro",
+            "elite": "Elite",
+            "empire": "Empire"
+        },
+        "list": {
+            "presential": {
+                "start": {
+                    "name": "Free Start Digital",
+                    "desc": "Formation complète pour apprendre en profondeur, étape par étape. (Durée: 3 mois)",
+                    "scheduleLines": ["Mer & Sam: 09h-12h | 13h-16h", "Rythme: 12h / semaine"],
+                    "highlight": "110 000 FCFA"
+                },
+                "boost": {
+                    "name": "Free Boost Digital (Soir)",
+                    "desc": "Idéal pour obtenir des résultats rapidement avec un rythme intensif. (Durée: 2 mois)",
+                    "scheduleLines": ["Mer & Sam: 17h00 - 20h00", "Rythme: 6h / semaine"],
+                    "highlight": "150 000 FCFA"
+                },
+                "pro": {
+                    "name": "Free Pro",
+                    "desc": "Maîtrise complète du métier, du planning éditorial aux outils d'automatisation.",
+                    "scheduleLines": ["Lun-Mer 9h-12h | 14h-18h", "Jeu-Ven 9h-12h | 14h-18h"],
+                    "highlight": "35h / semaine"
+                },
+                "elite": {
+                    "name": "Free Elite",
+                    "desc": "Performance avancée, publicité payante et monétisation de communauté.",
+                    "scheduleLines": ["Lun-Ven 9h-13h | 14h-18h", "Sam 10h-13h | Coaching 1:1"],
+                    "highlight": "40h / semaine"
+                },
+                "empire": {
+                    "name": "Free Empire",
+                    "desc": "Expertise ultime, gestion d'agence et passage à l'échelle business.",
+                    "scheduleLines": ["Accès VIP 24h/24 | 7j/7", "Session Stratégie Mensuelle"],
+                    "highlight": "Accès VIP 24/7"
+                }
+            },
+            "online": {
+                "start": {
+                    "name": "Free Start Online",
+                    "desc": "Bases en ligne à votre rythme.",
+                    "scheduleLines": ["Lun 9h-12h | 13h-16h", "Mar 9h-12h | 13h-16h"],
+                    "highlight": "Libre accès"
+                },
+                "boost": {
+                    "name": "Free Boost Digital (En ligne)",
+                    "desc": "Même programme accéléré, accessible partout. (Durée: 2 mois)",
+                    "scheduleLines": ["Lun, Mar, Jeu: 19h00 - 21h00", "Rythme: 6h / semaine"],
+                    "highlight": "150 000 FCFA"
+                },
+                "pro": {
+                    "name": "Free Pro Online",
+                    "desc": "Maîtrise complète en ligne avec mentor.",
+                    "scheduleLines": ["Lun 17h (Coaching)", "Ven 16h (Review)"],
+                    "highlight": "Mentor dédié"
+                },
+                "elite": {
+                    "name": "Free Elite Online",
+                    "desc": "Performance avancée avec mastermind privé.",
+                    "scheduleLines": ["Mer 19h (Masterclass)", "Sam 11h (Q&A Session)"],
+                    "highlight": "Mastermind Privé"
+                },
+                "empire": {
+                    "name": "Free Empire Online",
+                    "desc": "Expertise ultime avec consulting mensuel.",
+                    "scheduleLines": ["Accès VIP 24h/24 | 7j/7", "Consulting 1:1 Planifié"],
+                    "highlight": "Consulting Mensuel"
+                }
+            }
+        }
     }
 }
