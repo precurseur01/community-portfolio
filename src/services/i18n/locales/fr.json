@@ -505,5 +505,49 @@
                 ]
             }
         ]
+    },
+    "cmTraining": {
+        "label": "🎓 CM Academy Premium",
+        "headline": {
+            "prefix": "Deviens Community Manager ",
+            "highlight": "rentable en 12 semaines"
+        },
+        "description": "Formation pratique orientée résultats. Maîtrisez l'IA, la création de contenu et la publicité pour devenir un expert recherché sur le marché.",
+        "nextSession": "Prochaine session : {{date}}",
+        "limitedPlaces": "Places limitées (15 participants max) pour un accompagnement ultra-personnalisé.",
+        "viewProgram": "Voir le programme",
+        "reservePlace": "Je réserve ma place",
+        "quickSignup": "Inscription rapide",
+        "limit15": "Places limitées à 15 participants",
+        "studentsCount": "Apprenants déjà formés",
+        "provenMethod": "Méthode éprouvée et résultats concrets",
+        "vipSupport": "Accompagnement VIP",
+        "guaranteedTransformation": "Transformation garantie",
+        "liveSuccess": "Live Success",
+        "nextSessionLabel": "Prochaine session",
+        "satisfaction": "Satisfaction",
+        "modulesTitle": "Nos modules de formation",
+        "viewFullProgram": "Voir le programme complet",
+        "intensiveProgram": "Programme intensif couvrant de la stratégie (Module 1) à la monétisation (Module 7).",
+        "discoverFormulas": "Découvrir les formules",
+        "date": "04 JUILLET 2026",
+        "modules": {
+            "fundamentals": {
+                "title": "Fondamentaux du Community Management",
+                "desc": "Maîtrisez les algorithmes et créez des communautés engagées."
+            },
+            "ia": {
+                "title": "IA appliquée au CM",
+                "desc": "Automatisez vos tâches et boostez votre créativité avec l'IA."
+            },
+            "content": {
+                "title": "Création de contenu",
+                "desc": "Produisez des visuels et vidéos impactants qui convertissent."
+            },
+            "ads": {
+                "title": "Publicité & analytics",
+                "desc": "Gérez des budgets publicitaires et mesurez votre ROI précisément."
+            }
+        }
     }
 }

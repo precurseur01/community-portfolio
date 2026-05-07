@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Calendar, TrendingUp, AlertCircle, CheckCircle, Rocket, BarChart3, Brain, Palette, Users } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Img from '../constants/img';
 
 const modules = [
-  { icon: Users, emoji: '👥', title: 'Fondamentaux du Community Management', desc: 'Maîtrisez les algorithmes et créez des communautés engagées.' },
-  { icon: Brain, emoji: '🤖', title: 'IA appliquée au CM', desc: 'Automatisez vos tâches et boostez votre créativité avec l\'IA.' },
-  { icon: Palette, emoji: '🎨', title: 'Création de contenu', desc: 'Produisez des visuels et vidéos impactants qui convertissent.' },
-  { icon: BarChart3, emoji: '📊', title: 'Publicité & analytics', desc: 'Gérez des budgets publicitaires et mesurez votre ROI précisément.' },
+  { icon: Users, emoji: '👥', titleKey: 'cmTraining.modules.fundamentals.title', descKey: 'cmTraining.modules.fundamentals.desc' },
+  { icon: Brain, emoji: '🤖', titleKey: 'cmTraining.modules.ia.title', descKey: 'cmTraining.modules.ia.desc' },
+  { icon: Palette, emoji: '🎨', titleKey: 'cmTraining.modules.content.title', descKey: 'cmTraining.modules.content.desc' },
+  { icon: BarChart3, emoji: '📊', titleKey: 'cmTraining.modules.ads.title', descKey: 'cmTraining.modules.ads.desc' },
 ];
 
 const avatars = [
@@ -27,6 +28,7 @@ const sliderImages = [
 ];
 
 export default function CMTrainingHero() {
+  const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
   const [count, setCount] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -149,22 +151,22 @@ export default function CMTrainingHero() {
             {/* Label */}
             <span className="inline-flex items-center gap-2 w-fit px-4 py-1.5 mt-2 rounded-full text-sm font-semibold uppercase tracking-wider border"
               style={{ background: '#e6f7fd', color: '#09A9E3', borderColor: '#b3e6f7' }}>
-              🎓 CM Academy Premium
+              {t('cmTraining.label')}
             </span>
 
             {/* Headline */}
             <div className="space-y-4">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight" style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
-                Deviens Community Manager{' '}
+                {t('cmTraining.headline.prefix')}{' '}
                 <span className="relative inline-block">
-                  <span style={{ color: '#09A9E3' }}>rentable en 12 semaines</span>
+                  <span style={{ color: '#09A9E3' }}>{t('cmTraining.headline.highlight')}</span>
                   <svg className="absolute -bottom-1 left-0 w-full" height="6" viewBox="0 0 200 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 3 Q50 0 100 3 Q150 6 200 3" stroke="#FF8C42" strokeWidth="3" strokeLinecap="round" fill="none" />
                   </svg>
                 </span>
               </h2>
               <p className="text-lg text-gray-600 max-w-xl leading-relaxed">
-                Formation pratique orientée résultats. Maîtrisez l'IA, la création de contenu et la publicité pour devenir un expert recherché sur le marché.
+                {t('cmTraining.description')}
               </p>
             </div>
 
@@ -174,13 +176,13 @@ export default function CMTrainingHero() {
               <div className="flex items-center gap-3">
                 <Calendar size={20} style={{ color: '#09A9E3' }} />
                 <p className="font-bold text-sm uppercase tracking-wide" style={{ color: '#0B3C5D' }}>
-                  Prochaine session : 04 Juillet 2026
+                  {t('cmTraining.nextSession', { date: t('cmTraining.date') })}
                 </p>
               </div>
               <div className="flex items-start gap-2 rounded-lg p-3" style={{ background: '#fff3ee' }}>
                 <AlertCircle size={18} style={{ color: '#FF8C42', flexShrink: 0, marginTop: 1 }} />
                 <p className="text-sm" style={{ color: '#7c4700' }}>
-                  Places limitées <strong>(15 participants max)</strong> pour un accompagnement ultra-personnalisé.
+                  {t('cmTraining.limitedPlaces')}
                 </p>
               </div>
             </div>
@@ -194,7 +196,7 @@ export default function CMTrainingHero() {
                   style={{ background: 'linear-gradient(135deg, #09A9E3, #50BC74)' }}
                 >
                   <Rocket size={18} />
-                  Voir le programme
+                  {t('cmTraining.viewProgram')}
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button
@@ -203,15 +205,15 @@ export default function CMTrainingHero() {
                   style={{ background: 'linear-gradient(135deg, #09A9E3, #50BC74, #FF8C42)' }}
                 >
                   <CheckCircle size={18} />
-                  Je réserve ma place
+                  {t('cmTraining.reservePlace')}
                 </button>
               </div>
 
               <div className="flex items-center gap-2 text-sm text-gray-500">
                 <CheckCircle size={15} style={{ color: '#50BC74' }} />
-                <span>Inscription rapide</span>
+                <span>{t('cmTraining.quickSignup')}</span>
                 <span className="text-gray-300 mx-1">•</span>
-                <span>Places limitées à 15 participants</span>
+                <span>{t('cmTraining.limit15')}</span>
               </div>
             </div>
 
@@ -228,8 +230,8 @@ export default function CMTrainingHero() {
                 </div>
               </div>
               <div>
-                <p className="font-semibold text-sm" style={{ color: '#0B3C5D' }}>Apprenants déjà formés</p>
-                <p className="text-xs text-gray-500">Méthode éprouvée et résultats concrets</p>
+                <p className="font-semibold text-sm" style={{ color: '#0B3C5D' }}>{t('cmTraining.studentsCount')}</p>
+                <p className="text-xs text-gray-500">{t('cmTraining.provenMethod')}</p>
               </div>
             </div>
           </div>
@@ -266,15 +268,15 @@ export default function CMTrainingHero() {
                   <TrendingUp size={22} className="text-[#09A9E3]" />
                 </div>
                 <div>
-                  <p className="font-bold text-sm text-[#0B3C5D]">Accompagnement VIP</p>
-                  <p className="text-xs text-gray-500">Transformation garantie</p>
+                  <p className="font-bold text-sm text-[#0B3C5D]">{t('cmTraining.vipSupport')}</p>
+                  <p className="text-xs text-gray-500">{t('cmTraining.guaranteedTransformation')}</p>
                 </div>
               </div>
 
               {/* Top badge */}
               <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full px-3 py-1.5 flex items-center gap-1.5 shadow">
                 <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#50BC74' }} />
-                <span className="text-xs font-bold" style={{ color: '#0B3C5D' }}>Live Success</span>
+                <span className="text-xs font-bold" style={{ color: '#0B3C5D' }}>{t('cmTraining.liveSuccess')}</span>
               </div>
             </div>
 
@@ -282,15 +284,15 @@ export default function CMTrainingHero() {
             <div className="absolute top-4 left-4 bg-[#FF8C42] text-white rounded-full px-5 py-2.5 flex items-center gap-3 shadow-xl flex animate-bounce" style={{ animationDuration: '4s' }}>
               <div className="w-2.5 h-2.5 rounded-full bg-white animate-pulse shadow-sm flex-shrink-0" />
               <div className="flex flex-col -space-y-0.5">
-                <span className="text-[11px] font-bold text-[#0B3C5D]">Prochaine session</span>
-                <span className="text-sm font-black tracking-tight">04 JUILLET 2026</span>
+                <span className="text-[11px] font-bold text-[#0B3C5D]">{t('cmTraining.nextSessionLabel')}</span>
+                <span className="text-sm font-black tracking-tight">{t('cmTraining.date')}</span>
               </div>
             </div>
 
             {/* Decorative float element */}
             <div className="absolute -bottom-6 -right-6 bg-[#FF8C42] text-white p-6 rounded-2xl shadow-xl hidden lg:block animate-bounce" style={{ animationDuration: '3s' }}>
               <div className="text-3xl font-bold mb-1">98%</div>
-              <div className="text-xs uppercase tracking-wider opacity-80 font-bold">Satisfaction</div>
+              <div className="text-xs uppercase tracking-wider opacity-80 font-bold">{t('cmTraining.satisfaction')}</div>
             </div>
           </div>
 
@@ -301,14 +303,14 @@ export default function CMTrainingHero() {
         <div id="cm-modules">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-2xl font-bold" style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
-              Nos modules de formation
+              {t('cmTraining.modulesTitle')}
             </h3>
             <button
               onClick={() => navigate('/growth/cm-curriculum')}
               className="hidden sm:flex items-center gap-1.5 text-sm font-semibold link-underline"
               style={{ color: '#09A9E3' }}
             >
-              Voir le programme complet
+              {t('cmTraining.viewFullProgram')}
               <ArrowRight size={15} className="arrow-slide" />
             </button>
           </div>
@@ -328,8 +330,8 @@ export default function CMTrainingHero() {
                     style={{ background: '#f8faff' }}>
                     <mod.icon size={26} style={{ stroke: 'url(#blue-green-gradient)' }} />
                   </div>
-                  <h4 className="font-bold text-base mb-2" style={{ color: '#0B3C5D' }}>{mod.title}</h4>
-                  <p className="text-sm text-gray-500 leading-relaxed">{mod.desc}</p>
+                  <h4 className="font-bold text-base mb-2" style={{ color: '#0B3C5D' }}>{t(mod.titleKey)}</h4>
+                  <p className="text-sm text-gray-500 leading-relaxed">{t(mod.descKey)}</p>
                 </div>
               </div>
             ))}
@@ -338,7 +340,7 @@ export default function CMTrainingHero() {
           {/* Bottom CTA */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
             <p className="text-sm text-gray-500">
-              Programme intensif couvrant de la stratégie (Module 1) à la monétisation (Module 7).
+              {t('cmTraining.intensiveProgram')}
             </p>
             <div className="flex gap-3">
               <button
@@ -346,14 +348,14 @@ export default function CMTrainingHero() {
                 className="text-sm font-semibold link-underline"
                 style={{ color: '#09A9E3' }}
               >
-                Voir le programme complet <ArrowRight size={14} className="arrow-slide" />
+                {t('cmTraining.viewFullProgram')} <ArrowRight size={14} className="arrow-slide" />
               </button>
               <button
                 onClick={() => navigate('/growth/cm-programs')}
                 className="hover-pulse px-5 py-2 rounded-full text-sm font-semibold border-2 transition-all hover:opacity-80"
                 style={{ borderColor: '#09A9E3', color: '#09A9E3' }}
               >
-                Découvrir les formules →
+                {t('cmTraining.discoverFormulas')} →
               </button>
             </div>
           </div>

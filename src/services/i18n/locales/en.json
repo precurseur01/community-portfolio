@@ -505,5 +505,49 @@
         ]
       }
     ]
+  },
+  "cmTraining": {
+    "label": "🎓 CM Academy Premium",
+    "headline": {
+      "prefix": "Become a profitable ",
+      "highlight": "Community Manager in 12 weeks"
+    },
+    "description": "Results-oriented practical training. Master AI, content creation and advertising to become a sought-after expert in the market.",
+    "nextSession": "Next session: {{date}}",
+    "limitedPlaces": "Limited spots (15 participants max) for ultra-personalized coaching.",
+    "viewProgram": "View the program",
+    "reservePlace": "Reserve my spot",
+    "quickSignup": "Quick registration",
+    "limit15": "Spots limited to 15 participants",
+    "studentsCount": "Students already trained",
+    "provenMethod": "Proven method and concrete results",
+    "vipSupport": "VIP Support",
+    "guaranteedTransformation": "Guaranteed transformation",
+    "liveSuccess": "Live Success",
+    "nextSessionLabel": "Next session",
+    "satisfaction": "Satisfaction",
+    "modulesTitle": "Our training modules",
+    "viewFullProgram": "See full program",
+    "intensiveProgram": "Intensive program covering from strategy (Module 1) to monetization (Module 7).",
+    "discoverFormulas": "Discover plans",
+    "date": "JULY 04, 2026",
+    "modules": {
+      "fundamentals": {
+        "title": "Community Management Fundamentals",
+        "desc": "Master algorithms and create engaged communities."
+      },
+      "ia": {
+        "title": "AI applied to CM",
+        "desc": "Automate your tasks and boost your creativity with AI."
+      },
+      "content": {
+        "title": "Content Creation",
+        "desc": "Produce impactful visuals and videos that convert."
+      },
+      "ads": {
+        "title": "Advertising & Analytics",
+        "desc": "Manage advertising budgets and measure your ROI precisely."
+      }
+    }
   }
 }
