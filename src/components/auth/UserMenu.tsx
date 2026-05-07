@@ -2,9 +2,11 @@ import { useState, useRef, useEffect } from 'react';
 import { LogOut, User, ChevronDown, Settings } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../context/AuthContext';
+import { useTranslation } from 'react-i18next';
 
 export default function UserMenu() {
   const { user, signOut } = useAuth();
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +30,7 @@ export default function UserMenu() {
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 pl-1 pr-3 py-1 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-200 group"
-        aria-label="Menu utilisateur"
+        aria-label={t('nav.myAccount')}
       >
         {/* Avatar */}
         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white text-sm font-bold shadow-sm flex-shrink-0">
@@ -64,7 +66,7 @@ export default function UserMenu() {
                   {initial}
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-sm font-semibold text-white">Mon compte</p>
+                  <p className="text-sm font-semibold text-white">{t('nav.myAccount')}</p>
                   <p className="text-xs text-slate-400 truncate">{email}</p>
                 </div>
               </div>
@@ -79,7 +81,7 @@ export default function UserMenu() {
                 <div className="w-7 h-7 rounded-lg bg-blue-500/10 flex items-center justify-center">
                   <User size={14} className="text-blue-400" />
                 </div>
-                Profil
+                {t('nav.profile')}
               </button>
 
               <button
@@ -89,7 +91,7 @@ export default function UserMenu() {
                 <div className="w-7 h-7 rounded-lg bg-emerald-500/10 flex items-center justify-center">
                   <Settings size={14} className="text-emerald-400" />
                 </div>
-                Paramètres
+                {t('nav.settings')}
               </button>
             </div>
 
@@ -102,7 +104,7 @@ export default function UserMenu() {
                 <div className="w-7 h-7 rounded-lg bg-red-500/10 flex items-center justify-center">
                   <LogOut size={14} className="text-red-400" />
                 </div>
-                Se déconnecter
+                {t('nav.logout')}
               </button>
             </div>
           </motion.div>

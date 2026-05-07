@@ -16,44 +16,31 @@ interface NavigationProps {
 const playbookItems = [
   {
     icon: Zap,
-    label: 'Techniques de Conversion',
-    desc: '8 méthodes pour convertir',
+    labelKey: 'playbook.items.conversion.label',
+    descKey: 'playbook.items.conversion.desc',
     href: '/growth/conversion',
     color: 'text-emerald-400',
     bg: 'bg-emerald-500/10',
+    requiresAuth: true,
   },
   {
     icon: Users,
-    label: 'Community Management',
-    desc: 'qcm',
+    labelKey: 'playbook.items.community.label',
+    descKey: 'playbook.items.community.desc',
     href: '/growth/formation',
     color: 'text-emerald-400',
     bg: 'bg-emerald-500/10',
+    requiresAuth: true,
   },
   {
     icon: Brain,
-    label: 'Psychologie Client',
-    desc: 'SONCAS & motivations',
+    labelKey: 'playbook.items.psychology.label',
+    descKey: 'playbook.items.psychology.desc',
     href: '/growth/psychology',
     color: 'text-blue-400',
     bg: 'bg-blue-500/10',
+    requiresAuth: false,
   },
-  // {
-  //   icon: MessageSquare,
-  //   label: 'Scripts WhatsApp',
-  //   desc: 'Templates de messages',
-  //   href: '/growth/scripts',
-  //   color: 'text-emerald-400',
-  //   bg: 'bg-emerald-500/10',
-  // },
-  // {
-  //   icon: TrendingUp,
-  //   label: 'Tunnel de Vente',
-  //   desc: 'De prospect à client',
-  //   href: '/growth/funnel',
-  //   color: 'text-blue-400',
-  //   bg: 'bg-blue-500/10',
-  // },
 ];
 
 export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: NavigationProps) {
@@ -86,6 +73,8 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
     { name: t('nav.projects'), href: '/projects', delay: 'delay-200' },
     { name: t('nav.contact'), href: '/contact', delay: 'delay-300' },
   ];
+
+  const filteredPlaybookItems = playbookItems.filter(item => !item.requiresAuth || (user && !loading));
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-lg border-b border-white/10' : 'bg-[#020617]/80 backdrop-blur-md border-b border-white/5'}`}>
@@ -127,7 +116,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                 }`}
               >
                 <BookOpen size={13} className="transition-colors duration-200" />
-                Growth Playbook
+                {t('playbook.title')}
                 <ChevronDown
                   size={13}
                   className={`transition-transform duration-300 ${playbook ? 'rotate-180' : ''}`}
@@ -154,18 +143,18 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                         <Star size={12} className="text-white" />
                       </div>
                       <span className="text-xs font-semibold text-white uppercase tracking-wider">
-                        Growth Playbook
+                        {t('playbook.title')}
                       </span>
                     </div>
                     <p className="text-xs text-slate-500 mt-1 pl-8">
-                      Développez vos compétences digitales
+                      {t('playbook.subtitle')}
                     </p>
                   </div>
 
                   <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-2" />
 
                   {/* Items */}
-                  {playbookItems.map((item) => (
+                  {filteredPlaybookItems.map((item) => (
                     <NavLink
                       key={item.href}
                       to={item.href}
@@ -176,8 +165,8 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                         <item.icon size={15} className={item.color} />
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-white">{item.label}</div>
-                        <div className="text-xs text-slate-500">{item.desc}</div>
+                        <div className="text-sm font-medium text-white">{t(item.labelKey)}</div>
+                        <div className="text-xs text-slate-500">{t(item.descKey)}</div>
                       </div>
                       <ChevronRight
                         size={14}
@@ -194,7 +183,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                     className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-gradient-to-r from-blue-600/20 to-emerald-600/20 border border-emerald-500/20 text-emerald-300 text-xs font-semibold hover:from-blue-600/30 hover:to-emerald-600/30 transition-all duration-200"
                   >
                     <BookOpen size={13} />
-                    Voir tout le Playbook →
+                    {t('playbook.viewAll')} →
                   </NavLink>
                 </div>
               </div>
@@ -219,14 +208,14 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                     className="flex items-center gap-1.5 text-[13px] font-medium text-gray-300 hover:text-white border border-white/15 hover:border-white/30 px-3.5 py-2 rounded-xl transition-all duration-200 hover:bg-white/5"
                   >
                     <LogIn size={14} />
-                    Connexion
+                    {t('nav.login')}
                   </button>
                   <button
                     onClick={onOpenSignup}
                     className="flex items-center gap-1.5 text-[13px] font-semibold text-white bg-gradient-to-r from-blue-600 to-emerald-600 px-3.5 py-2 rounded-xl shadow-md shadow-blue-500/20 hover:shadow-blue-500/30 hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
                   >
                     <UserPlus size={14} />
-                    S'inscrire
+                    {t('nav.signup')}
                   </button>
                 </div>
               )
@@ -302,7 +291,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                     </div>
                     <span className={`text-xl uppercase font-semibold transition-colors duration-200 ${mobilePlaybook ? 'text-emerald-400' : 'text-white'
                       }`}>
-                      Growth Playbook
+                      {t('playbook.title')}
                     </span>
                   </div>
                   <ChevronDown
@@ -314,7 +303,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
 
                 <div className={`transition-all duration-300 ${mobilePlaybook ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                   <div className="px-4 pb-4 space-y-1.5">
-                    {playbookItems.map((item) => (
+                    {filteredPlaybookItems.map((item) => (
                       <NavLink
                         key={item.href}
                         to={item.href}
@@ -325,8 +314,8 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                           <item.icon size={14} className={item.color} />
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-white">{item.label}</div>
-                          <div className="text-xs text-slate-500">{item.desc}</div>
+                          <div className="text-sm font-medium text-white">{t(item.labelKey)}</div>
+                          <div className="text-xs text-slate-500">{t(item.descKey)}</div>
                         </div>
                         <ChevronRight
                           size={14}
@@ -342,7 +331,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                       className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-600 text-white text-sm font-semibold mt-2 hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300"
                     >
                       <BookOpen size={14} />
-                      Voir tout le Playbook →
+                      {t('playbook.viewAll')} →
                     </NavLink>
                   </div>
                 </div>
@@ -362,7 +351,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                       {user.email?.charAt(0).toUpperCase()}
                     </div>
                     <div className="overflow-hidden">
-                      <p className="text-sm font-semibold text-white">Connecté</p>
+                      <p className="text-sm font-semibold text-white">{t('nav.connected')}</p>
                       <p className="text-xs text-slate-400 truncate">{user.email}</p>
                     </div>
                   </div>
@@ -373,14 +362,14 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                       className="flex items-center justify-center gap-2 py-3.5 rounded-2xl border border-white/15 text-white font-semibold hover:bg-white/5 transition-all"
                     >
                       <LogIn size={16} />
-                      Connexion
+                      {t('nav.login')}
                     </button>
                     <button
                       onClick={() => { setIsOpen(false); onOpenSignup(); }}
                       className="flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-emerald-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all"
                     >
                       <UserPlus size={16} />
-                      S'inscrire
+                      {t('nav.signup')}
                     </button>
                   </div>
                 )

@@ -7,7 +7,34 @@
     "contact": "Contact",
     "brand": "Free Digital Solutions",
     "cta": "Let's discuss your project",
-    "tagline": "Let's create something exceptional together"
+    "tagline": "Let's create something exceptional together",
+    "login": "Login",
+    "signup": "Sign Up",
+    "logout": "Logout",
+    "connected": "Connected",
+    "toggleMenu": "Toggle Menu",
+    "myAccount": "My account",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "playbook": {
+    "title": "Growth Playbook",
+    "subtitle": "Develop your digital skills",
+    "viewAll": "See full Playbook",
+    "items": {
+      "conversion": {
+        "label": "Conversion Techniques",
+        "desc": "8 methods to convert"
+      },
+      "community": {
+        "label": "Community Management",
+        "desc": "Interactive MCQ"
+      },
+      "psychology": {
+        "label": "Customer Psychology",
+        "desc": "SONCAS & motivations"
+      }
+    }
   },
   "hero": {
     "role": "Community Management & Digital Strategy",
