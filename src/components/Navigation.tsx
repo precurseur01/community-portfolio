@@ -77,8 +77,15 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
   const filteredPlaybookItems = playbookItems.filter(item => !item.requiresAuth || (user && !loading));
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-lg border-b border-white/10' : 'bg-[#020617]/80 backdrop-blur-md border-b border-white/5'}`}>
-      <div className="max-w-[1600px] mx-auto px-4 xl:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      {/* Background layer with filter - separated to avoid clipping the fixed mobile menu */}
+      <div className={`absolute inset-0 h-[76px] transition-all duration-300 ${
+        scrolled 
+          ? 'bg-black/90 backdrop-blur-lg border-b border-white/10' 
+          : 'bg-[#020617]/80 backdrop-blur-md border-b border-white/5'
+      }`} />
+
+      <div className="relative max-w-[1600px] mx-auto px-4 xl:px-8">
         <div className="flex items-center h-[76px] gap-4">
 
           {/* ── Logo ── */}
