@@ -12,7 +12,7 @@ import { examPremium, examPremiumMeta } from './exam-premium';
 
 export const cmFundamentals: Course = {
   id: 'cm-fundamentals',
-  title: 'Community Management — Guide d\'étude Meta',
+  title: 'Community Management — Guide',
   description: 'Cours complet basé sur le guide officiel Meta : établir, stratégiser, créer du contenu, modérer et mesurer la réussite d\'une communauté.',
   icon: '📘',
   color: '#09A9E3',
