@@ -71,6 +71,42 @@
 
 
 
+/* ─── Brand Loader animations ───────────────────────────────────────────── */
+@keyframes brand-loader-rotate-cw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes brand-loader-rotate-ccw {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+
+@keyframes brand-loader-pulse-ring {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50%       { transform: scale(1.05); opacity: 0.5; }
+}
+
+@keyframes brand-loader-text-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.brand-loader-ring-outer {
+  animation:
+    brand-loader-rotate-cw 8s linear infinite,
+    brand-loader-pulse-ring 4s ease-in-out infinite;
+}
+
+.brand-loader-ring-middle {
+  animation: brand-loader-rotate-ccw 12s linear infinite;
+}
+
+.brand-loader-pulse {
+  animation: brand-loader-text-pulse 2s ease-in-out infinite;
+}
+/* ─────────────────────────────────────────────────────────────────────────── */
+
 @layer base {
   :root {
     --background: 220 20% 6%;

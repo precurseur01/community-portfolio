@@ -1,7 +1,8 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import AuthModal from '../components/auth/AuthModal';
+import { useAuthModal } from '../context/AuthModalContext';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -14,18 +15,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
   scrolled,
   bgClassName = 'bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900'
 }) => {
-  const [authOpen, setAuthOpen] = useState(false);
-  const [authInitialView, setAuthInitialView] = useState<'login' | 'signup'>('login');
-
-  const openLogin = useCallback(() => {
-    setAuthInitialView('login');
-    setAuthOpen(true);
-  }, []);
-
-  const openSignup = useCallback(() => {
-    setAuthInitialView('signup');
-    setAuthOpen(true);
-  }, []);
+  const { isOpen, initialView, openLogin, openSignup, close } = useAuthModal();
 
   return (
     <div className={`min-h-screen ${bgClassName} text-white`}>
@@ -36,9 +26,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({
       <Footer />
 
       <AuthModal
-        isOpen={authOpen}
-        initialView={authInitialView}
-        onClose={() => setAuthOpen(false)}
+        isOpen={isOpen}
+        initialView={initialView}
+        onClose={close}
       />
     </div>
   );

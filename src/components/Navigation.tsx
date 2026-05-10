@@ -27,7 +27,7 @@ const playbookItems = [
     icon: Users,
     labelKey: 'playbook.items.community.label',
     descKey: 'playbook.items.community.desc',
-    href: '/growth/formation',
+    href: '/academy',
     color: 'text-emerald-400',
     bg: 'bg-emerald-500/10',
     requiresAuth: true,
@@ -75,6 +75,9 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
   ];
 
   const filteredPlaybookItems = playbookItems.filter(item => !item.requiresAuth || (user && !loading));
+
+  const displayName = user?.user_metadata?.full_name || user?.user_metadata?.name || user?.email?.split('@')[0] || 'Utilisateur';
+  const initial = displayName.charAt(0).toUpperCase();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
@@ -355,10 +358,10 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                 user ? (
                   <div className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold flex-shrink-0">
-                      {user.email?.charAt(0).toUpperCase()}
+                      {initial}
                     </div>
                     <div className="overflow-hidden">
-                      <p className="text-sm font-semibold text-white">{t('nav.connected')}</p>
+                      <p className="text-sm font-semibold text-white">{displayName}</p>
                       <p className="text-xs text-slate-400 truncate">{user.email}</p>
                     </div>
                   </div>

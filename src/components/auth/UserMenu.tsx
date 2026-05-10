@@ -21,7 +21,8 @@ export default function UserMenu() {
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  const initial = user?.email?.charAt(0).toUpperCase() ?? 'U';
+  const displayName = user?.user_metadata?.full_name || user?.user_metadata?.name || user?.email?.split('@')[0] || 'Utilisateur';
+  const initial = displayName.charAt(0).toUpperCase();
   const email = user?.email ?? '';
 
   return (
@@ -37,9 +38,9 @@ export default function UserMenu() {
           {initial}
         </div>
 
-        {/* Email (desktop) */}
+        {/* Display Name (desktop) */}
         <span className="hidden lg:block text-sm text-slate-300 group-hover:text-white transition-colors max-w-[120px] truncate">
-          {email}
+          {displayName}
         </span>
 
         <ChevronDown
@@ -66,7 +67,7 @@ export default function UserMenu() {
                   {initial}
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-sm font-semibold text-white">{t('nav.myAccount')}</p>
+                  <p className="text-sm font-semibold text-white">{displayName}</p>
                   <p className="text-xs text-slate-400 truncate">{email}</p>
                 </div>
               </div>

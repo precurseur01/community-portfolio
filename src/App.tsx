@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BrandLoader from './components/BrandLoader';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
@@ -24,9 +25,12 @@ import CMTrainingHero from './components/CMTrainingHero';
 import CMCurriculumPage from './components/Pages/CMCurriculumPage';
 import CMProgramsPage from './components/Pages/CMProgramsPage';
 import ScrollToTop from './components/ScrollToTop';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+import AcademyLayout from './components/Academy/AcademyLayout';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [appLoading, setAppLoading] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -35,10 +39,12 @@ function App() {
   }, []);
 
   return (
+    <>
+      {appLoading && <BrandLoader onComplete={() => setAppLoading(false)} />}
     <Router>
       <ScrollToTop />
       <Routes>
-        {/* Page d'accueil avec sections */}
+        {/* ═══ Pages publiques ═══ */}
         <Route
           path="/"
           element={
@@ -50,56 +56,6 @@ function App() {
               <Testimonials />
               <Contact />
               <FloatingWhatsAppButton />
-            </MainLayout>
-          }
-        />
-
-        {/* Pages standalone */}
-        <Route
-          path="/growth/formation"
-          element={
-            <MainLayout scrolled={scrolled}>
-              <TrainingPage />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/growth/formation2"
-          element={
-            <MainLayout scrolled={scrolled}>
-              <TrainingPage2 />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/growth/cm-curriculum"
-          element={
-            <MainLayout scrolled={scrolled}>
-              <CMCurriculumPage />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/growth/cm-programs"
-          element={
-            <MainLayout scrolled={scrolled}>
-              <CMProgramsPage />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/growth"
-          element={
-            <MainLayout scrolled={scrolled}>
-              <GrowthPlaybook />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/preselection"
-          element={
-            <MainLayout scrolled={scrolled}>
-              <PreselectionForm />
             </MainLayout>
           }
         />
@@ -116,14 +72,6 @@ function App() {
           element={
             <MainLayout scrolled={scrolled}>
               <Services />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <MainLayout scrolled={scrolled}>
-              <About />
             </MainLayout>
           }
         />
@@ -159,38 +107,106 @@ function App() {
             </MainLayout>
           }
         />
+
+        {/* ═══ Pages protégées (authentification requise) ═══ */}
+
+        {/* Academy — plateforme e-learning unifiée */}
         <Route
-          path="/receipt-generator"
+          path="/academy"
           element={
-            <MainLayout scrolled={scrolled}>
-              <ReceiptGenerator />
-            </MainLayout>
+            <ProtectedRoute>
+              <MainLayout scrolled={scrolled}>
+                <AcademyLayout />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Legacy redirects */}
+        <Route path="/growth/formation" element={<Navigate to="/academy" replace />} />
+        <Route path="/growth/formation2" element={<Navigate to="/academy" replace />} />
+        <Route
+          path="/growth/cm-curriculum"
+          element={
+            <ProtectedRoute>
+              <MainLayout scrolled={scrolled}>
+                <CMCurriculumPage />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/growth/cm-programs"
+          element={
+            <ProtectedRoute>
+              <MainLayout scrolled={scrolled}>
+                <CMProgramsPage />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/growth"
+          element={
+            <ProtectedRoute>
+              <MainLayout scrolled={scrolled}>
+                <GrowthPlaybook />
+              </MainLayout>
+            </ProtectedRoute>
           }
         />
         <Route
           path="/growth/Conversion"
           element={
-            <MainLayout scrolled={scrolled}>
-              <ConversionTechniques />
-            </MainLayout>
+            <ProtectedRoute>
+              <MainLayout scrolled={scrolled}>
+                <ConversionTechniques />
+              </MainLayout>
+            </ProtectedRoute>
           }
         />
         <Route
           path="/growth/Psychology"
           element={
-            <MainLayout scrolled={scrolled}>
-              <PsychologyLearning />
-            </MainLayout>
+            <ProtectedRoute>
+              <MainLayout scrolled={scrolled}>
+                <PsychologyLearning />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/preselection"
+          element={
+            <ProtectedRoute>
+              <MainLayout scrolled={scrolled}>
+                <PreselectionForm />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/receipt-generator"
+          element={
+            <ProtectedRoute>
+              <MainLayout scrolled={scrolled}>
+                <ReceiptGenerator />
+              </MainLayout>
+            </ProtectedRoute>
           }
         />
         <Route
           path="/suggestion"
           element={
-            <MainLayout scrolled={scrolled}>
-              <SuggestionBox />
-            </MainLayout>
+            <ProtectedRoute>
+              <MainLayout scrolled={scrolled}>
+                <SuggestionBox />
+              </MainLayout>
+            </ProtectedRoute>
           }
         />
+
+        {/* ═══ 404 ═══ */}
         <Route
           path="*"
           element={
@@ -199,7 +215,9 @@ function App() {
         />
       </Routes>
     </Router>
+    </>
   );
 }
 
 export default App;
+
