@@ -1,4 +1,4 @@
-import { Menu, X, ChevronRight, ChevronDown, BookOpen, Zap, Star, Users, Brain, LogIn, UserPlus } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronDown, BookOpen, Zap, Star, Users, Brain, LogIn, UserPlus, GraduationCap } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -24,12 +24,12 @@ const playbookItems = [
     requiresAuth: true,
   },
   {
-    icon: Users,
+    icon: GraduationCap,
     labelKey: 'playbook.items.community.label',
     descKey: 'playbook.items.community.desc',
     href: '/academy',
-    color: 'text-emerald-400',
-    bg: 'bg-emerald-500/10',
+    color: 'text-blue-400',
+    bg: 'bg-blue-500/10',
     requiresAuth: true,
   },
   {
