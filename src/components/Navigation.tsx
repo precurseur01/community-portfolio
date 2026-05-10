@@ -1,4 +1,4 @@
-import { Menu, X, ChevronRight, ChevronDown, BookOpen, Zap, Star, Users, Brain, LogIn, UserPlus, GraduationCap } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronDown, BookOpen, Zap, Star, Users, Brain, LogIn, UserPlus, GraduationCap, LogOut } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -44,7 +44,7 @@ const playbookItems = [
 ];
 
 export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: NavigationProps) {
-  const { user, loading } = useAuth();
+  const { user, loading, signOut } = useAuth();
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [playbook, setPlaybook] = useState(false);
@@ -356,14 +356,26 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
               {/* ── Auth mobile ── */}
               {!loading && (
                 user ? (
-                  <div className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold flex-shrink-0">
-                      {initial}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold flex-shrink-0">
+                        {initial}
+                      </div>
+                      <div className="overflow-hidden">
+                        <p className="text-sm font-semibold text-white">{displayName}</p>
+                        <p className="text-xs text-slate-400 truncate">{user.email}</p>
+                      </div>
                     </div>
-                    <div className="overflow-hidden">
-                      <p className="text-sm font-semibold text-white">{displayName}</p>
-                      <p className="text-xs text-slate-400 truncate">{user.email}</p>
-                    </div>
+                    <button
+                      onClick={async () => {
+                        await signOut();
+                        setIsOpen(false);
+                      }}
+                      className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-red-500/30 text-red-400 font-medium hover:bg-red-500/10 transition-all"
+                    >
+                      <LogOut size={16} />
+                      {t('nav.logout')}
+                    </button>
                   </div>
                 ) : (
                   <div className="grid grid-cols-2 gap-3">
