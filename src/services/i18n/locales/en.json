@@ -15,7 +15,10 @@
     "toggleMenu": "Toggle Menu",
     "myAccount": "My account",
     "profile": "Profile",
-    "settings": "Settings"
+    "settings": "Settings",
+    "pricing": "Pricing",
+    "servicesDesc": "Our offers & solutions",
+    "pricingDesc": "Plans & Pricing"
   },
   "playbook": {
     "title": "Growth Playbook",
@@ -40,8 +43,6 @@
     "role": "Community Management & Digital Strategy",
     "headingPrefix": "We create brands that",
     "headingGradient": "inspire, engage, and grow",
-    "descriptionPrefix": "I am",
-    "descriptionName": "Yndris Douanla",
     "descriptionMiddle": "We help brands build a",
     "descriptionStrong": "strong",
     "descriptionHuman": "human",
@@ -62,17 +63,17 @@
       "before": "From",
       "highlight1": "Technology",
       "middle": "to",
-      "highlight2": "Communication"
+      "highlight2": "Strategy"
     },
-    "paragraph1": "Originally a developer, I learned to understand algorithms. Today, I turn them into emotional and growth levers.",
-    "paragraph2": "My approach to community management is analytical, human, and impact-driven. I don't just manage accounts, I build communities that turn brands into movements.",
-    "quote": "Here, creativity meets strategy. Every post is thought out, every community is cultivated, every brand becomes a movement.",
+    "paragraph1": "Born from the fusion of technical expertise and creative vision, our agency transforms algorithms into emotional and growth levers.",
+    "paragraph2": "Our approach to digital is analytical, human, and impact-driven. We don't just manage accounts; we build ecosystems that turn brands into market leaders.",
+    "quote": "At Free Digital, innovation meets strategy. We cultivate every community to turn your brand into an essential movement.",
     "timeline": {
-      "heading": "My Journey",
-      "2019": "Tech Developer",
-      "2021": "Discovery of Digital Marketing",
-      "2023": "Expert Community Manager",
-      "2025": "Digital & Growth Strategist"
+      "heading": "Our Evolution",
+      "2019": "Founding & Tech Expertise",
+      "2021": "Digital Marketing Specialization",
+      "2023": "Expansion & Community Management",
+      "2025": "Leader in Strategy & Growth"
     }
   },
   "services": {
@@ -267,7 +268,7 @@
       }
     },
     "whyWorkWithMe": {
-      "title": "Why work with me?",
+      "title": "Why work with us?",
       "features": {
         "feature1": "Data-driven and creative approach",
         "feature2": "Measurable and transparent results",

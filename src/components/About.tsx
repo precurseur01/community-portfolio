@@ -45,7 +45,7 @@ export default function About() {
               <div className="relative z-10 text-center p-8">
                 <Code2 size={80} className="mx-auto mb-4 text-blue-400" />
                 <div className="text-6xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">+</div>
-                <Heart size={80} className="mx-auto text-emerald-400" />
+                <TrendingUp size={80} className="mx-auto text-emerald-400" />
               </div>
             </div>
           </div>

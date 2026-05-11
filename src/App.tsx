@@ -28,6 +28,8 @@ import ScrollToTop from './components/ScrollToTop';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import AcademyLayout from './components/Academy/AcademyLayout';
 
+import PricingPage from './components/Pages/PricingPage';
+
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const [appLoading, setAppLoading] = useState(true);
@@ -72,6 +74,14 @@ function App() {
           element={
             <MainLayout scrolled={scrolled}>
               <Services />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/pricing"
+          element={
+            <MainLayout scrolled={scrolled}>
+              <PricingPage />
             </MainLayout>
           }
         />

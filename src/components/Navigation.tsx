@@ -43,13 +43,35 @@ const playbookItems = [
   },
 ];
 
+const serviceItems = [
+  {
+    icon: Zap,
+    labelKey: 'nav.services',
+    descKey: 'nav.servicesDesc',
+    href: '/services',
+    color: 'text-blue-400',
+    bg: 'bg-blue-500/10',
+  },
+  {
+    icon: Star,
+    labelKey: 'nav.pricing',
+    descKey: 'nav.pricingDesc',
+    href: '/pricing',
+    color: 'text-emerald-400',
+    bg: 'bg-emerald-500/10',
+  },
+];
+
 export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: NavigationProps) {
   const { user, loading, signOut } = useAuth();
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [playbook, setPlaybook] = useState(false);
+  const [servicesDropdown, setServicesDropdown] = useState(false);
   const [mobilePlaybook, setMobilePlaybook] = useState(false);
+  const [mobileServices, setMobileServices] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
@@ -61,6 +83,9 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setPlaybook(false);
       }
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesDropdown(false);
+      }
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
@@ -69,9 +94,8 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
   const navLinks = [
     { name: t('nav.home'), href: '/', delay: 'delay-75' },
     { name: t('nav.about'), href: '/about', delay: 'delay-100' },
-    { name: t('nav.services'), href: '/services', delay: 'delay-150' },
-    { name: t('nav.projects'), href: '/projects', delay: 'delay-200' },
-    { name: t('nav.contact'), href: '/contact', delay: 'delay-300' },
+    { name: t('nav.projects'), href: '/projects', delay: 'delay-150' },
+    { name: t('nav.contact'), href: '/contact', delay: 'delay-200' },
   ];
 
   const filteredPlaybookItems = playbookItems.filter(item => !item.requiresAuth || (user && !loading));
@@ -113,6 +137,60 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                 {link.name}
               </NavLink>
             ))}
+
+            {/* ── Services dropdown ── */}
+            <div ref={servicesRef} className="relative">
+              <button
+                onClick={() => setServicesDropdown(!servicesDropdown)}
+                onMouseEnter={() => setServicesDropdown(true)}
+                className={`flex items-center gap-1.5 px-3 py-2 text-[13px] uppercase font-medium rounded-lg transition-all duration-200 ${
+                  servicesDropdown
+                    ? 'text-emerald-400 bg-emerald-400/10'
+                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {t('nav.services')}
+                <ChevronDown
+                  size={13}
+                  className={`transition-transform duration-300 ${servicesDropdown ? 'rotate-180' : ''}`}
+                />
+              </button>
+
+              {/* Dropdown panel */}
+              <div
+                onMouseLeave={() => setServicesDropdown(false)}
+                className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 transition-all duration-300 origin-top ${servicesDropdown
+                  ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
+                  : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
+                  }`}
+              >
+                {/* Arrow tip */}
+                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-slate-900 border-l border-t border-white/10 rotate-45" />
+
+                <div className="relative bg-slate-900/95 backdrop-blur-xl rounded-2xl border border-white/10 p-2 shadow-2xl shadow-black/50">
+                  {serviceItems.map((item) => (
+                    <NavLink
+                      key={item.href}
+                      to={item.href}
+                      onClick={() => setServicesDropdown(false)}
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-all duration-200 group"
+                    >
+                      <div className={`w-8 h-8 rounded-lg ${item.bg} flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110`}>
+                        <item.icon size={15} className={item.color} />
+                      </div>
+                      <div>
+                        <div className="text-[13px] font-medium text-white">{t(item.labelKey)}</div>
+                        <div className="text-[11px] text-slate-500">{t(item.descKey)}</div>
+                      </div>
+                      <ChevronRight
+                        size={14}
+                        className="ml-auto text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all"
+                      />
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             {/* ── Growth Playbook dropdown ── */}
             <div ref={dropdownRef} className="relative">
@@ -282,6 +360,60 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                   />
                 </NavLink>
               ))}
+
+              {/* ── Mobile Services accordion ── */}
+              <div
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+                  } delay-150 ${mobileServices
+                    ? 'border-emerald-500/40 bg-gradient-to-r from-blue-600/10 to-emerald-600/10'
+                    : 'border-white/10 bg-gradient-to-r from-white/5 to-white/0'
+                  }`}
+              >
+                <button
+                  onClick={() => setMobileServices(!mobileServices)}
+                  className="w-full flex items-center justify-between p-4"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center">
+                      <Zap size={15} className="text-white" />
+                    </div>
+                    <span className={`text-xl uppercase font-semibold transition-colors duration-200 ${mobileServices ? 'text-emerald-400' : 'text-white'
+                      }`}>
+                      {t('nav.services')}
+                    </span>
+                  </div>
+                  <ChevronDown
+                    size={20}
+                    className={`transition-transform duration-300 ${mobileServices ? 'rotate-180 text-emerald-400' : 'text-gray-400'
+                      }`}
+                  />
+                </button>
+
+                <div className={`transition-all duration-300 ${mobileServices ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <div className="px-4 pb-4 space-y-1.5">
+                    {serviceItems.map((item) => (
+                      <NavLink
+                        key={item.href}
+                        to={item.href}
+                        onClick={() => { setIsOpen(false); setMobileServices(false); }}
+                        className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all group"
+                      >
+                        <div className={`w-8 h-8 rounded-lg ${item.bg} flex items-center justify-center flex-shrink-0`}>
+                          <item.icon size={14} className={item.color} />
+                        </div>
+                        <div>
+                          <div className="text-sm font-medium text-white">{t(item.labelKey)}</div>
+                          <div className="text-xs text-slate-500">{t(item.descKey)}</div>
+                        </div>
+                        <ChevronRight
+                          size={14}
+                          className="ml-auto text-slate-600 group-hover:text-emerald-400 transition-colors"
+                        />
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
               {/* ── Mobile Growth Playbook accordion ── */}
               <div

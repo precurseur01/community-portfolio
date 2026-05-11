@@ -125,6 +125,12 @@ export default function Footer() {
                   <a href="/services" className="hover:text-white transition">{t(key)}</a>
                 </li>
               ))}
+              <li className="pt-2 border-t border-white/5">
+                <a href="/pricing" className="text-emerald-400 font-medium hover:text-emerald-300 transition-colors flex items-center gap-2">
+                  <Sparkles size={14} />
+                  {t("nav.pricing")}
+                </a>
+              </li>
             </ul>
           </div>
 

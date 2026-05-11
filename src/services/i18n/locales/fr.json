@@ -15,7 +15,10 @@
         "toggleMenu": "Basculer le menu",
         "myAccount": "Mon compte",
         "profile": "Profil",
-        "settings": "Paramètres"
+        "settings": "Paramètres",
+        "pricing": "Tarifs",
+        "servicesDesc": "Nos offres & solutions",
+        "pricingDesc": "Forfaits & Tarification"
     },
     "playbook": {
         "title": "Growth Playbook",
@@ -40,8 +43,6 @@
         "role": "Community Management & Stratégie Digitale",
         "headingPrefix": "Nous créons des marques qui",
         "headingGradient": "inspirent, engagent et grandissent",
-        "descriptionPrefix": "Je suis",
-        "descriptionName": "Yndris Douanla",
         "descriptionMiddle": "Nous aidons les marques à construire une présence",
         "descriptionStrong": "puissante",
         "descriptionHuman": "humaine",
@@ -62,17 +63,17 @@
             "before": "De la",
             "highlight1": "technologie",
             "middle": "à la",
-            "highlight2": "communication"
+            "highlight2": "stratégie"
         },
-        "paragraph1": "Développeur à l'origine, j'ai appris à comprendre les algorithmes. Aujourd'hui, je les transforme en leviers d'émotion et de croissance.",
-        "paragraph2": "Mon approche du community management est analytique, humaine et orientée impact. Je ne gère pas simplement des comptes, je construis des communautés qui transforment les marques en mouvements.",
-        "quote": "Ici, la créativité rencontre la stratégie. Chaque publication est pensée, chaque communauté est cultivée, chaque marque devient un mouvement.",
+        "paragraph1": "Née de la fusion entre expertise technique et vision créative, notre agence transforme les algorithmes en leviers d'émotion et de croissance.",
+        "paragraph2": "Notre approche du digital est analytique, humaine et orientée impact. Nous ne gérons pas simplement des comptes, nous construisons des écosystèmes qui transforment les marques en leaders de leur marché.",
+        "quote": "Chez Free Digital, l'innovation rencontre la stratégie. Nous cultivons chaque communauté pour faire de votre marque un mouvement incontournable.",
         "timeline": {
-            "heading": "Mon parcours",
-            "2019": "Développeur Tech",
-            "2021": "Découverte du Marketing Digital",
-            "2023": "Community Manager Expert",
-            "2025": "Stratège Digital & Growth"
+            "heading": "Notre évolution",
+            "2019": "Fondation & Expertise Tech",
+            "2021": "Spécialisation Marketing Digital",
+            "2023": "Expansion & Community Management",
+            "2025": "Leader en Stratégie & Growth"
         }
     },
     "services": {
@@ -267,7 +268,7 @@
             }
         },
         "whyWorkWithMe": {
-            "title": "Pourquoi travailler avec moi ?",
+            "title": "Pourquoi travailler avec nous ?",
             "features": {
                 "feature1": "Approche data-driven et créative",
                 "feature2": "Résultats mesurables et transparents",
