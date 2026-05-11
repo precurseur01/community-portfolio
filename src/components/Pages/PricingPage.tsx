@@ -189,14 +189,21 @@ const PricingPage: React.FC = () => {
               </div>
             )}
 
-            <button className={`w-full py-4 px-6 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 ${
-              plan.popular 
-                ? 'bg-primary text-primary-foreground hover:scale-[1.02] shadow-lg shadow-primary/20' 
-                : 'bg-secondary hover:bg-secondary/80 border border-white/10'
-            }`}>
+            <a 
+              href={`https://wa.me/237670616710?text=${encodeURIComponent(
+                `Bonjour, je suis intéressé par le forfait ${plan.name} de Free Digital Solutions. Pouvez-vous m'en dire plus ?`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`w-full py-4 px-6 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 ${
+                plan.popular 
+                  ? 'bg-primary text-primary-foreground hover:scale-[1.02] shadow-lg shadow-primary/20' 
+                  : 'bg-secondary hover:bg-secondary/80 border border-white/10'
+              }`}
+            >
               Choisir ce forfait
               <ArrowRight size={18} />
-            </button>
+            </a>
           </motion.div>
         ))}
       </div>
@@ -221,7 +228,11 @@ const PricingPage: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
-              href="#contact" 
+              href={`https://wa.me/237670616710?text=${encodeURIComponent(
+                "Bonjour, je souhaiterais obtenir un devis sur mesure pour les services de Free Digital Solutions."
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-black px-8 py-4 rounded-2xl font-bold hover:bg-white/90 transition-all flex items-center gap-2"
             >
               Demander un devis
