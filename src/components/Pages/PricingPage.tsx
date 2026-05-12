@@ -29,6 +29,7 @@ const pricingPlans = [
     description: "Gestion de communauté",
     tagline: "1 plateforme",
     features: [
+      "3 posts/semaine + stories",
       "Création & planification du contenu",
       "Animation de la page (posts, stories)",
       "Réponse aux commentaires & messages",
@@ -46,8 +47,9 @@ const pricingPlans = [
     price: "90 000",
     period: "FCFA/mois",
     description: "Contenu + Boost Pub",
-    tagline: "Hors budget pub | 1 plateforme",
+    tagline: "1 plateforme | Hors budget pub",
     features: [
+      "4 posts/semaine + stories",
       "Community management (1 plateforme)",
       "Boost de publications stratégiques",
       "Ciblage d'audience de base",
@@ -65,8 +67,9 @@ const pricingPlans = [
     price: "150 000",
     period: "FCFA/mois",
     description: "Communauté → Leads qualifiés",
-    tagline: "2 plateformes",
+    tagline: "2 plateformes | Hors budget pub",
     features: [
+      "5 posts/semaine + stories",
       "Community management complet",
       "Stratégie de contenu personnalisée",
       "Calendrier de contenu mensuel",
@@ -88,6 +91,7 @@ const pricingPlans = [
     description: "Présence digitale complète",
     tagline: "3 plateformes | Hors budget pub",
     features: [
+      "7 posts/semaine + stories & reels",
       "Community management multi-plateformes",
       "Campagnes publicitaires avancées",
       "Création de visuels & vidéos courtes",
@@ -221,9 +225,10 @@ const PricingPage: React.FC = () => {
         
         <div className="relative z-10">
           <h3 className="text-2xl md:text-3xl font-display font-bold mb-4">Besoin d'un accompagnement sur mesure ?</h3>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Nous proposons également des devis personnalisés pour répondre à vos besoins spécifiques. 
-            Notez que tous nos forfaits nécessitent un <span className="text-white font-bold">engagement minimum de 3 mois</span>.
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto space-y-2">
+            <span className="block">📌 Budget publicitaire non inclus dans les forfaits.</span>
+            <span className="block">📌 Engagement minimum : <span className="text-white font-bold">3 mois</span>.</span>
+            <span className="block">📌 Devis personnalisé disponible pour vos besoins spécifiques.</span>
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
