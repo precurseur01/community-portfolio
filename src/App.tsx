@@ -7,7 +7,7 @@ import Services from './components/Services';
 import CaseStudies from './components/CaseStudies';
 import Contact from './components/Contact';
 import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
-import TrainingPage from './components/Pages/TrainingPage';
+// import TrainingPage from './components/Pages/TrainingPage';
 import PreselectionForm from './components/Pages/PreselectionForm';
 import MainLayout from './Layout/MainLayout';
 import LegalNotice from './components/Pages/LegalNotice';
@@ -19,7 +19,7 @@ import ReceiptGenerator from './components/Pages/ReceiptGenerator';
 import ConversionTechniques from './components/Pages/ConversionTechniques';
 import GrowthPlaybook from './components/Pages/GrowthPlaybook';
 import PsychologyLearning from './components/Pages/psychologyTriggers';
-import TrainingPage2 from './components/Pages/TrainingPage2';
+// import TrainingPage2 from './components/Pages/TrainingPage2';
 import SuggestionBox from './components/Pages/SuggestionBox';
 import CMTrainingHero from './components/CMTrainingHero';
 import CMCurriculumPage from './components/Pages/CMCurriculumPage';
@@ -188,11 +188,9 @@ function App() {
         <Route
           path="/preselection"
           element={
-            <ProtectedRoute>
               <MainLayout scrolled={scrolled}>
                 <PreselectionForm />
               </MainLayout>
-            </ProtectedRoute>
           }
         />
         <Route
