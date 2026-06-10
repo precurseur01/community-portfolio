@@ -185,7 +185,7 @@ const Receipt: React.FC<ReceiptProps> = ({ data, montantLettre }) => (
       paddingBottom: "6px",
       gap: "12px",
     }}>
-      <img src={Img.ifpit} style={{ height: "20mm", objectFit: "contain" }} alt="IFPIT" />
+      <img src={Img.ifpit} style={{ height: "20mm", objectFit: "contain" }} alt="FDS" />
       <div style={{ textAlign: "center", flex: 1 }}>
         <div style={{ fontSize: "13pt", fontWeight: 800, color: "#0f3460", textTransform: "uppercase" as const, letterSpacing: "0.5px" }}>
           REÇU DE PAIEMENT – FORMATION
@@ -466,7 +466,7 @@ const ReceiptGenerator: React.FC = () => {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "24px" }}>
           <div>
             <div style={{ fontSize: "20px", fontWeight: 800, color: "#0f3460" }}>
-              IFPIT<span style={{ color: "#e94560" }}>.</span> — Reçu Formation CM
+              FDS<span style={{ color: "#e94560" }}>.</span> — Reçu Formation CM
             </div>
             <div style={{ fontSize: "12px", color: "#888", marginTop: "3px" }}>
               Formation Community Management — Remplissez les champs pour générer le reçu
