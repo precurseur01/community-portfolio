@@ -133,33 +133,29 @@ export default function BrandLoader({ onComplete }: { onComplete?: () => void })
           </div>
         </div>
 
-        {/* Mini footer inside main */}
-        <div style={{
-          width: '200px', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          marginTop: '3rem',
-          borderTop: '1px solid hsl(var(--border))', paddingTop: '1rem',
-          opacity: 0.6,
-        }}>
-          <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#09A9E3' }}>
-            CORE_v1.0.0
-          </span>
-          <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'hsl(var(--muted-foreground))' }}>
-            SYST_OK
-          </span>
-        </div>
       </main>
 
-      {/* Global footer */}
+      {/* Footer */}
       <footer style={{
         position: 'fixed', bottom: 0, left: 0,
         width: '100%', padding: '1.5rem', textAlign: 'center', zIndex: 20,
+        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem',
       }}>
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: '1rem',
+          fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em',
+          opacity: 0.6,
+        }}>
+          <span style={{ color: '#09A9E3' }}>CORE_v1.0.0</span>
+          <span style={{ width: '3px', height: '3px', borderRadius: '9999px', backgroundColor: 'hsl(var(--muted-foreground))' }} />
+          <span style={{ color: 'hsl(var(--muted-foreground))' }}>SYST_OK</span>
+        </div>
         <p style={{
           fontSize: '10px', color: 'hsl(var(--muted-foreground))',
           textTransform: 'uppercase', letterSpacing: '0.2em', margin: 0,
-          opacity: 0.6,
+          opacity: 0.5,
         }}>
-          © 2025 Free Digital Solutions. Precision &amp; Vitality in Motion.
+          © {new Date().getFullYear()} Free Digital Solutions. Precision &amp; Vitality in Motion.
         </p>
       </footer>
     </div>
