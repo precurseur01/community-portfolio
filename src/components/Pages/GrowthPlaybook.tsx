@@ -124,7 +124,7 @@ export default function GrowthPlaybook() {
     const modulesVisible = useVisible(0.1);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 font-sans overflow-x-hidden">
+        <div className="min-h-screen font-sans overflow-x-hidden">
             <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
         .font-serif { font-family: 'Playfair Display', serif; }
@@ -201,7 +201,7 @@ export default function GrowthPlaybook() {
                                 </span>
                             </h1>
 
-                            <p className="font-body text-slate-400 text-lg leading-relaxed mb-10 max-w-md">
+                            <p className="font-body text-muted-foreground text-lg leading-relaxed mb-10 max-w-md">
                                 Toutes les techniques, méthodes et scripts pour transformer vos prospects en clients — et vos clients en ambassadeurs.
                             </p>
 
@@ -215,7 +215,7 @@ export default function GrowthPlaybook() {
                                 </NavLink>
                                 <a
                                     href="#modules"
-                                    className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/5 border border-white/10 rounded-xl text-slate-300 font-body font-500 text-sm hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                                    className="inline-flex items-center gap-2 px-6 py-3.5 bg-secondary/20 border border-border rounded-xl text-foreground/80 font-body font-500 text-sm hover:bg-secondary/40 hover:border-border/80 transition-all duration-300"
                                 >
                                     Explorer les modules
                                 </a>
@@ -228,18 +228,18 @@ export default function GrowthPlaybook() {
                                 {/* Glow behind card */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 to-indigo-600/20 rounded-3xl blur-2xl scale-105" />
 
-                                <div className="relative bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-violet-500/20 overflow-hidden">
+                                <div className="relative bg-card/80 backdrop-blur-xl rounded-3xl border border-violet-500/20 overflow-hidden">
                                     {/* Card header */}
                                     <div className="bg-gradient-to-br from-violet-600 to-indigo-700 p-6 relative overflow-hidden">
-                                        <div className="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-white/5" />
+                                        <div className="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-secondary/30" />
                                         <div className="absolute -right-2 -bottom-8 w-24 h-24 rounded-full bg-black/10" />
                                         <div className="relative flex items-start justify-between">
                                             <div>
-                                                <div className="text-white/50 text-xs font-body uppercase tracking-widest mb-2">Module en vedette</div>
+                                                <div className="text-muted-foreground/200 text-xs font-body uppercase tracking-widest mb-2">Module en vedette</div>
                                                 <h3 className="font-serif text-2xl text-white font-700">{featured.title}</h3>
                                                 <p className="text-white/70 text-sm mt-1 font-body">{featured.tagline}</p>
                                             </div>
-                                            <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center">
+                                            <div className="w-12 h-12 rounded-2xl bg-secondary/40 flex items-center justify-center">
                                                 <featured.icon size={22} className="text-white" />
                                             </div>
                                         </div>
@@ -247,7 +247,7 @@ export default function GrowthPlaybook() {
 
                                     {/* Card body */}
                                     <div className="p-6">
-                                        <p className="text-slate-400 text-sm font-body leading-relaxed mb-5">{featured.desc}</p>
+                                        <p className="text-muted-foreground text-sm font-body leading-relaxed mb-5">{featured.desc}</p>
 
                                         <div className="flex flex-wrap gap-2 mb-5">
                                             {featured.tags.map(tag => (
@@ -258,7 +258,7 @@ export default function GrowthPlaybook() {
                                         </div>
 
                                         <div className="flex items-center justify-between">
-                                            <div className="flex items-center gap-4 text-xs text-slate-500 font-body">
+                                            <div className="flex items-center gap-4 text-xs text-muted-foreground font-body">
                                                 <span className="flex items-center gap-1.5"><Clock size={12} /> {featured.duration}</span>
                                                 <span className={`flex items-center gap-1.5 ${featured.levelColor}`}>
                                                     <Star size={12} /> {featured.level}
@@ -280,7 +280,7 @@ export default function GrowthPlaybook() {
             </section>
 
             {/* ── STATS BAR ──────────────────────────── */}
-            <section className="border-y border-white/5 bg-white/[0.02] py-10 px-4">
+            <section className="border-y border-border bg-secondary/20 py-10 px-4">
                 <div ref={statsVisible.ref} className="max-w-5xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {stats.map((s, i) => (
@@ -289,12 +289,12 @@ export default function GrowthPlaybook() {
                                 className={`reveal ${statsVisible.visible ? 'visible' : ''} flex items-center gap-4`}
                                 style={{ transitionDelay: `${i * 0.1}s` }}
                             >
-                                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0">
+                                <div className="w-10 h-10 rounded-xl bg-secondary/30 flex items-center justify-center flex-shrink-0">
                                     <s.icon size={18} className={s.color} />
                                 </div>
                                 <div>
                                     <div className={`font-serif text-2xl font-700 ${s.color}`}>{s.value}</div>
-                                    <div className="text-xs text-slate-500 font-body">{s.label}</div>
+                                    <div className="text-xs text-muted-foreground font-body">{s.label}</div>
                                 </div>
                             </div>
                         ))}
@@ -310,14 +310,14 @@ export default function GrowthPlaybook() {
                     <div ref={modulesVisible.ref} className={`reveal ${modulesVisible.visible ? 'visible' : ''} mb-14`}>
                         <div className="flex items-center gap-4 mb-4">
                             <div className="w-12 h-px bg-gradient-to-r from-white/20 to-transparent" />
-                            <span className="text-xs font-body text-slate-500 uppercase tracking-[0.2em]">Curriculum</span>
+                            <span className="text-xs font-body text-muted-foreground uppercase tracking-[0.2em]">Curriculum</span>
                         </div>
                         <div className="flex flex-col md:flex-row md:items-end gap-4 justify-between">
                             <h2 className="font-serif text-4xl md:text-5xl text-white">
                                 Les 4 modules<br />
-                                <span className="italic text-slate-400">du Playbook</span>
+                                <span className="italic text-muted-foreground">du Playbook</span>
                             </h2>
-                            <p className="text-slate-500 text-sm font-body max-w-xs leading-relaxed">
+                            <p className="text-muted-foreground text-sm font-body max-w-xs leading-relaxed">
                                 Un parcours progressif, du fondamental à l'avancé. Chaque module est autonome et directement applicable.
                             </p>
                         </div>
@@ -331,7 +331,7 @@ export default function GrowthPlaybook() {
                                 to={mod.href}
                                 onMouseEnter={() => setHovered(mod.id)}
                                 onMouseLeave={() => setHovered(null)}
-                                className={`module-card reveal ${modulesVisible.visible ? 'visible' : ''} group relative bg-slate-900/60 backdrop-blur-sm rounded-2xl border ${mod.border} ${mod.hover} overflow-hidden cursor-pointer block ${hovered === mod.id ? `shadow-2xl ${mod.glow}` : ''}`}
+                                className={`module-card reveal ${modulesVisible.visible ? 'visible' : ''} group relative bg-card/60 backdrop-blur-sm rounded-2xl border ${mod.border} ${mod.hover} overflow-hidden cursor-pointer block ${hovered === mod.id ? `shadow-2xl ${mod.glow}` : ''}`}
                                 style={{ transitionDelay: `${i * 0.1}s` }}
                             >
                                 {/* Big background number */}
@@ -349,7 +349,7 @@ export default function GrowthPlaybook() {
                                             <mod.icon size={20} className="text-white" />
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <span className={`text-xs font-body font-500 ${mod.levelColor} px-2.5 py-1 rounded-full bg-white/5 border border-white/10`}>
+                                            <span className={`text-xs font-body font-500 ${mod.levelColor} px-2.5 py-1 rounded-full bg-secondary/20 border border-border`}>
                                                 {mod.level}
                                             </span>
                                         </div>
@@ -357,12 +357,12 @@ export default function GrowthPlaybook() {
 
                                     {/* Text */}
                                     <div className="mb-5">
-                                        <div className="text-xs font-body text-slate-500 uppercase tracking-widest mb-1.5">Module {mod.number}</div>
+                                        <div className="text-xs font-body text-muted-foreground uppercase tracking-widest mb-1.5">Module {mod.number}</div>
                                         <h3 className="font-serif text-xl text-white font-700 mb-1 group-hover:text-white transition-colors">
                                             {mod.title}
                                         </h3>
-                                        <p className="text-sm font-body italic text-slate-400 mb-3">{mod.tagline}</p>
-                                        <p className="text-sm font-body text-slate-500 leading-relaxed">{mod.desc}</p>
+                                        <p className="text-sm font-body italic text-muted-foreground mb-3">{mod.tagline}</p>
+                                        <p className="text-sm font-body text-muted-foreground leading-relaxed">{mod.desc}</p>
                                     </div>
 
                                     {/* Tags */}
@@ -370,7 +370,7 @@ export default function GrowthPlaybook() {
                                         {mod.tags.map(tag => (
                                             <span
                                                 key={tag}
-                                                className="tag-pill px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-400 text-xs font-body"
+                                                className="tag-pill px-2.5 py-1 rounded-lg bg-secondary/20 border border-border text-muted-foreground text-xs font-body"
                                             >
                                                 {tag}
                                             </span>
@@ -378,8 +378,8 @@ export default function GrowthPlaybook() {
                                     </div>
 
                                     {/* Footer */}
-                                    <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                                        <div className="flex items-center gap-1.5 text-xs font-body text-slate-500">
+                                    <div className="flex items-center justify-between pt-4 border-t border-border">
+                                        <div className="flex items-center gap-1.5 text-xs font-body text-muted-foreground">
                                             <Clock size={12} />
                                             {mod.duration}
                                         </div>
@@ -399,12 +399,12 @@ export default function GrowthPlaybook() {
             <section className="py-20 px-4 relative overflow-hidden diagonal-line">
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-600/5 via-cyan-600/5 to-emerald-600/5" />
                 <div className="max-w-3xl mx-auto text-center relative">
-                    <div className="text-6xl font-serif text-white/5 mb-2 leading-none">"</div>
-                    <blockquote className="font-serif text-2xl md:text-3xl text-white/80 italic leading-relaxed mb-6">
+                    <div className="text-6xl font-serif text-muted-foreground/20 mb-2 leading-none">"</div>
+                    <blockquote className="font-serif text-2xl md:text-3xl text-foreground/80 italic leading-relaxed mb-6">
                         Les gens n'achètent pas ce que vous faites,<br className="hidden md:block" />
                         ils achètent <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">pourquoi</span> vous le faites.
                     </blockquote>
-                    <cite className="text-slate-500 text-sm font-body not-italic">— Simon Sinek · Start With Why</cite>
+                    <cite className="text-muted-foreground text-sm font-body not-italic">— Simon Sinek · Start With Why</cite>
                 </div>
             </section>
 
@@ -417,9 +417,9 @@ export default function GrowthPlaybook() {
                     </div>
                     <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">
                         Démarrez avec<br />
-                        <span className="italic text-slate-400">le module 01</span>
+                        <span className="italic text-muted-foreground">le module 01</span>
                     </h2>
-                    <p className="text-slate-500 font-body leading-relaxed mb-10">
+                    <p className="text-muted-foreground font-body leading-relaxed mb-10">
                         Commencez par maîtriser les techniques de conversion fondamentales. 45 minutes suffisent pour transformer votre approche commerciale.
                     </p>
                     <NavLink

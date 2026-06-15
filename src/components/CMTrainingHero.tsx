@@ -66,8 +66,7 @@ export default function CMTrainingHero() {
     <section
       ref={sectionRef}
       id="cm-academy"
-      className="relative py-20 overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #f0f9ff 0%, #fff 50%, #fff8f0 100%)' }}
+      className="relative py-20 overflow-hidden bg-background"
     >
       <style>{`
         @keyframes shimmer {
@@ -149,39 +148,37 @@ export default function CMTrainingHero() {
             className={`lg:col-span-7 flex flex-col gap-7 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
             {/* Label */}
-            <span className="inline-flex items-center gap-2 w-fit px-4 py-1.5 mt-2 rounded-full text-sm font-semibold uppercase tracking-wider border"
-              style={{ background: '#e6f7fd', color: '#09A9E3', borderColor: '#b3e6f7' }}>
+            <span className="inline-flex items-center gap-2 w-fit px-4 py-1.5 mt-2 rounded-full text-sm font-semibold uppercase tracking-wider border bg-primary/10 text-primary border-primary/30">
               {t('cmTraining.label')}
             </span>
 
             {/* Headline */}
             <div className="space-y-4">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight" style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground font-display">
                 {t('cmTraining.headline.prefix')}{' '}
                 <span className="relative inline-block">
-                  <span style={{ color: '#09A9E3' }}>{t('cmTraining.headline.highlight')}</span>
+                  <span className="text-primary">{t('cmTraining.headline.highlight')}</span>
                   <svg className="absolute -bottom-1 left-0 w-full" height="6" viewBox="0 0 200 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 3 Q50 0 100 3 Q150 6 200 3" stroke="#FF8C42" strokeWidth="3" strokeLinecap="round" fill="none" />
                   </svg>
                 </span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-xl leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
                 {t('cmTraining.description')}
               </p>
             </div>
 
             {/* Session Box */}
-            <div className="bg-white border rounded-2xl p-5 shadow-md space-y-3 max-w-md"
-              style={{ borderColor: '#e2e8f0' }}>
+            <div className="bg-card border border-border rounded-2xl p-5 shadow-md space-y-3 max-w-md">
               <div className="flex items-center gap-3">
-                <Calendar size={20} style={{ color: '#09A9E3' }} />
-                <p className="font-bold text-sm uppercase tracking-wide" style={{ color: '#0B3C5D' }}>
+                <Calendar size={20} className="text-primary" />
+                <p className="font-bold text-sm uppercase tracking-wide text-foreground">
                   {t('cmTraining.nextSession', { date: t('cmTraining.date') })}
                 </p>
               </div>
-              <div className="flex items-start gap-2 rounded-lg p-3" style={{ background: '#fff3ee' }}>
-                <AlertCircle size={18} style={{ color: '#FF8C42', flexShrink: 0, marginTop: 1 }} />
-                <p className="text-sm" style={{ color: '#7c4700' }}>
+              <div className="flex items-start gap-2 rounded-lg p-3 bg-[#FF8C42]/10 border border-[#FF8C42]/20">
+                <AlertCircle size={18} className="text-[#FF8C42] flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-[#FF8C42]">
                   {t('cmTraining.limitedPlaces')}
                 </p>
               </div>
@@ -209,29 +206,28 @@ export default function CMTrainingHero() {
                 </button>
               </div>
 
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <CheckCircle size={15} style={{ color: '#50BC74' }} />
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <CheckCircle size={15} className="text-accent" />
                 <span>{t('cmTraining.quickSignup')}</span>
-                <span className="text-gray-300 mx-1">•</span>
+                <span className="text-foreground/40 mx-1">•</span>
                 <span>{t('cmTraining.limit15')}</span>
               </div>
             </div>
 
             {/* Social Proof */}
-            <div className="flex flex-wrap items-center gap-5 pt-4 border-t border-gray-100">
+            <div className="flex flex-wrap items-center gap-5 pt-4 border-t border-border">
               <div className="flex -space-x-3">
                 {avatars.map((src, i) => (
                   <img key={i} src={src} alt="Apprenant"
-                    className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 object-cover" />
+                    className="w-10 h-10 rounded-full border-2 border-background bg-secondary object-cover" />
                 ))}
-                <div className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold text-white"
-                  style={{ background: '#09A9E3' }}>
+                <div className="w-10 h-10 rounded-full border-2 border-background flex items-center justify-center text-xs font-bold text-primary-foreground bg-primary">
                   +{count}
                 </div>
               </div>
               <div>
-                <p className="font-semibold text-sm" style={{ color: '#0B3C5D' }}>{t('cmTraining.studentsCount')}</p>
-                <p className="text-xs text-gray-500">{t('cmTraining.provenMethod')}</p>
+                <p className="font-semibold text-sm text-foreground">{t('cmTraining.studentsCount')}</p>
+                <p className="text-xs text-muted-foreground">{t('cmTraining.provenMethod')}</p>
               </div>
             </div>
           </div>
@@ -263,20 +259,20 @@ export default function CMTrainingHero() {
               </div>
 
               {/* Floating glassmorphism badge */}
-              <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-4 flex items-center gap-3 border border-white/50">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-blue-50">
-                  <TrendingUp size={22} className="text-[#09A9E3]" />
+              <div className="absolute bottom-6 left-6 bg-card/90 backdrop-blur-md rounded-2xl shadow-lg p-4 flex items-center gap-3 border border-border">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-primary/15">
+                  <TrendingUp size={22} className="text-primary" />
                 </div>
                 <div>
-                  <p className="font-bold text-sm text-[#0B3C5D]">{t('cmTraining.vipSupport')}</p>
-                  <p className="text-xs text-gray-500">{t('cmTraining.guaranteedTransformation')}</p>
+                  <p className="font-bold text-sm text-foreground">{t('cmTraining.vipSupport')}</p>
+                  <p className="text-xs text-muted-foreground">{t('cmTraining.guaranteedTransformation')}</p>
                 </div>
               </div>
 
               {/* Top badge */}
-              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full px-3 py-1.5 flex items-center gap-1.5 shadow">
-                <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#50BC74' }} />
-                <span className="text-xs font-bold" style={{ color: '#0B3C5D' }}>{t('cmTraining.liveSuccess')}</span>
+              <div className="absolute top-4 right-4 bg-card/90 backdrop-blur-md rounded-full px-3 py-1.5 flex items-center gap-1.5 shadow border border-border">
+                <div className="w-2 h-2 rounded-full animate-pulse bg-accent" />
+                <span className="text-xs font-bold text-foreground">{t('cmTraining.liveSuccess')}</span>
               </div>
             </div>
 
@@ -284,7 +280,7 @@ export default function CMTrainingHero() {
             <div className="absolute top-4 left-4 bg-[#FF8C42] text-white rounded-full px-5 py-2.5 flex items-center gap-3 shadow-xl flex animate-bounce" style={{ animationDuration: '4s' }}>
               <div className="w-2.5 h-2.5 rounded-full bg-white animate-pulse shadow-sm flex-shrink-0" />
               <div className="flex flex-col -space-y-0.5">
-                <span className="text-[11px] font-bold text-[#0B3C5D]">{t('cmTraining.nextSessionLabel')}</span>
+                <span className="text-[11px] font-bold text-white/90">{t('cmTraining.nextSessionLabel')}</span>
                 <span className="text-sm font-black tracking-tight">{t('cmTraining.date')}</span>
               </div>
             </div>
@@ -302,13 +298,12 @@ export default function CMTrainingHero() {
         {/* ── Modules Grid ── */}
         <div id="cm-modules">
           <div className="flex items-center justify-between mb-8">
-            <h3 className="text-2xl font-bold" style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h3 className="text-2xl font-bold text-foreground font-display">
               {t('cmTraining.modulesTitle')}
             </h3>
             <button
               onClick={() => navigate('/growth/cm-curriculum')}
-              className="hidden sm:flex items-center gap-1.5 text-sm font-semibold link-underline"
-              style={{ color: '#09A9E3' }}
+              className="hidden sm:flex items-center gap-1.5 text-sm font-semibold link-underline text-primary"
             >
               {t('cmTraining.viewFullProgram')}
               <ArrowRight size={15} className="arrow-slide" />
@@ -325,13 +320,12 @@ export default function CMTrainingHero() {
                   animationDelay: `${i * 100}ms`
                 }}
               >
-                <div className="bg-white rounded-2xl p-6 h-full transition-colors group-hover:bg-gray-50">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 shadow-sm"
-                    style={{ background: '#f8faff' }}>
+                <div className="bg-card rounded-2xl p-6 h-full transition-colors border border-border group-hover:bg-secondary/50">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 shadow-sm bg-primary/10">
                     <mod.icon size={26} style={{ stroke: 'url(#blue-green-gradient)' }} />
                   </div>
-                  <h4 className="font-bold text-base mb-2" style={{ color: '#0B3C5D' }}>{t(mod.titleKey)}</h4>
-                  <p className="text-sm text-gray-500 leading-relaxed">{t(mod.descKey)}</p>
+                  <h4 className="font-bold text-base mb-2 text-foreground">{t(mod.titleKey)}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t(mod.descKey)}</p>
                 </div>
               </div>
             ))}
@@ -339,21 +333,19 @@ export default function CMTrainingHero() {
 
           {/* Bottom CTA */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               {t('cmTraining.intensiveProgram')}
             </p>
             <div className="flex gap-3">
               <button
                 onClick={() => navigate('/growth/cm-curriculum')}
-                className="text-sm font-semibold link-underline"
-                style={{ color: '#09A9E3' }}
+                className="text-sm font-semibold link-underline text-primary"
               >
                 {t('cmTraining.viewFullProgram')} <ArrowRight size={14} className="arrow-slide" />
               </button>
               <button
                 onClick={() => navigate('/growth/cm-programs')}
-                className="hover-pulse px-5 py-2 rounded-full text-sm font-semibold border-2 transition-all hover:opacity-80"
-                style={{ borderColor: '#09A9E3', color: '#09A9E3' }}
+                className="hover-pulse px-5 py-2 rounded-full text-sm font-semibold border-2 border-primary text-primary transition-all hover:bg-primary/10"
               >
                 {t('cmTraining.discoverFormulas')} →
               </button>

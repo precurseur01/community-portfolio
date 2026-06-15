@@ -36,8 +36,8 @@ export default function AcademySidebar({
   return (
     <aside className={`space-y-2 ${className}`}>
       {/* Header */}
-      <div className="px-3 pb-3 border-b border-white/10 mb-3">
-        <div className="flex items-center gap-2 text-white">
+      <div className="px-3 pb-3 border-b border-border mb-3">
+        <div className="flex items-center gap-2 text-foreground">
           <BookOpen size={16} style={{ color: '#09A9E3' }} />
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#09A9E3' }}>Academy</span>
         </div>
@@ -56,12 +56,12 @@ export default function AcademySidebar({
             <button
               onClick={() => { toggle(course.id); onSelectCourse(course.id); }}
               className={`w-full text-left px-3 py-3 flex items-center gap-3 transition-all duration-200 rounded-xl ${
-                isActive && !activeChapterId && activeView !== 'exam' ? 'bg-white/10' : 'hover:bg-white/5'
+                isActive && !activeChapterId && activeView !== 'exam' ? 'bg-secondary/70' : 'hover:bg-secondary/40'
               }`}
             >
               <span className="text-xl flex-shrink-0">{course.icon}</span>
               <div className="flex-1 min-w-0">
-                <div className="text-sm font-semibold text-white truncate">{course.title.split('—')[0].trim()}</div>
+                <div className="text-sm font-semibold text-foreground truncate">{course.title.split('—')[0].trim()}</div>
                 <div className="flex items-center gap-2 mt-1">
                   <span className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold uppercase"
                     style={{ background: `${course.color}20`, color: course.color }}>
@@ -71,7 +71,7 @@ export default function AcademySidebar({
                 </div>
               </div>
               {course.chapters.length > 0 && (
-                <ChevronDown size={14} className={`text-slate-500 transition-transform duration-200 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`} />
+                <ChevronDown size={14} className={`text-muted-foreground transition-transform duration-200 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`} />
               )}
             </button>
 
@@ -86,7 +86,7 @@ export default function AcademySidebar({
                     <button key={ch.id}
                       onClick={() => onSelectChapter(course.id, ch.id)}
                       className={`w-full text-left px-3 py-2 rounded-lg flex items-center gap-2.5 transition-all text-xs ${
-                        isChActive ? 'bg-white/10 text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'
+                        isChActive ? 'bg-secondary/70 text-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
                       }`}
                     >
                       {isDone ? (
@@ -107,7 +107,7 @@ export default function AcademySidebar({
                   <button
                     onClick={() => onSelectExam(course.id)}
                     className={`w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-2.5 transition-all text-xs mt-1 ${
-                      isActive && activeView === 'exam' ? 'bg-white/10 text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'
+                      isActive && activeView === 'exam' ? 'bg-secondary/70 text-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
                     }`}
                   >
                     <Award size={14} className="flex-shrink-0" style={{ color: cp?.examCompleted ? '#50BC74' : '#FF8C42' }} />

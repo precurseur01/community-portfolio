@@ -17,24 +17,24 @@ const blockIcons = {
 };
 
 const blockStyles: Record<string, { bg: string; border: string; titleColor: string }> = {
-  text: { bg: '', border: '', titleColor: 'text-white' },
+  text: { bg: '', border: '', titleColor: 'text-foreground' },
   callout: { bg: 'bg-[#09A9E3]/10', border: 'border-[#09A9E3]/30', titleColor: 'text-[#09A9E3]' },
-  list: { bg: 'bg-white/[0.03]', border: 'border-white/10', titleColor: 'text-white' },
+  list: { bg: 'bg-secondary/40', border: 'border-border', titleColor: 'text-foreground' },
   example: { bg: 'bg-[#50BC74]/10', border: 'border-[#50BC74]/30', titleColor: 'text-[#50BC74]' },
-  tip: { bg: 'bg-amber-500/10', border: 'border-amber-500/30', titleColor: 'text-amber-400' },
-  warning: { bg: 'bg-red-500/10', border: 'border-red-500/30', titleColor: 'text-red-400' },
+  tip: { bg: 'bg-amber-500/10', border: 'border-amber-500/30', titleColor: 'text-amber-500' },
+  warning: { bg: 'bg-red-500/10', border: 'border-red-500/30', titleColor: 'text-red-500' },
 };
 
 export default function ChapterContent({ chapter, courseColor = '#09A9E3', onStartQuiz }: ChapterContentProps) {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 bg-card rounded-2xl border border-border p-8 shadow-lg">
       {/* Chapter header */}
-      <div className="border-b border-white/10 pb-6">
+      <div className="border-b border-border pb-6">
         <div className="flex items-center gap-3 mb-3">
           <span className="text-3xl">{chapter.icon}</span>
           <div>
-            <h2 className="text-2xl font-bold text-white">{chapter.title}</h2>
-            <p className="text-sm text-slate-400 mt-1">{chapter.description}</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">{chapter.title}</h2>
+            <p className="text-sm text-muted-foreground mt-1">{chapter.description}</p>
           </div>
         </div>
       </div>
@@ -49,8 +49,8 @@ export default function ChapterContent({ chapter, courseColor = '#09A9E3', onSta
               {li + 1}
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-white">{lesson.title}</h3>
-              <span className="text-xs text-slate-500">⏱ {lesson.duration}</span>
+              <h3 className="text-lg font-semibold text-foreground">{lesson.title}</h3>
+              <span className="text-xs text-muted-foreground">⏱ {lesson.duration}</span>
             </div>
           </div>
 
@@ -61,7 +61,7 @@ export default function ChapterContent({ chapter, courseColor = '#09A9E3', onSta
 
             if (block.type === 'text') {
               return (
-                <p key={bi} className="text-slate-300 text-sm leading-relaxed pl-11">
+                <p key={bi} className="text-foreground/80 text-sm leading-relaxed pl-11">
                   {block.content as string}
                 </p>
               );
@@ -78,14 +78,14 @@ export default function ChapterContent({ chapter, courseColor = '#09A9E3', onSta
                 {Array.isArray(block.content) ? (
                   <ul className="space-y-1.5">
                     {block.content.map((item, ii) => (
-                      <li key={ii} className="flex items-start gap-2 text-sm text-slate-300">
+                      <li key={ii} className="flex items-start gap-2 text-sm text-foreground/80">
                         <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: courseColor }} />
                         {item}
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-sm text-slate-300 leading-relaxed">{block.content}</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{block.content}</p>
                 )}
               </div>
             );
@@ -93,21 +93,22 @@ export default function ChapterContent({ chapter, courseColor = '#09A9E3', onSta
 
           {/* Separator between lessons */}
           {li < chapter.lessons.length - 1 && (
-            <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent ml-11" />
+            <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent ml-11" />
           )}
         </div>
       ))}
 
       {/* Quiz CTA */}
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center">
+      <div className="rounded-2xl border-2 p-6 text-center"
+        style={{ borderColor: `${courseColor}30`, background: `linear-gradient(135deg, ${courseColor}10, ${courseColor}05)` }}>
         <BookOpen size={28} className="mx-auto mb-3" style={{ color: courseColor }} />
-        <h3 className="text-lg font-bold text-white mb-2">Testez vos connaissances</h3>
-        <p className="text-sm text-slate-400 mb-4">
+        <h3 className="text-lg font-bold text-foreground mb-2">Testez vos connaissances</h3>
+        <p className="text-sm text-muted-foreground mb-4">
           {chapter.quiz.length} questions pour valider ce chapitre
         </p>
         <button onClick={onStartQuiz}
-          className="px-6 py-3 rounded-xl text-white font-semibold text-sm hover:opacity-90 transition-all hover:-translate-y-0.5"
-          style={{ background: courseColor }}>
+          className="px-6 py-3 rounded-xl text-white font-semibold text-sm hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-lg"
+          style={{ background: courseColor, boxShadow: `0 6px 20px ${courseColor}50` }}>
           Commencer le quiz →
         </button>
       </div>

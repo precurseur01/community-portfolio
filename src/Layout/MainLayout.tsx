@@ -13,12 +13,12 @@ interface MainLayoutProps {
 const MainLayout: React.FC<MainLayoutProps> = ({
   children,
   scrolled,
-  bgClassName = 'bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900'
+  bgClassName = 'bg-background'
 }) => {
   const { isOpen, initialView, openLogin, openSignup, close } = useAuthModal();
 
   return (
-    <div className={`min-h-screen ${bgClassName} text-white`}>
+    <div className={`min-h-screen ${bgClassName} text-foreground`}>
       <Navigation scrolled={scrolled} onOpenLogin={openLogin} onOpenSignup={openSignup} />
 
       {children}

@@ -22,7 +22,7 @@ export default function AcademyMobileNav({ isOpen, onToggle, children }: Academy
       )}
 
       {/* Drawer */}
-      <div className={`lg:hidden fixed inset-y-0 left-0 z-40 w-[280px] bg-slate-950/95 backdrop-blur-xl border-r border-white/10 transform transition-transform duration-300 ease-out overflow-y-auto ${
+      <div className={`lg:hidden fixed inset-y-0 left-0 z-40 w-[280px] bg-background/95 backdrop-blur-xl border-r border-border transform transition-transform duration-300 ease-out overflow-y-auto ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`} style={{ paddingTop: '80px' }}>
         <div className="p-4">

@@ -50,10 +50,10 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="text-xl sm:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-foreground/80 mb-10 max-w-3xl mx-auto leading-relaxed">
             {t('hero.descriptionMiddle')}{' '}
-            <span className="text-emerald-400">{t('hero.descriptionStrong')}</span>,{' '}
-            <span className="text-blue-400">{t('hero.descriptionHuman')}</span> et{' '}
+            <span className="text-accent">{t('hero.descriptionStrong')}</span>,{' '}
+            <span className="text-primary">{t('hero.descriptionHuman')}</span> et{' '}
             <span className="text-white">{t('hero.descriptionHigh')}</span>{' '}
             {t('hero.descriptionSuffix')}
           </p>

@@ -31,11 +31,11 @@ interface InputFieldProps {
 function InputField({ id, label, type, placeholder, value, onChange, icon, rightElement, disabled }: InputFieldProps) {
   return (
     <div className="space-y-1.5">
-      <label htmlFor={id} className="block text-sm font-semibold text-slate-300 pl-1">
+      <label htmlFor={id} className="block text-sm font-semibold text-foreground/80 pl-1">
         {label}
       </label>
       <div className="relative group">
-        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500 group-focus-within:text-blue-400 transition-colors">
+        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-muted-foreground group-focus-within:text-blue-400 transition-colors">
           {icon}
         </div>
         <input
@@ -45,7 +45,7 @@ function InputField({ id, label, type, placeholder, value, onChange, icon, right
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           disabled={disabled}
-          className="w-full pl-12 pr-12 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-slate-600 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all disabled:opacity-50"
+          className="w-full pl-12 pr-12 py-3.5 bg-secondary/20 border border-border rounded-xl text-foreground placeholder-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all disabled:opacity-50"
         />
         {rightElement && (
           <div className="absolute inset-y-0 right-0 pr-4 flex items-center">
@@ -187,7 +187,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
             className="fixed inset-0 z-[201] flex items-center justify-center p-4 pointer-events-none"
           >
             <div
-              className="pointer-events-auto w-full max-w-[900px] flex flex-col md:flex-row overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/60"
+              className="pointer-events-auto w-full max-w-[900px] flex flex-col md:flex-row overflow-hidden rounded-2xl border border-border shadow-2xl shadow-black/60"
               style={{ background: 'rgba(8, 14, 30, 0.92)', backdropFilter: 'blur(32px)' }}
               onClick={(e) => e.stopPropagation()}
             >
@@ -215,7 +215,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                     </span>
                   </h2>
 
-                  <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
+                  <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
                     Stratégies data-driven, growth marketing et outils de conversion pensés pour les entrepreneurs ambitieux.
                   </p>
 
@@ -227,9 +227,9 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                       { value: '5×', label: 'ROI moyen' },
                       { value: '24h', label: 'Support réactif' },
                     ].map((stat) => (
-                      <div key={stat.label} className="bg-white/5 border border-white/10 rounded-xl p-3">
+                      <div key={stat.label} className="bg-secondary/20 border border-border rounded-xl p-3">
                         <div className="text-lg font-bold text-white">{stat.value}</div>
-                        <div className="text-xs text-slate-500">{stat.label}</div>
+                        <div className="text-xs text-muted-foreground">{stat.label}</div>
                       </div>
                     ))}
                   </div>
@@ -247,12 +247,12 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                     </div>
                     <div>
                       <h1 className="text-xl font-bold text-white">{titles[view]}</h1>
-                      <p className="text-sm text-slate-400 mt-0.5">{subtitles[view]}</p>
+                      <p className="text-sm text-muted-foreground mt-0.5">{subtitles[view]}</p>
                     </div>
                   </div>
                   <button
                     onClick={onClose}
-                    className="w-9 h-9 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-400 hover:text-white transition-all"
+                    className="w-9 h-9 flex items-center justify-center rounded-xl bg-secondary/20 hover:bg-secondary/40 border border-border text-muted-foreground hover:text-foreground transition-all"
                     aria-label="Fermer"
                   >
                     <X size={18} />
@@ -261,7 +261,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
 
                 {/* Tabs (Login / Signup) */}
                 {view !== 'reset' && (
-                  <div className="flex p-1 bg-white/5 rounded-xl border border-white/10 mb-7">
+                  <div className="flex p-1 bg-secondary/20 rounded-xl border border-border mb-7">
                     {(['login', 'signup'] as const).map((v) => (
                       <button
                         key={v}
@@ -269,7 +269,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                         className={`flex-1 py-2.5 text-sm font-semibold rounded-lg transition-all duration-200 ${
                           view === v
                             ? 'bg-gradient-to-r from-blue-600 to-emerald-600 text-white shadow-md'
-                            : 'text-slate-400 hover:text-white'
+                            : 'text-muted-foreground hover:text-white'
                         }`}
                       >
                         {v === 'login' ? 'Connexion' : 'Inscription'}
@@ -282,7 +282,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                 {view === 'reset' && (
                   <button
                     onClick={() => switchView('login')}
-                    className="flex items-center gap-2 text-sm text-slate-400 hover:text-white mb-6 transition-colors self-start group"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-white mb-6 transition-colors self-start group"
                   >
                     <ArrowLeft size={16} className="group-hover:-translate-x-0.5 transition-transform" />
                     Retour à la connexion
@@ -329,7 +329,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                         <button
                           type="button"
                           onClick={() => setShowPassword(!showPassword)}
-                          className="text-slate-500 hover:text-slate-300 transition-colors"
+                          className="text-muted-foreground hover:text-foreground/80 transition-colors"
                           tabIndex={-1}
                         >
                           {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -344,7 +344,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                       <button
                         type="button"
                         onClick={() => switchView('reset')}
-                        className="text-xs text-blue-400 hover:text-blue-300 hover:underline underline-offset-4 transition-colors"
+                        className="text-xs text-primary hover:text-primary/80 hover:underline underline-offset-4 transition-colors"
                       >
                         Mot de passe oublié ?
                       </button>
@@ -360,7 +360,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                         exit={{ opacity: 0 }}
                         className={`flex items-start gap-3 p-3.5 rounded-xl text-sm border ${
                           feedback.type === 'success'
-                            ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
+                            ? 'bg-accent/10 border-accent/30 text-accent'
                             : 'bg-red-500/10 border-red-500/30 text-red-300'
                         }`}
                       >
@@ -391,31 +391,31 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                 </form>
 
                 {/* Bas de modal */}
-                <div className="mt-6 pt-5 border-t border-white/10 text-center">
+                <div className="mt-6 pt-5 border-t border-border text-center">
                   {view === 'login' && (
-                    <p className="text-sm text-slate-500">
+                    <p className="text-sm text-muted-foreground">
                       Pas encore de compte ?{' '}
                       <button
                         onClick={() => switchView('signup')}
-                        className="text-blue-400 hover:text-blue-300 font-semibold hover:underline underline-offset-4 transition-colors"
+                        className="text-primary hover:text-primary/80 font-semibold hover:underline underline-offset-4 transition-colors"
                       >
                         Créer un compte
                       </button>
                     </p>
                   )}
                   {view === 'signup' && (
-                    <p className="text-sm text-slate-500">
+                    <p className="text-sm text-muted-foreground">
                       Déjà un compte ?{' '}
                       <button
                         onClick={() => switchView('login')}
-                        className="text-blue-400 hover:text-blue-300 font-semibold hover:underline underline-offset-4 transition-colors"
+                        className="text-primary hover:text-primary/80 font-semibold hover:underline underline-offset-4 transition-colors"
                       >
                         Se connecter
                       </button>
                     </p>
                   )}
                   {view === 'reset' && (
-                    <p className="text-xs text-slate-600">
+                    <p className="text-xs text-muted-foreground">
                       Vérifiez également votre dossier spam si vous ne recevez rien.
                     </p>
                   )}

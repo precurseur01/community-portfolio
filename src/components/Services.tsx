@@ -182,7 +182,7 @@ export default function Services() {
               {t('services.titleGradient')}
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">{t('services.description')}</p>
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">{t('services.description')}</p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-emerald-400 mx-auto rounded-full mt-6"></div>
         </div>
 
@@ -194,10 +194,10 @@ export default function Services() {
               <div
                 key={index}
                 className={
-                  "group backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl " +
+                  "group backdrop-blur-sm border border-border rounded-2xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl " +
                   (index === 5
                     ? "bg-gradient-to-br from-violet-700/30 to-blue-700/20 hover:bg-gradient-to-br hover:from-violet-600/40 hover:to-blue-600/30"
-                    : "bg-white/5 hover:bg-white/10")
+                    : "bg-secondary/20 hover:bg-secondary/40")
                 }
               >
                 <div
@@ -206,27 +206,27 @@ export default function Services() {
                   <Icon size={32} className="text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold mb-2 text-white">{t(service.titleKey)}</h3>
-                <p className="text-sm text-emerald-400 mb-4 font-medium">{t(service.subtitleKey)}</p>
-                <p className="text-gray-300 mb-6 leading-relaxed">{t(service.descriptionKey)}</p>
+                <h3 className="text-2xl font-bold mb-2 text-foreground">{t(service.titleKey)}</h3>
+                <p className="text-sm text-accent mb-4 font-medium">{t(service.subtitleKey)}</p>
+                <p className="text-foreground/80 mb-6 leading-relaxed">{t(service.descriptionKey)}</p>
 
                 <ul className="space-y-2 mb-6">
                   {service.featuresKeys.map((featureKey, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-400">
-                      <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-2"></div>
+                    <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></div>
                       {t(featureKey)}
                     </li>
                   ))}
                 </ul>
 
-                <div className="pt-4 border-t border-white/10">
+                <div className="pt-4 border-t border-border">
                   <button
 
                     onClick={(e) => {
                       e.preventDefault();
                       handleLearnMore(service, index);
                     }}
-                    className="text-blue-400 hover:text-blue-300 flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all"
+                    className="text-primary hover:text-primary/80 flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all"
                   >
                     {t('services.learnMore')}
                     <ArrowRight size={16} />

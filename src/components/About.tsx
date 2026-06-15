@@ -32,10 +32,10 @@ export default function About() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div className="space-y-6">
-            <p className="text-lg text-gray-300 leading-relaxed">{t('about.paragraph1')}</p>
-            <p className="text-lg text-gray-300 leading-relaxed">{t('about.paragraph2')}</p>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300">
-              <p className="text-xl italic text-gray-200">{t('about.quote')}</p>
+            <p className="text-lg text-foreground/80 leading-relaxed">{t('about.paragraph1')}</p>
+            <p className="text-lg text-foreground/80 leading-relaxed">{t('about.paragraph2')}</p>
+            <div className="bg-secondary/20 backdrop-blur-sm border border-border rounded-2xl p-6 hover:bg-secondary/40 transition-all duration-300">
+              <p className="text-xl italic text-foreground">{t('about.quote')}</p>
             </div>
           </div>
 
@@ -43,9 +43,9 @@ export default function About() {
             <div className="aspect-square rounded-3xl bg-gradient-to-br from-blue-600/20 to-emerald-600/20 backdrop-blur-sm border border-white/10 flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-emerald-500/10"></div>
               <div className="relative z-10 text-center p-8">
-                <Code2 size={80} className="mx-auto mb-4 text-blue-400" />
+                <Code2 size={80} className="mx-auto mb-4 text-primary" />
                 <div className="text-6xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">+</div>
-                <TrendingUp size={80} className="mx-auto text-emerald-400" />
+                <TrendingUp size={80} className="mx-auto text-accent" />
               </div>
             </div>
           </div>
@@ -65,12 +65,12 @@ export default function About() {
                 return (
                   <div key={index} className="text-center group">
                     <div className="relative inline-block mb-4">
-                      <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-emerald-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border-4 border-slate-950">
+                      <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-emerald-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border-4 border-background">
                         <Icon size={32} className="text-white" />
                       </div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-400 mb-2">{item.year}</div>
-                    <div className="text-gray-300 font-medium">{item.event}</div>
+                    <div className="text-2xl font-bold text-primary mb-2">{item.year}</div>
+                    <div className="text-foreground/80 font-medium">{item.event}</div>
                   </div>
                 );
               })}
@@ -81,16 +81,16 @@ export default function About() {
       {/* Stats */}
       <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
         <div className="text-center">
-          <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">+30</div>
-          <div className="text-sm text-gray-400">{t('hero.stats.brands')}</div>
+          <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">+30</div>
+          <div className="text-sm text-muted-foreground">{t('hero.stats.brands')}</div>
         </div>
         <div className="text-center">
-          <div className="text-3xl sm:text-4xl font-bold text-emerald-400 mb-2">+200K</div>
-          <div className="text-sm text-gray-400">{t('hero.stats.followers')}</div>
+          <div className="text-3xl sm:text-4xl font-bold text-accent mb-2">+200K</div>
+          <div className="text-sm text-muted-foreground">{t('hero.stats.followers')}</div>
         </div>
         <div className="text-center">
-          <div className="text-3xl sm:text-4xl font-bold text-white mb-2">+320%</div>
-          <div className="text-sm text-gray-400">{t('hero.stats.engagement')}</div>
+          <div className="text-3xl sm:text-4xl font-bold text-foreground mb-2">+320%</div>
+          <div className="text-sm text-muted-foreground">{t('hero.stats.engagement')}</div>
         </div>
       </div>
     </section>

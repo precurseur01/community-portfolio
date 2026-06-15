@@ -446,16 +446,16 @@ const TrainingPage: React.FC = () => {
 
   if (showResults) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 md:p-8 mt-16">
-        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-8 mt-8">
+      <div className="min-h-screen p-4 md:p-8 mt-16">
+        <div className="max-w-4xl mx-auto bg-card rounded-2xl border border-border shadow-2xl p-8 mt-8">
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Résultats du QCM</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Résultats du QCM</h2>
             <div className="text-6xl font-bold mb-4">
-              <span className={score >= questions.length * 0.7 ? 'text-green-500' : 'text-orange-500'}>
+              <span className={score >= questions.length * 0.7 ? 'text-accent' : 'text-[hsl(var(--warning))]'}>
                 {score}/{questions.length}
               </span>
             </div>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               Score: {((score / questions.length) * 100).toFixed(1)}%
             </p>
           </div>
@@ -466,7 +466,7 @@ const TrainingPage: React.FC = () => {
               const isCorrect = isAnswerCorrect(qIndex);
 
               return (
-                <div key={qIndex} className="border rounded-lg p-6 bg-gray-50">
+                <div key={qIndex} className="border border-border rounded-lg p-6 bg-secondary/30">
                   <div className="flex items-start gap-3 mb-4">
                     {isCorrect ? (
                       <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={24} />
@@ -474,10 +474,10 @@ const TrainingPage: React.FC = () => {
                       <XCircle className="text-red-500 flex-shrink-0 mt-1" size={24} />
                     )}
                     <div className="flex-1">
-                      <p className="font-semibold text-gray-800 mb-2">
+                      <p className="font-semibold text-foreground mb-2">
                         Question {qIndex + 1}
                       </p>
-                      <p className="text-sm text-gray-600 mb-4">{question.question}</p>
+                      <p className="text-sm text-muted-foreground mb-4">{question.question}</p>
 
                       <div className="space-y-2">
                         {question.options.map((option, oIndex) => {
@@ -488,10 +488,10 @@ const TrainingPage: React.FC = () => {
                             <div
                               key={oIndex}
                               className={`p-3 rounded-lg text-sm ${isCorrectAnswer
-                                ? 'bg-green-100 border-2 border-green-500'
+                                ? 'bg-green-500/10 border-2 border-green-500'
                                 : isUserAnswer
-                                  ? 'bg-red-100 border-2 border-red-500'
-                                  : 'bg-white border border-gray-200'
+                                  ? 'bg-red-500/10 border-2 border-red-500'
+                                  : 'bg-secondary/50 border border-border'
                                 }`}
                             >
                               {option}
@@ -515,7 +515,7 @@ const TrainingPage: React.FC = () => {
           <div className="text-center">
             <button
               onClick={resetQuiz}
-              className="inline-flex items-center gap-2 px-8 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-semibold"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold"
             >
               <RotateCcw size={20} />
               Recommencer le QCM
@@ -530,37 +530,37 @@ const TrainingPage: React.FC = () => {
   const userAnswers = selectedAnswers[currentQuestion] || [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 md:p-8 mt-16">
+    <div className="min-h-screen p-4 md:p-8 mt-16">
       <div className="max-w-4xl mx-auto">
         {/* En-tête avec progression */}
-        <div className="bg-white rounded-t-2xl shadow-lg p-6">
+        <div className="bg-card rounded-t-2xl border border-b-0 border-border shadow-lg p-6">
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-bold text-gray-800">
+            <h1 className="text-2xl font-bold text-foreground">
               QCM Community Management
             </h1>
-            <span className="text-lg font-semibold text-indigo-600">
+            <span className="text-lg font-semibold text-primary">
               Question {currentQuestion + 1} / {questions.length}
             </span>
           </div>
 
           {/* Barre de progression */}
-          <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+          <div className="w-full bg-secondary rounded-full h-3 overflow-hidden">
             <div
-              className="bg-indigo-600 h-full transition-all duration-300 ease-out"
+              className="bg-primary h-full transition-all duration-300 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
         </div>
 
         {/* Carte de question */}
-        <div className="bg-white shadow-lg p-8 mb-4">
+        <div className="bg-card border-x border-border shadow-lg p-8 mb-0">
           <div className="mb-6">
             {question.multiSelect && (
-              <span className="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+              <span className="inline-block bg-primary/15 text-primary text-sm font-semibold px-3 py-1 rounded-full mb-4">
                 Sélection multiple
               </span>
             )}
-            <p className="text-lg text-gray-800 leading-relaxed whitespace-pre-line">
+            <p className="text-lg text-foreground leading-relaxed whitespace-pre-line">
               {question.question}
             </p>
           </div>
@@ -575,20 +575,20 @@ const TrainingPage: React.FC = () => {
                   key={index}
                   onClick={() => handleAnswerSelect(index)}
                   className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ${isSelected
-                    ? 'border-indigo-600 bg-indigo-50 shadow-md'
-                    : 'border-gray-200 bg-white hover:border-indigo-300 hover:bg-indigo-50'
+                    ? 'border-primary bg-primary/10 shadow-md'
+                    : 'border-border bg-secondary/30 hover:border-primary/50 hover:bg-primary/5'
                     }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${isSelected ? 'border-indigo-600 bg-indigo-600' : 'border-gray-300'
+                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${isSelected ? 'border-primary bg-primary' : 'border-border'
                       }`}>
                       {isSelected && (
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 text-primary-foreground" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       )}
                     </div>
-                    <span className="text-gray-800">{option}</span>
+                    <span className="text-foreground">{option}</span>
                   </div>
                 </button>
               );
@@ -597,14 +597,14 @@ const TrainingPage: React.FC = () => {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white rounded-b-2xl shadow-lg p-6">
+        <div className="bg-card rounded-b-2xl border border-t-0 border-border shadow-lg p-6">
           <div className="flex justify-between items-center">
             <button
               onClick={goToPrevious}
               disabled={currentQuestion === 0}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors ${currentQuestion === 0
-                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-secondary/50 text-muted-foreground cursor-not-allowed'
+                : 'bg-secondary text-foreground hover:bg-secondary/80'
                 }`}
             >
               <ChevronLeft size={20} />
@@ -612,7 +612,7 @@ const TrainingPage: React.FC = () => {
             </button>
 
             <div className="text-center">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 {Object.keys(selectedAnswers).length} / {questions.length} réponses
               </p>
             </div>
@@ -621,10 +621,10 @@ const TrainingPage: React.FC = () => {
               onClick={goToNext}
               disabled={userAnswers.length === 0}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors ${userAnswers.length === 0
-                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                ? 'bg-secondary/50 text-muted-foreground cursor-not-allowed'
                 : currentQuestion === questions.length - 1
-                  ? 'bg-green-600 text-white hover:bg-green-700'
-                  : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                  ? 'bg-accent text-accent-foreground hover:bg-accent/90'
+                  : 'bg-primary text-primary-foreground hover:bg-primary/90'
                 }`}
             >
               {currentQuestion === questions.length - 1 ? 'Terminer' : 'Suivant'}

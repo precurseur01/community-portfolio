@@ -24,10 +24,10 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
   // Pendant la vérification de session, afficher un loading spinner
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-10 h-10 border-3 border-white/20 border-t-emerald-400 rounded-full animate-spin" />
-          <p className="text-sm text-slate-400 animate-pulse">Vérification…</p>
+          <div className="w-10 h-10 border-[3px] border-border border-t-primary rounded-full animate-spin" />
+          <p className="text-sm text-muted-foreground animate-pulse">Vérification…</p>
         </div>
       </div>
     );

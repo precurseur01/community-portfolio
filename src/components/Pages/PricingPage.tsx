@@ -176,7 +176,7 @@ const PricingPage: React.FC = () => {
             <ul className="space-y-4 mb-8 flex-grow">
               {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm">
-                  <div className={`mt-1 p-0.5 rounded-full ${plan.popular ? 'bg-primary/20 text-primary' : 'bg-white/10 text-white/70'}`}>
+                  <div className={`mt-1 p-0.5 rounded-full ${plan.popular ? 'bg-primary/20 text-primary' : 'bg-secondary/50 text-foreground/60'}`}>
                     <Check size={12} />
                   </div>
                   <span className="text-foreground/90">{feature}</span>
@@ -202,7 +202,7 @@ const PricingPage: React.FC = () => {
               className={`w-full py-4 px-6 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 ${
                 plan.popular 
                   ? 'bg-primary text-primary-foreground hover:scale-[1.02] shadow-lg shadow-primary/20' 
-                  : 'bg-secondary hover:bg-secondary/80 border border-white/10'
+                  : 'bg-secondary hover:bg-secondary/80 border border-border'
               }`}
             >
               Choisir ce forfait
@@ -217,7 +217,7 @@ const PricingPage: React.FC = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="bg-gradient-card p-8 md:p-12 rounded-[2rem] border border-white/10 relative overflow-hidden text-center"
+        className="bg-gradient-card p-8 md:p-12 rounded-[2rem] border border-border relative overflow-hidden text-center"
       >
         <div className="absolute top-0 right-0 p-8 opacity-10">
           <MessageCircle size={120} />
@@ -238,7 +238,7 @@ const PricingPage: React.FC = () => {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-black px-8 py-4 rounded-2xl font-bold hover:bg-white/90 transition-all flex items-center gap-2"
+              className="bg-foreground text-background px-8 py-4 rounded-2xl font-bold hover:bg-foreground/90 transition-all flex items-center gap-2"
             >
               Demander un devis
               <ArrowRight size={18} />

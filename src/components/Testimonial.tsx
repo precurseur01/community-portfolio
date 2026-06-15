@@ -108,7 +108,7 @@ const Testimonials = () => {
                             {t("testimonials.sectionTitle2")}
                         </span>
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">{t("testimonials.sectionDescription")}</p>
+                    <p className="text-xl text-foreground/80 max-w-2xl mx-auto">{t("testimonials.sectionDescription")}</p>
                     <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-emerald-400 mx-auto rounded-full mt-6"></div>
                 </div>
 
@@ -177,7 +177,7 @@ const Testimonials = () => {
                                     </div>
                                     {/* Nom */}
                                     <div className="flex items-center gap-3 mt-8">
-                                        <span className="w-6 h-[2px] bg-blue-500"></span>
+                                        <span className="w-6 h-[2px] bg-primary"></span>
                                         <h3 className="text-lg italic font-semibold text-primary">
                                             {t(currentTestimonial.nameKey)}
                                         </h3>

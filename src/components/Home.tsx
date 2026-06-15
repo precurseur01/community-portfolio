@@ -37,7 +37,7 @@ export default function HomeServicesSections() {
 
     // const navigate = useNavigate();
     return (
-        <section className="relative py-24 overflow-hidden bg-black from-slate-950 via-blue-950 to-slate-900">
+        <section className="relative py-24 overflow-hidden bg-background">
             {/* Background glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08),transparent_70%)]"></div>
 
@@ -61,7 +61,7 @@ export default function HomeServicesSections() {
                             >
                                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-emerald-500/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
 
-                                <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                                <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-border">
                                     <img
                                         src={section.image}
                                         alt={section.title}
@@ -79,17 +79,17 @@ export default function HomeServicesSections() {
                                 className={`space-y-6 ${isReverse ? "lg:order-2" : "lg:order-1"
                                     }`}
                             >
-                                <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+                                <h2 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight">
                                     {section.title}
                                 </h2>
 
-                                <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-emerald-400 rounded-full"></div>
+                                <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
 
-                                <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
+                                <p className="text-foreground/80 text-lg leading-relaxed whitespace-pre-line">
                                     {section.description}
                                 </p>
 
-                                <p className="text-gray-400 leading-relaxed whitespace-pre-line">
+                                <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
                                     {section.description2}
                                 </p>
 

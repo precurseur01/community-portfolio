@@ -89,7 +89,7 @@ export default function PreselectionForm() {
                 <h2 className="text-4xl font-bold text-center mb-6">
                     {t("preselectionForm.title")}
                 </h2>
-                <p className="text-center text-gray-300 mb-12">
+                <p className="text-center text-foreground/80 mb-12">
                     <Trans i18nKey="preselectionForm.sessionInfo">
                         Session du <span className="text-orange-400 font-bold">04 juillet 2026</span> – 3 mois pour devenir un CM professionnel !
                     </Trans>
@@ -100,10 +100,10 @@ export default function PreselectionForm() {
                 <form
                     ref={formRef}
                     onSubmit={handleSubmit}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 space-y-6"
+                    className="bg-secondary/20 backdrop-blur-sm border border-border rounded-3xl p-8 space-y-6"
                 >
                     {/* ── Infos personnelles ── */}
-                    <h3 className="text-xl font-bold text-emerald-400 mb-4">
+                    <h3 className="text-xl font-bold text-accent mb-4">
                         {t("preselectionForm.personalInfo")}
                     </h3>
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -124,7 +124,7 @@ export default function PreselectionForm() {
                     </div>
 
                     {/* ── Profil et objectif ── */}
-                    <h3 className="text-xl font-bold text-emerald-400 mb-4">
+                    <h3 className="text-xl font-bold text-accent mb-4">
                         {t("preselectionForm.profileObjective")}
                     </h3>
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -162,7 +162,7 @@ export default function PreselectionForm() {
                     </div>
 
                     {/* ── Disponibilité et format ── */}
-                    <h3 className="text-xl font-bold text-emerald-400 mb-4">
+                    <h3 className="text-xl font-bold text-accent mb-4">
                         {t("preselectionForm.availabilityTitle")}
                     </h3>
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -207,7 +207,7 @@ export default function PreselectionForm() {
                     </div>
 
                     {/* ── Équipement (checkbox — validation manuelle) ── */}
-                    <h3 className="text-xl font-bold text-emerald-400 mb-4">
+                    <h3 className="text-xl font-bold text-accent mb-4">
                         {t("preselectionForm.equipmentTitle")}
                         <span className="text-red-400 ml-1">*</span>
                     </h3>
@@ -237,7 +237,7 @@ export default function PreselectionForm() {
                     )}
 
                     {/* ── Motivation ── */}
-                    <h3 className="text-xl font-bold text-emerald-400 mb-4">
+                    <h3 className="text-xl font-bold text-accent mb-4">
                         {t("preselectionForm.motivationTitle")}
                     </h3>
                     <textarea
@@ -252,12 +252,12 @@ export default function PreselectionForm() {
                     />
 
                     {/* ── Mise en situation ── */}
-                    <h3 className="text-xl font-bold text-emerald-400 mb-4">
+                    <h3 className="text-xl font-bold text-accent mb-4">
                         {t("preselectionForm.practicalTestTitle")}
                     </h3>
-                    <p className="text-gray-300 mb-4">{t("preselectionForm.practicalTestDesc1")}</p>
-                    <p className="text-gray-300 mb-4">{t("preselectionForm.practicalTestDesc2")}</p>
-                    <p className="text-gray-300 mb-4 font-semibold">{t("preselectionForm.practicalTestQuestion")}</p>
+                    <p className="text-foreground/80 mb-4">{t("preselectionForm.practicalTestDesc1")}</p>
+                    <p className="text-foreground/80 mb-4">{t("preselectionForm.practicalTestDesc2")}</p>
+                    <p className="text-foreground/80 mb-4 font-semibold">{t("preselectionForm.practicalTestQuestion")}</p>
                     <div className="space-y-2 mb-6">
                         {(t("preselectionForm.practicalTestOptions", { returnObjects: true }) as string[]).map((option: string) => (
                             <label
@@ -280,7 +280,7 @@ export default function PreselectionForm() {
                     </div>
 
                     {/* ── Créativité ── */}
-                    <h3 className="text-xl font-bold text-emerald-400 mb-4">
+                    <h3 className="text-xl font-bold text-accent mb-4">
                         {t("preselectionForm.creativityTitle")}
                     </h3>
                     <textarea
@@ -342,13 +342,13 @@ export default function PreselectionForm() {
 
                     {/* ── Feedback inline ── */}
                     {status === 'success' && (
-                        <div className="flex items-start gap-3 p-5 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl text-emerald-300 text-sm">
+                        <div className="flex items-start gap-3 p-5 bg-accent/10 border border-accent/20 rounded-2xl text-accent/90 text-sm">
                             <CheckCircle size={20} className="flex-shrink-0 mt-0.5" />
                             <div>
                                 <p className="font-bold text-base mb-1">
                                     🎉 Candidature reçue, {formData.name || "bonne chance"} !
                                 </p>
-                                <p className="text-emerald-400/80">
+                                <p className="text-accent/80">
                                     Votre dossier de préselection a bien été envoyé. Nous analyserons votre profil et vous contacterons sur WhatsApp dans les prochains jours.
                                 </p>
                             </div>

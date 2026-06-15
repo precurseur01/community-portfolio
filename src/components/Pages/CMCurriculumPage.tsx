@@ -111,7 +111,7 @@ export default function CMCurriculumPage() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: '#f8faff', fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen bg-background font-sans">
 
       {/* ── Hero Header ── */}
       <header
@@ -161,15 +161,15 @@ export default function CMCurriculumPage() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200"
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${activeModule === item.id ? '' : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'}`}
                   style={activeModule === item.id
-                    ? { background: item.isBonus ? '#fff3ee' : '#e6f7fd', color: item.isBonus ? '#FF8C42' : '#09A9E3' }
-                    : { color: '#64748b', background: 'transparent' }}
+                    ? { background: item.isBonus ? 'rgba(255,140,66,0.12)' : 'rgba(9,169,227,0.12)', color: item.isBonus ? '#FF8C42' : '#09A9E3' }
+                    : { background: 'transparent' }}
                   onClick={e => { e.preventDefault(); document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' }); }}
                 >
                   <span
                     className="w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-bold text-white flex-shrink-0"
-                    style={{ background: activeModule === item.id ? (item.isBonus ? '#FF8C42' : '#09A9E3') : '#cbd5e1' }}
+                    style={{ background: activeModule === item.id ? (item.isBonus ? '#FF8C42' : '#09A9E3') : 'hsl(var(--muted-foreground))' }}
                   >
                     {item.num}
                   </span>
@@ -186,13 +186,8 @@ export default function CMCurriculumPage() {
                 key={mod.id}
                 id={mod.id}
                 ref={setRef(mod.id)}
-                className="rounded-2xl overflow-hidden transition-all duration-500"
-                style={{
-                  background: mod.isBonus ? 'linear-gradient(135deg, #fff8f3, #fff3ee)' : '#ffffff',
-                  border: mod.isBonus ? '2px solid #FF8C42' : '1px solid #e8edf5',
-                  boxShadow: '0 4px 24px rgba(11,60,93,0.06)',
-                  animationDelay: `${i * 80}ms`,
-                }}
+                className={`rounded-2xl overflow-hidden transition-all duration-500 relative ${mod.isBonus ? 'bg-[#FF8C42]/10 border-2 border-[#FF8C42]' : 'bg-card border border-border'} shadow-lg`}
+                style={{ animationDelay: `${i * 80}ms` }}
               >
                 <div className="p-6 sm:p-8 flex flex-col sm:flex-row gap-6">
                   {/* Bonus badge */}
@@ -207,8 +202,7 @@ export default function CMCurriculumPage() {
 
                   {/* Image column */}
                   <div className="sm:w-1/3 flex-shrink-0">
-                    <div className="aspect-square rounded-xl overflow-hidden mb-3"
-                      style={{ background: mod.isBonus ? '#ffdbc9' : '#f0f9ff' }}>
+                    <div className={`aspect-square rounded-xl overflow-hidden mb-3 ${mod.isBonus ? 'bg-[#FF8C42]/20' : 'bg-primary/10'}`}>
                       <img src={mod.img} alt={mod.title}
                         className="w-full h-full object-cover"
                         onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
@@ -228,15 +222,15 @@ export default function CMCurriculumPage() {
 
                   {/* Content column */}
                   <div className="sm:w-2/3">
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h3 className="text-xl font-bold mb-3 text-foreground font-display">
                       {mod.title}
                     </h3>
-                    <p className="text-sm text-gray-500 mb-5 leading-relaxed">{mod.desc}</p>
+                    <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{mod.desc}</p>
                     <ul className="space-y-2.5">
                       {mod.skills.map((skill, si) => (
                         <li key={si} className="flex items-start gap-3">
                           <CheckCircle size={18} style={{ color: mod.isBonus ? '#FF8C42' : '#09A9E3', flexShrink: 0, marginTop: 1 }} />
-                          <span className="text-sm text-gray-700">{skill}</span>
+                          <span className="text-sm text-foreground/80">{skill}</span>
                         </li>
                       ))}
                     </ul>
@@ -249,12 +243,12 @@ export default function CMCurriculumPage() {
       </main>
 
       {/* ── Final CTA ── */}
-      <section className="py-20 border-t" style={{ borderColor: '#e8edf5', background: '#ffffff' }}>
+      <section className="py-20 border-t border-border bg-card/30">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4" style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 text-foreground font-display">
             {t('curriculum.ctaTitle')}
           </h2>
-          <p className="text-lg text-gray-500 mb-10 max-w-xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
             {t('curriculum.ctaSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -273,7 +267,7 @@ export default function CMCurriculumPage() {
               {t('curriculum.downloadBrochure')}
             </button>
           </div>
-          <p className="mt-6 text-sm text-gray-400">
+          <p className="mt-6 text-sm text-muted-foreground">
             {t('curriculum.nextCohort', { date: t('cmTraining.date') })}
           </p>
         </div>
@@ -281,17 +275,15 @@ export default function CMCurriculumPage() {
 
       {/* ── Floating Rating Badge ── */}
       <div className="fixed bottom-6 right-6 z-40 hidden md:block">
-        <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-4 flex items-center gap-3"
-          style={{ border: '1px solid #e8edf5' }}>
-          <div className="w-11 h-11 rounded-full flex items-center justify-center"
-            style={{ background: '#e6f7fd' }}>
+        <div className="bg-card/95 backdrop-blur-md rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-border">
+          <div className="w-11 h-11 rounded-full flex items-center justify-center bg-primary/15">
             <Star size={20} style={{ color: '#09A9E3' }} fill="#09A9E3" />
           </div>
           <div>
-            <p className="text-[10px] uppercase font-bold tracking-widest text-gray-400">{t('curriculum.avgRating')}</p>
+            <p className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground">{t('curriculum.avgRating')}</p>
             <div className="flex items-center gap-1">
-              <span className="text-2xl font-extrabold" style={{ color: '#0B3C5D' }}>4.9</span>
-              <span className="text-lg text-gray-400">/5</span>
+              <span className="text-2xl font-extrabold text-foreground">4.9</span>
+              <span className="text-lg text-muted-foreground">/5</span>
               <Star size={14} style={{ color: '#FF8C42' }} fill="#FF8C42" />
             </div>
           </div>

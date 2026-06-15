@@ -19,21 +19,21 @@ interface Program {
 
 const tierStyles: Record<string, { badge: React.CSSProperties; card: React.CSSProperties; highlight: React.CSSProperties; highlightText: React.CSSProperties }> = {
   starter: {
-    badge: { background: '#f1f5f9', color: '#475569' },
-    card: { background: '#ffffff', border: '1px solid #e8edf5' },
-    highlight: { background: '#e6f7fd' },
+    badge: { background: 'hsl(var(--secondary))', color: 'hsl(var(--muted-foreground))' },
+    card: { background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))' },
+    highlight: { background: 'rgba(9,169,227,0.12)' },
     highlightText: { color: '#09A9E3' },
   },
   growth: {
-    badge: { background: '#e8f5f1', color: '#0B3C5D' },
-    card: { background: '#ffffff', border: '1px solid #e8edf5' },
-    highlight: { background: '#e6f7fd' },
+    badge: { background: 'rgba(80,188,116,0.15)', color: '#50BC74' },
+    card: { background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))' },
+    highlight: { background: 'rgba(9,169,227,0.12)' },
     highlightText: { color: '#09A9E3' },
   },
   pro: {
-    badge: { background: '#e6f7fd', color: '#09A9E3' },
-    card: { background: '#ffffff', border: '1px solid #e8edf5' },
-    highlight: { background: '#e6f7fd' },
+    badge: { background: 'rgba(9,169,227,0.15)', color: '#09A9E3' },
+    card: { background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))' },
+    highlight: { background: 'rgba(9,169,227,0.12)' },
     highlightText: { color: '#09A9E3' },
   },
   elite: {
@@ -54,8 +54,8 @@ function ProgramCard({ program, compact = false, icon }: { program: Program; com
   const { t } = useTranslation();
   const s = tierStyles[program.tier];
   const isPremium = program.tier === 'elite' || program.tier === 'empire';
-  const textColor = isPremium ? '#ffffff' : '#0B3C5D';
-  const mutedColor = isPremium ? 'rgba(255,255,255,0.6)' : '#64748b';
+  const textColor = isPremium ? '#ffffff' : 'hsl(var(--foreground))';
+  const mutedColor = isPremium ? 'rgba(255,255,255,0.6)' : 'hsl(var(--muted-foreground))';
   const navigate = useNavigate();
 
   return (
@@ -221,12 +221,11 @@ export default function CMProgramsPage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ background: '#f8faff', fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen bg-background font-sans">
 
       {/* ── Hero ── */}
       <section
-        className="relative py-28 px-4 overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 40%, #fff8f3 100%)' }}
+        className="relative py-28 px-4 overflow-hidden bg-background"
       >
         {/* Decorative blobs */}
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full pointer-events-none"
@@ -235,15 +234,13 @@ export default function CMProgramsPage() {
           style={{ background: 'radial-gradient(circle, rgba(255,140,66,0.12) 0%, transparent 70%)' }} />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-block mb-5 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest"
-            style={{ background: '#e6f7fd', color: '#09A9E3', border: '1px solid #b3e6f7' }}>
+          <span className="inline-block mb-5 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest bg-primary/10 text-primary border border-primary/30">
             {t('programs.educationPerformance')}
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-5 leading-tight"
-            style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-5 leading-tight text-foreground font-display">
             {t('programs.heroTitle')}
           </h1>
-          <p className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             {t('programs.heroSubtitle')}
           </p>
           <button
@@ -261,12 +258,11 @@ export default function CMProgramsPage() {
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-3">
             <Award size={28} style={{ color: '#FF8C42' }} />
-            <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-wide"
-              style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-wide text-foreground font-display">
               {t('programs.presentialTitle')}
             </h2>
           </div>
-          <p className="text-gray-500 max-w-xl">
+          <p className="text-muted-foreground max-w-xl">
             {t('programs.presentialSubtitle')}
           </p>
         </div>
@@ -279,28 +275,25 @@ export default function CMProgramsPage() {
       </section>
 
       {/* ── Online Programs ── */}
-      <section className="py-20 px-4" style={{ background: '#f1f5f9' }}>
+      <section className="py-20 px-4 bg-card/40">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <Globe size={28} style={{ color: '#09A9E3' }} />
-                <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-wide"
-                  style={{ color: '#0B3C5D', fontFamily: "'Space Grotesk', sans-serif" }}>
+                <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-wide text-foreground font-display">
                   {t('programs.onlineTitle')}
                 </h2>
               </div>
-              <p className="text-gray-500 max-w-xl">
+              <p className="text-muted-foreground max-w-xl">
                 {t('programs.onlineSubtitle')}
               </p>
             </div>
             <div className="flex gap-3 flex-wrap">
-              <span className="flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg"
-                style={{ background: '#e6f7fd', color: '#09A9E3' }}>
+              <span className="flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg bg-primary/10 text-primary">
                 <Cloud size={14} /> {t('programs.online100')}
               </span>
-              <span className="flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg"
-                style={{ background: '#e8f5f1', color: '#50BC74' }}>
+              <span className="flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg bg-accent/10 text-accent">
                 ⏰ {t('programs.flexibleAccess')}
               </span>
             </div>

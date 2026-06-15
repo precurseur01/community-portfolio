@@ -171,7 +171,7 @@ export default function AcademyLayout() {
         <div className="flex gap-6">
           {/* Desktop sidebar */}
           <div className="hidden lg:block w-[280px] flex-shrink-0">
-            <div className="sticky top-[100px] bg-white/[0.03] backdrop-blur-sm rounded-2xl border border-white/10 p-4 max-h-[calc(100vh-120px)] overflow-y-auto">
+            <div className="sticky top-[100px] bg-card backdrop-blur-sm rounded-2xl border border-border p-4 max-h-[calc(100vh-120px)] overflow-y-auto shadow-lg">
               {sidebarContent}
             </div>
           </div>

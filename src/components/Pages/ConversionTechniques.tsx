@@ -190,7 +190,7 @@ export default function ConversionTechniques() {
   }, [activeMethod]);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 py-20 px-4 font-sans">
+    <section className="min-h-screen py-20 px-4 font-sans">
       {/* Google Fonts */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
@@ -219,14 +219,14 @@ export default function ConversionTechniques() {
 
         {/* Header */}
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-slate-400 font-display tracking-widest uppercase mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 border border-border text-xs text-muted-foreground font-display tracking-widest uppercase mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse"></span>
             Module Formation · Techniques de Vente
           </div>
           <h1 className="font-display text-4xl md:text-5xl font-800 text-white mb-4 leading-tight">
             Techniques de <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">Conversion</span>
           </h1>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto leading-relaxed">
             Maîtrisez les 8 méthodes qui transforment un prospect en client. Cliquez sur chaque lettre pour découvrir les détails.
           </p>
 
@@ -236,7 +236,7 @@ export default function ConversionTechniques() {
               <button
                 key={t.id}
                 onClick={() => handleMethodChange(t.id)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${activeMethod === t.id ? 'w-8 bg-violet-400' : 'w-2 bg-white/20 hover:bg-white/40'}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${activeMethod === t.id ? 'w-8 bg-violet-400' : 'w-2 bg-secondary hover:bg-secondary/80'}`}
               />
             ))}
           </div>
@@ -246,26 +246,26 @@ export default function ConversionTechniques() {
 
           {/* Sidebar nav */}
           <aside className="lg:sticky lg:top-8 lg:self-start">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-3 space-y-1">
-              <p className="text-xs font-display font-600 text-slate-500 uppercase tracking-wider px-3 py-2">Méthodes</p>
+            <div className="bg-secondary/30 backdrop-blur-sm rounded-2xl border border-border p-3 space-y-1">
+              <p className="text-xs font-display font-600 text-muted-foreground uppercase tracking-wider px-3 py-2">Méthodes</p>
               {techniques.map(t => (
                 <button
                   key={t.id}
                   onClick={() => handleMethodChange(t.id)}
                   className={`method-btn w-full text-left px-3 py-3 rounded-xl flex items-center gap-3 group ${
                     activeMethod === t.id
-                      ? 'bg-white/10 border border-white/15'
-                      : 'hover:bg-white/5 border border-transparent'
+                      ? 'bg-secondary/60 border border-border'
+                      : 'hover:bg-secondary/30 border border-transparent'
                   }`}
                 >
                   <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${t.color} flex items-center justify-center flex-shrink-0`}>
                     <span className="font-display font-800 text-white text-xs">{t.acronym.slice(0, 3)}</span>
                   </div>
                   <div className="min-w-0">
-                    <div className={`font-display font-600 text-sm truncate ${activeMethod === t.id ? 'text-white' : 'text-slate-300'}`}>
+                    <div className={`font-display font-600 text-sm truncate ${activeMethod === t.id ? 'text-foreground' : 'text-foreground/70'}`}>
                       {t.acronym}
                     </div>
-                    <div className="text-xs text-slate-500 truncate">{t.subtitle}</div>
+                    <div className="text-xs text-muted-foreground truncate">{t.subtitle}</div>
                   </div>
                   {activeMethod === t.id && (
                     <div className="ml-auto w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" />
@@ -274,19 +274,19 @@ export default function ConversionTechniques() {
               ))}
 
               {/* Name guide button */}
-              <div className="pt-2 border-t border-white/10">
+              <div className="pt-2 border-t border-border">
                 <button
                   onClick={() => setShowNameGuide(!showNameGuide)}
                   className={`method-btn w-full text-left px-3 py-3 rounded-xl flex items-center gap-3 ${
-                    showNameGuide ? 'bg-amber-500/10 border border-amber-500/20' : 'hover:bg-white/5 border border-transparent'
+                    showNameGuide ? 'bg-amber-500/10 border border-amber-500/20' : 'hover:bg-secondary/30 border border-transparent'
                   }`}
                 >
                   <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center flex-shrink-0 text-sm">
                     🙋
                   </div>
                   <div>
-                    <div className={`font-display font-600 text-sm ${showNameGuide ? 'text-amber-300' : 'text-slate-300'}`}>Appel du prospect</div>
-                    <div className="text-xs text-slate-500">Nom ou prénom ?</div>
+                    <div className={`font-display font-600 text-sm ${showNameGuide ? 'text-amber-300' : 'text-foreground/80'}`}>Appel du prospect</div>
+                    <div className="text-xs text-muted-foreground">Nom ou prénom ?</div>
                   </div>
                 </button>
               </div>
@@ -296,7 +296,7 @@ export default function ConversionTechniques() {
           {/* Main content */}
           <div ref={contentRef}>
             {showNameGuide ? (
-              <div className="fade-in bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden">
+              <div className="fade-in bg-secondary/30 backdrop-blur-sm rounded-2xl border border-border overflow-hidden">
                 <div className="bg-gradient-to-r from-amber-600 to-yellow-600 px-8 py-6">
                   <div className="text-3xl mb-2">🙋</div>
                   <h2 className="font-display text-2xl font-700 text-white">{nameGuide.title}</h2>
@@ -310,17 +310,17 @@ export default function ConversionTechniques() {
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-3">
                             <span className="font-display font-700 text-white text-lg">{stage.phase}</span>
-                            <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-white/70 text-xs font-display">Recommandé</span>
+                            <span className="px-2.5 py-0.5 rounded-full bg-secondary/60 text-foreground/70 text-xs font-display">Recommandé</span>
                           </div>
-                          <div className="bg-white/10 rounded-lg px-4 py-2 inline-block mb-4">
+                          <div className="bg-secondary/60 rounded-lg px-4 py-2 inline-block mb-4">
                             <span className="font-display font-600 text-white">{stage.recommendation}</span>
                           </div>
-                          <blockquote className="text-slate-300 italic text-sm mb-4 border-l-2 border-white/20 pl-3">
+                          <blockquote className="text-foreground/80 italic text-sm mb-4 border-l-2 border-border pl-3">
                             {stage.example}
                           </blockquote>
                           <div className="flex flex-wrap gap-2">
                             {stage.why.map(w => (
-                              <span key={w} className="px-3 py-1 rounded-full bg-white/10 text-white/80 text-xs font-display">
+                              <span key={w} className="px-3 py-1 rounded-full bg-secondary/60 text-foreground/80 text-xs font-display">
                                 ✓ {w}
                               </span>
                             ))}
@@ -329,8 +329,8 @@ export default function ConversionTechniques() {
                       </div>
                     </div>
                   ))}
-                  <div className="bg-slate-800/60 rounded-xl p-5 border border-white/5">
-                    <p className="text-slate-300 text-sm leading-relaxed">
+                  <div className="bg-secondary/40 rounded-xl p-5 border border-border">
+                    <p className="text-foreground/80 text-sm leading-relaxed">
                       <span className="text-white font-600">Règle d'or :</span> La relation évolue. Commencez formel pour établir la crédibilité, puis passez au prénom pour créer la proximité. Ce passage est un signal fort que la relation progresse.
                     </p>
                   </div>
@@ -340,7 +340,7 @@ export default function ConversionTechniques() {
               <div key={animKey} className="space-y-6">
                 {/* Method header card */}
                 <div className={`fade-in stagger-1 rounded-2xl bg-gradient-to-br ${current.color} p-8 relative overflow-hidden`}>
-                  <div className="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-white/5" />
+                  <div className="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-secondary/30" />
                   <div className="absolute -right-4 -bottom-12 w-56 h-56 rounded-full bg-black/10" />
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-4 flex-wrap gap-3">
@@ -349,7 +349,7 @@ export default function ConversionTechniques() {
                           {current.badge}
                         </span>
                         <h2 className="font-display text-3xl font-800 text-white">{current.title}</h2>
-                        <p className="text-white/70 text-sm mt-1 font-display">{current.subtitle}</p>
+                        <p className="text-foreground/70 text-sm mt-1 font-display">{current.subtitle}</p>
                       </div>
                       <div className="font-display font-800 text-5xl text-white/20 tracking-widest">{current.acronym}</div>
                     </div>
@@ -363,10 +363,10 @@ export default function ConversionTechniques() {
                     <button
                       key={i}
                       onClick={() => setActiveLetterIndex(activeLetterIndex === i ? null : i)}
-                      className={`fade-in stagger-${i + 1} letter-card text-left rounded-xl border p-5 cursor-pointer bg-white/5 backdrop-blur-sm ${
+                      className={`fade-in stagger-${i + 1} letter-card text-left rounded-xl border p-5 cursor-pointer bg-secondary/30 backdrop-blur-sm ${
                         activeLetterIndex === i
-                          ? 'border-white/30 bg-white/10 active'
-                          : 'border-white/10 hover:border-white/20'
+                          ? 'border-border bg-secondary/60 active'
+                          : 'border-border hover:border-border'
                       }`}
                     >
                       <div className="flex items-center justify-between mb-3">
@@ -376,14 +376,14 @@ export default function ConversionTechniques() {
                         <span className="text-2xl">{item.icon}</span>
                       </div>
                       <div className="font-display font-700 text-white text-base mb-1">{item.word}</div>
-                      <div className="text-slate-400 text-xs leading-relaxed">{item.desc}</div>
+                      <div className="text-muted-foreground text-xs leading-relaxed">{item.desc}</div>
                     </button>
                   ))}
                 </div>
 
                 {/* Expanded detail */}
                 {activeLetterIndex !== null && (
-                  <div className="fade-in rounded-2xl bg-white/5 border border-white/15 p-6 backdrop-blur-sm">
+                  <div className="fade-in rounded-2xl bg-secondary/30 border border-border p-6 backdrop-blur-sm">
                     <div className="flex items-start gap-4">
                       <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${current.color} flex items-center justify-center flex-shrink-0`}>
                         <span className="font-display font-800 text-white text-2xl">{current.letters[activeLetterIndex].letter}</span>
@@ -392,10 +392,10 @@ export default function ConversionTechniques() {
                         <div className="font-display font-700 text-white text-xl mb-1">
                           {current.letters[activeLetterIndex].word}
                         </div>
-                        <p className="text-slate-300 text-sm mb-4">{current.letters[activeLetterIndex].desc}</p>
-                        <div className="bg-slate-800/80 rounded-xl p-4 border-l-4" style={{ borderColor: current.accent }}>
-                          <div className="text-xs font-display text-slate-400 uppercase tracking-wider mb-2">Exemple concret</div>
-                          <p className="text-slate-200 text-sm italic leading-relaxed">
+                        <p className="text-foreground/80 text-sm mb-4">{current.letters[activeLetterIndex].desc}</p>
+                        <div className="bg-secondary/50 rounded-xl p-4 border-l-4" style={{ borderColor: current.accent }}>
+                          <div className="text-xs font-display text-muted-foreground uppercase tracking-wider mb-2">Exemple concret</div>
+                          <p className="text-foreground text-sm italic leading-relaxed">
                             {current.letters[activeLetterIndex].example}
                           </p>
                         </div>
@@ -405,13 +405,13 @@ export default function ConversionTechniques() {
                 )}
 
                 {/* Pro tip */}
-                <div className="fade-in rounded-xl bg-white/5 border border-white/10 p-5 flex items-start gap-4">
+                <div className="fade-in rounded-xl bg-secondary/20 border border-border p-5 flex items-start gap-4">
                   <div className="w-8 h-8 rounded-lg bg-yellow-500/20 flex items-center justify-center flex-shrink-0 text-sm">
                     💡
                   </div>
                   <div>
                     <div className="font-display font-600 text-yellow-400 text-sm mb-1">Conseil Pro</div>
-                    <p className="text-slate-300 text-sm leading-relaxed">{current.tip}</p>
+                    <p className="text-foreground/80 text-sm leading-relaxed">{current.tip}</p>
                   </div>
                 </div>
 
@@ -423,11 +423,11 @@ export default function ConversionTechniques() {
                       if (idx > 0) handleMethodChange(techniques[idx - 1].id);
                     }}
                     disabled={techniques.findIndex(t => t.id === activeMethod) === 0}
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-all text-sm font-display disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-secondary/20 border border-border text-muted-foreground hover:text-foreground hover:bg-secondary/40 transition-all text-sm font-display disabled:opacity-30 disabled:cursor-not-allowed"
                   >
                     ← Précédent
                   </button>
-                  <span className="text-slate-500 text-xs font-display">
+                  <span className="text-muted-foreground text-xs font-display">
                     {techniques.findIndex(t => t.id === activeMethod) + 1} / {techniques.length}
                   </span>
                   <button
@@ -436,7 +436,7 @@ export default function ConversionTechniques() {
                       if (idx < techniques.length - 1) handleMethodChange(techniques[idx + 1].id);
                     }}
                     disabled={techniques.findIndex(t => t.id === activeMethod) === techniques.length - 1}
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-all text-sm font-display disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-secondary/20 border border-border text-muted-foreground hover:text-foreground hover:bg-secondary/40 transition-all text-sm font-display disabled:opacity-30 disabled:cursor-not-allowed"
                   >
                     Suivant →
                   </button>

@@ -75,7 +75,7 @@ export default function QuizResults({
   return (
     <div className="space-y-6">
       {/* ── Score card ── */}
-      <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 text-center">
+      <div className="rounded-2xl border border-border bg-card backdrop-blur-sm p-8 text-center shadow-xl">
         <div
           className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center"
           style={{ background: passed ? 'rgba(80,188,116,0.15)' : 'rgba(239,68,68,0.15)' }}
@@ -83,12 +83,12 @@ export default function QuizResults({
           <Award size={36} style={{ color: passedColor }} />
         </div>
 
-        <h2 className="text-3xl font-bold text-white mb-1">{score}/{questions.length}</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-1">{score}/{questions.length}</h2>
         <p className="text-lg mb-4" style={{ color: passedColor }}>
           {pct}% — {passed ? 'Réussi ! 🎉' : 'À retravailler'}
         </p>
 
-        <div className="h-2 rounded-full bg-white/10 max-w-xs mx-auto mb-6 overflow-hidden">
+        <div className="h-2 rounded-full bg-secondary max-w-xs mx-auto mb-6 overflow-hidden">
           <div
             className="h-full rounded-full transition-all duration-700"
             style={{ width: `${pct}%`, background: passedColor }}
@@ -98,7 +98,7 @@ export default function QuizResults({
         <div className="flex items-center justify-center gap-3 flex-wrap">
           <button
             onClick={onReset}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm font-semibold hover:bg-white/10 transition-all"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-secondary/30 border border-border text-foreground/80 text-sm font-semibold hover:bg-secondary/60 transition-all"
           >
             <RotateCcw size={15} /> Recommencer
           </button>
@@ -132,29 +132,29 @@ export default function QuizResults({
             q.correctAnswers.every(a => userAnswer.includes(a));
 
           return (
-            <div key={qi} className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+            <div key={qi} className="rounded-xl border border-border bg-card p-5 shadow-sm">
               <div className="flex items-start gap-3 mb-3">
                 {isCorrect
                   ? <CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{ color: '#50BC74' }} />
                   : <XCircle size={20} className="flex-shrink-0 mt-0.5" style={{ color: '#ef4444' }} />
                 }
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-white mb-1">Question {qi + 1}</p>
-                  <p className="text-xs text-slate-400 line-clamp-2">{q.question.split('\n')[0]}</p>
+                  <p className="text-sm font-semibold text-foreground mb-1">Question {qi + 1}</p>
+                  <p className="text-xs text-muted-foreground line-clamp-2">{q.question.split('\n')[0]}</p>
                 </div>
               </div>
               <div className="space-y-1.5 pl-8">
                 {q.options.map((opt, oi) => {
                   const isUser = userAnswer.includes(oi);
                   const isRight = q.correctAnswers.includes(oi);
-                  let bg = 'bg-white/[0.02] border-white/5';
-                  if (isRight) bg = 'bg-[#50BC74]/10 border-[#50BC74]/30';
-                  else if (isUser) bg = 'bg-red-500/10 border-red-500/30';
+                  let bg = 'bg-secondary/30 border-border';
+                  if (isRight) bg = 'bg-[#50BC74]/15 border-[#50BC74]/40';
+                  else if (isUser) bg = 'bg-red-500/15 border-red-500/40';
                   return (
                     <div key={oi} className={`px-3 py-2 rounded-lg text-xs border ${bg}`}>
-                      <span className="text-slate-300">{opt}</span>
+                      <span className="text-foreground/80">{opt}</span>
                       {isRight && <span className="ml-2 text-[#50BC74] font-semibold">✓</span>}
-                      {isUser && !isRight && <span className="ml-2 text-red-400 font-semibold">✗</span>}
+                      {isUser && !isRight && <span className="ml-2 text-red-500 font-semibold">✗</span>}
                     </div>
                   );
                 })}

@@ -30,7 +30,7 @@ export default function UserMenu() {
       {/* ── Avatar Button ── */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 pl-1 pr-3 py-1 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-200 group"
+        className="flex items-center gap-2 pl-1 pr-3 py-1 rounded-xl bg-secondary/30 border border-border hover:bg-secondary/60 hover:border-border/80 transition-all duration-200 group"
         aria-label={t('nav.myAccount')}
       >
         {/* Avatar */}
@@ -39,13 +39,13 @@ export default function UserMenu() {
         </div>
 
         {/* Display Name (desktop) */}
-        <span className="hidden lg:block text-sm text-slate-300 group-hover:text-white transition-colors max-w-[120px] truncate">
+        <span className="hidden lg:block text-sm text-foreground/80 group-hover:text-foreground transition-colors max-w-[120px] truncate">
           {displayName}
         </span>
 
         <ChevronDown
           size={14}
-          className={`text-slate-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          className={`text-muted-foreground transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
         />
       </button>
 
@@ -57,18 +57,17 @@ export default function UserMenu() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -6 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="absolute right-0 top-full mt-2 w-60 rounded-2xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden z-50"
-            style={{ background: 'rgba(8,14,30,0.95)', backdropFilter: 'blur(24px)' }}
+            className="absolute right-0 top-full mt-2 w-60 rounded-2xl border border-border shadow-2xl shadow-black/50 overflow-hidden z-50 bg-card/95 backdrop-blur-xl"
           >
             {/* Info utilisateur */}
-            <div className="px-4 py-3.5 border-b border-white/10">
+            <div className="px-4 py-3.5 border-b border-border">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold flex-shrink-0">
                   {initial}
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-sm font-semibold text-white">{displayName}</p>
-                  <p className="text-xs text-slate-400 truncate">{email}</p>
+                  <p className="text-sm font-semibold text-foreground">{displayName}</p>
+                  <p className="text-xs text-muted-foreground truncate">{email}</p>
                 </div>
               </div>
             </div>
@@ -77,27 +76,27 @@ export default function UserMenu() {
             <div className="p-2">
               <button
                 onClick={() => setOpen(false)}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-all group"
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-foreground/80 hover:text-foreground hover:bg-secondary/40 transition-all group"
               >
-                <div className="w-7 h-7 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                  <User size={14} className="text-blue-400" />
+                <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <User size={14} className="text-primary" />
                 </div>
                 {t('nav.profile')}
               </button>
 
               <button
                 onClick={() => setOpen(false)}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-all group"
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-foreground/80 hover:text-foreground hover:bg-secondary/40 transition-all group"
               >
-                <div className="w-7 h-7 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                  <Settings size={14} className="text-emerald-400" />
+                <div className="w-7 h-7 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <Settings size={14} className="text-accent" />
                 </div>
                 {t('nav.settings')}
               </button>
             </div>
 
             {/* Déconnexion */}
-            <div className="p-2 border-t border-white/10">
+            <div className="p-2 border-t border-border">
               <button
                 onClick={async () => { setOpen(false); await signOut(); }}
                 className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all"

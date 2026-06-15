@@ -49,11 +49,11 @@ export default function Contact() {
         { icon: Linkedin, url: "https://linkedin.com/in/yndris-douanla-060968273", label: 'LinkedIn', key: 'LinkedIn', color: 'hover:text-blue-400' },
         { icon: Facebook, url: 'https://www.facebook.com/share/1C6Lz8aFes/?mibextid=wwXIfr', label: 'Facebook', key: 'Facebook', color: 'hover:text-blue-300' },
         { icon: Github, url: 'https://github.com/precurseur01', label: 'Github', key: 'Github', color: 'hover:text-blue-300' },
-        { icon: Mail, url: 'mailto:contact@freedry.dev', label: 'Email', key: 'Email', color: 'hover:text-emerald-400' },
+        { icon: Mail, url: 'mailto:contact@freedry.dev', label: 'Email', key: 'Email', color: 'hover:text-accent' },
     ];
 
     const inputClass = `
-        w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white
+        w-full px-4 py-3 bg-secondary/40 border border-border rounded-xl text-white
         placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500
         focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed
     `;
@@ -75,7 +75,7 @@ export default function Contact() {
                         </span>
                         ?
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
                         {t('contact.description')}
                     </p>
                     <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-emerald-400 mx-auto rounded-full mt-6" />
@@ -85,7 +85,7 @@ export default function Contact() {
 
                     {/* ── Colonne gauche ── */}
                     <div className="space-y-8">
-                        <div className="bg-gradient-to-br from-blue-600/20 to-emerald-600/20 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
+                        <div className="bg-gradient-to-br from-blue-600/20 to-emerald-600/20 backdrop-blur-sm border border-border rounded-3xl p-8">
                             <h3 className="text-2xl font-bold mb-6">{t('contact.connect.title')}</h3>
 
                             {/* Email */}
@@ -95,7 +95,7 @@ export default function Contact() {
                                         <Mail size={24} className="text-white" />
                                     </div>
                                     <div>
-                                        <div className="text-sm text-gray-400">{t('contact.connect.emailLabel')}</div>
+                                        <div className="text-sm text-muted-foreground">{t('contact.connect.emailLabel')}</div>
                                         <div className="text-white font-medium">{t('contact.connect.emailValue')}</div>
                                     </div>
                                 </div>
@@ -107,13 +107,13 @@ export default function Contact() {
                                     <Phone size={24} className="text-white" />
                                 </div>
                                 <div>
-                                    <div className="text-sm text-gray-400">{t('contact.connect.phone')}</div>
+                                    <div className="text-sm text-muted-foreground">{t('contact.connect.phone')}</div>
                                     <div className="text-white font-medium">+237 670616710</div>
                                 </div>
                             </a>
 
                             {/* Réseaux */}
-                            <div className="pt-6 border-t border-white/10">
+                            <div className="pt-6 border-t border-border">
                                 <h4 className="text-lg font-semibold mb-4">{t('contact.connect.followTitle')}</h4>
                                 <div className="flex gap-4">
                                     {socialLinks.map((social, index) => {
@@ -122,7 +122,7 @@ export default function Contact() {
                                             <a
                                                 key={index}
                                                 href={social.url}
-                                                className={`w-12 h-12 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center transition-all duration-300 ${social.color} hover:scale-110`}
+                                                className={`w-12 h-12 bg-secondary/40 hover:bg-secondary/70 rounded-xl flex items-center justify-center transition-all duration-300 ${social.color} hover:scale-110`}
                                                 aria-label={t(`contact.connect.socialLinks.${social.key}`)}
                                             >
                                                 <Icon size={20} />
@@ -133,9 +133,9 @@ export default function Contact() {
                             </div>
 
                             {/* Pourquoi nous */}
-                            <div className="mt-8 p-6 bg-white/5 rounded-2xl border border-white/10">
-                                <h4 className="font-semibold mb-3 text-emerald-400">{t('contact.whyWorkWithMe.title')}</h4>
-                                <ul className="space-y-2 text-sm text-gray-300">
+                            <div className="mt-8 p-6 bg-secondary/20 rounded-2xl border border-border">
+                                <h4 className="font-semibold mb-3 text-accent">{t('contact.whyWorkWithMe.title')}</h4>
+                                <ul className="space-y-2 text-sm text-foreground/80">
                                     {Object.values(t('contact.whyWorkWithMe.features', { returnObjects: true })).map((feature, idx) => (
                                         <li key={idx} className="flex items-start gap-2">
                                             <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 flex-shrink-0" />
@@ -152,11 +152,11 @@ export default function Contact() {
                         <form
                             ref={formRef}
                             onSubmit={handleSubmit}
-                            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 space-y-6"
+                            className="bg-secondary/20 backdrop-blur-sm border border-border rounded-3xl p-8 space-y-6"
                         >
                             {/* Nom */}
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                                <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">
                                     {t('contact.form.nameLabel')}
                                 </label>
                                 <input
@@ -174,7 +174,7 @@ export default function Contact() {
 
                             {/* Email */}
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                                <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">
                                     {t('contact.form.emailLabel')}
                                 </label>
                                 <input
@@ -192,7 +192,7 @@ export default function Contact() {
 
                             {/* Message */}
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                                <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">
                                     {t('contact.form.messageLabel')}
                                 </label>
                                 <textarea
@@ -242,11 +242,11 @@ export default function Contact() {
 
                             {/* Feedback inline */}
                             {status === 'success' && (
-                                <div className="flex items-start gap-3 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-300 text-sm">
+                                <div className="flex items-start gap-3 p-4 bg-accent/10 border border-accent/20 rounded-xl text-accent/90 text-sm">
                                     <CheckCircle size={18} className="flex-shrink-0 mt-0.5" />
                                     <div>
                                         <p className="font-semibold mb-0.5">Votre message a bien été envoyé 🎉</p>
-                                        <p className="text-emerald-400/70">Je vous répondrai dans les plus brefs délais.</p>
+                                        <p className="text-accent/70">Je vous répondrai dans les plus brefs délais.</p>
                                     </div>
                                 </div>
                             )}

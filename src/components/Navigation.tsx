@@ -1,4 +1,4 @@
-import { Menu, X, ChevronRight, ChevronDown, BookOpen, Zap, Star, Users, Brain, LogIn, UserPlus, GraduationCap, LogOut } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronDown, BookOpen, Zap, Star, Users, Brain, LogIn, UserPlus, GraduationCap, LogOut, Sun, Moon } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -6,6 +6,7 @@ import Img from '../constants/img';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import UserMenu from './auth/UserMenu';
+import { useTheme } from '../context/ThemeContext';
 
 interface NavigationProps {
   scrolled: boolean;
@@ -64,6 +65,7 @@ const serviceItems = [
 
 export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: NavigationProps) {
   const { user, loading, signOut } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [playbook, setPlaybook] = useState(false);
@@ -108,8 +110,8 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
       {/* Background layer with filter - separated to avoid clipping the fixed mobile menu */}
       <div className={`absolute inset-0 h-[76px] transition-all duration-300 ${
         scrolled 
-          ? 'bg-black/90 backdrop-blur-lg border-b border-white/10' 
-          : 'bg-[#020617]/80 backdrop-blur-md border-b border-white/5'
+          ? 'bg-background/90 backdrop-blur-lg border-b border-border'
+          : 'bg-background/70 backdrop-blur-md border-b border-border/50'
       }`} />
 
       <div className="relative max-w-[1600px] mx-auto px-4 xl:px-8">
@@ -129,8 +131,8 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                 className={({ isActive }) =>
                   `px-3 py-2 text-[13px] uppercase font-medium rounded-lg transition-all duration-200 ${
                     isActive
-                      ? 'text-emerald-400 bg-emerald-400/10'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                      ? 'text-primary bg-primary/10'
+                      : 'text-foreground/70 hover:text-foreground hover:bg-secondary/40'
                   }`
                 }
               >
@@ -145,8 +147,8 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                 onMouseEnter={() => setServicesDropdown(true)}
                 className={`flex items-center gap-1.5 px-3 py-2 text-[13px] uppercase font-medium rounded-lg transition-all duration-200 ${
                   servicesDropdown
-                    ? 'text-emerald-400 bg-emerald-400/10'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    ? 'text-primary bg-primary/10'
+                    : 'text-foreground/70 hover:text-foreground hover:bg-secondary/40'
                 }`}
               >
                 {t('nav.services')}
@@ -165,26 +167,26 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                   }`}
               >
                 {/* Arrow tip */}
-                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-slate-900 border-l border-t border-white/10 rotate-45" />
+                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-card border-l border-t border-border rotate-45" />
 
-                <div className="relative bg-slate-900/95 backdrop-blur-xl rounded-2xl border border-white/10 p-2 shadow-2xl shadow-black/50">
+                <div className="relative bg-card/95 backdrop-blur-xl rounded-2xl border border-border p-2 shadow-2xl shadow-black/50">
                   {serviceItems.map((item) => (
                     <NavLink
                       key={item.href}
                       to={item.href}
                       onClick={() => setServicesDropdown(false)}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-all duration-200 group"
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-secondary/40 transition-all duration-200 group"
                     >
                       <div className={`w-8 h-8 rounded-lg ${item.bg} flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110`}>
                         <item.icon size={15} className={item.color} />
                       </div>
                       <div>
-                        <div className="text-[13px] font-medium text-white">{t(item.labelKey)}</div>
-                        <div className="text-[11px] text-slate-500">{t(item.descKey)}</div>
+                        <div className="text-[13px] font-medium text-foreground">{t(item.labelKey)}</div>
+                        <div className="text-[11px] text-muted-foreground">{t(item.descKey)}</div>
                       </div>
                       <ChevronRight
                         size={14}
-                        className="ml-auto text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all"
+                        className="ml-auto text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all"
                       />
                     </NavLink>
                   ))}
@@ -199,8 +201,8 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                 onMouseEnter={() => setPlaybook(true)}
                 className={`flex items-center gap-1.5 px-3 py-2 text-[13px] uppercase font-medium rounded-lg transition-all duration-200 ${
                   playbook
-                    ? 'text-emerald-400 bg-emerald-400/10'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    ? 'text-primary bg-primary/10'
+                    : 'text-foreground/70 hover:text-foreground hover:bg-secondary/40'
                 }`}
               >
                 <BookOpen size={13} className="transition-colors duration-200" />
@@ -220,9 +222,9 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                   }`}
               >
                 {/* Arrow tip */}
-                <div className="absolute -top-1.5 right-[72px] w-3 h-3 bg-slate-900 border-l border-t border-white/10 rotate-45" />
+                <div className="absolute -top-1.5 right-[72px] w-3 h-3 bg-card border-l border-t border-border rotate-45" />
 
-                <div className="relative bg-slate-900/95 backdrop-blur-xl rounded-2xl border border-white/10 p-3 shadow-2xl shadow-black/50">
+                <div className="relative bg-card/95 backdrop-blur-xl rounded-2xl border border-border p-3 shadow-2xl shadow-black/50">
 
                   {/* Header */}
                   <div className="px-3 py-2 mb-2">
@@ -230,16 +232,16 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                       <div className="w-6 h-6 rounded-md bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center">
                         <Star size={12} className="text-white" />
                       </div>
-                      <span className="text-xs font-semibold text-white uppercase tracking-wider">
+                      <span className="text-xs font-semibold text-foreground uppercase tracking-wider">
                         {t('playbook.title')}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-500 mt-1 pl-8">
+                    <p className="text-xs text-muted-foreground mt-1 pl-8">
                       {t('playbook.subtitle')}
                     </p>
                   </div>
 
-                  <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-2" />
+                  <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-2" />
 
                   {/* Items */}
                   {filteredPlaybookItems.map((item) => (
@@ -247,24 +249,24 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                       key={item.href}
                       to={item.href}
                       onClick={() => setPlaybook(false)}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-all duration-200 group"
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-secondary/40 transition-all duration-200 group"
                     >
                       <div className={`w-8 h-8 rounded-lg ${item.bg} flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110`}>
                         <item.icon size={15} className={item.color} />
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-white">{t(item.labelKey)}</div>
-                        <div className="text-xs text-slate-500">{t(item.descKey)}</div>
+                        <div className="text-sm font-medium text-foreground">{t(item.labelKey)}</div>
+                        <div className="text-xs text-muted-foreground">{t(item.descKey)}</div>
                       </div>
                       <ChevronRight
                         size={14}
-                        className="ml-auto text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all"
+                        className="ml-auto text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all"
                       />
                     </NavLink>
                   ))}
 
                   {/* CTA footer */}
-                  <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mt-2 mb-3" />
+                  <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mt-2 mb-3" />
                   <NavLink
                     to="/growth"
                     onClick={() => setPlaybook(false)}
@@ -282,8 +284,22 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
           <div className="hidden xl:flex flex-shrink-0 items-center gap-3">
             <LanguageSwitcher />
 
+            {/* Toggle Dark / Light */}
+            <button
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'}
+              className="relative w-9 h-9 flex items-center justify-center rounded-xl border border-border bg-secondary/30 text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all duration-200 overflow-hidden group"
+            >
+              <span className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'}`}>
+                <Sun size={15} />
+              </span>
+              <span className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${theme === 'light' ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'}`}>
+                <Moon size={15} />
+              </span>
+            </button>
+
             {/* Séparateur vertical */}
-            <div className="w-px h-5 bg-white/15 rounded-full" />
+            <div className="w-px h-5 bg-border rounded-full" />
 
             {/* Auth buttons / UserMenu */}
             {!loading && (
@@ -293,7 +309,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                 <div className="flex items-center gap-2">
                   <button
                     onClick={onOpenLogin}
-                    className="flex items-center gap-1.5 text-[13px] font-medium text-gray-300 hover:text-white border border-white/15 hover:border-white/30 px-3.5 py-2 rounded-xl transition-all duration-200 hover:bg-white/5"
+                    className="flex items-center gap-1.5 text-[13px] font-medium text-foreground/70 hover:text-foreground border border-border hover:border-border/80 px-3.5 py-2 rounded-xl transition-all duration-200 hover:bg-secondary/40"
                   >
                     <LogIn size={14} />
                     {t('nav.login')}
@@ -313,7 +329,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
           {/* ── Mobile toggle (visible sous xl) ── */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="xl:hidden ml-auto text-white relative z-[70] w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
+            className="xl:hidden ml-auto text-foreground relative z-[70] w-10 h-10 flex items-center justify-center rounded-lg bg-secondary/40 backdrop-blur-sm hover:bg-secondary/70 transition-all duration-300"
             aria-label={t('nav.toggleMenu')}
           >
             <div className="relative w-6 h-6">
@@ -330,7 +346,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
 
       {/* ── Menu mobile ── */}
       <div
-        className={`xl:hidden fixed inset-0 z-[60] bg-black/95 backdrop-blur-2xl transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
+        className={`xl:hidden fixed inset-0 z-[60] bg-background/95 backdrop-blur-2xl transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
         style={{ top: '76px' }}
       >
         <div className="h-full overflow-y-auto">
@@ -346,17 +362,17 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                     `group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
                     } ${link.delay} ${isActive
                       ? 'bg-gradient-to-r from-blue-600/30 to-emerald-600/30 border-emerald-400'
-                      : 'bg-gradient-to-r from-white/5 to-white/0 border-white/10 hover:border-white/20'
+                      : 'bg-secondary/20 border-border hover:border-border/80'
                     }`
                   }
                   style={{ transitionDelay: isOpen ? `${index * 50}ms` : '0ms' }}
                 >
-                  <span className="text-xl uppercase font-semibold text-white group-hover:text-emerald-400 transition-colors duration-300">
+                  <span className="text-xl uppercase font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
                     {link.name}
                   </span>
                   <ChevronRight
                     size={24}
-                    className="text-gray-500 group-hover:text-blue-400 group-hover:translate-x-2 transition-all duration-300"
+                    className="text-muted-foreground group-hover:text-primary group-hover:translate-x-2 transition-all duration-300"
                   />
                 </NavLink>
               ))}
@@ -366,7 +382,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
                   } delay-150 ${mobileServices
                     ? 'border-emerald-500/40 bg-gradient-to-r from-blue-600/10 to-emerald-600/10'
-                    : 'border-white/10 bg-gradient-to-r from-white/5 to-white/0'
+                    : 'border-border bg-secondary/20'
                   }`}
               >
                 <button
@@ -377,14 +393,14 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center">
                       <Zap size={15} className="text-white" />
                     </div>
-                    <span className={`text-xl uppercase font-semibold transition-colors duration-200 ${mobileServices ? 'text-emerald-400' : 'text-white'
+                    <span className={`text-xl uppercase font-semibold transition-colors duration-200 ${mobileServices ? 'text-primary' : 'text-foreground'
                       }`}>
                       {t('nav.services')}
                     </span>
                   </div>
                   <ChevronDown
                     size={20}
-                    className={`transition-transform duration-300 ${mobileServices ? 'rotate-180 text-emerald-400' : 'text-gray-400'
+                    className={`transition-transform duration-300 ${mobileServices ? 'rotate-180 text-primary' : 'text-muted-foreground'
                       }`}
                   />
                 </button>
@@ -396,18 +412,18 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                         key={item.href}
                         to={item.href}
                         onClick={() => { setIsOpen(false); setMobileServices(false); }}
-                        className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all group"
+                        className="flex items-center gap-3 p-3 rounded-xl bg-secondary/30 hover:bg-secondary/60 transition-all group"
                       >
                         <div className={`w-8 h-8 rounded-lg ${item.bg} flex items-center justify-center flex-shrink-0`}>
                           <item.icon size={14} className={item.color} />
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-white">{t(item.labelKey)}</div>
-                          <div className="text-xs text-slate-500">{t(item.descKey)}</div>
+                          <div className="text-sm font-medium text-foreground">{t(item.labelKey)}</div>
+                          <div className="text-xs text-muted-foreground">{t(item.descKey)}</div>
                         </div>
                         <ChevronRight
                           size={14}
-                          className="ml-auto text-slate-600 group-hover:text-emerald-400 transition-colors"
+                          className="ml-auto text-muted-foreground group-hover:text-primary transition-colors"
                         />
                       </NavLink>
                     ))}
@@ -420,7 +436,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
                   } delay-300 ${mobilePlaybook
                     ? 'border-emerald-500/40 bg-gradient-to-r from-blue-600/10 to-emerald-600/10'
-                    : 'border-white/10 bg-gradient-to-r from-white/5 to-white/0'
+                    : 'border-border bg-secondary/20'
                   }`}
               >
                 <button
@@ -431,14 +447,14 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center">
                       <BookOpen size={15} className="text-white" />
                     </div>
-                    <span className={`text-xl uppercase font-semibold transition-colors duration-200 ${mobilePlaybook ? 'text-emerald-400' : 'text-white'
+                    <span className={`text-xl uppercase font-semibold transition-colors duration-200 ${mobilePlaybook ? 'text-primary' : 'text-foreground'
                       }`}>
                       {t('playbook.title')}
                     </span>
                   </div>
                   <ChevronDown
                     size={20}
-                    className={`transition-transform duration-300 ${mobilePlaybook ? 'rotate-180 text-emerald-400' : 'text-gray-400'
+                    className={`transition-transform duration-300 ${mobilePlaybook ? 'rotate-180 text-primary' : 'text-muted-foreground'
                       }`}
                   />
                 </button>
@@ -450,18 +466,18 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                         key={item.href}
                         to={item.href}
                         onClick={() => { setIsOpen(false); setMobilePlaybook(false); }}
-                        className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all group"
+                        className="flex items-center gap-3 p-3 rounded-xl bg-secondary/30 hover:bg-secondary/60 transition-all group"
                       >
                         <div className={`w-8 h-8 rounded-lg ${item.bg} flex items-center justify-center flex-shrink-0`}>
                           <item.icon size={14} className={item.color} />
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-white">{t(item.labelKey)}</div>
-                          <div className="text-xs text-slate-500">{t(item.descKey)}</div>
+                          <div className="text-sm font-medium text-foreground">{t(item.labelKey)}</div>
+                          <div className="text-xs text-muted-foreground">{t(item.descKey)}</div>
                         </div>
                         <ChevronRight
                           size={14}
-                          className="ml-auto text-slate-600 group-hover:text-emerald-400 transition-colors"
+                          className="ml-auto text-muted-foreground group-hover:text-primary transition-colors"
                         />
                       </NavLink>
                     ))}
@@ -480,22 +496,36 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
               </div>
 
               <LanguageSwitcher />
+
+              {/* Toggle thème mobile */}
+              <button
+                onClick={toggleTheme}
+                aria-label={theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'}
+                className="flex items-center justify-between w-full p-4 rounded-2xl border border-border bg-secondary/20 hover:bg-secondary/40 transition-all"
+              >
+                <span className="text-base font-semibold text-foreground/80">
+                  {theme === 'dark' ? 'Mode clair' : 'Mode sombre'}
+                </span>
+                <span className="w-9 h-9 flex items-center justify-center rounded-xl bg-secondary/50 border border-border text-foreground/70">
+                  {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
+                </span>
+              </button>
             </div>
 
             <div className={`mt-8 space-y-4 transform transition-all duration-500 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} delay-500`}>
-              <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
               {/* ── Auth mobile ── */}
               {!loading && (
                 user ? (
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10">
+                    <div className="flex items-center gap-3 p-4 rounded-2xl bg-secondary/30 border border-border">
                       <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold flex-shrink-0">
                         {initial}
                       </div>
                       <div className="overflow-hidden">
-                        <p className="text-sm font-semibold text-white">{displayName}</p>
-                        <p className="text-xs text-slate-400 truncate">{user.email}</p>
+                        <p className="text-sm font-semibold text-foreground">{displayName}</p>
+                        <p className="text-xs text-muted-foreground truncate">{user.email}</p>
                       </div>
                     </div>
                     <button
@@ -513,7 +543,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
                   <div className="grid grid-cols-2 gap-3">
                     <button
                       onClick={() => { setIsOpen(false); onOpenLogin(); }}
-                      className="flex items-center justify-center gap-2 py-3.5 rounded-2xl border border-white/15 text-white font-semibold hover:bg-white/5 transition-all"
+                      className="flex items-center justify-center gap-2 py-3.5 rounded-2xl border border-border text-foreground font-semibold hover:bg-secondary/40 transition-all"
                     >
                       <LogIn size={16} />
                       {t('nav.login')}
@@ -536,7 +566,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
               >
                 {t('nav.cta')}
               </a>
-              <p className="text-center text-sm text-gray-400">{t('nav.tagline')}</p>
+              <p className="text-center text-sm text-muted-foreground">{t('nav.tagline')}</p>
             </div>
           </div>
         </div>

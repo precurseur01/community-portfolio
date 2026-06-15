@@ -55,7 +55,7 @@ export default function CaseStudies() {
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             {t('cases.titlePrefix')} <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">{t('cases.titleGradient')}</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
             {t('cases.description')}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-emerald-400 mx-auto rounded-full mt-6"></div>
@@ -65,50 +65,50 @@ export default function CaseStudies() {
           {cases.map((caseStudy, index) => (
             <div
               key={index}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10"
+              className="group bg-card/60 backdrop-blur-sm border border-border rounded-3xl overflow-hidden hover:bg-card transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10"
             >
               <div className="grid lg:grid-cols-2 gap-8 p-8 lg:p-12">
                 <div className="space-y-6">
                   <div>
-                    <span className="inline-block px-4 py-1 bg-white/10 rounded-full text-sm text-emerald-400 mb-4">
+                    <span className="inline-block px-4 py-1 bg-accent/15 rounded-full text-sm text-accent mb-4">
                       {caseStudy.category}
                     </span>
-                    <h3 className="text-3xl font-bold mb-4 text-white">{caseStudy.title}</h3>
+                    <h3 className="text-3xl font-bold mb-4 text-foreground">{caseStudy.title}</h3>
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold text-blue-400 mb-2 uppercase tracking-wide">{t('cases.challenge')}</h4>
-                    <p className="text-gray-300">{caseStudy.challenge}</p>
+                    <h4 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wide">{t('cases.challenge')}</h4>
+                    <p className="text-foreground/80">{caseStudy.challenge}</p>
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold text-emerald-400 mb-2 uppercase tracking-wide">{t('cases.strategy')}</h4>
-                    <p className="text-gray-300">{caseStudy.strategy}</p>
+                    <h4 className="text-sm font-semibold text-accent mb-2 uppercase tracking-wide">{t('cases.strategy')}</h4>
+                    <p className="text-foreground/80">{caseStudy.strategy}</p>
                   </div>
 
-                  <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                    <Quote size={24} className="text-blue-400 mb-3" />
-                    <p className="text-gray-200 italic">{caseStudy.quote}</p>
+                  <div className="bg-secondary/30 border border-border rounded-xl p-6">
+                    <Quote size={24} className="text-primary mb-3" />
+                    <p className="text-foreground italic">{caseStudy.quote}</p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <h4 className="text-sm font-semibold text-white mb-6 uppercase tracking-wide">{t('cases.results')}</h4>
+                  <h4 className="text-sm font-semibold text-foreground mb-6 uppercase tracking-wide">{t('cases.results')}</h4>
                   {caseStudy.results.map((result, idx) => {
                     const Icon = result.icon;
                     return (
                       <div
                         key={idx}
-                        className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:scale-105 transition-transform duration-300"
+                        className="bg-secondary/40 backdrop-blur-sm border border-border rounded-2xl p-6 hover:scale-105 transition-transform duration-300"
                       >
                         <div className="flex items-start gap-4">
                           <div className={`w-12 h-12 bg-gradient-to-br ${caseStudy.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
                             <Icon size={24} className="text-white" />
                           </div>
                           <div className="flex-1">
-                            <div className="text-3xl font-bold text-white mb-1">{result.value}</div>
-                            <div className="text-sm text-gray-400">{result.period}</div>
-                            <div className="text-xs text-gray-500 mt-1">{result.label}</div>
+                            <div className="text-3xl font-bold text-foreground mb-1">{result.value}</div>
+                            <div className="text-sm text-muted-foreground">{result.period}</div>
+                            <div className="text-xs text-muted-foreground mt-1">{result.label}</div>
                           </div>
                         </div>
                       </div>

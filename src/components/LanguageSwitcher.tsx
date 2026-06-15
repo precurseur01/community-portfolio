@@ -58,12 +58,12 @@ const LanguageSwitcher = () => {
             </button>
 
             {isOpen && (
-                <div className="absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg py-2 min-w-[150px] z-50">
+                <div className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-lg py-2 min-w-[150px] z-50">
                     {languages.map((language) => (
                         <button
                             key={language.code}
                             onClick={() => handleLanguageChange(language.code)}
-                            className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 flex items-center space-x-3 ${i18n.language === language.code ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                            className={`w-full text-left px-4 py-2 text-sm hover:bg-secondary/50 flex items-center space-x-3 ${i18n.language === language.code ? 'bg-primary/10 text-primary' : 'text-foreground/80'
                                 }`}
                         >
                             <span className="text-lg">{language.flag}</span>
