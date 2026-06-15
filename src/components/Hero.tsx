@@ -43,17 +43,17 @@ export default function Hero() {
 
           <AnimatedBadge t={t} />
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
             {t('hero.headingPrefix')}{' '}
             <span className="block bg-gradient-to-r from-blue-400 via-emerald-400 to-blue-400 bg-clip-text text-transparent animate-gradient">
               {t('hero.headingGradient')}
             </span>
           </h1>
 
-          <p className="text-xl sm:text-2xl text-foreground/80 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-white/85 mb-10 max-w-3xl mx-auto leading-relaxed">
             {t('hero.descriptionMiddle')}{' '}
-            <span className="text-accent">{t('hero.descriptionStrong')}</span>,{' '}
-            <span className="text-primary">{t('hero.descriptionHuman')}</span> et{' '}
+            <span className="text-emerald-400">{t('hero.descriptionStrong')}</span>,{' '}
+            <span className="text-blue-400">{t('hero.descriptionHuman')}</span> et{' '}
             <span className="text-white">{t('hero.descriptionHigh')}</span>{' '}
             {t('hero.descriptionSuffix')}
           </p>
@@ -69,7 +69,7 @@ export default function Hero() {
 
             <a
               href="#contact"
-              className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full font-semibold hover:bg-white/20 transition-all duration-300"
+              className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full font-semibold text-white hover:bg-white/20 transition-all duration-300"
             >
               {t('hero.cta.contact')}
             </a>

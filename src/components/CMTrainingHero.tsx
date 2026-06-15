@@ -178,7 +178,7 @@ export default function CMTrainingHero() {
               </div>
               <div className="flex items-start gap-2 rounded-lg p-3 bg-[#FF8C42]/10 border border-[#FF8C42]/20">
                 <AlertCircle size={18} className="text-[#FF8C42] flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-[#FF8C42]">
+                <p className="text-sm font-semibold text-[#FF8C42]">
                   {t('cmTraining.limitedPlaces')}
                 </p>
               </div>

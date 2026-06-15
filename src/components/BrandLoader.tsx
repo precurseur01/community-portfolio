@@ -14,7 +14,7 @@ export default function BrandLoader({ onComplete }: { onComplete?: () => void })
     <div
       style={{
         position: 'fixed', inset: 0, zIndex: 9999,
-        backgroundColor: '#f9f9fc',
+        backgroundColor: 'hsl(var(--background))',
         display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center',
         overflow: 'hidden',
@@ -31,7 +31,7 @@ export default function BrandLoader({ onComplete }: { onComplete?: () => void })
         backgroundSize: '40px 40px',
         WebkitMaskImage: 'radial-gradient(circle at center, black, transparent 80%)',
         maskImage: 'radial-gradient(circle at center, black, transparent 80%)',
-        opacity: 0.03, pointerEvents: 'none',
+        opacity: 0.08, pointerEvents: 'none',
       }} />
 
       {/* Ambient blobs */}
@@ -64,14 +64,14 @@ export default function BrandLoader({ onComplete }: { onComplete?: () => void })
           {/* Outer dashed ring — rotates CW + pulses */}
           <div className="brand-loader-ring-outer" style={{
             position: 'absolute', inset: 0,
-            border: '2px dashed rgba(0,102,138,0.2)',
+            border: '2px dashed rgba(9,169,227,0.35)',
             borderRadius: '9999px',
           }} />
           {/* Middle segmented ring — rotates CCW */}
           <div className="brand-loader-ring-middle" style={{
             position: 'absolute', inset: '1rem',
-            borderTop: '2px solid rgba(0,109,55,0.4)',
-            borderLeft: '2px solid rgba(0,109,55,0.4)',
+            borderTop: '2px solid rgba(80,188,116,0.5)',
+            borderLeft: '2px solid rgba(80,188,116,0.5)',
             borderRight: '2px solid transparent',
             borderBottom: '2px solid transparent',
             borderRadius: '9999px',
@@ -79,7 +79,7 @@ export default function BrandLoader({ onComplete }: { onComplete?: () => void })
           {/* Inner glow ring */}
           <div style={{
             position: 'absolute', inset: '2rem',
-            border: '1px solid rgba(0,102,138,0.1)',
+            border: '1px solid rgba(9,169,227,0.2)',
             borderRadius: '9999px',
             filter: 'drop-shadow(0 0 8px rgba(9,169,227,0.4))',
           }} />
@@ -105,7 +105,7 @@ export default function BrandLoader({ onComplete }: { onComplete?: () => void })
         <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <h1 style={{
             fontSize: '20px', lineHeight: '28px', fontWeight: 700,
-            color: '#1a1c1e', letterSpacing: '0.18em', textTransform: 'uppercase',
+            color: 'hsl(var(--foreground))', letterSpacing: '0.18em', textTransform: 'uppercase',
             filter: 'drop-shadow(0 0 8px rgba(9,169,227,0.35))',
             margin: 0,
           }}>
@@ -114,14 +114,14 @@ export default function BrandLoader({ onComplete }: { onComplete?: () => void })
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
             <p className="brand-loader-pulse" style={{
               fontSize: '13px', fontWeight: 600,
-              color: '#00668a', letterSpacing: '0.06em', margin: 0,
+              color: '#09A9E3', letterSpacing: '0.06em', margin: 0,
             }}>
               Initialisation du système...
             </p>
             <div style={{
               display: 'flex', alignItems: 'center', gap: '0.3rem',
               fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.3em',
-              color: 'rgba(62,72,79,0.4)',
+              color: 'hsl(var(--muted-foreground))',
             }}>
               <span style={{
                 width: '6px', height: '6px', borderRadius: '9999px',
@@ -137,13 +137,13 @@ export default function BrandLoader({ onComplete }: { onComplete?: () => void })
         <div style={{
           width: '200px', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
           marginTop: '3rem',
-          borderTop: '1px solid rgba(110,120,128,0.1)', paddingTop: '1rem',
-          opacity: 0.4,
+          borderTop: '1px solid hsl(var(--border))', paddingTop: '1rem',
+          opacity: 0.6,
         }}>
-          <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#00668a' }}>
+          <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#09A9E3' }}>
             CORE_v1.0.0
           </span>
-          <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#3e484f' }}>
+          <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'hsl(var(--muted-foreground))' }}>
             SYST_OK
           </span>
         </div>
@@ -155,8 +155,9 @@ export default function BrandLoader({ onComplete }: { onComplete?: () => void })
         width: '100%', padding: '1.5rem', textAlign: 'center', zIndex: 20,
       }}>
         <p style={{
-          fontSize: '10px', color: 'rgba(62,72,79,0.3)',
+          fontSize: '10px', color: 'hsl(var(--muted-foreground))',
           textTransform: 'uppercase', letterSpacing: '0.2em', margin: 0,
+          opacity: 0.6,
         }}>
           © 2025 Free Digital Solutions. Precision &amp; Vitality in Motion.
         </p>
