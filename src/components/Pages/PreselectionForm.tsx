@@ -215,7 +215,7 @@ export default function PreselectionForm() {
                         {equipmentOptions.map((option) => (
                             <label
                                 key={option}
-                                className={`flex items-center gap-2 text-white cursor-pointer select-none ${isDisabled ? "opacity-50 cursor-not-allowed" : ""}`}
+                                className={`flex items-center gap-2 text-foreground cursor-pointer select-none ${isDisabled ? "opacity-50 cursor-not-allowed" : ""}`}
                             >
                                 <input
                                     type="checkbox"
@@ -262,7 +262,7 @@ export default function PreselectionForm() {
                         {(t("preselectionForm.practicalTestOptions", { returnObjects: true }) as string[]).map((option: string) => (
                             <label
                                 key={option}
-                                className={`flex items-center gap-2 text-white cursor-pointer select-none ${isDisabled ? "opacity-50 cursor-not-allowed" : ""}`}
+                                className={`flex items-center gap-2 text-foreground cursor-pointer select-none ${isDisabled ? "opacity-50 cursor-not-allowed" : ""}`}
                             >
                                 <input
                                     type="radio"
@@ -312,7 +312,7 @@ export default function PreselectionForm() {
                     <button
                         type="submit"
                         disabled={isDisabled}
-                        className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-xl font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:shadow-none"
+                        className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 text-white rounded-xl font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:shadow-none"
                     >
                         {status === 'sending' && (
                             <>
@@ -373,20 +373,23 @@ export default function PreselectionForm() {
                     width: 100%;
                     padding: 0.75rem 1rem;
                     border-radius: 1rem;
-                    border: 1px solid rgba(255,255,255,0.2);
-                    background: rgba(255,255,255,0.05);
-                    color: white;
+                    border: 1px solid hsl(var(--border));
+                    background: hsl(var(--secondary) / 0.4);
+                    color: hsl(var(--foreground));
                     font-size: 1rem;
                     outline: none;
                     transition: all 0.2s;
+                }
+                .input-field::placeholder {
+                    color: hsl(var(--muted-foreground));
                 }
                 .input-field:focus {
                     border-color: #10b981;
                     box-shadow: 0 0 0 3px rgba(16,185,129,0.3);
                 }
                 .input-field option {
-                    background-color: #1e293b;
-                    color: white;
+                    background-color: hsl(var(--card));
+                    color: hsl(var(--foreground));
                 }
                 .input-field:disabled {
                     opacity: 0.5;
