@@ -16,6 +16,7 @@ interface AuthContextValue {
   loading: boolean;
   signIn: (email: string, password: string) => Promise<AuthResult>;
   signUp: (email: string, password: string, fullName?: string) => Promise<AuthResult>;
+  signInWithGoogle: () => Promise<AuthResult>;
   signOut: () => Promise<void>;
   resetPassword: (email: string) => Promise<AuthResult>;
 }
@@ -80,6 +81,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  const signInWithGoogle = useCallback(async (): Promise<AuthResult> => {
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}/`,
+          queryParams: { access_type: 'offline', prompt: 'consent' },
+        },
+      });
+      return { error };
+    } catch (error: unknown) {
+      return { error: error instanceof Error ? error : new Error(String(error)) };
+    }
+  }, []);
+
   const signOut = useCallback(async () => {
     await supabase.auth.signOut();
   }, []);
@@ -92,7 +108,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, session, loading, signIn, signUp, signOut, resetPassword }}>
+    <AuthContext.Provider value={{ user, session, loading, signIn, signUp, signInWithGoogle, signOut, resetPassword }}>
       {children}
     </AuthContext.Provider>
   );
