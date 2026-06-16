@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Mail, Lock, Eye, EyeOff, ArrowRight, ArrowLeft, Rocket, CheckCircle, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { useAuthModal } from '../../context/AuthModalContext';
 import Img from '../../constants/img';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -61,6 +63,8 @@ function InputField({ id, label, type, placeholder, value, onChange, icon, right
 
 export default function AuthModal({ isOpen, initialView = 'login', onClose }: AuthModalProps) {
   const { signIn, signUp, signInWithGoogle, resetPassword } = useAuth();
+  const { redirectTo } = useAuthModal();
+  const navigate = useNavigate();
 
   // ── State ──
   const [view, setView] = useState<AuthView>(initialView);
@@ -110,6 +114,9 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
         setFeedback({ type: 'error', message: 'Email ou mot de passe incorrect.' });
       } else {
         onClose();
+        if (redirectTo) {
+          navigate(redirectTo, { replace: true });
+        }
       }
     } else if (view === 'signup') {
       const { error } = await signUp(email, password, fullName);
@@ -145,7 +152,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
   const handleGoogleSignIn = async () => {
     setLoading(true);
     setFeedback(null);
-    const { error } = await signInWithGoogle();
+    const { error } = await signInWithGoogle(redirectTo || undefined);
     if (error) {
       setFeedback({ type: 'error', message: "Connexion Google indisponible. Réessayez ou utilisez l'email." });
       setLoading(false);

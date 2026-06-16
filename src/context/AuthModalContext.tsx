@@ -6,7 +6,8 @@ import React, { createContext, useContext, useState, useCallback } from 'react';
 interface AuthModalContextValue {
   isOpen: boolean;
   initialView: 'login' | 'signup';
-  openLogin: () => void;
+  redirectTo: string | null;
+  openLogin: (redirectTo?: string) => void;
   openSignup: () => void;
   close: () => void;
 }
@@ -20,9 +21,11 @@ const AuthModalContext = createContext<AuthModalContextValue | null>(null);
 export function AuthModalProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [initialView, setInitialView] = useState<'login' | 'signup'>('login');
+  const [redirectTo, setRedirectTo] = useState<string | null>(null);
 
-  const openLogin = useCallback(() => {
+  const openLogin = useCallback((redirect?: string) => {
     setInitialView('login');
+    if (redirect) setRedirectTo(redirect);
     setIsOpen(true);
   }, []);
 
@@ -33,10 +36,11 @@ export function AuthModalProvider({ children }: { children: React.ReactNode }) {
 
   const close = useCallback(() => {
     setIsOpen(false);
+    setRedirectTo(null);
   }, []);
 
   return (
-    <AuthModalContext.Provider value={{ isOpen, initialView, openLogin, openSignup, close }}>
+    <AuthModalContext.Provider value={{ isOpen, initialView, redirectTo, openLogin, openSignup, close }}>
       {children}
     </AuthModalContext.Provider>
   );
