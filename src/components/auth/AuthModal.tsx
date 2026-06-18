@@ -208,7 +208,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                 <div className="absolute bottom-0 right-0 w-48 h-48 bg-emerald-500/15 rounded-full blur-[60px]" />
 
                 <div className="relative z-10 space-y-5">
-                  <img src={Img.logo} alt="Free Digital Solutions" className="max-h-[150px] w-auto" />
+                  <img src={Img.logo} alt="Free Digital Solutions" className="max-h-[100px] w-auto" />
 
                   <h2 className="text-2xl font-bold text-white leading-tight">
                     Développez votre{' '}
