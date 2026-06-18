@@ -97,7 +97,7 @@ export default function Footer() {
 
           {/* Bloc 1 — Logo + Social */}
           <div className="space-y-5">
-            <img src={Img.logo} alt="Free Technology Logo" className="max-h-[60px] w-auto" />
+            <img src={Img.logo} alt="Free Technology Logo" className="max-h-[100px] w-auto" />
             <p className="text-muted-foreground text-sm leading-relaxed">{t("footer.about")}</p>
             <div className="flex gap-4 pt-2">
               {socialLinks.map((social, index) => {
@@ -170,7 +170,7 @@ export default function Footer() {
         <div className="relative max-w-4xl mx-auto px-5 sm:px-8 py-16 text-center">
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-600/15 to-emerald-600/15 border border-white/10 text-xs text-muted-foreground uppercase tracking-widest mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-600/15 to-emerald-600/15 border border-border text-xs text-muted-foreground uppercase tracking-widest mb-6">
             <Sparkles size={12} className="text-accent" />
             Newsletter · Gratuit
           </div>
@@ -244,7 +244,7 @@ export default function Footer() {
             </p>
           )}
           {status === 'error' && (
-            <p className="mt-4 text-sm text-red-400">
+            <p className="mt-4 text-sm text-red-500">
               Une erreur est survenue. Réessayez ou contactez-nous directement.
             </p>
           )}

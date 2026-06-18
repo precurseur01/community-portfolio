@@ -196,11 +196,11 @@ function App() {
         <Route
           path="/receipt-generator"
           element={
-            <ProtectedRoute>
+        
               <MainLayout scrolled={scrolled}>
                 <ReceiptGenerator />
               </MainLayout>
-            </ProtectedRoute>
+         
           }
         />
         <Route

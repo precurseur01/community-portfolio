@@ -119,7 +119,7 @@ export default function Navigation({ scrolled, onOpenLogin, onOpenSignup }: Navi
 
           {/* ── Logo ── */}
           <a href="/" className="relative z-50 flex-shrink-0">
-            <img src={Img.logo1} alt="Free Digital Logo" className="max-h-[54px] w-auto" />
+            <img src={Img.logo} alt="Free Digital Logo" className="max-h-[50px] w-auto" />
           </a>
 
           {/* ── Centre : liens de navigation ── */}

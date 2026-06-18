@@ -480,6 +480,150 @@ const Receipt: React.FC<ReceiptProps> = ({ data, montantLettre }) => {
     )
 }
 
+// ─── BLANK LINE HELPER ───────────────────────────────────────────────────────
+
+const BL = ({ w = "100px" }: { w?: string }) => (
+    <span style={{ display: "inline-block", minWidth: w, borderBottom: "1px solid #555", marginLeft: "3px", verticalAlign: "bottom" }}>&nbsp;</span>
+)
+
+// ─── BLANK RECEIPT (version vierge imprimable) ────────────────────────────────
+
+const BlankReceipt2: React.FC = () => {
+  const year = new Date().getFullYear()
+  const prefix = `FRD-${year}-`
+  return (
+    <div style={{
+        fontFamily: "'Sora', 'Segoe UI', sans-serif",
+        background: "#fff",
+        width: "210mm",
+        minHeight: "297mm",
+        padding: "12mm 14mm",
+        boxSizing: "border-box",
+        color: "#1a1a2e",
+        fontSize: "9pt",
+        position: "relative",
+    }}>
+        {/* HEADER */}
+        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", borderBottom: "2.5px solid #0f3460", paddingBottom: "8px", marginBottom: "10px", gap: "16px" }}>
+            <div style={{ minWidth: "120px" }}>
+                <img src={Img.logo} className="h-[15mm] object-contain" alt="Free Digital Solutions" />
+                <div style={{ fontSize: "7.5pt", color: "#555", marginTop: "2px" }}>Agence Digitale</div>
+                <div style={{ fontSize: "7pt", color: "#888", marginTop: "4px" }}>
+                    digital.freedry.dev<br />+237 670 616 710
+                </div>
+            </div>
+            <div style={{ textAlign: "center", flex: 1 }}>
+                <div style={{ fontSize: "14pt", fontWeight: 700, color: "#0f3460", textTransform: "uppercase", letterSpacing: "1px" }}>
+                    Facture / Reçu de Paiement
+                </div>
+                <div style={{ fontSize: "8.5pt", color: "#16a34a", fontWeight: 600, marginTop: "3px" }}>
+                    Marketing Digital &amp; Croissance Digitale
+                </div>
+                <div style={{ display: "flex", justifyContent: "center", gap: "14px", marginTop: "6px" }}>
+                    {[
+                        { label: "Paiement Total" },
+                        { label: "Avance / Acompte" },
+                        { label: "Solde Final" },
+                    ].map((item) => (
+                        <span key={item.label} style={{ display: "inline-flex", alignItems: "center", gap: "4px", fontSize: "8pt", color: "#333" }}>
+                            <span style={{ width: "11px", height: "11px", border: "1.5px solid #555", borderRadius: "2px", display: "inline-block", flexShrink: 0 }} />
+                            {item.label}
+                        </span>
+                    ))}
+                </div>
+            </div>
+            <div style={{ minWidth: "130px", textAlign: "right", fontSize: "8pt" }}>
+                <div style={{ color: "#888" }}>N° Reçu</div>
+                <div style={{ fontWeight: 700, color: "#0f3460", fontSize: "8.5pt", display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "2px" }}>
+                    <span>{prefix}</span><BL w="40px" />
+                </div>
+                <div style={{ color: "#888", marginTop: "4px" }}>Date</div>
+                <div><BL w="70px" /></div>
+            </div>
+        </div>
+
+        {/* SERVICES BAR */}
+        <div style={{ background: "#f0f4ff", borderLeft: "3px solid #0f3460", borderRadius: "0 4px 4px 0", padding: "5px 10px", marginBottom: "10px", display: "flex", flexWrap: "wrap", gap: "6px 14px" }}>
+            {SERVICES.map((s) => (
+                <span key={s.label} style={{ fontSize: "7.5pt", color: "#0f3460", fontWeight: 500 }}>{s.icon} {s.label}</span>
+            ))}
+        </div>
+
+        {/* CLIENT */}
+        <div style={{ marginBottom: "10px" }}>
+            <div style={{ background: "#0f3460", color: "#fff", fontSize: "7.5pt", fontWeight: 700, padding: "3px 8px", borderRadius: "3px 3px 0 0", textTransform: "uppercase", letterSpacing: "0.5px" }}>Client</div>
+            <div style={{ border: "1px solid #dde3f0", borderTop: "none", borderRadius: "0 0 3px 3px", padding: "6px 10px", fontSize: "10.5pt", fontWeight: 700 }}>
+                <BL w="200px" />
+            </div>
+        </div>
+
+        {/* DESCRIPTION */}
+        <div style={{ marginBottom: "10px" }}>
+            <div style={{ background: "#0f3460", color: "#fff", fontSize: "7.5pt", fontWeight: 700, padding: "3px 8px", borderRadius: "3px 3px 0 0", textTransform: "uppercase", letterSpacing: "0.5px", marginTop: "30px" }}>Objet / Prestation</div>
+            <div style={{ border: "1px solid #dde3f0", borderTop: "none", borderRadius: "0 0 3px 3px", minHeight: "38px", padding: "6px 10px" }} />
+        </div>
+
+        {/* MODE DE PAIEMENT */}
+        <div style={{ marginBottom: "10px" }}>
+            <div style={{ background: "#0f3460", color: "#fff", fontSize: "7.5pt", fontWeight: 700, padding: "3px 8px", borderRadius: "3px 3px 0 0", textTransform: "uppercase", letterSpacing: "0.5px", marginTop: "30px" }}>Mode de Paiement</div>
+            <div style={{ border: "1px solid #dde3f0", borderTop: "none", borderRadius: "0 0 3px 3px", padding: "5px 10px", display: "flex", gap: "14px" }}>
+                {MODES_PAIEMENT.map((m) => (
+                    <span key={m} style={{ display: "inline-flex", alignItems: "center", gap: "4px", fontSize: "8.5pt" }}>
+                        <span style={{ width: "11px", height: "11px", borderRadius: "50%", border: "2px solid #bbb", display: "inline-block", flexShrink: 0 }} />
+                        {m}
+                    </span>
+                ))}
+            </div>
+        </div>
+
+        {/* TABLEAU + SIGNATURE */}
+        <div style={{ display: "flex", gap: "14px", marginBottom: "10px" }}>
+            <table style={{ width: "58%", borderCollapse: "collapse", fontSize: "9pt" }}>
+                <thead>
+                    <tr>
+                        <th colSpan={2} style={{ background: "#0f3460", color: "#fff", padding: "4px 8px", textAlign: "left", fontSize: "7.5pt", letterSpacing: "0.5px", textTransform: "uppercase" }}>
+                            Récapitulatif Financier
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {[
+                        { label: "Montant Total Prestation", bg: "#f8faff" },
+                        { label: "Montant Versé (ce reçu)", bg: "#fff", bold: true },
+                        { label: "Avance Antérieure", bg: "#f8faff" },
+                        { label: "Reste à Régler", bg: "#fff", accent: true },
+                    ].map((row, i) => (
+                        <tr key={i} style={{ background: row.bg }}>
+                            <td style={{ border: "1px solid #dde3f0", padding: "4px 8px", fontWeight: row.bold ? 700 : 400, color: row.accent ? "#e94560" : "#1a1a2e" }}>{row.label}</td>
+                            <td style={{ border: "1px solid #dde3f0", padding: "4px 8px", fontWeight: row.bold ? 700 : 400, color: row.accent ? "#e94560" : "#1a1a2e" }}>
+                                <BL w="70px" /> FCFA
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            <div style={{ flex: 1, border: "1px solid #dde3f0", borderRadius: "5px", padding: "8px 10px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <div style={{ fontSize: "7.5pt", color: "#888", textTransform: "uppercase", fontWeight: 600 }}>Signature & Cachet</div>
+                <div style={{ flex: 1, marginTop: "6px", border: "1.5px dashed #c5cde8", borderRadius: "4px", minHeight: "50px" }} />
+                <div style={{ fontSize: "7pt", color: "#aaa", marginTop: "4px", textAlign: "center" }}>Signature autorisée</div>
+            </div>
+        </div>
+
+        {/* MONTANT EN LETTRES */}
+        <div style={{ background: "#f0f4ff", border: "1px solid #c5cde8", borderRadius: "4px", padding: "6px 10px", marginBottom: "14px" }}>
+            <span style={{ fontSize: "8pt", color: "#888" }}>Montant versé en lettres : </span>
+            <BL w="220px" />
+        </div>
+
+        {/* FOOTER */}
+        <div style={{ borderTop: "1.5px solid #e0e6f5", paddingTop: "7px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "7.5pt", color: "#888" }}>
+            <div><span style={{ fontWeight: 700, color: "#0f3460" }}>Free Digital Solution</span> — digital.freedry.dev — +237 670 616 710</div>
+            <div style={{ textAlign: "right" }}>Ce document tient lieu de reçu officiel.<br />Conservez-le pour vos archives.</div>
+        </div>
+    </div>
+  )
+}
+
 // ─── SMALL SHARED COMPONENT ──────────────────────────────────────────────────
 
 const SectionHeader: React.FC<{ label: string }> = ({ label }) => (
@@ -504,6 +648,7 @@ const SectionHeader: React.FC<{ label: string }> = ({ label }) => (
 
 const ReceiptGenerator = ({ setReceipts }: ProfessionalReceiptProps) => {
     const receiptRef = useRef<HTMLDivElement>(null)
+    const blankRef = useRef<HTMLDivElement>(null)
 
     const [data, setData] = useState<ReceiptData>({
         numero: generateReceiptNumber(),
@@ -560,9 +705,8 @@ const ReceiptGenerator = ({ setReceipts }: ProfessionalReceiptProps) => {
             .save()
     }
 
-    const handlePrint = useReactToPrint({
-        contentRef: receiptRef
-    })
+    const handlePrint = useReactToPrint({ contentRef: receiptRef })
+    const handlePrintBlank = useReactToPrint({ contentRef: blankRef })
     const montantLettre: string = data.montantPaye
         ? capitalize(numberToWords(data.montantPaye)) + " francs CFA"
         : ""
@@ -772,15 +916,23 @@ const ReceiptGenerator = ({ setReceipts }: ProfessionalReceiptProps) => {
                     </button>
                     <button
                         onClick={regenerate}
-                        style={{
-                            ...btnBase,
-                            background: "#f0f4ff",
-                            color: "#0f3460",
-                            border: "1px solid #c5cde8",
-                        }}
+                        style={{ ...btnBase, background: "#f0f4ff", color: "#0f3460", border: "1px solid #c5cde8" }}
                     >
                         🔄 Nouveau Numéro
                     </button>
+                    <button
+                        onClick={handlePrintBlank}
+                        style={{ ...btnBase, background: "#fff", color: "#555", border: "1.5px dashed #aaa" }}
+                    >
+                        🖨 Version vierge (à remplir)
+                    </button>
+                </div>
+
+                {/* Reçu vierge caché — uniquement pour impression */}
+                <div style={{ position: "absolute", left: "-9999px", top: 0 }}>
+                    <div ref={blankRef}>
+                        <BlankReceipt2 />
+                    </div>
                 </div>
             </div>
 
