@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Mail, Lock, Eye, EyeOff, ArrowRight, ArrowLeft, Rocket, CheckCircle, AlertCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../context/AuthContext';
 import { useAuthModal } from '../../context/AuthModalContext';
 import Img from '../../constants/img';
@@ -67,6 +68,7 @@ function InputField({ id, label, type, placeholder, value, onChange, icon, right
 }
 
 export default function AuthModal({ isOpen, initialView = 'login', onClose }: AuthModalProps) {
+  const { t } = useTranslation();
   const { signIn, signUp, signInWithGoogle, resetPassword } = useAuth();
   const { redirectTo } = useAuthModal();
   const navigate = useNavigate();
@@ -111,7 +113,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
     if (view === 'login') {
       const { error } = await signIn(email, password);
       if (error) {
-        setFeedback({ type: 'error', message: 'Email ou mot de passe incorrect.' });
+        setFeedback({ type: 'error', message: t('auth.errors.invalidCredentials') });
       } else {
         onClose();
         if (redirectTo) navigate(redirectTo, { replace: true });
@@ -121,14 +123,14 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
       if (error) {
         setFeedback({ type: 'error', message: error.message });
       } else {
-        setFeedback({ type: 'success', message: 'Compte créé ! Vérifiez votre boîte mail pour confirmer votre adresse.' });
+        setFeedback({ type: 'success', message: t('auth.success.accountCreated') });
       }
     } else {
       const { error } = await resetPassword(email);
       if (error) {
         setFeedback({ type: 'error', message: error.message });
       } else {
-        setFeedback({ type: 'success', message: 'Lien de réinitialisation envoyé ! Vérifiez votre boîte mail.' });
+        setFeedback({ type: 'success', message: t('auth.success.resetLinkSent') });
       }
     }
 
@@ -146,27 +148,27 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
     setFeedback(null);
     const { error } = await signInWithGoogle(redirectTo || undefined);
     if (error) {
-      setFeedback({ type: 'error', message: "Connexion Google indisponible. Réessayez ou utilisez l'email." });
+      setFeedback({ type: 'error', message: t('auth.errors.googleUnavailable') });
       setLoading(false);
     }
   };
 
   const titles: Record<AuthView, string> = {
-    login: 'Bon retour 👋',
-    signup: 'Créer un compte',
-    reset: 'Mot de passe oublié',
+    login: t('auth.titles.login'),
+    signup: t('auth.titles.signup'),
+    reset: t('auth.titles.reset'),
   };
 
   const subtitles: Record<AuthView, string> = {
-    login: 'Accédez à votre espace personnel.',
-    signup: 'Rejoignez la communauté Free Technology.',
-    reset: 'Recevez un lien de réinitialisation par email.',
+    login: t('auth.subtitles.login'),
+    signup: t('auth.subtitles.signup'),
+    reset: t('auth.subtitles.reset'),
   };
 
   const ctaLabels: Record<AuthView, string> = {
-    login: 'Se connecter',
-    signup: 'Créer mon compte',
-    reset: 'Envoyer le lien',
+    login: t('auth.cta.login'),
+    signup: t('auth.cta.signup'),
+    reset: t('auth.cta.reset'),
   };
 
   return (
@@ -211,22 +213,22 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                   <img src={Img.logo} alt="Free Digital Solutions" className="max-h-[100px] w-auto" />
 
                   <h2 className="text-2xl font-bold text-white leading-tight">
-                    Développez votre{' '}
+                    {t('auth.brand.headingPrefix')}{' '}
                     <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                      présence digitale.
+                      {t('auth.brand.headingHighlight')}
                     </span>
                   </h2>
 
                   <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-                    Stratégies data-driven, growth marketing et outils de conversion pensés pour les entrepreneurs ambitieux.
+                    {t('auth.brand.desc')}
                   </p>
 
                   <div className="grid grid-cols-2 gap-3 pt-2">
                     {[
-                      { value: '+300', label: 'Clients actifs' },
-                      { value: '98%', label: 'Satisfaction' },
-                      { value: '5×', label: 'ROI moyen' },
-                      { value: '24h', label: 'Support réactif' },
+                      { value: '+300', label: t('auth.brand.stats.clients') },
+                      { value: '98%', label: t('auth.brand.stats.satisfaction') },
+                      { value: '5×', label: t('auth.brand.stats.roi') },
+                      { value: '24h', label: t('auth.brand.stats.support') },
                     ].map((stat) => (
                       <div key={stat.label} className="bg-white/8 border border-white/10 rounded-xl p-3">
                         <div className="text-lg font-bold text-white">{stat.value}</div>
@@ -254,7 +256,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                   <button
                     onClick={onClose}
                     className="w-9 h-9 flex items-center justify-center rounded-xl bg-secondary hover:bg-muted border border-border text-muted-foreground hover:text-foreground transition-all duration-200 cursor-pointer flex-shrink-0 ml-3"
-                    aria-label="Fermer"
+                    aria-label={t('auth.close')}
                   >
                     <X size={17} />
                   </button>
@@ -273,7 +275,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                             : 'text-muted-foreground hover:text-foreground'
                         }`}
                       >
-                        {v === 'login' ? 'Connexion' : 'Inscription'}
+                        {v === 'login' ? t('auth.tabs.login') : t('auth.tabs.signup')}
                       </button>
                     ))}
                   </div>
@@ -294,12 +296,12 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                         <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
                         <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                       </svg>
-                      Continuer avec Google
+                      {t('auth.continueWithGoogle')}
                     </button>
 
                     <div className="flex items-center gap-3 my-5">
                       <div className="flex-1 h-px bg-border" />
-                      <span className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] font-semibold">ou</span>
+                      <span className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] font-semibold">{t('auth.or')}</span>
                       <div className="flex-1 h-px bg-border" />
                     </div>
                   </>
@@ -312,7 +314,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                     className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors self-start group cursor-pointer"
                   >
                     <ArrowLeft size={15} className="group-hover:-translate-x-0.5 transition-transform" />
-                    Retour à la connexion
+                    {t('auth.backToLogin')}
                   </button>
                 )}
 
@@ -320,9 +322,9 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                 <form onSubmit={handleSubmit} className="space-y-4 flex-1">
                   <InputField
                     id="auth-email"
-                    label="Adresse email"
+                    label={t('auth.labels.email')}
                     type="email"
-                    placeholder="nom@entreprise.com"
+                    placeholder={t('auth.placeholders.email')}
                     value={email}
                     onChange={setEmail}
                     icon={<Mail size={17} />}
@@ -332,9 +334,9 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                   {view === 'signup' && (
                     <InputField
                       id="auth-name"
-                      label="Nom complet"
+                      label={t('auth.labels.fullName')}
                       type="text"
-                      placeholder="Jean Dupont"
+                      placeholder={t('auth.placeholders.fullName')}
                       value={fullName}
                       onChange={setFullName}
                       icon={<Rocket size={17} />}
@@ -345,9 +347,9 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                   {view !== 'reset' && (
                     <InputField
                       id="auth-password"
-                      label="Mot de passe"
+                      label={t('auth.labels.password')}
                       type={showPassword ? 'text' : 'password'}
-                      placeholder="••••••••"
+                      placeholder={t('auth.placeholders.password')}
                       value={password}
                       onChange={setPassword}
                       icon={<Lock size={17} />}
@@ -358,7 +360,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                           onClick={() => setShowPassword(!showPassword)}
                           className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer p-1"
                           tabIndex={-1}
-                          aria-label={showPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'}
+                          aria-label={showPassword ? t('auth.hidePassword') : t('auth.showPassword')}
                         >
                           {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
                         </button>
@@ -374,7 +376,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                         onClick={() => switchView('reset')}
                         className="text-xs text-primary hover:text-primary/80 hover:underline underline-offset-4 transition-colors cursor-pointer"
                       >
-                        Mot de passe oublié ?
+                        {t('auth.forgotPassword')}
                       </button>
                     </div>
                   )}
@@ -422,29 +424,29 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                 <div className="mt-6 pt-5 border-t border-border text-center">
                   {view === 'login' && (
                     <p className="text-sm text-muted-foreground">
-                      Pas encore de compte ?{' '}
+                      {t('auth.noAccount')}{' '}
                       <button
                         onClick={() => switchView('signup')}
                         className="text-primary hover:text-primary/80 font-semibold hover:underline underline-offset-4 transition-colors cursor-pointer"
                       >
-                        Créer un compte
+                        {t('auth.createAccount')}
                       </button>
                     </p>
                   )}
                   {view === 'signup' && (
                     <p className="text-sm text-muted-foreground">
-                      Déjà un compte ?{' '}
+                      {t('auth.hasAccount')}{' '}
                       <button
                         onClick={() => switchView('login')}
                         className="text-primary hover:text-primary/80 font-semibold hover:underline underline-offset-4 transition-colors cursor-pointer"
                       >
-                        Se connecter
+                        {t('auth.signIn')}
                       </button>
                     </p>
                   )}
                   {view === 'reset' && (
                     <p className="text-xs text-muted-foreground">
-                      Vérifiez également votre dossier spam si vous ne recevez rien.
+                      {t('auth.spamCheck')}
                     </p>
                   )}
                 </div>

@@ -290,14 +290,15 @@
     }
   },
   "preselectionForm": {
-    "title": "📝 Preselection Form – Community Managers Training",
-    "sessionInfo": "Session on <1>March 28, 2026</1> – 3 months to become a professional CM!",
+    "title": "Community Manager Preselection",
+    "sessionInfo": "Session on <1>October 06, 2026</1>",
     "personalInfo": "🧑‍💼 Personal Information",
     "placeholders": {
       "name": "Full Name",
       "whatsapp": "WhatsApp Number",
       "email": "Email Address",
-      "city": "City / Country",
+      "city": "City",
+      "country": "Country",
       "age": "Age"
     },
     "profileObjective": "🎯 Profile & Objective",
@@ -333,6 +334,7 @@
       "enligne": "Online"
     },
     "equipmentTitle": "💻 Equipment & Access",
+    "equipmentQuestion": "What equipment do you have to follow the training?",
     "motivationTitle": "🧠 Motivation",
     "motivationPlaceholder": "Why do you want to take this training?",
     "practicalTestTitle": "🧪 Practical Task",
@@ -352,7 +354,51 @@
       "oui": "Yes",
       "non": "No"
     },
-    "submitButton": "Submit my application"
+    "submitButton": "Submit my application",
+    "timeEstimate": "≈ 2 minutes",
+    "stepIndicator": "Step {{current}} of {{total}}",
+    "next": "Continue",
+    "previous": "Back",
+    "stepIncomplete": "Complete the fields to continue.",
+    "scarcityTitle": "Session seats",
+    "scarcityRemaining": "Only {{count}} seats left out of {{total}}",
+    "scarcityLastPlaces": "Last seats available",
+    "scarcityFull": "Session full — join the next one",
+    "scarcityFilling": "The session is filling up fast",
+    "sending": "Sending…",
+    "sent": "Application sent!",
+    "retry": "Retry",
+    "successTitle": "🎉 Application received, {{name}}!",
+    "successBody": "Your application has arrived. We're reviewing your profile and will reach out on WhatsApp very soon.",
+    "errorTitle": "Something went wrong",
+    "errorBody": "Try again or contact us directly on WhatsApp at +237 670616710.",
+    "steps": {
+      "1": {
+        "title": "Your goal",
+        "desc": "A quick question to get started.",
+        "encouragement": "Let's start with the essentials"
+      },
+      "2": {
+        "title": "Your profile",
+        "desc": "Help us get to know you better.",
+        "encouragement": "Great, you're moving fast"
+      },
+      "3": {
+        "title": "Your skills",
+        "desc": "Practical situation and creativity.",
+        "encouragement": "Halfway there"
+      },
+      "4": {
+        "title": "Your commitment",
+        "desc": "Your motivation and availability.",
+        "encouragement": "Just two steps left"
+      },
+      "5": {
+        "title": "Your contact info",
+        "desc": "So we can reach you after review.",
+        "encouragement": "Final stretch!"
+      }
+    }
   },
   "trainingAnnouncement": {
     "title": "Community Managers Training – Session on {{date}}! Become a professional CM in 3 months",
@@ -513,7 +559,7 @@
       "prefix": "Become a profitable ",
       "highlight": "Community Manager in 12 weeks"
     },
-    "description": "Results-oriented practical training. Master AI, content creation and advertising to become a sought-after expert in the market.",
+    "description": "Master AI, content and paid ads to launch your own social media business and build a community that buys — or resell that expertise to companies ready to pay top dollar.",
     "nextSession": "Next session: {{date}}",
     "limitedPlaces": "Limited spots (15 participants max) for ultra-personalized coaching.",
     "viewProgram": "View the program",
@@ -531,7 +577,7 @@
     "viewFullProgram": "See full program",
     "intensiveProgram": "Intensive program covering from strategy (Module 1) to monetization (Module 7).",
     "discoverFormulas": "Discover plans",
-    "date": "JULY 04, 2026",
+    "date": "OCTOBER 06, 2026",
     "modules": {
       "fundamentals": {
         "title": "Community Management Fundamentals",
@@ -761,6 +807,91 @@
           "highlight": "Monthly Consulting"
         }
       }
+    }
+  },
+  "ecosystem": {
+    "eyebrow": "Our ecosystem",
+    "title": "A complete ecosystem",
+    "titleHighlight": "for your success",
+    "subtitle": "Strategic partners guaranteeing the quality of your journey — from certification to equipment, through production.",
+    "partners": {
+      "ifpit": {
+        "name": "IFPIT",
+        "role": "Official certification",
+        "desc": "Recognized and accredited diplomas"
+      },
+      "pixiris": {
+        "name": "Pixiris",
+        "role": "Audiovisual production",
+        "desc": "Professional-grade content"
+      },
+      "freetech": {
+        "name": "FreeTech",
+        "role": "Professional equipment",
+        "desc": "Optimized setups for learners"
+      }
+    }
+  },
+  "auth": {
+    "close": "Close",
+    "titles": {
+      "login": "Welcome back 👋",
+      "signup": "Create an account",
+      "reset": "Forgot password"
+    },
+    "subtitles": {
+      "login": "Access your personal space.",
+      "signup": "Join the Free Technology community.",
+      "reset": "Get a reset link by email."
+    },
+    "cta": {
+      "login": "Sign in",
+      "signup": "Create my account",
+      "reset": "Send the link"
+    },
+    "tabs": {
+      "login": "Sign in",
+      "signup": "Sign up"
+    },
+    "labels": {
+      "email": "Email address",
+      "fullName": "Full name",
+      "password": "Password"
+    },
+    "placeholders": {
+      "email": "name@company.com",
+      "fullName": "John Doe",
+      "password": "••••••••"
+    },
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "forgotPassword": "Forgot password?",
+    "backToLogin": "Back to sign in",
+    "continueWithGoogle": "Continue with Google",
+    "or": "or",
+    "noAccount": "Don't have an account yet?",
+    "createAccount": "Create an account",
+    "hasAccount": "Already have an account?",
+    "signIn": "Sign in",
+    "spamCheck": "Also check your spam folder if you don't receive anything.",
+    "brand": {
+      "headingPrefix": "Grow your",
+      "headingHighlight": "digital presence.",
+      "desc": "Data-driven strategies, growth marketing and conversion tools designed for ambitious entrepreneurs.",
+      "stats": {
+        "clients": "Active clients",
+        "satisfaction": "Satisfaction",
+        "roi": "Average ROI",
+        "support": "Responsive support"
+      }
+    },
+    "errors": {
+      "invalidCredentials": "Incorrect email or password.",
+      "googleUnavailable": "Google sign-in unavailable. Try again or use email."
+    },
+    "success": {
+      "accountCreated": "Account created! Check your inbox to confirm your address.",
+      "resetLinkSent": "Reset link sent! Check your inbox."
     }
   }
 }

@@ -18,6 +18,11 @@ import hero_cm_1 from "../assets/img/hero_cm_1.png"
 import hero_cm_2 from "../assets/img/hero_cm_2.png"
 import hero_cm_3 from "../assets/img/hero_cm_3.png"
 
+// Partners
+import partnerIfpit from "../assets/partnerlogo/ifpit.png";
+import partnerPixiris from "../assets/partnerlogo/Pixiris logo.png";
+import partnerFreetech from "../assets/partnerlogo/freetech.png";
+
 
 //avatar
 import avatar1 from "../assets/avatar/av1.jfif";
@@ -56,6 +61,9 @@ const Img = {
     hero_cm_1,
     hero_cm_2,
     hero_cm_3,
+    partnerIfpit,
+    partnerPixiris,
+    partnerFreetech,
 };
 
 export default Img;

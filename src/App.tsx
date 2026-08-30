@@ -14,6 +14,7 @@ import LegalNotice from './components/Pages/LegalNotice';
 import PrivacyPolicy from './components/Pages/PrivacyPolicy';
 import HomeServicesSections from './components/Home';
 import Testimonials from './components/Testimonial';
+import Ecosystem from './components/Ecosystem';
 import NotFound from './components/Pages/NotFound';
 import ReceiptGenerator from './components/Pages/ReceiptGenerator';
 import ConversionTechniques from './components/Pages/ConversionTechniques';
@@ -56,6 +57,7 @@ function App() {
                 <HomeServicesSections />
                 <Services />
                 <Testimonials />
+                <Ecosystem />
                 <Contact />
                 <FloatingWhatsAppButton />
               </MainLayout>

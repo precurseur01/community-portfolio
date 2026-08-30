@@ -290,14 +290,15 @@
         }
     },
     "preselectionForm": {
-        "title": "📝 Formulaire de présélection – Formation Community Managers",
-        "sessionInfo": "Session du <1>04 juillet 2026</1> – 3 mois pour devenir un CM professionnel !",
+        "title": "Présélection Community Manager",
+        "sessionInfo": "Session du <1>06 octobre 2026</1>",
         "personalInfo": "🧑‍💼 Informations personnelles",
         "placeholders": {
             "name": "Nom et prénom",
             "whatsapp": "Numéro WhatsApp",
             "email": "Adresse e-mail",
-            "city": "Ville / Pays",
+            "city": "Ville",
+            "country": "Pays",
             "age": "Âge"
         },
         "profileObjective": "🎯 Profil et objectif",
@@ -333,6 +334,7 @@
             "enligne": "En ligne"
         },
         "equipmentTitle": "💻 Équipement et accès",
+        "equipmentQuestion": "De quel matériel disposes-tu pour suivre la formation ?",
         "motivationTitle": "🧠 Motivation",
         "motivationPlaceholder": "Pourquoi souhaitez-vous suivre cette formation ?",
         "practicalTestTitle": "🧪 Mise en situation",
@@ -352,7 +354,51 @@
             "oui": "Oui",
             "non": "Non"
         },
-        "submitButton": "Envoyer ma candidature"
+        "submitButton": "Envoyer ma candidature",
+        "timeEstimate": "≈ 2 minutes",
+        "stepIndicator": "Étape {{current}} sur {{total}}",
+        "next": "Continuer",
+        "previous": "Retour",
+        "stepIncomplete": "Complète les champs pour continuer.",
+        "scarcityTitle": "Places de la session",
+        "scarcityRemaining": "Il ne reste que {{count}} places sur {{total}}",
+        "scarcityLastPlaces": "Dernières places disponibles",
+        "scarcityFull": "Session complète — inscris-toi à la prochaine",
+        "scarcityFilling": "La session se remplit vite",
+        "sending": "Envoi en cours…",
+        "sent": "Candidature envoyée !",
+        "retry": "Réessayer",
+        "successTitle": "🎉 Candidature reçue, {{name}} !",
+        "successBody": "Ton dossier est bien arrivé. Nous analysons ton profil et te recontactons sur WhatsApp très bientôt.",
+        "errorTitle": "Une erreur est survenue",
+        "errorBody": "Réessaie ou contacte-nous directement sur WhatsApp au +237 670616710.",
+        "steps": {
+            "1": {
+                "title": "Ton objectif",
+                "desc": "Une question rapide pour commencer.",
+                "encouragement": "Commençons par l'essentiel"
+            },
+            "2": {
+                "title": "Ton profil",
+                "desc": "Aide-nous à mieux te connaître.",
+                "encouragement": "Excellent, tu progresses vite"
+            },
+            "3": {
+                "title": "Tes compétences",
+                "desc": "Situation pratique et créativité.",
+                "encouragement": "Moitié du chemin parcouru"
+            },
+            "4": {
+                "title": "Ton engagement",
+                "desc": "Ta motivation et ta disponibilité.",
+                "encouragement": "Plus que deux étapes"
+            },
+            "5": {
+                "title": "Tes coordonnées",
+                "desc": "Pour te recontacter après validation.",
+                "encouragement": "Dernière ligne droite !"
+            }
+        }
     },
     "trainingAnnouncement": {
         "title": "Formation Community Managers – Session du {{date}} ! Devenez un CM professionnel en 3 mois",
@@ -513,7 +559,7 @@
             "prefix": "Deviens Community Manager ",
             "highlight": "rentable en 12 semaines"
         },
-        "description": "Formation pratique orientée résultats. Maîtrisez l'IA, la création de contenu et la publicité pour devenir un expert recherché sur le marché.",
+        "description": "Maîtrisez l'IA, le contenu et la publicité pour lancer votre propre activité sur les réseaux et fédérer une communauté qui achète — ou revendez cette expertise aux entreprises prêtes à payer le prix fort.",
         "nextSession": "Prochaine session : {{date}}",
         "limitedPlaces": "Places limitées (15 participants max) pour un accompagnement ultra-personnalisé.",
         "viewProgram": "Voir le programme",
@@ -531,7 +577,7 @@
         "viewFullProgram": "Voir le programme complet",
         "intensiveProgram": "Programme intensif couvrant de la stratégie (Module 1) à la monétisation (Module 7).",
         "discoverFormulas": "Découvrir les formules",
-        "date": "04 JUILLET 2026",
+        "date": "06 OCTOBRE 2026",
         "modules": {
             "fundamentals": {
                 "title": "Fondamentaux du Community Management",
@@ -731,6 +777,91 @@
                     "highlight": "Consulting Mensuel"
                 }
             }
+        }
+    },
+    "ecosystem": {
+        "eyebrow": "Notre écosystème",
+        "title": "Un écosystème complet",
+        "titleHighlight": "pour votre réussite",
+        "subtitle": "Des partenaires stratégiques qui garantissent la qualité de votre parcours — de la certification à l'équipement, en passant par la production.",
+        "partners": {
+            "ifpit": {
+                "name": "IFPIT",
+                "role": "Certification officielle",
+                "desc": "Diplômes reconnus et accrédités"
+            },
+            "pixiris": {
+                "name": "Pixiris",
+                "role": "Production audiovisuelle",
+                "desc": "Contenus de qualité professionnelle"
+            },
+            "freetech": {
+                "name": "FreeTech",
+                "role": "Équipement professionnel",
+                "desc": "Setups optimisés pour apprenants"
+            }
+        }
+    },
+    "auth": {
+        "close": "Fermer",
+        "titles": {
+            "login": "Bon retour 👋",
+            "signup": "Créer un compte",
+            "reset": "Mot de passe oublié"
+        },
+        "subtitles": {
+            "login": "Accédez à votre espace personnel.",
+            "signup": "Rejoignez la communauté Free Technology.",
+            "reset": "Recevez un lien de réinitialisation par email."
+        },
+        "cta": {
+            "login": "Se connecter",
+            "signup": "Créer mon compte",
+            "reset": "Envoyer le lien"
+        },
+        "tabs": {
+            "login": "Connexion",
+            "signup": "Inscription"
+        },
+        "labels": {
+            "email": "Adresse email",
+            "fullName": "Nom complet",
+            "password": "Mot de passe"
+        },
+        "placeholders": {
+            "email": "nom@entreprise.com",
+            "fullName": "Jean Dupont",
+            "password": "••••••••"
+        },
+        "showPassword": "Afficher le mot de passe",
+        "hidePassword": "Masquer le mot de passe",
+        "forgotPassword": "Mot de passe oublié ?",
+        "backToLogin": "Retour à la connexion",
+        "continueWithGoogle": "Continuer avec Google",
+        "or": "ou",
+        "noAccount": "Pas encore de compte ?",
+        "createAccount": "Créer un compte",
+        "hasAccount": "Déjà un compte ?",
+        "signIn": "Se connecter",
+        "spamCheck": "Vérifiez également votre dossier spam si vous ne recevez rien.",
+        "brand": {
+            "headingPrefix": "Développez votre",
+            "headingHighlight": "présence digitale.",
+            "desc": "Stratégies data-driven, growth marketing et outils de conversion pensés pour les entrepreneurs ambitieux.",
+            "stats": {
+                "clients": "Clients actifs",
+                "satisfaction": "Satisfaction",
+                "roi": "ROI moyen",
+                "support": "Support réactif"
+            }
+        },
+        "errors": {
+            "invalidCredentials": "Email ou mot de passe incorrect.",
+            "googleUnavailable": "Connexion Google indisponible. Réessayez ou utilisez l'email."
+        },
+        "success": {
+            "accountCreated": "Compte créé ! Vérifiez votre boîte mail pour confirmer votre adresse.",
+            "resetLinkSent": "Lien de réinitialisation envoyé ! Vérifiez votre boîte mail."
         }
     }
 }
