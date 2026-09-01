@@ -42,13 +42,46 @@ export default function QuizEngine({ questions, title = 'Quiz', courseColor = '#
 
   const finish = () => {
     let correct = 0;
+    const answersReport: string[] = [];
+
     questions.forEach((qu, i) => {
       const ua = selected[i] || [];
-      if (ua.length === qu.correctAnswers.length && qu.correctAnswers.every(a => ua.includes(a))) correct++;
+      const isCorrect =
+        ua.length === qu.correctAnswers.length &&
+        qu.correctAnswers.every(a => ua.includes(a));
+      if (isCorrect) correct++;
+
+      const userText = ua.length
+        ? ua.map(idx => qu.options[idx]).join(' | ')
+        : '(aucune réponse)';
+      const correctText = qu.correctAnswers.map(idx => qu.options[idx]).join(' | ');
+
+      answersReport.push(
+        `Q${i + 1}. ${qu.question}\n  → Réponse: ${userText}\n  → ${isCorrect ? '✅ Correct' : `❌ Attendu: ${correctText}`}`
+      );
     });
+
     setScore(correct);
     setShowResults(true);
     onComplete?.(correct, questions.length);
+
+    // ── Envoi Formspree en arrière-plan (fire-and-forget) ──
+    const examTitle = metadata?.title ?? title;
+    const pct = Math.round((correct / questions.length) * 100);
+    fetch('https://formspree.io/f/xldnpebz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        _subject: `📝 Examen soumis – ${candidateName} – ${examTitle}`,
+        candidate_name: candidateName,
+        candidate_email: user?.email ?? 'inconnu',
+        exam_title: examTitle,
+        submitted_at: new Date().toISOString(),
+        score: `${correct} / ${questions.length} (${pct}%)`,
+        status: pct >= 70 ? 'RÉUSSI' : 'ÉCHOUÉ',
+        answers: answersReport,
+      }),
+    }).catch(() => { /* silencieux — l'UI résultats reste inchangée */ });
   };
 
   const reset = () => {
