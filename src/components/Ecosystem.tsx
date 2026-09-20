@@ -57,7 +57,7 @@ export default function Ecosystem() {
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-emerald-500/[0.06] blur-[120px]" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-6">
         {/* ── Header (épuré, centré) ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

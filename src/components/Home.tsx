@@ -41,7 +41,7 @@ export default function HomeServicesSections() {
             {/* Background glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08),transparent_70%)]"></div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-32">
+            <div className="relative z-10 max-w-[1400px] mx-auto px-6 space-y-32">
                 {sections.map((section, index) => {
                     const isReverse = index % 2 !== 0;
 

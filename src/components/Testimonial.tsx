@@ -99,7 +99,7 @@ const Testimonials = () => {
             role="region"
             className="relative py-20 md:py-32 overflow-hidden bg-card/50"
         >
-            <div className="container mx-auto px-4 md:px-8 relative z-10 max-w-6xl">
+            <div className="container mx-auto px-4 md:px-8 relative z-10 max-w-[1280px]">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl sm:text-5xl font-bold mb-6">

@@ -68,7 +68,7 @@ export default function SuggestionBox() {
             <div className="relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-[#09A9E3]/10 via-transparent to-[#50BC74]/10" />
                 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10">
+                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10">
                     
                     {/* Header */}
                     <div className="text-center mb-16">
@@ -92,7 +92,7 @@ export default function SuggestionBox() {
                         <div className="w-24 h-1 bg-gradient-to-r from-[#09A9E3] to-[#50BC74] mx-auto rounded-full mt-8" />
                     </div>
 
-                    <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div className="grid lg:grid-cols-3 gap-8 max-w-[1280px] mx-auto">
                         
                         {/* Left Column - Info Cards */}
                         <div className="lg:col-span-1 space-y-6">

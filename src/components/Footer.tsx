@@ -62,7 +62,7 @@ export default function Footer() {
   return (
     <footer className="bg-card/80 backdrop-blur-xl border-t border-border text-foreground/70">
       <div className="relative py-20 overflow-hidden border-y border-border bg-gradient-to-br from-primary/5 via-background to-accent/5">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-[1280px] mx-auto px-6">
           <div className="text-center mb-14">
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground">{t("footer.processTitle")}</h3>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm sm:text-base">{t("footer.processSubtitle")}</p>
@@ -92,7 +92,7 @@ export default function Footer() {
         </div>
       </div>
       {/* ── SECTION PRINCIPALE ── */}
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-14">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
           {/* Bloc 1 — Logo + Social */}
@@ -253,7 +253,7 @@ export default function Footer() {
 
       {/* ── BAS FOOTER ── */}
       <div className="border-t border-border">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground text-center md:text-left">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground text-center md:text-left">
           <p>© {new Date().getFullYear()} – Free Digital Solutions</p>
           <div className="flex gap-6">
             <a href="/legal-notice" className="hover:text-foreground transition">{t("footer.legal")}</a>

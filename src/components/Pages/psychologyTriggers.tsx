@@ -97,7 +97,7 @@ export default function PsychologyLearning() {
     return (
         <section className="py-20 px-6 bg-gradient-to-br from-blue-950 via-slate-950 to-emerald-950 text-white">
 
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-[1280px] mx-auto">
 
                 {/* Header */}
 

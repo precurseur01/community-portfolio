@@ -109,7 +109,7 @@ const pricingPlans = [
 
 const PricingPage: React.FC = () => {
   return (
-    <div className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <div className="py-24 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto overflow-hidden">
       {/* Header Section */}
       <div className="text-center mb-20 relative">
         <motion.div

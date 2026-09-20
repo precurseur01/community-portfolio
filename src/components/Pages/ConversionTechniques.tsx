@@ -215,7 +215,7 @@ export default function ConversionTechniques() {
         .glow-effect { box-shadow: 0 0 30px rgba(124, 58, 237, 0.15); }
       `}</style>
 
-      <div className="max-w-6xl mx-auto font-body">
+      <div className="max-w-[1280px] mx-auto font-body">
 
         {/* Header */}
         <div className="text-center mb-14">

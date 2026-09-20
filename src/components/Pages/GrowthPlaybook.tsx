@@ -180,7 +180,7 @@ export default function GrowthPlaybook() {
                 <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-violet-600/10 blur-[100px] pulse-glow" />
                 <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-cyan-600/10 blur-[100px] pulse-glow" style={{ animationDelay: '1.5s' }} />
 
-                <div className="max-w-6xl mx-auto w-full">
+                <div className="max-w-[1280px] mx-auto w-full">
                     <div ref={heroVisible.ref} className={`grid lg:grid-cols-2 gap-16 items-center`}>
 
                         {/* Left — text */}
@@ -304,7 +304,7 @@ export default function GrowthPlaybook() {
 
             {/* ── MODULES GRID ───────────────────────── */}
             <section id="modules" className="py-24 px-4">
-                <div className="max-w-6xl mx-auto">
+                <div className="max-w-[1280px] mx-auto">
 
                     {/* Section header */}
                     <div ref={modulesVisible.ref} className={`reveal ${modulesVisible.visible ? 'visible' : ''} mb-14`}>
