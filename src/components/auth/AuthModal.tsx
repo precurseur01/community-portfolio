@@ -318,7 +318,7 @@ export default function AuthModal({ isOpen, initialView = 'login', onClose }: Au
                   </button>
                 )}
 
-                {/* Formulaire */}
+                {/* Formulaire .... */}
                 <form onSubmit={handleSubmit} className="space-y-4 flex-1">
                   <InputField
                     id="auth-email"
