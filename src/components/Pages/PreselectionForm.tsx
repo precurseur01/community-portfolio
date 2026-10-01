@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import {
     Send, Loader, CheckCircle, AlertCircle, ArrowRight, ArrowLeft,
     Clock, Briefcase, Rocket, TrendingUp, GraduationCap, HelpCircle,
-    Sparkles, Flame, Users,
+    Sparkles, Flame, Users, MessageCircle,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation, Trans } from "react-i18next";
@@ -182,7 +182,7 @@ export default function PreselectionForm() {
                     </h2>
                     <p className="text-foreground/80">
                         <Trans i18nKey="preselectionForm.sessionInfo">
-                            Session du <span className="text-orange-400 font-bold">06 octobre 2026</span>
+                            Session du <span className="text-orange-400 font-bold">07 octobre 2026</span>
                         </Trans>
                     </p>
                     <div className="inline-flex items-center gap-1.5 mt-3 px-3 py-1 rounded-full bg-secondary/60 border border-border/60 text-xs text-muted-foreground">
@@ -605,8 +605,20 @@ export default function PreselectionForm() {
                             <h3 className="text-xl font-bold text-foreground mb-2">
                                 {t("preselectionForm.successTitle", { name: formData.name || "" })}
                             </h3>
-                            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+                            <p className="text-sm text-muted-foreground max-w-md mx-auto mb-6">
                                 {t("preselectionForm.successBody")}
+                            </p>
+                            <a
+                                href={`https://wa.me/237670616710?text=${encodeURIComponent(t("preselectionForm.whatsappMessage"))}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-white bg-gradient-to-br from-[#25D366] to-[#128C7E] shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all"
+                            >
+                                <MessageCircle size={18} />
+                                {t("preselectionForm.whatsappCta")}
+                            </a>
+                            <p className="text-xs text-muted-foreground mt-3">
+                                {t("preselectionForm.whatsappHint")}
                             </p>
                         </motion.div>
                     )}
