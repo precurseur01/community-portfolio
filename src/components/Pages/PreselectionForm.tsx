@@ -182,7 +182,7 @@ export default function PreselectionForm() {
                     </h2>
                     <p className="text-foreground/80">
                         <Trans i18nKey="preselectionForm.sessionInfo">
-                            Session du <span className="text-orange-400 font-bold">07 octobre 2026</span>
+                            Session du <span className="text-orange-400 font-bold">13 janvier 2027</span>
                         </Trans>
                     </p>
                     <div className="inline-flex items-center gap-1.5 mt-3 px-3 py-1 rounded-full bg-secondary/60 border border-border/60 text-xs text-muted-foreground">
